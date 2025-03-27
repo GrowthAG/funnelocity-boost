@@ -28,15 +28,21 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="flex items-center space-x-2"
+          className="flex items-center"
+          aria-label="GrowthFunnels Home"
         >
-          <div className="font-display font-bold text-white flex items-center">
-            <img 
-              src="/lovable-uploads/f08c6356-9c67-4e4d-8373-5cfd85f5e2f4.png" 
-              alt="Growth Funnels Logo" 
-              className="h-8 md:h-10"
-            />
-            <span className="ml-2 text-xl tracking-tight text-white">GrowthFunnels</span>
+          <div className="group relative transition-all duration-300">
+            <div className={cn(
+              "w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300",
+              scrolled ? "bg-black/60 shadow-[0_0_15px_rgba(207,15,0,0.3)]" : "bg-black/30"
+            )}>
+              <img 
+                src="/lovable-uploads/f08c6356-9c67-4e4d-8373-5cfd85f5e2f4.png" 
+                alt="GrowthFunnels Logo" 
+                className="h-7 md:h-8 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-growth-green/70 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </div>
         </Link>
 
@@ -74,6 +80,7 @@ const Navbar = () => {
         <button 
           className="md:hidden text-white" 
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
