@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, FormInput, Tag, Filter, Mail, Calendar, MessageCircle, Database, Clock, ShoppingCart, BadgeCheck, Bell } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -22,6 +22,42 @@ const Features = () => {
     { id: "crm", label: "👥 CRM & Outras Ferramentas" }
   ];
 
+  // Example workflow data
+  const automationWorkflow = {
+    title: "Sequência de Nutrição de Leads",
+    conversion: "32%",
+    steps: [
+      { 
+        type: "trigger", 
+        title: "Formulário Preenchido", 
+        description: "Lead preenche formulário no site",
+        icon: <FormInput className="h-5 w-5 text-white" />,
+        color: "#9b87f5"
+      },
+      { 
+        type: "filter", 
+        title: "Interesse no Produto X?", 
+        description: "Segmenta leads por interesse",
+        icon: <Filter className="h-5 w-5 text-white" />,
+        color: "#F97316"
+      },
+      { 
+        type: "action", 
+        title: "Enviar Sequência de E-mails", 
+        description: "3 e-mails educativos em 7 dias",
+        icon: <Mail className="h-5 w-5 text-white" />,
+        color: "#0EA5E9"
+      },
+      { 
+        type: "action", 
+        title: "Adicionar Tag no CRM", 
+        description: "Tag 'Nutrido' + notificação",
+        icon: <Tag className="h-5 w-5 text-black" />,
+        color: "#d0ff00"
+      }
+    ]
+  };
+
   const features = {
     adManager: [
       { name: 'Google Ads Report', extraCost: false, description: 'Painel com desempenho de campanhas Google Ads.' },
@@ -36,8 +72,31 @@ const Features = () => {
       { name: 'Construtor de E-mails', extraCost: false, description: 'Editor intuitivo drag & drop.' }
     ],
     workflow: [
-      { name: 'Workflows', extraCost: true, description: 'Criação de automações complexas e visuais.' },
-      { name: 'Triggers', extraCost: true, description: 'Gatilhos automatizados para iniciar sequências.' }
+      { 
+        name: 'Automação de Nutrição de Leads', 
+        extraCost: false, 
+        description: 'Sequências de e-mails e mensagens baseadas em comportamento do usuário que aumentam sua taxa de conversão em 32%.' 
+      },
+      { 
+        name: 'Automação de Carrinho Abandonado', 
+        extraCost: false, 
+        description: 'Recupere até 24% das vendas perdidas com lembretes automáticos via WhatsApp e e-mail.' 
+      },
+      { 
+        name: 'Onboarding de Clientes', 
+        extraCost: false, 
+        description: 'Entregue conteúdo educacional e agende demonstrações automaticamente para novos clientes.' 
+      },
+      { 
+        name: 'Workflows Avançados', 
+        extraCost: true, 
+        description: 'Crie automações complexas com múltiplas condições, atrasos e bifurcações.' 
+      },
+      { 
+        name: 'Triggers Personalizados', 
+        extraCost: true, 
+        description: 'Configure gatilhos baseados em eventos específicos do seu negócio.' 
+      }
     ],
     crm: [
       { name: 'CRM completo', extraCost: false, description: 'Gerenciamento de contatos, oportunidades e pipelines.' },
@@ -120,6 +179,81 @@ const Features = () => {
                 value={category.id}
                 className="animate-fade-in"
               >
+                {category.id === "workflow" && (
+                  <div className="mb-8 rounded-xl overflow-hidden border border-[#d0ff00]/20 bg-black/40">
+                    <div className="p-5 border-b border-[#d0ff00]/10">
+                      <h3 className="text-xl font-bold text-white">Automação que realmente converte</h3>
+                      <p className="text-white/70 mt-1">Configure uma vez e deixe seu marketing e vendas trabalharem 24/7</p>
+                    </div>
+                    
+                    <div className="p-5">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <h4 className="text-white font-medium">{automationWorkflow.title}</h4>
+                          <div className="flex items-center mt-1">
+                            <span className="text-[#9b87f5] text-xs font-medium">Conversão: {automationWorkflow.conversion}</span>
+                            <span className="mx-2 text-white/30">•</span>
+                            <span className="text-white/50 text-xs">204 leads nos últimos 30 dias</span>
+                          </div>
+                        </div>
+                        <Button className="text-xs bg-[#9b87f5] hover:bg-[#8a74e6] text-white">Ver Detalhes</Button>
+                      </div>
+                      
+                      {/* Workflow Visual Steps */}
+                      <div className="mt-6 relative">
+                        {/* Timeline connector */}
+                        <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#d0ff00]"></div>
+                        
+                        {automationWorkflow.steps.map((step, index) => (
+                          <div key={index} className="flex mb-5 relative">
+                            <div 
+                              className="w-11 h-11 rounded-full flex items-center justify-center z-10 shrink-0"
+                              style={{ backgroundColor: step.color }}
+                            >
+                              {step.icon}
+                            </div>
+                            <div 
+                              className="ml-4 bg-black/40 rounded-lg p-3 flex-1"
+                              style={{ borderColor: `${step.color}30` }}
+                              className="border"
+                            >
+                              <h5 className="text-white text-sm font-medium mb-1">{step.type === "trigger" ? "Trigger" : step.type === "filter" ? "Condição" : "Ação"}: {step.title}</h5>
+                              <p className="text-white/60 text-xs">{step.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Integrações */}
+                      <div className="mt-6 pt-5 border-t border-[#d0ff00]/10">
+                        <h4 className="text-white/80 text-sm font-medium mb-3">Integrações Disponíveis:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                            <span className="text-white/80 text-xs">WhatsApp</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Mail className="h-4 w-4 text-[#d0ff00]" />
+                            <span className="text-white/80 text-xs">E-mail</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Database className="h-4 w-4 text-[#4A66FB]" />
+                            <span className="text-white/80 text-xs">CRM</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Calendar className="h-4 w-4 text-[#0EA5E9]" />
+                            <span className="text-white/80 text-xs">Calendário</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Bell className="h-4 w-4 text-[#ea384c]" />
+                            <span className="text-white/80 text-xs">Notificações</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
                 <div className="mb-8 md:mb-12">
                   <FeatureTable featureList={features[category.id as keyof typeof features]} />
                 </div>

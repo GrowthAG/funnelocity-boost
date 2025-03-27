@@ -29,7 +29,14 @@ import {
   Users as UsersIcon,
   RefreshCw,
   Zap,
-  ArrowUpRight
+  ArrowUpRight,
+  Clock,
+  Tag,
+  FormInput,
+  ShoppingCart,
+  FileCheck,
+  BadgeCheck,
+  Bell
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -147,6 +154,36 @@ const Features = () => {
     { month: 'Jul', value: 17.8 }
   ];
 
+  const automationExamples = [
+    {
+      id: 'lead-nurturing',
+      title: 'Nutrição de Leads',
+      description: 'Sequência automatizada para converter visitantes em clientes',
+      triggers: ['Formulário Preenchido', 'E-book Baixado', 'Webinar Registrado'],
+      actions: ['Enviar E-mail', 'Adicionar Tag CRM', 'Notificar Vendedor'],
+      conversion: '32%',
+      color: '#9b87f5'
+    },
+    {
+      id: 'abandoned-cart',
+      title: 'Carrinho Abandonado',
+      description: 'Recupere vendas perdidas com lembretes automáticos',
+      triggers: ['Carrinho Não Finalizado', 'Checkout Iniciado', 'Produto Adicionado'],
+      actions: ['Enviar WhatsApp', 'Oferecer Desconto', 'Reengajar no Instagram'],
+      conversion: '24%',
+      color: '#F97316'
+    },
+    {
+      id: 'client-onboarding',
+      title: 'Onboarding de Clientes',
+      description: 'Apresente sua empresa e produto para novos clientes',
+      triggers: ['Primeira Compra', 'Assinatura Iniciada', 'Cadastro Completo'],
+      actions: ['Enviar Boas-vindas', 'Agendar Reunião', 'Enviar Material de Treinamento'],
+      conversion: '89%',
+      color: '#0EA5E9'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -242,95 +279,200 @@ const Features = () => {
             <div className="p-8 md:p-10 relative">
               <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
                 <Workflow className="h-6 w-6 text-[#d0ff00]" />
-                Automações Visuais
+                Automações Inteligentes
               </h3>
-              <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
-                Crie automações poderosas sem precisar de código, usando nosso editor visual com lógica condicional, agendamentos e múltiplas integrações.
+              <p className="text-white/70 mb-5 leading-relaxed text-sm md:text-base">
+                Crie sequências automáticas baseadas em comportamentos de clientes e prospects que aumentam suas conversões sem precisar criar códigos ou contratar developers.
               </p>
               
-              <div className="flex justify-center mb-6">
-                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-2 px-4 flex items-center gap-4">
-                  <div className="h-8 w-8 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
-                    <MessageCircle className="h-4 w-4 text-[#25D366]" />
+              <div className="bg-black/30 border border-[#d0ff00]/10 rounded-lg p-5 mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="h-8 w-8 rounded-full bg-[#9b87f5]/10 flex items-center justify-center border border-[#9b87f5]/30">
+                    <FormInput className="h-4 w-4 text-[#9b87f5]" />
                   </div>
-                  <div className="h-8 w-8 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
-                    <Instagram className="h-4 w-4 text-[#E4405F]" />
+                  <div className="flex-1">
+                    <h4 className="text-white text-sm font-medium">Nutrição de Leads</h4>
+                    <div className="flex items-center mt-1">
+                      <span className="text-[#9b87f5] text-xs font-medium">Conversão: 32%</span>
+                      <span className="mx-2 text-white/30">•</span>
+                      <span className="text-white/50 text-xs">Ativa há 47 dias</span>
+                    </div>
                   </div>
-                  <div className="h-8 w-8 rounded-full bg-[#4267B2]/10 flex items-center justify-center border border-[#4267B2]/30">
-                    <Linkedin className="h-4 w-4 text-[#4267B2]" />
+                  <div className="bg-[#9b87f5]/20 rounded-full px-2 py-0.5 text-xs text-[#9b87f5]">
+                    +204 leads
                   </div>
-                  <div className="h-8 w-8 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
-                    <Mail className="h-4 w-4 text-[#d0ff00]" />
+                </div>
+
+                <div className="mt-5 relative">
+                  <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#9b87f5]/20"></div>
+                  
+                  <div className="flex mb-5 relative">
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#9b87f5] z-10 shrink-0">
+                      <FormInput className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#9b87f5]/30">
+                      <h5 className="text-white text-sm font-medium mb-1">Trigger: Formulário Preenchido</h5>
+                      <p className="text-white/60 text-xs">O lead preenche o formulário de captura no seu site</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex mb-5 relative">
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#F97316] z-10 shrink-0">
+                      <Filter className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#F97316]/30">
+                      <h5 className="text-white text-sm font-medium mb-1">Condição: Interesse no Produto X?</h5>
+                      <p className="text-white/60 text-xs">Se marcou interesse no produto X, segue fluxo A, senão segue fluxo B</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex mb-5 relative">
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#0EA5E9] z-10 shrink-0">
+                      <Mail className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#0EA5E9]/30">
+                      <h5 className="text-white text-sm font-medium mb-1">Ação: Enviar Sequência de E-mails</h5>
+                      <p className="text-white/60 text-xs">Envia 3 e-mails ao longo de 7 dias com conteúdo educativo</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex relative">
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
+                      <Tag className="h-5 w-5 text-black" />
+                    </div>
+                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
+                      <h5 className="text-white text-sm font-medium mb-1">Ação: Adicionar Tag no CRM</h5>
+                      <p className="text-white/60 text-xs">Adiciona tag "Nutrido" e notifica o time comercial</p>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              <div className="p-5 bg-black/30 border border-[#d0ff00]/10 rounded-lg mb-8">
-                <div className="flex items-center justify-center">
-                  <div className="relative flex flex-col items-center">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-full bg-[#d0ff00]/10 border border-[#d0ff00] flex items-center justify-center">
-                          <Users className="h-6 w-6 text-[#d0ff00]" />
-                        </div>
-                        <span className="text-white text-xs mt-2">Cliente</span>
-                      </div>
-                      
-                      <svg width="40" height="20">
-                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
-                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
-                      </svg>
-                      
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-md bg-[#FF6B6B]/10 border border-[#FF6B6B] flex items-center justify-center">
-                          <Filter className="h-6 w-6 text-[#FF6B6B]" />
-                        </div>
-                        <span className="text-white text-xs mt-2">Condição</span>
-                      </div>
-                      
-                      <svg width="40" height="20">
-                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
-                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
-                      </svg>
-                      
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-md bg-[#0088FE]/10 border border-[#0088FE] flex items-center justify-center">
-                          <Zap className="h-6 w-6 text-[#0088FE]" />
-                        </div>
-                        <span className="text-white text-xs mt-2">Ação</span>
-                      </div>
+              <div className="mb-6">
+                <h4 className="text-white text-sm font-medium mb-3">Integrações Disponíveis:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
+                      <MessageCircle className="h-3 w-3 text-[#25D366]" />
                     </div>
-                    
-                    <div className="flex items-center gap-4">
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-md bg-[#d0ff00]/10 border border-[#d0ff00] flex items-center justify-center">
-                          <Mail className="h-6 w-6 text-[#d0ff00]" />
-                        </div>
-                        <span className="text-white text-xs mt-2">Email</span>
-                      </div>
-                      
-                      <svg width="40" height="20">
-                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
-                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
-                      </svg>
-                      
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-md bg-[#8884d8]/10 border border-[#8884d8] flex items-center justify-center">
-                          <Database className="h-6 w-6 text-[#8884d8]" />
-                        </div>
-                        <span className="text-white text-xs mt-2">CRM</span>
-                      </div>
+                    <span className="text-white/80 text-xs">WhatsApp</span>
+                  </div>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
+                      <Instagram className="h-3 w-3 text-[#E4405F]" />
                     </div>
+                    <span className="text-white/80 text-xs">Instagram</span>
+                  </div>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#0A66C2]/10 flex items-center justify-center border border-[#0A66C2]/30">
+                      <Linkedin className="h-3 w-3 text-[#0A66C2]" />
+                    </div>
+                    <span className="text-white/80 text-xs">LinkedIn</span>
+                  </div>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
+                      <Mail className="h-3 w-3 text-[#d0ff00]" />
+                    </div>
+                    <span className="text-white/80 text-xs">E-mail</span>
+                  </div>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#4A66FB]/10 flex items-center justify-center border border-[#4A66FB]/30">
+                      <Database className="h-3 w-3 text-[#4A66FB]" />
+                    </div>
+                    <span className="text-white/80 text-xs">CRM</span>
+                  </div>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-[#ea384c]/10 flex items-center justify-center border border-[#ea384c]/30">
+                      <Bell className="h-3 w-3 text-[#ea384c]" />
+                    </div>
+                    <span className="text-white/80 text-xs">Notificações</span>
                   </div>
                 </div>
               </div>
               
               <div className="flex justify-center">
                 <Link to="/demo" className="bg-gradient-to-r from-[#d0ff00] to-[#b3e600] hover:from-[#d0ff00] hover:to-[#a3cc00] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1">
-                  Começar Agora
+                  Começar Automação Gratuita
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mb-16 md:mb-24">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white">
+              Templates de Automação Prontos
+            </h2>
+            <p className="text-white/70 text-base">
+              Comece em minutos com nossos modelos de automação testados e otimizados
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {automationExamples.map((example) => (
+              <div 
+                key={example.id}
+                className="bg-black/40 border border-[#d0ff00]/10 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/30"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div 
+                    className="h-10 w-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${example.color}10`, borderColor: `${example.color}30` }}
+                    className="border"
+                  >
+                    {example.id === 'lead-nurturing' && <FormInput style={{ color: example.color }} className="h-5 w-5" />}
+                    {example.id === 'abandoned-cart' && <ShoppingCart style={{ color: example.color }} className="h-5 w-5" />}
+                    {example.id === 'client-onboarding' && <BadgeCheck style={{ color: example.color }} className="h-5 w-5" />}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">{example.title}</h3>
+                    <div className="flex items-center mt-1">
+                      <span style={{ color: example.color }} className="text-xs font-medium">Conversão: {example.conversion}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-white/70 text-sm mb-4">{example.description}</p>
+                
+                <div className="mb-4">
+                  <h4 className="text-white/80 text-xs font-medium mb-2">Gatilhos:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {example.triggers.map((trigger, idx) => (
+                      <div key={idx} className="bg-black/70 border border-white/10 rounded-full py-1 px-2.5 text-white/70 text-xs">
+                        {trigger}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-white/80 text-xs font-medium mb-2">Ações:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {example.actions.map((action, idx) => (
+                      <div 
+                        key={idx} 
+                        className="border rounded-full py-1 px-2.5 text-xs"
+                        style={{ borderColor: `${example.color}30`, color: example.color, backgroundColor: `${example.color}05` }}
+                      >
+                        {action}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <button 
+                  className="w-full mt-5 py-2 rounded-lg text-sm font-medium border transition-all"
+                  style={{ 
+                    borderColor: `${example.color}50`,
+                    color: example.color,
+                    backgroundColor: `${example.color}10`
+                  }}
+                >
+                  Usar Template
+                </button>
+              </div>
+            ))}
           </div>
         </div>
 
