@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -39,7 +40,9 @@ import {
   Bell,
   Settings,
   BarChart4,
-  UserCheck
+  UserCheck,
+  ArrowDown,
+  DollarSign
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -149,96 +152,96 @@ const Features = () => {
       name: "CRM & Pipeline de Vendas", 
       value: "R$ 502,71/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Funis de vendas", 
       value: "R$ 1.507,22/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Planejamento de redes sociais", 
       value: "R$ 24,90/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Construtor de sites", 
       value: "R$ 248,75/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Formulários e Pesquisas", 
       value: "R$ 457,03/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "E-mail marketing", 
       value: "R$ 406,25/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Calendário e Agendamentos", 
       value: "R$ 111,72/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Automações de marketing", 
       value: "R$ 858,20/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Cursos/Produtos", 
       value: "R$ 492,54/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Chamadas e monitoramentos", 
       value: "R$ 482,47/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Gestão de reputação", 
       value: "R$ 2.448/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     },
     {
       name: "Analytics", 
       value: "R$ 126,96/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
       ] 
     }
   ];
@@ -645,14 +648,14 @@ const Features = () => {
                   <img 
                     src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
                     alt="Growth Funnels Logo" 
-                    className="h-8 w-auto object-contain"
+                    className="h-8 w-auto object-contain brightness-0"
                   />
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="divide-y divide-[#d0ff00]/10">
+          <div className="divide-y divide-[#d0ff00]/30">
             {replacementTools.map((tool, index) => (
               <div key={index} className="flex items-center p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
                 <div className="w-full grid grid-cols-12 gap-4 items-center">
@@ -660,17 +663,28 @@ const Features = () => {
                     <div className="text-white text-sm md:text-base">{tool.name}</div>
                   </div>
                   <div className="col-span-3 md:col-span-3 flex justify-center">
-                    <div className="flex space-x-1 md:space-x-2">
-                      <div className="h-6 w-6 bg-white/10 rounded-full"></div>
-                      <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
-                      <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
+                    <div className="flex space-x-2 md:space-x-3 bg-white/10 backdrop-blur-sm p-1.5 rounded-lg border border-white/10">
+                      {tool.logos.map((logo, logoIndex) => (
+                        <div 
+                          key={logoIndex} 
+                          className="h-6 w-6 bg-white rounded-full flex items-center justify-center p-0.5"
+                        >
+                          <img 
+                            src={logo.src} 
+                            alt={logo.alt} 
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-span-3 md:col-span-3 text-right md:text-center">
                     <span className="text-white text-sm md:text-base">{tool.value}</span>
                   </div>
                   <div className="col-span-1 flex justify-end">
-                    <Check className="h-5 w-5 text-[#d0ff00]" />
+                    <div className="bg-[#d0ff00]/10 h-7 w-7 rounded-full flex items-center justify-center">
+                      <Check className="h-4 w-4 text-[#d0ff00]" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -686,8 +700,15 @@ const Features = () => {
               </div>
               <div className="col-span-4 md:col-span-4 text-right md:text-center">
                 <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
-                  <span className="text-white/70 line-through text-sm md:text-base">{totalSaving}</span>
-                  <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
+                  <span className="text-red-500/70 line-through text-sm md:text-base">{totalSaving}</span>
+                  <div className="flex items-center">
+                    <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
+                    <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
+                  </div>
+                  <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
+                    <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
+                    <span className="text-[#d0ff00] text-xs font-medium">90%</span>
+                  </div>
                 </div>
               </div>
             </div>
