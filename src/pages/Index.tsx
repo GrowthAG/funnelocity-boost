@@ -14,17 +14,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black overflow-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
-        <div className="py-10 md:py-20"></div> {/* Espaçamento ajustado */}
+        <div className="py-8 md:py-16"></div>
         <Features />
-        <div className="py-8 md:py-16"></div> {/* Espaçamento ajustado */}
+        <div className="py-6 md:py-12"></div>
         <Metrics />
-        <div className="py-8 md:py-16"></div> {/* Espaçamento ajustado */}
+        <div className="py-6 md:py-12"></div>
         <Testimonials />
-        <div className="py-10 md:py-20"></div> {/* Espaçamento ajustado */}
+        <div className="py-8 md:py-16"></div>
         <CTA />
       </main>
       <Footer />

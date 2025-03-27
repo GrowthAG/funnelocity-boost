@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CheckCircle, XCircle } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Features = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const Features = () => {
   }, []);
 
   const [activeCategory, setActiveCategory] = useState("adManager");
+  const isMobile = useIsMobile();
 
   const featureCategories = [
     { id: "adManager", label: "🔍 Ad Manager & Reporting" },
@@ -47,26 +49,26 @@ const Features = () => {
   };
 
   const FeatureTable = ({ featureList }: { featureList: any[] }) => (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-x-auto w-full rounded-b-xl">
       <table className="w-full border-separate border-spacing-0">
         <thead>
           <tr>
-            <th className="text-left p-4 bg-white/5 text-white rounded-tl-lg border-b border-[#d0ff00]/10">Feature</th>
-            <th className="text-center p-4 bg-white/5 text-white border-b border-[#d0ff00]/10 w-24 md:w-32">Custo Extra</th>
-            <th className="text-left p-4 bg-white/5 text-white rounded-tr-lg border-b border-[#d0ff00]/10">Descrição</th>
+            <th className="text-left p-3 md:p-4 bg-white/5 text-white rounded-tl-lg border-b border-[#d0ff00]/10">Feature</th>
+            <th className="text-center p-3 md:p-4 bg-white/5 text-white border-b border-[#d0ff00]/10 w-20 md:w-32">Custo Extra</th>
+            <th className="text-left p-3 md:p-4 bg-white/5 text-white rounded-tr-lg border-b border-[#d0ff00]/10">Descrição</th>
           </tr>
         </thead>
         <tbody>
           {featureList.map((feature, index) => (
             <tr key={index} className="hover:bg-black/60 transition-colors">
-              <td className="p-4 text-white font-medium border-t border-[#d0ff00]/10">{feature.name}</td>
-              <td className="p-4 text-center border-t border-[#d0ff00]/10">
+              <td className="p-3 md:p-4 text-white font-medium border-t border-[#d0ff00]/10">{feature.name}</td>
+              <td className="p-3 md:p-4 text-center border-t border-[#d0ff00]/10">
                 {feature.extraCost ? 
                   <XCircle className="h-5 w-5 text-destructive mx-auto" /> : 
                   <CheckCircle className="h-5 w-5 text-growth-green mx-auto" />
                 }
               </td>
-              <td className="p-4 text-white/80 border-t border-[#d0ff00]/10">{feature.description}</td>
+              <td className="p-3 md:p-4 text-white/80 border-t border-[#d0ff00]/10">{feature.description}</td>
             </tr>
           ))}
         </tbody>
@@ -75,37 +77,37 @@ const Features = () => {
   );
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
       
-      <main className="pt-24 pb-16 px-4 md:px-8">
+      <main className="pt-20 md:pt-24 pb-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white mobile-friendly-text">
               Explore tudo o que você pode fazer com o <span className="text-gradient">GrowthFunnels</span>
             </h1>
-            <p className="text-xl text-white/80">
+            <p className="text-lg md:text-xl text-white/80 mobile-friendly-text">
               Funcionalidades completas para automatizar sua operação de ponta a ponta.
             </p>
           </div>
           
           <Tabs defaultValue="adManager" value={activeCategory} onValueChange={setActiveCategory} className="w-full mb-16">
-            <div className="relative mb-10">
+            <div className="relative mb-8 md:mb-10">
               <div className="absolute inset-0 bg-[#d0ff00]/5 rounded-lg -z-10" />
-              <div className="overflow-x-auto py-2 px-1">
-                <TabsList className="bg-black border border-[#d0ff00]/20 p-1 rounded-lg inline-flex w-full min-w-max">
+              <div className="overflow-x-auto py-2 px-1 no-scrollbar">
+                <TabsList className="bg-black/80 border border-[#d0ff00]/20 p-1 rounded-lg inline-flex w-full min-w-max">
                   {featureCategories.map((category) => (
                     <TabsTrigger 
                       key={category.id} 
                       value={category.id}
                       className={`
-                        px-4 py-2.5 rounded-md text-sm md:text-base font-medium transition-all 
+                        px-3 md:px-4 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300
                         data-[state=active]:bg-[#d0ff00] data-[state=active]:text-black data-[state=active]:shadow-md 
                         data-[state=inactive]:text-white/80 data-[state=inactive]:hover:bg-white/10 whitespace-nowrap
-                        min-w-[100px] md:min-w-0 justify-center md:justify-start
+                        min-w-[80px] md:min-w-0 justify-center md:justify-start
                       `}
                     >
-                      {category.label}
+                      {isMobile ? category.label.split(' ')[0] : category.label}
                     </TabsTrigger>
                   ))}
                 </TabsList>
@@ -118,30 +120,30 @@ const Features = () => {
                 value={category.id}
                 className="animate-fade-in"
               >
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                   <FeatureTable featureList={features[category.id as keyof typeof features]} />
                 </div>
               </TabsContent>
             ))}
           </Tabs>
           
-          <div className="text-center mt-16 py-10 glass-panel bg-black/40 border border-[#d0ff00]/20 rounded-xl backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-4 text-white">
+          <div className="text-center mt-12 md:mt-16 py-8 md:py-10 glass-panel bg-black/40 border border-[#d0ff00]/20 rounded-xl backdrop-blur-sm">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">
               Pronto para começar a automatizar sua operação?
             </h3>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
               Escolha o plano que melhor se adapta às suas necessidades e comece a transformar sua estratégia de marketing e vendas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                className="bg-[#d0ff00] hover:bg-[#b3e600] text-black px-6 py-3 text-base font-semibold shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transition-all duration-300" 
+                className="bg-[#d0ff00] hover:bg-[#b3e600] text-black px-5 md:px-6 py-2.5 md:py-3 text-base font-semibold shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transition-all duration-300" 
                 size="lg"
                 asChild
               >
                 <a href="/pricing">Ver Planos e Preços</a>
               </Button>
               <Button 
-                className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10 px-6 py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300" 
+                className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10 px-5 md:px-6 py-2.5 md:py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300" 
                 size="lg" 
                 variant="outline"
                 asChild
