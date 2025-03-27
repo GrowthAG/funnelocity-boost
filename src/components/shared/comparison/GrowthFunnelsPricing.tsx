@@ -46,7 +46,7 @@ const GrowthFunnelsPricing = () => {
           <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer" className="w-full">
             <Button 
               className="w-full"
-              variant="redNeon"
+              variant="greenNeon"
               size="lg"
             >
               Contratar Plano PRO
