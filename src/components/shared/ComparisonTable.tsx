@@ -111,7 +111,7 @@ const ComparisonTable = ({
                 
                 <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer" className="w-full max-w-xs">
                   <Button 
-                    className="w-full bg-[#cf0f00] text-white hover:bg-[#b80e00] shadow-lg hover:shadow-xl transition-all font-bold text-base py-6"
+                    className="w-full py-6"
                     size="lg"
                     variant="redNeon"
                   >
