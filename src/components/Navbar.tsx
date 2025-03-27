@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out py-4 px-4 md:px-8",
-        scrolled ? "bg-black/90 backdrop-blur-md border-b border-growth-green/10" : "bg-transparent"
+        scrolled ? "bg-black/90 backdrop-blur-md border-b border-[#d0ff00]/10" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -46,26 +46,26 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/features" className="text-white/80 hover:text-growth-green transition-colors">
+          <Link to="/features" className="text-white/80 hover:text-[#d0ff00] transition-colors">
             Funcionalidades
           </Link>
-          <Link to="/pricing" className="text-white/80 hover:text-growth-green transition-colors">
+          <Link to="/pricing" className="text-white/80 hover:text-[#d0ff00] transition-colors">
             Preços
           </Link>
-          <Link to="/cases" className="text-white/80 hover:text-growth-green transition-colors">
+          <Link to="/cases" className="text-white/80 hover:text-[#d0ff00] transition-colors">
             Cases
           </Link>
-          <Link to="/blog" className="text-white/80 hover:text-growth-green transition-colors">
+          <Link to="/blog" className="text-white/80 hover:text-[#d0ff00] transition-colors">
             Blog
           </Link>
-          <Link to="/about" className="text-white/80 hover:text-growth-green transition-colors">
+          <Link to="/about" className="text-white/80 hover:text-[#d0ff00] transition-colors">
             Sobre
           </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
           <Link to="/login">
-            <Button variant="outline" className="border border-growth-green/30 text-growth-green hover:bg-growth-green/10">
+            <Button variant="outline" className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
               Login
             </Button>
           </Link>
@@ -87,39 +87,39 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-growth-green/10 py-6 px-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-[#d0ff00]/10 py-6 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             <Link 
               to="/features" 
-              className="text-white/80 hover:text-growth-green transition-colors py-2"
+              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Funcionalidades
             </Link>
             <Link 
               to="/pricing" 
-              className="text-white/80 hover:text-growth-green transition-colors py-2"
+              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Preços
             </Link>
             <Link 
               to="/cases" 
-              className="text-white/80 hover:text-growth-green transition-colors py-2"
+              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Cases
             </Link>
             <Link 
               to="/blog" 
-              className="text-white/80 hover:text-growth-green transition-colors py-2"
+              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Blog
             </Link>
             <Link 
               to="/about" 
-              className="text-white/80 hover:text-growth-green transition-colors py-2"
+              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Sobre
@@ -130,7 +130,7 @@ const Navbar = () => {
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                <Button variant="outline" className="w-full border border-growth-green/30 text-growth-green hover:bg-growth-green/10">
+                <Button variant="outline" className="w-full border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
                   Login
                 </Button>
               </Link>

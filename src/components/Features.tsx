@@ -17,49 +17,49 @@ import {
 
 const features = [
   {
-    icon: <PanelLeft className="h-6 w-6 text-growth-green" />,
+    icon: <PanelLeft className="h-6 w-6 text-[#d0ff00]" />,
     title: "CRM com Funis Visuais",
-    description: "Gerencie seus leads e oportunidades com um painel visual intuitivo e personalizável."
+    description: "Gerencie leads e oportunidades com painéis visuais personalizáveis. Acompanhe todo o ciclo de vendas em uma interface intuitiva."
   },
   {
-    icon: <MessageSquare className="h-6 w-6 text-growth-green" />,
+    icon: <MessageSquare className="h-6 w-6 text-[#d0ff00]" />,
     title: "WhatsApp, Email e SMS",
-    description: "Envie mensagens automatizadas para seus leads e clientes em múltiplos canais de comunicação."
+    description: "Comunique-se com seus leads e clientes em múltiplos canais. Envie mensagens automatizadas e personalizadas no momento certo."
   },
   {
-    icon: <Calendar className="h-6 w-6 text-growth-green" />,
+    icon: <Calendar className="h-6 w-6 text-[#d0ff00]" />,
     title: "Agenda e Agendamentos",
-    description: "Sistema de agendamentos integrado com seu calendário, permitindo que clientes marquem horários automaticamente."
+    description: "Sistema de agendamentos inteligente integrado com seu calendário. Permita que clientes marquem horários sem intervenção manual."
   },
   {
-    icon: <Layers className="h-6 w-6 text-growth-green" />,
+    icon: <Layers className="h-6 w-6 text-[#d0ff00]" />,
     title: "Landing Pages e Funis",
-    description: "Construa landing pages de alta conversão e funis de vendas completos sem conhecimento técnico."
+    description: "Construa landing pages de alta conversão e funis de vendas completos sem conhecimento técnico usando nosso editor drag & drop."
   },
   {
-    icon: <Workflow className="h-6 w-6 text-growth-green" />,
+    icon: <Workflow className="h-6 w-6 text-[#d0ff00]" />,
     title: "Automação de Fluxos",
-    description: "Crie fluxos de automação para nutrir leads e clientes em cada etapa da jornada de compra."
+    description: "Crie fluxos de automação complexos para nutrir leads e clientes. Automatize tarefas repetitivas e aumente a eficiência da equipe."
   },
   {
-    icon: <BarChart4 className="h-6 w-6 text-growth-green" />,
+    icon: <BarChart4 className="h-6 w-6 text-[#d0ff00]" />,
     title: "Dashboards em Tempo Real",
-    description: "Visualize o desempenho do seu funil de vendas com dashboards personalizáveis atualizados em tempo real."
+    description: "Visualize métricas importantes com dashboards atualizados em tempo real. Tome decisões baseadas em dados concretos e tendências."
   },
   {
-    icon: <Bot className="h-6 w-6 text-growth-green" />,
+    icon: <Bot className="h-6 w-6 text-[#d0ff00]" />,
     title: "IA para Marketing",
-    description: "Use Inteligência Artificial para criar campanhas mais eficientes e segmentar leads com precisão."
+    description: "Utilize Inteligência Artificial para otimizar campanhas, segmentar leads com precisão e criar conteúdo personalizado automaticamente."
   },
   {
-    icon: <FileText className="h-6 w-6 text-growth-green" />,
+    icon: <FileText className="h-6 w-6 text-[#d0ff00]" />,
     title: "Propostas e Contratos",
-    description: "Crie, envie e assine propostas e contratos digitalmente, agilizando o processo de fechamento."
+    description: "Crie, envie e assine propostas e contratos digitalmente. Acompanhe status e receba notificações de abertura e assinatura."
   },
   {
-    icon: <Map className="h-6 w-6 text-growth-green" />,
+    icon: <Map className="h-6 w-6 text-[#d0ff00]" />,
     title: "Jornada do Cliente",
-    description: "Mapeie e otimize cada etapa da jornada do cliente para maximizar conversões e retenção."
+    description: "Mapeie cada etapa da jornada do cliente para maximizar conversões e retenção. Identifique gargalos e oportunidades de melhoria."
   }
 ];
 
@@ -69,10 +69,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Todas as ferramentas que sua empresa precisa para <span className="text-gradient">crescer</span>
+            Todas as ferramentas que sua empresa precisa para <span className="text-[#d0ff00]">crescer</span>
           </h2>
           <p className="text-lg text-white/80">
-            O Growth Funnels reúne todas as ferramentas essenciais para automação de marketing, CRM e gestão de vendas em uma única plataforma intuitiva.
+            O GrowthFunnels reúne todas as ferramentas essenciais para automação de marketing, CRM e gestão de vendas em uma única plataforma intuitiva, permitindo que você gerencie todo o ciclo de receita de forma integrada e eficiente.
           </p>
         </div>
         
@@ -83,7 +83,7 @@ const Features = () => {
               className="feature-card p-6 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-4 p-2 rounded-lg bg-growth-green/10 border border-growth-green/20 w-fit">
+              <div className="mb-4 p-2 rounded-lg bg-[#d0ff00]/10 border border-[#d0ff00]/20 w-fit">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
