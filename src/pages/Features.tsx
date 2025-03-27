@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -372,7 +371,11 @@ const Features = () => {
                     <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
                       <span className="text-red-500/70 line-through text-sm md:text-base">{totalSaving}</span>
                       <div className="flex items-center">
-                        <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
+                        <img 
+                          src="/lovable-uploads/2af2ab0f-347b-4cb0-b0d4-882a872e07fe.png" 
+                          alt="GrowthFunnels Logo" 
+                          className="h-6 w-auto mr-2" 
+                        />
                         <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
                       </div>
                       <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">

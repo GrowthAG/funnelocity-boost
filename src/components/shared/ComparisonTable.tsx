@@ -101,8 +101,15 @@ const ComparisonTable = ({
               <TableCell className="py-4 text-right">
                 <span className="text-red-500/80 line-through text-base">{totalSaving}/mês</span>
               </TableCell>
-              <TableCell className="py-4 text-center">
-                <span className="text-[#d0ff00] font-bold text-lg">R$ 497/mês</span>
+              <TableCell className="py-4 text-center flex items-center justify-center">
+                <div className="flex items-center justify-center gap-2">
+                  <img 
+                    src="/lovable-uploads/2af2ab0f-347b-4cb0-b0d4-882a872e07fe.png" 
+                    alt="GrowthFunnels Logo" 
+                    className="h-6 w-auto"
+                  />
+                  <span className="text-[#d0ff00] font-bold text-lg">R$ 497/mês</span>
+                </div>
               </TableCell>
             </TableRow>
           </TableBody>
