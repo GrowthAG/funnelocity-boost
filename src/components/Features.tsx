@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -526,7 +525,7 @@ const Features = () => {
             {automationExamples.map((example) => (
               <div 
                 key={example.id}
-                className="bg-black border border-[#d0ff00]/20 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/40"
+                className="bg-black border border-[#d0ff00]/20 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/40 flex flex-col h-full"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div 
@@ -571,11 +570,17 @@ const Features = () => {
                   </div>
                 </div>
                 
-                <button 
-                  className="w-full mt-5 py-2 rounded-lg text-sm font-medium bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300"
-                >
-                  Usar Template
-                </button>
+                <div className="mt-auto pt-5">
+                  <a 
+                    href="https://checkout.growthfunnels.com.br/plano-pro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Usar Template ${example.title} - Redireciona para o Plano PRO`}
+                    className="block w-full py-2.5 rounded-md text-sm font-semibold bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
+                  >
+                    Usar Template
+                  </a>
+                </div>
               </div>
             ))}
           </div>
