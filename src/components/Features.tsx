@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -146,59 +145,57 @@ const Features = () => {
           </p>
         </div>
 
-        {/* Platform Screenshots Section */}
-        <div className="mb-20 md:mb-28 overflow-hidden rounded-xl bg-white/5 border border-[#d0ff00]/20 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8">
-            <div className="flex flex-col h-full">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white">Dashboard & Analytics</h3>
-              <p className="text-white/70 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
+        {/* Platform Screenshots Section - Updated to match the image */}
+        <div className="mb-20 md:mb-28 overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            {/* Left side - Dashboard & Analytics */}
+            <div className="p-8 md:p-10 border-r border-[#d0ff00]/10">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Dashboard & Analytics</h3>
+              <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
                 Visualize métricas importantes para seu negócio como receita mensal recorrente, crescimento e novos clientes.
               </p>
-              <div className="bg-white/5 rounded-lg p-4 md:p-6 space-y-4 md:space-y-6 flex-1 shadow-inner">
-                <div className="grid grid-cols-2 gap-4 md:gap-6">
-                  <Card className="bg-black/60 border border-[#d0ff00]/20 hover:border-[#d0ff00]/40 transition-all duration-300">
-                    <CardHeader className="pb-1 md:pb-2">
-                      <CardTitle className="text-xs md:text-sm text-white/70">Receita Recorrente</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-xl md:text-2xl font-bold text-white">R$ 12.947</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-black/60 border border-[#d0ff00]/20 hover:border-[#d0ff00]/40 transition-all duration-300">
-                    <CardHeader className="pb-1 md:pb-2">
-                      <CardTitle className="text-xs md:text-sm text-white/70">Novos Clientes</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-xl md:text-2xl font-bold text-white">32</p>
-                    </CardContent>
-                  </Card>
+              
+              <div className="space-y-6">
+                {/* Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4">
+                    <p className="text-white/70 text-sm mb-1">Receita Recorrente</p>
+                    <p className="text-white text-xl md:text-2xl font-bold">R$ 12.947</p>
+                  </div>
+                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4">
+                    <p className="text-white/70 text-sm mb-1">Novos Clientes</p>
+                    <p className="text-white text-xl md:text-2xl font-bold">32</p>
+                  </div>
                 </div>
-                <div className="h-28 md:h-40 bg-black/30 rounded-lg flex items-center justify-center">
+                
+                {/* Chart area */}
+                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-4 flex items-center justify-center h-[180px]">
                   <img 
-                    src="/lovable-uploads/873518a3-4940-430d-985b-470b533d4b7a.png" 
-                    alt="Gráfico de Barras" 
-                    className="h-16 md:h-20 w-auto" 
+                    src="/lovable-uploads/af51da29-988c-4767-aa02-b724b80fd078.png" 
+                    alt="Dashboard Analytics Chart" 
+                    className="h-24 w-auto object-contain"
                   />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col h-full">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white">Automações Visuais</h3>
-              <p className="text-white/70 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
+            
+            {/* Right side - Automações Visuais */}
+            <div className="p-8 md:p-10">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Automações Visuais</h3>
+              <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
                 Crie fluxos de automação sem código com nosso editor visual intuitivo.
               </p>
-              <div className="bg-white/5 rounded-lg p-4 md:p-6 flex-1 flex items-center justify-center shadow-inner">
-                <div className="text-center">
-                  <img 
-                    src="/lovable-uploads/25d0a1ba-c7ab-4632-a6d7-ba4487a0a28c.png" 
-                    alt="Automações Visuais" 
-                    className="h-20 md:h-24 w-auto mx-auto mb-6 md:mb-8"
-                  />
-                  <p className="text-white text-base md:text-lg mb-4 md:mb-6">Crie sua automação</p>
-                  <div className="mt-2 py-3 px-6 md:px-8 bg-[#d0ff00] rounded-full text-black inline-block text-sm md:text-base font-medium hover:bg-[#b3e600] cursor-pointer transition-all">
-                    Começar Agora
-                  </div>
-                </div>
+              
+              <div className="flex flex-col items-center justify-center h-[calc(100%-80px)] space-y-6">
+                <img 
+                  src="/lovable-uploads/25d0a1ba-c7ab-4632-a6d7-ba4487a0a28c.png" 
+                  alt="Automações Visuais" 
+                  className="h-36 w-auto object-contain"
+                />
+                <p className="text-white text-lg">Crie sua automação</p>
+                <a href="/demo" className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3 transition-all duration-300">
+                  Começar Agora
+                </a>
               </div>
             </div>
           </div>
@@ -255,7 +252,7 @@ const Features = () => {
           ))}
         </Tabs>
 
-        {/* Tools Replacement Section - Redesigned to match the screenshot */}
+        {/* Tools Replacement Section */}
         <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30">
           {/* Header */}
           <div className="bg-[#d0ff00] p-5 md:p-6">
