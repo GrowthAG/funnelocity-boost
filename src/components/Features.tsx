@@ -28,10 +28,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const Features = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const [activeTab, setActiveTab] = useState('all');
 
   const features = [
@@ -98,13 +94,13 @@ const Features = () => {
   ];
 
   const categories = [
-    { id: 'all', name: 'Todas as Features' },
-    { id: 'crm', name: 'CRM & Vendas' },
-    { id: 'marketing', name: 'Marketing' },
-    { id: 'automation', name: 'Automação' },
-    { id: 'communication', name: 'Comunicação' },
-    { id: 'website', name: 'Website' },
-    { id: 'tools', name: 'Ferramentas' }
+    { id: 'all', name: 'Todas as Features', icon: <LayoutGrid className="h-4 w-4" /> },
+    { id: 'crm', name: 'CRM & Vendas', icon: <Database className="h-4 w-4" /> },
+    { id: 'marketing', name: 'Marketing', icon: <BarChart3 className="h-4 w-4" /> },
+    { id: 'automation', name: 'Automação', icon: <Activity className="h-4 w-4" /> },
+    { id: 'communication', name: 'Comunicação', icon: <MessageSquare className="h-4 w-4" /> },
+    { id: 'website', name: 'Website', icon: <LayoutGrid className="h-4 w-4" /> },
+    { id: 'tools', name: 'Ferramentas', icon: <Link2 className="h-4 w-4" /> }
   ];
 
   const filteredFeatures = activeTab === 'all' 
@@ -182,38 +178,55 @@ const Features = () => {
         </div>
 
         {/* Feature Tabs */}
-        <div className="mb-8 md:mb-10 overflow-x-auto">
-          <div className="flex space-x-2 md:space-x-3 min-w-max p-1 bg-white/5 rounded-lg">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveTab(category.id)}
-                className={`px-4 md:px-6 py-2 md:py-3 rounded-md text-sm md:text-base font-medium transition-all ${
-                  activeTab === category.id 
-                    ? 'bg-[#d0ff00] text-black shadow-md' 
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16 md:mb-20">
-          {filteredFeatures.map((feature, index) => (
-            <div 
-              key={index} 
-              className="feature-card p-6 md:p-8 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#d0ff00]/5"
-            >
-              <div className="mb-4 md:mb-6 p-3 rounded-lg bg-[#d0ff00]/10 w-fit">
-                {feature.icon}
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-white">{feature.title}</h3>
-              <p className="text-white/70 leading-relaxed text-sm md:text-base">{feature.description}</p>
+        <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <div className="relative mb-12">
+            <div className="absolute inset-0 bg-[#d0ff00]/5 rounded-lg -z-10" />
+            <div className="overflow-x-auto py-2 px-1">
+              <TabsList className="bg-black border border-[#d0ff00]/20 p-1 rounded-lg inline-flex w-full md:w-auto min-w-max mx-auto justify-start md:justify-center">
+                {categories.map((category) => (
+                  <TabsTrigger 
+                    key={category.id} 
+                    value={category.id}
+                    className={`
+                      px-4 py-2.5 rounded-md text-sm md:text-base flex items-center gap-2 font-medium transition-all 
+                      data-[state=active]:bg-[#d0ff00] data-[state=active]:text-black data-[state=active]:shadow-md 
+                      data-[state=inactive]:text-white/80 data-[state=inactive]:hover:bg-white/10 whitespace-nowrap
+                      min-w-[100px] md:min-w-0 justify-center md:justify-start
+                    `}
+                  >
+                    {category.icon}
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
             </div>
+          </div>
+          
+          {categories.map((category) => (
+            <TabsContent 
+              key={category.id} 
+              value={category.id}
+              className="animate-fade-in mt-0"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {filteredFeatures.map((feature, index) => (
+                  <div 
+                    key={index} 
+                    className="feature-card p-6 md:p-8 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 
+                    bg-black/40 backdrop-blur-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg 
+                    hover:shadow-[#d0ff00]/5 h-full"
+                  >
+                    <div className="mb-4 md:mb-6 p-3 rounded-lg bg-[#d0ff00]/10 w-fit">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-white">{feature.title}</h3>
+                    <p className="text-white/70 leading-relaxed text-sm md:text-base">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
 
         {/* Tools Replacement Section */}
         <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg">
