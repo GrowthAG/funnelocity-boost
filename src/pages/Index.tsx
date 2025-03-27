@@ -4,9 +4,6 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Metrics from '../components/Metrics';
-import Testimonials from '../components/Testimonials';
-import CTA from '../components/CTA';
-import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -15,15 +12,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main>
         <Hero />
         <Features />
         <Metrics />
-        <Testimonials />
-        <CTA />
-        <FAQ />
       </main>
       <Footer />
     </div>

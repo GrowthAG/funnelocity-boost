@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           
           {/* These routes will redirect to home for now as placeholders */}
-          <Route path="/cases" element={<Index />} />
+          <Route path="/case-studies" element={<Index />} />
           <Route path="/contact" element={<Index />} />
           <Route path="/login" element={<Index />} />
           <Route path="/demo" element={<Index />} />

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 100 100% 65%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 100% 41%;
+    --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 50%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
   }
@@ -48,10 +48,10 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 100 100% 65%;
+    --primary: 221 83% 53%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 160 100% 41%;
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -79,60 +79,27 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-display font-bold;
   }
 }
 
 @layer components {
-  .hero-gradient {
-    @apply bg-gradient-to-b from-black via-black to-black;
-  }
-  
-  .glass-panel {
-    @apply bg-white/10 backdrop-blur-md border border-[#d0ff00]/20 rounded-2xl;
-  }
-  
-  .feature-card {
-    @apply bg-black/80 backdrop-blur-lg border border-[#d0ff00]/10 rounded-xl 
-           transition-all duration-300 hover:bg-black/60 hover:scale-[1.02] 
-           hover:shadow-[0_0_30px_rgba(208,255,0,0.15)];
-  }
-  
-  .text-gradient {
-    @apply bg-gradient-to-r from-[#d0ff00] to-[#b3e600] bg-clip-text text-transparent;
-  }
-  
   .btn-primary {
-    @apply bg-gradient-to-r from-[#d0ff00] to-[#b3e600] text-black font-semibold rounded-md py-3 px-6
-           shadow-[0_0_20px_rgba(208,255,0,0.3)] hover:shadow-[0_0_30px_rgba(208,255,0,0.5)] 
-           transition-all duration-300;
+    @apply bg-revcrm-blue hover:bg-revcrm-blue-dark text-white font-medium rounded-md py-2 px-6
+           transition-all duration-200;
   }
   
   .btn-secondary {
-    @apply bg-growth-blue-electric text-white rounded-md py-3 px-6 font-medium 
-           shadow-[0_0_20px_rgba(0,160,255,0.3)] hover:shadow-[0_0_30px_rgba(0,160,255,0.5)] 
-           transition-all duration-300 hover:bg-opacity-90;
+    @apply bg-white hover:bg-revcrm-gray-light text-revcrm-black border border-revcrm-gray-medium
+           rounded-md py-2 px-6 font-medium transition-all duration-200;
   }
   
-  .btn-outline {
-    @apply border border-[#d0ff00]/60 text-[#d0ff00] rounded-md py-3 px-6 font-medium 
-           hover:bg-[#d0ff00]/10 transition-all duration-300;
-  }
-
-  .browser-mockup {
-    @apply relative rounded-xl overflow-hidden border border-[#d0ff00]/20 shadow-2xl;
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
   }
   
-  .browser-bar {
-    @apply flex items-center bg-black/90 px-4 py-3 border-b border-[#d0ff00]/20;
-  }
-  
-  .browser-dot {
-    @apply h-3 w-3 rounded-full bg-[#d0ff00]/40 mr-2;
-  }
-  
-  .browser-address {
-    @apply bg-white/10 rounded-md px-3 py-1 text-xs text-white/70 w-full max-w-md mx-auto;
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
   }
 }
 

@@ -53,28 +53,20 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				growth: {
-					'blue-deep': '#1A365D',
-					'blue-electric': '#00A0FF',
-					'green': '#d0ff00',
-					'green-hover': '#b3e600',
-					'dark': '#111111',
-					'light': '#FFFFFF',
+				revcrm: {
+					blue: '#2563EB',
+					"blue-dark": '#1d4ed8',
+					"blue-light": '#3b82f6',
+					"gray-light": '#f3f4f6',
+					"gray-medium": '#e5e7eb',
+					"gray-dark": '#6b7280',
+					black: '#111827',
+					white: '#ffffff',
 				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Montserrat', 'Lexend', 'system-ui', 'sans-serif'],
+				display: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,22 +98,6 @@ export default {
 					from: { transform: 'translateY(-10px)', opacity: '0' },
 					to: { transform: 'translateY(0)', opacity: '1' }
 				},
-				'scale-in': {
-					from: { transform: 'scale(0.95)', opacity: '0' },
-					to: { transform: 'scale(1)', opacity: '1' }
-				},
-				'scale-out': {
-					from: { transform: 'scale(1)', opacity: '1' },
-					to: { transform: 'scale(0.95)', opacity: '0' }
-				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'pulse': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.5' }
-				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -130,14 +106,9 @@ export default {
 				'fade-out': 'fade-out 0.3s ease-out',
 				'slide-up': 'slide-up 0.4s ease-out',
 				'slide-down': 'slide-down 0.4s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out',
-				'scale-out': 'scale-out 0.3s ease-out',
-				'float': 'float 6s ease-in-out infinite',
-				'pulse': 'pulse 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'green-gradient': 'linear-gradient(135deg, #d0ff00 0%, #b3e600 100%)',
-				'blue-gradient': 'linear-gradient(135deg, #00A0FF 0%, #0070B0 100%)',
+				'gradient-light': 'linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%)',
 			}
 		}
 	},

@@ -22,62 +22,53 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out py-4 px-4 md:px-8",
-        scrolled ? "bg-black/90 backdrop-blur-md border-b border-[#d0ff00]/10" : "bg-transparent"
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
           className="flex items-center"
-          aria-label="GrowthFunnels Home"
+          aria-label="RevCRM Home"
         >
           <div className="flex items-center">
-            <div className={cn(
-              "flex items-center justify-center"
-            )}>
-              <img 
-                src="/lovable-uploads/19e748f8-e8c3-4367-a3ed-5d16da13f8c1.png" 
-                alt="GrowthFunnels Logo" 
-                className="h-8 md:h-9 transition-transform duration-300 hover:scale-105"
-              />
-              <span className="text-white font-semibold ml-2 text-lg md:text-xl">Funnels</span>
+            <div className="h-9 w-9 rounded-full bg-revcrm-blue flex items-center justify-center text-white font-bold text-xl">
+              R
             </div>
+            <span className="text-revcrm-black font-semibold ml-2 text-xl">RevCRM</span>
           </div>
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/features" className="text-white/80 hover:text-[#d0ff00] transition-colors">
-            Funcionalidades
+          <Link to="/" className="text-revcrm-black hover:text-revcrm-blue transition-colors font-medium">
+            Home
           </Link>
-          <Link to="/pricing" className="text-white/80 hover:text-[#d0ff00] transition-colors">
-            Preços
+          <Link to="/features" className="text-revcrm-black hover:text-revcrm-blue transition-colors font-medium">
+            Features
           </Link>
-          <Link to="/cases" className="text-white/80 hover:text-[#d0ff00] transition-colors">
-            Cases
+          <Link to="/pricing" className="text-revcrm-black hover:text-revcrm-blue transition-colors font-medium">
+            Pricing
           </Link>
-          <Link to="/blog" className="text-white/80 hover:text-[#d0ff00] transition-colors">
-            Blog
-          </Link>
-          <Link to="/about" className="text-white/80 hover:text-[#d0ff00] transition-colors">
-            Sobre
+          <Link to="/about" className="text-revcrm-black hover:text-revcrm-blue transition-colors font-medium">
+            About
           </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
           <Link to="/login">
-            <Button variant="outline" className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
-              Login
+            <Button variant="ghost" className="text-revcrm-black hover:text-revcrm-blue hover:bg-revcrm-gray-light">
+              Log in
             </Button>
           </Link>
           <Link to="/demo">
-            <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] font-medium">
-              Agendar Demo
+            <Button className="bg-revcrm-blue hover:bg-revcrm-blue-dark text-white font-medium">
+              Try Demo
             </Button>
           </Link>
         </div>
 
         <button 
-          className="md:hidden text-white" 
+          className="md:hidden text-revcrm-black" 
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -87,42 +78,35 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-[#d0ff00]/10 py-6 px-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-6 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             <Link 
-              to="/features" 
-              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
+              to="/" 
+              className="text-revcrm-black hover:text-revcrm-blue transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Funcionalidades
+              Home
+            </Link>
+            <Link 
+              to="/features" 
+              className="text-revcrm-black hover:text-revcrm-blue transition-colors py-2 font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Features
             </Link>
             <Link 
               to="/pricing" 
-              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
+              className="text-revcrm-black hover:text-revcrm-blue transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Preços
-            </Link>
-            <Link 
-              to="/cases" 
-              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Cases
-            </Link>
-            <Link 
-              to="/blog" 
-              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Blog
+              Pricing
             </Link>
             <Link 
               to="/about" 
-              className="text-white/80 hover:text-[#d0ff00] transition-colors py-2"
+              className="text-revcrm-black hover:text-revcrm-blue transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Sobre
+              About
             </Link>
             <div className="pt-4 flex flex-col space-y-3">
               <Link 
@@ -130,8 +114,8 @@ const Navbar = () => {
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                <Button variant="outline" className="w-full border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
-                  Login
+                <Button variant="outline" className="w-full">
+                  Log in
                 </Button>
               </Link>
               <Link 
@@ -139,8 +123,8 @@ const Navbar = () => {
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                <Button className="w-full bg-[#d0ff00] text-black hover:bg-[#b3e600] font-medium">
-                  Agendar Demo
+                <Button className="w-full bg-revcrm-blue hover:bg-revcrm-blue-dark text-white">
+                  Try Demo
                 </Button>
               </Link>
             </div>

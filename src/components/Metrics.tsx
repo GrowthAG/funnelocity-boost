@@ -4,37 +4,37 @@ import { ArrowUpRight } from 'lucide-react';
 
 const metrics = [
   {
-    value: "147%",
-    label: "Média de aumento nas taxas de conversão",
-    description: "Nossos clientes experimentam um aumento significativo nas suas taxas de conversão."
+    value: "127%",
+    label: "Average increase in conversion rates",
+    description: "Our customers experience significant improvements in their conversion rates."
   },
   {
-    value: "73%",
-    label: "Redução no tempo de fechamento de vendas",
-    description: "Reduza o ciclo de vendas com automações inteligentes e acompanhamento eficiente."
+    value: "68%",
+    label: "Reduction in sales cycle length",
+    description: "Reduce your sales cycle with intelligent automations and efficient tracking."
   },
   {
-    value: "12h+",
-    label: "Economia de tempo semanal em tarefas manuais",
-    description: "Recupere horas valiosas automatizando tarefas repetitivas de marketing e vendas."
+    value: "15h+",
+    label: "Weekly time saved on manual tasks",
+    description: "Recover valuable hours by automating repetitive marketing and sales tasks."
   },
   {
-    value: "3x",
-    label: "Aumento na retenção de clientes",
-    description: "Melhore o relacionamento e aumente a fidelidade dos seus clientes."
+    value: "2.5x",
+    label: "Increase in customer retention",
+    description: "Improve relationships and increase customer loyalty with better engagement."
   }
 ];
 
 const Metrics = () => {
   return (
-    <section className="bg-black py-24 px-4 md:px-8">
+    <section className="bg-revcrm-gray-light py-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Resultados que <span className="text-gradient">transformam negócios</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-revcrm-black">
+            Results that <span className="text-revcrm-blue">transform businesses</span>
           </h2>
-          <p className="text-lg text-white/80">
-            O Growth Funnels não só simplifica seus processos, mas também impulsiona seu crescimento com resultados mensuráveis.
+          <p className="text-lg text-revcrm-gray-dark">
+            RevCRM doesn't just simplify your processes, it drives your growth with measurable results.
           </p>
         </div>
         
@@ -42,14 +42,14 @@ const Metrics = () => {
           {metrics.map((metric, index) => (
             <div 
               key={index} 
-              className="feature-card p-6 flex flex-col h-full"
+              className="bg-white p-6 rounded-xl border border-revcrm-gray-medium hover:shadow-md transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-baseline mb-4">
-                <span className="text-4xl font-bold text-growth-green">{metric.value}</span>
-                <ArrowUpRight className="ml-2 h-5 w-5 text-growth-green" />
+                <span className="text-4xl font-bold text-revcrm-blue">{metric.value}</span>
+                <ArrowUpRight className="ml-2 h-5 w-5 text-revcrm-blue" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white leading-tight">{metric.label}</h3>
-              <p className="text-white/70 text-sm mt-auto">{metric.description}</p>
+              <h3 className="text-lg font-semibold mb-3 text-revcrm-black leading-tight">{metric.label}</h3>
+              <p className="text-revcrm-gray-dark text-sm mt-auto">{metric.description}</p>
             </div>
           ))}
         </div>
