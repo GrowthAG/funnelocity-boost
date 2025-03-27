@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { 
@@ -285,7 +285,7 @@ const Features = () => {
         <div className="mb-20 md:mb-28">
           <div className="overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col">
+              <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col min-h-[660px]">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
                   <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
                   Dashboard & Analytics
@@ -325,7 +325,7 @@ const Features = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col">
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col flex-grow">
                     <div className="flex justify-between items-center mb-3">
                       <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
                       <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
@@ -333,7 +333,7 @@ const Features = () => {
                       </div>
                     </div>
                     
-                    <div className="h-[160px] w-full">
+                    <div className="h-[160px] w-full mt-4">
                       <div className="relative h-full w-full flex items-end justify-between px-2">
                         {mockRevenueData.map((item, index) => (
                           <div key={index} className="flex flex-col items-center justify-end">
@@ -363,7 +363,7 @@ const Features = () => {
                 </div>
               </div>
               
-              <div className="p-8 md:p-10 relative flex flex-col">
+              <div className="p-8 md:p-10 relative flex flex-col min-h-[660px]">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
                   <Workflow className="h-6 w-6 text-[#d0ff00]" />
                   Automações Inteligentes
@@ -479,12 +479,12 @@ const Features = () => {
               </div>
             </div>
             
-            <div className="p-6 flex justify-center border-t border-[#d0ff00]/10">
+            <div className="py-8 border-t border-[#d0ff00]/10 flex justify-center">
               <a 
                 href="https://checkout.growthfunnels.com.br/plus" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gradient-to-r from-[#d0ff00] to-[#b3e600] hover:from-[#d0ff00] hover:to-[#a3cc00] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
+                className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
               >
                 Começar Automação Gratuita
               </a>
@@ -622,13 +622,13 @@ const Features = () => {
           <div className="bg-[#d0ff00] p-5 md:p-6">
             <div className="grid grid-cols-12 gap-4 items-center">
               <div className="col-span-4 md:col-span-5">
-                <h3 className="text-lg md:text-2xl font-bold text-black">Ferramentas</h3>
+                <h3 className="text-lg md:text-xl font-bold text-black">Ferramentas</h3>
               </div>
               <div className="col-span-4 md:col-span-3 text-center">
-                <h3 className="text-lg md:text-2xl font-bold text-black">Substitui</h3>
+                <h3 className="text-lg md:text-xl font-bold text-black">Substitui</h3>
               </div>
               <div className="col-span-3 md:col-span-3">
-                <h3 className="text-lg md:text-2xl font-bold text-black text-right md:text-center">Valor</h3>
+                <h3 className="text-lg md:text-xl font-bold text-black text-right md:text-center">Valor</h3>
               </div>
               <div className="col-span-1 hidden md:block">
                 <div className="flex justify-end">
