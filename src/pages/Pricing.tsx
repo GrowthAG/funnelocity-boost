@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ComparisonTable from '@/components/shared/ComparisonTable';
+import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Pricing = () => {
   useEffect(() => {
@@ -101,20 +101,6 @@ const Pricing = () => {
       checkoutLink: 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd',
       popular: false
     }
-  ];
-
-  const replacementTools = [
-    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71" },
-    { name: "Funis de vendas", value: "R$ 1.507,22" },
-    { name: "Planejamento de redes sociais", value: "R$ 24,90" },
-    { name: "Construtor de sites", value: "R$ 248,75" },
-    { name: "Formulários e Pesquisas", value: "R$ 457,03" },
-    { name: "E-mail marketing", value: "R$ 406,25" },
-    { name: "Calendário e Agendamentos", value: "R$ 111,72" },
-    { name: "Automações de marketing", value: "R$ 858,20" },
-    { name: "Cursos/Produtos", value: "R$ 492,54" },
-    { name: "Chamadas e monitoramentos", value: "R$ 482,47" },
-    { name: "Gestão de reputação", value: "R$ 2.448,00" }
   ];
 
   return (
@@ -260,8 +246,8 @@ const Pricing = () => {
           
           <div className="mt-16">
             <ComparisonTable 
-              replacementTools={replacementTools}
-              totalSaving="R$ 7.539,79"
+              replacementTools={replacementToolsData}
+              totalSaving={totalSavingData}
             />
           </div>
           
