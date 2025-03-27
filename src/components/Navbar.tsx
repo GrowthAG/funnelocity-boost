@@ -29,14 +29,13 @@ const Navbar = () => {
         <Link 
           to="/" 
           className="flex items-center"
-          aria-label="GrowthFunnels Home"
+          aria-label="Funnels Home"
         >
-          <div className="flex items-center">
-            <div className="h-9 w-9 rounded-full bg-[#d0ff00] flex items-center justify-center text-black font-bold text-xl">
-              G
-            </div>
-            <span className="text-white font-semibold ml-2 text-xl">Growth<span className="text-[#d0ff00]">Funnels</span></span>
-          </div>
+          <img 
+            src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
+            alt="Funnels Logo" 
+            className="h-8 md:h-10"
+          />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
@@ -51,6 +50,9 @@ const Navbar = () => {
           </Link>
           <Link to="/about" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Sobre Nós
+          </Link>
+          <Link to="/blog" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
+            Blog
           </Link>
         </div>
 
@@ -107,6 +109,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Sobre Nós
+            </Link>
+            <Link 
+              to="/blog" 
+              className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
             </Link>
             <div className="pt-4 flex flex-col space-y-3">
               <Link 
