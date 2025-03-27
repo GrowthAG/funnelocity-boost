@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Github } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -108,11 +108,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Growth Funnels. Todos os direitos reservados.
           </p>
           <div className="flex items-center mt-4 md:mt-0 space-x-4">
-            <a href="https://www.instagram.com/growthfunnels.com.br/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors">
-              Instagram
+            <a href="https://www.instagram.com/growthfunnels.com.br/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors flex items-center gap-2">
+              <Instagram size={16} /> Instagram
             </a>
-            <a href="https://www.linkedin.com/company/105143227" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors">
-              LinkedIn
+            <a href="https://www.linkedin.com/company/105143227" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors flex items-center gap-2">
+              <Linkedin size={16} /> LinkedIn
             </a>
           </div>
         </div>

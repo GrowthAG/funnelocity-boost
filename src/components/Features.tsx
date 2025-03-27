@@ -22,10 +22,21 @@ import {
   Users,
   LineChart,
   Workflow,
-  Bot
+  Bot,
+  Instagram,
+  Linkedin,
+  Check
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { 
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const Features = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -106,6 +117,22 @@ const Features = () => {
   const filteredFeatures = activeTab === 'all' 
     ? features 
     : features.filter(feature => feature.category === activeTab);
+
+  // Tools replacement data for the comparison table
+  const replacementTools = [
+    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Funis de vendas", value: "R$ 1.507,22/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Construtor de sites", value: "R$ 248,75/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "E-mail marketing", value: "R$ 406,25/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Automações de marketing", value: "R$ 858,20/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Cursos/Produtos", value: "R$ 492,54/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Gestão de reputação", value: "R$ 2.448/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
+    { name: "Analytics", value: "R$ 126,96/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] }
+  ];
 
   return (
     <div className="min-h-screen bg-black py-20 md:py-28">
@@ -228,37 +255,74 @@ const Features = () => {
           ))}
         </Tabs>
 
-        {/* Tools Replacement Section */}
-        <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg">
-          <div className="bg-[#d0ff00] p-4 md:p-6">
-            <div className="flex justify-between items-center">
-              <h3 className="text-xl md:text-2xl font-bold text-black">Ferramentas</h3>
-              <h3 className="text-xl md:text-2xl font-bold text-black">Valor</h3>
+        {/* Tools Replacement Section - Redesigned to match the screenshot */}
+        <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30">
+          {/* Header */}
+          <div className="bg-[#d0ff00] p-5 md:p-6">
+            <div className="grid grid-cols-12 gap-4 items-center">
+              <div className="col-span-4 md:col-span-5">
+                <h3 className="text-lg md:text-2xl font-bold text-black">Ferramentas</h3>
+              </div>
+              <div className="col-span-4 md:col-span-3 text-center">
+                <h3 className="text-lg md:text-2xl font-bold text-black">Substitui</h3>
+              </div>
+              <div className="col-span-3 md:col-span-3">
+                <h3 className="text-lg md:text-2xl font-bold text-black text-right md:text-center">Valor</h3>
+              </div>
+              <div className="col-span-1 hidden md:block">
+                <div className="flex justify-end">
+                  <img 
+                    src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
+                    alt="Growth Funnels Logo" 
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
+          
+          {/* Tools List */}
           <div className="divide-y divide-[#d0ff00]/10">
-            {[
-              { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês" },
-              { name: "Funis de vendas", value: "R$ 1.507,22/mês" },
-              { name: "Planejamento de redes sociais", value: "R$ 324,90/mês" },
-              { name: "Construtor de sites", value: "R$ 448,75/mês" },
-              { name: "Formulários e Pesquisas", value: "R$ 457,03/mês" },
-              { name: "E-mail marketing", value: "R$ 406,25/mês" }
-            ].map((tool, index) => (
-              <div key={index} className="flex justify-between p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
-                <div className="text-white text-sm md:text-base">{tool.name}</div>
-                <div className="flex items-center gap-2 md:gap-3">
-                  <span className="text-white text-sm md:text-base">{tool.value}</span>
-                  <CheckCircle className="h-4 md:h-5 w-4 md:w-5 text-[#d0ff00]" />
+            {replacementTools.map((tool, index) => (
+              <div key={index} className="flex items-center p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
+                <div className="w-full grid grid-cols-12 gap-4 items-center">
+                  <div className="col-span-5 md:col-span-5">
+                    <div className="text-white text-sm md:text-base">{tool.name}</div>
+                  </div>
+                  <div className="col-span-3 md:col-span-3 flex justify-center">
+                    <div className="flex space-x-1 md:space-x-2">
+                      {/* Placeholder for tool logos */}
+                      <div className="h-6 w-6 bg-white/10 rounded-full"></div>
+                      <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
+                      <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
+                    </div>
+                  </div>
+                  <div className="col-span-3 md:col-span-3 text-right md:text-center">
+                    <span className="text-white text-sm md:text-base">{tool.value}</span>
+                  </div>
+                  <div className="col-span-1 flex justify-end">
+                    <Check className="h-5 w-5 text-[#d0ff00]" />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="bg-[#d0ff00]/10 p-4 md:p-6 flex justify-between">
-            <h3 className="text-lg md:text-xl font-bold text-white">Total</h3>
-            <div className="flex items-center gap-3 md:gap-4">
-              <span className="text-white/70 line-through text-sm md:text-base">R$ 13.122,40/mês</span>
-              <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
+          
+          {/* Total */}
+          <div className="bg-[#d0ff00]/10 p-4 md:p-6">
+            <div className="grid grid-cols-12 gap-4 items-center">
+              <div className="col-span-5 md:col-span-5">
+                <h3 className="text-lg md:text-xl font-bold text-white">Total</h3>
+              </div>
+              <div className="col-span-3 md:col-span-3">
+                {/* Placeholder for empty column */}
+              </div>
+              <div className="col-span-4 md:col-span-4 text-right md:text-center">
+                <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
+                  <span className="text-white/70 line-through text-sm md:text-base">R$ 10.122,40/mês</span>
+                  <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
