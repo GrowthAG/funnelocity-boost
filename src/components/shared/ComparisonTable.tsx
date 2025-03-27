@@ -1,9 +1,7 @@
 
 import React from 'react';
-import { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Check, ArrowDown, DollarSign, ExternalLink } from 'lucide-react';
+import { Check, ArrowDown, DollarSign } from 'lucide-react';
 
 export interface ToolInfo {
   name: string;
@@ -54,12 +52,16 @@ const ComparisonTable = ({
         <Table>
           <TableHeader className="bg-[#d0ff00]">
             <TableRow>
-              <TableHead className="text-black font-bold">Ferramenta GrowthFunnels</TableHead>
+              <TableHead className="text-black font-bold">Ferramentas</TableHead>
               <TableHead className="text-black font-bold">Substitui</TableHead>
-              <TableHead className="text-black font-bold text-right">Valor mensal</TableHead>
-              {variant === 'pricing' && (
-                <TableHead className="text-black font-bold w-10"></TableHead>
-              )}
+              <TableHead className="text-black font-bold text-right">Valor</TableHead>
+              <TableHead className="text-black font-bold w-24 text-right">
+                <img 
+                  src="/lovable-uploads/6fa94abc-97bc-4df5-9e33-2cd888a9ebfa.png" 
+                  alt="GrowthFunnels" 
+                  className="h-8 ml-auto" 
+                />
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -69,67 +71,37 @@ const ComparisonTable = ({
                 className="border-b border-[#d0ff00]/10 hover:bg-white/5"
               >
                 <TableCell className="font-medium text-white py-3">
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-[#d0ff00]" />
-                    {tool.name}
-                  </div>
+                  {tool.name}
                 </TableCell>
                 <TableCell className="py-3">
                   <div className="flex flex-wrap gap-2">
-                    {tool.tools.map((toolName, idx) => (
-                      <div 
+                    {tool.logos && tool.logos.map((logo, idx) => (
+                      <img 
                         key={idx} 
-                        className="bg-black/60 text-white px-2 py-1 rounded-md border border-[#d0ff00]/20 text-sm flex items-center gap-1"
-                      >
-                        {tool.logos && tool.logos[idx] && (
-                          <img 
-                            src={tool.logos[idx]} 
-                            alt={toolName} 
-                            className="h-4 w-4 object-contain" 
-                          />
-                        )}
-                        <span>{toolName}</span>
-                      </div>
+                        src={logo} 
+                        alt={tool.tools[idx] || ''} 
+                        className="h-6 w-6 object-contain" 
+                      />
                     ))}
                   </div>
                 </TableCell>
-                <TableCell className="text-white text-right py-3 font-medium">{tool.value}</TableCell>
-                {variant === 'pricing' && (
-                  <TableCell className="text-right py-3">
-                    <img 
-                      src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
-                      alt="GrowthFunnels" 
-                      className="h-5 w-5 ml-auto" 
-                    />
-                  </TableCell>
-                )}
+                <TableCell className="text-white text-right py-3 font-medium">
+                  {tool.value}/mês
+                </TableCell>
+                <TableCell className="text-right py-3">
+                  <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                </TableCell>
               </TableRow>
             ))}
             <TableRow className="bg-[#d0ff00]/10 border-t border-[#d0ff00]/30">
               <TableCell className="text-white font-bold py-4">Total</TableCell>
               <TableCell className="py-4"></TableCell>
               <TableCell className="py-4 text-right">
-                <div className="flex items-center justify-end gap-3">
-                  <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
-                  <div className="flex items-center">
-                    <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
-                    <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
-                  </div>
-                  <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
-                    <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
-                    <span className="text-[#d0ff00] text-xs font-medium">90%</span>
-                  </div>
-                </div>
+                <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
               </TableCell>
-              {variant === 'pricing' && (
-                <TableCell className="py-4 text-right">
-                  <img 
-                    src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
-                    alt="GrowthFunnels" 
-                    className="h-5 w-5 ml-auto" 
-                  />
-                </TableCell>
-              )}
+              <TableCell className="py-4 text-right">
+                <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -137,15 +109,12 @@ const ComparisonTable = ({
       
       {showFooter && (
         <div className="mt-4 text-center">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="text-[#d0ff00] border-[#d0ff00]/30 hover:bg-[#d0ff00]/10"
+          <button 
+            className="text-[#d0ff00] border border-[#d0ff00]/30 px-4 py-2 rounded-md hover:bg-[#d0ff00]/10 text-sm font-medium"
             onClick={onFooterClick || (() => window.location.href = footerLink)}
           >
-            <ExternalLink className="h-4 w-4 mr-2" />
             {footerLinkText}
-          </Button>
+          </button>
         </div>
       )}
     </div>
