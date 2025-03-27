@@ -3,9 +3,35 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, XCircle, FormInput, Tag, Filter, Mail, Calendar, MessageCircle, Database, Clock, ShoppingCart, BadgeCheck, Bell } from 'lucide-react';
+import { 
+  CheckCircle, 
+  XCircle, 
+  FormInput, 
+  Tag, 
+  Filter, 
+  Mail, 
+  Calendar, 
+  MessageCircle, 
+  Database, 
+  Clock, 
+  ShoppingCart, 
+  BadgeCheck, 
+  Bell,
+  Check,
+  ArrowDown,
+  DollarSign
+} from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableFooter
+} from "@/components/ui/table";
 
 const Features = () => {
   useEffect(() => {
@@ -107,6 +133,115 @@ const Features = () => {
     ]
   };
 
+  // Enhanced competitor tools data with properly organized logos
+  const replacementTools = [
+    { 
+      name: "CRM & Pipeline de Vendas", 
+      value: "R$ 502,71/mês", 
+      logos: [
+        { name: "Pipedrive", src: "https://cdn.simpleicons.org/pipedrive/white" },
+        { name: "Close", src: "https://cdn.simpleicons.org/close/white" },
+        { name: "ActiveCampaign", src: "https://cdn.simpleicons.org/activecampaign/white" },
+        { name: "Salesflare", src: "https://img.icons8.com/ios-filled/50/FFFFFF/salesflare.png" }
+      ] 
+    },
+    {
+      name: "Funis de vendas", 
+      value: "R$ 1.507,22/mês", 
+      logos: [
+        { name: "Salesforce", src: "https://cdn.simpleicons.org/salesforce/white" },
+        { name: "Pipefy", src: "https://cdn.simpleicons.org/pipefy/white" },
+        { name: "HubSpot", src: "https://cdn.simpleicons.org/hubspot/white" }
+      ] 
+    },
+    {
+      name: "Planejamento de redes sociais", 
+      value: "R$ 24,90/mês", 
+      logos: [
+        { name: "mLabs", src: "https://img.icons8.com/ios-filled/50/FFFFFF/mlabs.png" },
+        { name: "Etus", src: "https://img.icons8.com/ios-filled/50/FFFFFF/etus.png" }
+      ] 
+    },
+    {
+      name: "Construtor de sites", 
+      value: "R$ 248,75/mês", 
+      logos: [
+        { name: "WordPress", src: "https://cdn.simpleicons.org/wordpress/white" },
+        { name: "Wix", src: "https://cdn.simpleicons.org/wix/white" },
+        { name: "Webflow", src: "https://cdn.simpleicons.org/webflow/white" }
+      ] 
+    },
+    {
+      name: "Formulários e Pesquisas", 
+      value: "R$ 457,03/mês", 
+      logos: [
+        { name: "Typeform", src: "https://cdn.simpleicons.org/typeform/white" },
+        { name: "Google Forms", src: "https://cdn.simpleicons.org/googleforms/white" },
+        { name: "Respond.io", src: "https://img.icons8.com/ios-filled/50/FFFFFF/respond-io.png" }
+      ] 
+    },
+    {
+      name: "E-mail marketing", 
+      value: "R$ 406,25/mês", 
+      logos: [
+        { name: "Brevo", src: "https://cdn.simpleicons.org/brevo/white" },
+        { name: "Mailchimp", src: "https://cdn.simpleicons.org/mailchimp/white" },
+        { name: "ActiveCampaign", src: "https://cdn.simpleicons.org/activecampaign/white" }
+      ] 
+    },
+    {
+      name: "Calendário e Agendamentos", 
+      value: "R$ 111,72/mês", 
+      logos: [
+        { name: "Calendly", src: "https://cdn.simpleicons.org/calendly/white" },
+        { name: "Google Calendar", src: "https://cdn.simpleicons.org/googlecalendar/white" }
+      ] 
+    },
+    {
+      name: "Automações de marketing", 
+      value: "R$ 858,20/mês", 
+      logos: [
+        { name: "ActiveCampaign", src: "https://cdn.simpleicons.org/activecampaign/white" },
+        { name: "Salesforce Marketing Cloud", src: "https://cdn.simpleicons.org/salesforce/white" }
+      ] 
+    },
+    {
+      name: "Cursos/Produtos", 
+      value: "R$ 492,54/mês", 
+      logos: [
+        { name: "Hotmart", src: "https://cdn.simpleicons.org/hotmart/white" },
+        { name: "Eduzz", src: "https://img.icons8.com/ios-filled/50/FFFFFF/eduzz.png" },
+        { name: "Kiwify", src: "https://img.icons8.com/ios-filled/50/FFFFFF/kiwify.png" },
+        { name: "HeroSpark", src: "https://img.icons8.com/ios-filled/50/FFFFFF/herospark.png" }
+      ] 
+    },
+    {
+      name: "Chamadas e monitoramentos", 
+      value: "R$ 482,47/mês", 
+      logos: [
+        { name: "GoTo Connect", src: "https://cdn.simpleicons.org/goto/white" },
+        { name: "Twilio", src: "https://cdn.simpleicons.org/twilio/white" }
+      ] 
+    },
+    {
+      name: "Gestão de reputação", 
+      value: "R$ 2.448,00/mês", 
+      logos: [
+        { name: "Trustpilot", src: "https://cdn.simpleicons.org/trustpilot/white" }
+      ] 
+    },
+    {
+      name: "Analytics", 
+      value: "R$ 126,96/mês", 
+      logos: [
+        { name: "Mixpanel", src: "https://cdn.simpleicons.org/mixpanel/white" },
+        { name: "Amplitude", src: "https://cdn.simpleicons.org/amplitude/white" }
+      ] 
+    }
+  ];
+
+  const totalSaving = "R$ 10.122,40";
+
   const FeatureTable = ({ featureList }: { featureList: any[] }) => (
     <div className="overflow-x-auto w-full rounded-b-xl">
       <table className="w-full border-separate border-spacing-0">
@@ -135,6 +270,17 @@ const Features = () => {
     </div>
   );
 
+  // Function to render logo
+  const renderToolLogo = (logo: { name: string, src: string }) => (
+    <img 
+      key={logo.name}
+      src={logo.src}
+      alt={`${logo.name} logo`}
+      className="h-8 w-auto max-w-[100px] object-contain"
+      title={logo.name}
+    />
+  );
+
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
@@ -148,6 +294,96 @@ const Features = () => {
             <p className="text-lg md:text-xl text-white/80 mobile-friendly-text">
               Funcionalidades completas para automatizar sua operação de ponta a ponta.
             </p>
+          </div>
+          
+          {/* Comparison table showing all tools GrowthFunnels replaces */}
+          <div className="mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                Uma plataforma substitui <span className="text-[#d0ff00]">todas</span> essas ferramentas
+              </h2>
+              <p className="text-white/70">
+                Com o GrowthFunnels, você economiza tempo e dinheiro substituindo múltiplas ferramentas fragmentadas
+              </p>
+            </div>
+            
+            <div className="rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30">
+              <div className="bg-[#d0ff00] p-5 md:p-6">
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <div className="col-span-5 md:col-span-5">
+                    <h3 className="text-lg md:text-xl font-bold text-black">Ferramentas</h3>
+                  </div>
+                  <div className="col-span-4 md:col-span-3 text-center">
+                    <h3 className="text-lg md:text-xl font-bold text-black">Substitui</h3>
+                  </div>
+                  <div className="col-span-3 md:col-span-3">
+                    <h3 className="text-lg md:text-xl font-bold text-black text-right md:text-center">Valor</h3>
+                  </div>
+                  <div className="col-span-1 hidden md:block">
+                    <div className="flex justify-end">
+                      <img 
+                        src="/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png" 
+                        alt="Growth Funnels Logo" 
+                        className="h-12 w-auto object-contain brightness-0 invert"
+                        style={{ objectPosition: "-220px -40px", objectFit: "none", width: "120px" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="divide-y divide-[#d0ff00]/30">
+                {replacementTools.map((tool, index) => (
+                  <div key={index} className="flex items-center p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
+                    <div className="w-full grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5 md:col-span-5">
+                        <div className="text-white text-sm md:text-base">{tool.name}</div>
+                      </div>
+                      <div className="col-span-4 md:col-span-3">
+                        <div className="flex flex-wrap justify-center items-center gap-2 bg-black/60 backdrop-blur-sm p-2 rounded-lg border border-white/10">
+                          {tool.logos.map((logo) => (
+                            <div key={logo.name} className="flex items-center justify-center p-1">
+                              {renderToolLogo(logo)}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="col-span-3 md:col-span-3 text-right md:text-center">
+                        <span className="text-white text-sm md:text-base">{tool.value}</span>
+                      </div>
+                      <div className="col-span-1 flex justify-end">
+                        <div className="bg-[#d0ff00]/10 h-8 w-8 rounded-full flex items-center justify-center">
+                          <Check className="h-5 w-5 text-[#d0ff00]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="bg-[#d0ff00]/10 p-4 md:p-6">
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <div className="col-span-5 md:col-span-5">
+                    <h3 className="text-lg md:text-xl font-bold text-white">Economia Total</h3>
+                  </div>
+                  <div className="col-span-3 md:col-span-3">
+                  </div>
+                  <div className="col-span-4 md:col-span-4 text-right md:text-center">
+                    <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
+                      <span className="text-red-500/70 line-through text-sm md:text-base">{totalSaving}</span>
+                      <div className="flex items-center">
+                        <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
+                        <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
+                      </div>
+                      <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
+                        <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
+                        <span className="text-[#d0ff00] text-xs font-medium">90%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           
           <Tabs defaultValue="adManager" value={activeCategory} onValueChange={setActiveCategory} className="w-full mb-16">
