@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Check, ArrowDown, DollarSign } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export interface ToolInfo {
   name: string;
@@ -52,14 +52,14 @@ const ComparisonTable = ({
         <Table>
           <TableHeader className="bg-[#d0ff00]">
             <TableRow>
-              <TableHead className="text-black font-bold">Ferramentas</TableHead>
-              <TableHead className="text-black font-bold">Substitui</TableHead>
-              <TableHead className="text-black font-bold text-right">Valor</TableHead>
-              <TableHead className="text-black font-bold w-24 text-right">
+              <TableHead className="text-black font-bold text-lg">Ferramentas</TableHead>
+              <TableHead className="text-black font-bold text-lg">Substitui</TableHead>
+              <TableHead className="text-black font-bold text-lg text-right">Valor</TableHead>
+              <TableHead className="text-black font-bold w-24 text-center">
                 <img 
                   src="/lovable-uploads/6fa94abc-97bc-4df5-9e33-2cd888a9ebfa.png" 
                   alt="GrowthFunnels" 
-                  className="h-8 ml-auto" 
+                  className="h-8 mx-auto" 
                 />
               </TableHead>
             </TableRow>
@@ -70,37 +70,52 @@ const ComparisonTable = ({
                 key={index} 
                 className="border-b border-[#d0ff00]/10 hover:bg-white/5"
               >
-                <TableCell className="font-medium text-white py-3">
+                <TableCell className="font-medium text-white py-5 text-base">
                   {tool.name}
                 </TableCell>
-                <TableCell className="py-3">
-                  <div className="flex flex-wrap gap-1.5">
-                    {tool.tools.map((toolName, idx) => (
-                      <span 
-                        key={idx} 
-                        className="text-white/90 text-xs bg-white/10 px-2 py-0.5 rounded-full"
-                      >
-                        {toolName}
-                      </span>
-                    ))}
-                  </div>
+                <TableCell className="py-5">
+                  {tool.logos && tool.logos.length > 0 ? (
+                    <div className="flex items-center justify-center gap-4 bg-black/40 p-3 rounded-lg border border-white/10">
+                      {tool.logos.map((logo, logoIndex) => (
+                        <img 
+                          key={logoIndex}
+                          src={logo}
+                          alt={`${tool.tools[logoIndex] || 'Tool'} logo`}
+                          className="h-8 w-auto object-contain"
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-1.5">
+                      {tool.tools.map((toolName, idx) => (
+                        <span 
+                          key={idx} 
+                          className="text-white/90 text-xs bg-white/10 px-2 py-0.5 rounded-full"
+                        >
+                          {toolName}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </TableCell>
-                <TableCell className="text-white text-right py-3 font-medium">
+                <TableCell className="text-white text-right py-5 font-medium text-base">
                   {tool.value}/mês
                 </TableCell>
-                <TableCell className="text-right py-3">
-                  <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                <TableCell className="text-center py-5">
+                  <div className="bg-[#d0ff00]/10 h-8 w-8 rounded-full flex items-center justify-center mx-auto">
+                    <Check className="h-5 w-5 text-[#d0ff00]" />
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
             <TableRow className="bg-[#d0ff00]/10 border-t border-[#d0ff00]/30">
-              <TableCell className="text-white font-bold py-4">Total</TableCell>
+              <TableCell className="text-white font-bold py-4 text-lg">Total</TableCell>
               <TableCell className="py-4"></TableCell>
               <TableCell className="py-4 text-right">
-                <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
+                <span className="text-red-500/80 line-through text-base">{totalSaving}/mês</span>
               </TableCell>
-              <TableCell className="py-4 text-right">
-                <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
+              <TableCell className="py-4 text-center">
+                <span className="text-[#d0ff00] font-bold text-lg">R$ 497/mês</span>
               </TableCell>
             </TableRow>
           </TableBody>

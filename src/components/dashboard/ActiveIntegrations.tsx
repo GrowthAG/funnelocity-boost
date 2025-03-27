@@ -51,6 +51,8 @@ const ActiveIntegrations = () => {
             replacementTools={replacementToolsData}
             totalSaving={totalSavingData}
             variant="dashboard"
+            headerTitle="Economize até 90% com GrowthFunnels"
+            headerDescription="Substitua múltiplas ferramentas por uma única plataforma completa"
           />
         </div>
 
