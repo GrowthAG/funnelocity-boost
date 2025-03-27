@@ -36,7 +36,10 @@ import {
   ShoppingCart,
   FileCheck,
   BadgeCheck,
-  Bell
+  Bell,
+  Settings,
+  BarChart4,
+  UserCheck
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -112,6 +115,18 @@ const Features = () => {
       title: "Funis de Vendas",
       description: "Crie e gerencie funis de conversão completos para aumentar suas vendas.",
       category: "sales"
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Análises Avançadas",
+      description: "Visualize relatórios completos sobre a performance de suas campanhas e equipe.",
+      category: "marketing"
+    },
+    {
+      icon: <UserCheck className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Gestão de Equipe",
+      description: "Controle permissões e monitore a produtividade dos membros do seu time.",
+      category: "tools"
     }
   ];
 
