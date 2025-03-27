@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { LinkedinIcon, GithubIcon, TwitterIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const About = () => {
@@ -13,42 +12,6 @@ const About = () => {
   }, []);
   
   const isMobile = useIsMobile();
-
-  const teamMembers = [
-    {
-      name: 'Carlos Mendes',
-      role: 'CEO & Co-fundador',
-      bio: 'Especialista em marketing digital com mais de 10 anos de experiência. Apaixonado por automação e transformação digital.',
-      image: '/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#'
-      }
-    },
-    {
-      name: 'Mariana Costa',
-      role: 'CTO & Co-fundadora',
-      bio: 'Desenvolvedora full-stack e especialista em IA. Liderou projetos de tecnologia em grandes empresas de SaaS.',
-      image: '/lovable-uploads/b1082615-5b0d-4bd3-9b75-ee2724be2d23.png',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#'
-      }
-    },
-    {
-      name: 'Rafael Mendonça',
-      role: 'CMO',
-      bio: 'Especialista em growth hacking e estratégias de aquisição. Escalou startups de 0 a milhões em receita.',
-      image: '/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#'
-      }
-    }
-  ];
 
   const timelineEvents = [
     {
@@ -133,37 +96,6 @@ const About = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-          
-          <div className="mb-16 md:mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 text-white text-center">Time Fundador</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="feature-card p-5 md:p-6 text-center">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-4 md:mb-6 border-2 border-growth-green">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-1">{member.name}</h3>
-                  <p className="text-growth-green mb-2 md:mb-3">{member.role}</p>
-                  <p className="text-white/70 mb-3 md:mb-4 text-sm md:text-base">{member.bio}</p>
-                  <div className="flex justify-center space-x-3">
-                    <a href={member.social.linkedin} className="text-white/60 hover:text-growth-green transition-colors">
-                      <LinkedinIcon size={isMobile ? 18 : 20} />
-                    </a>
-                    <a href={member.social.twitter} className="text-white/60 hover:text-growth-green transition-colors">
-                      <TwitterIcon size={isMobile ? 18 : 20} />
-                    </a>
-                    <a href={member.social.github} className="text-white/60 hover:text-growth-green transition-colors">
-                      <GithubIcon size={isMobile ? 18 : 20} />
-                    </a>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
           
