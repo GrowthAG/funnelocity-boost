@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,15 +66,15 @@ export default {
 				growth: {
 					'blue-deep': '#1A365D',
 					'blue-electric': '#00A0FF',
-					'green': '#c8ff00',
-					'green-hover': '#d0ff33',
+					'green': '#cf0f00',
+					'green-hover': '#ff1200',
 					'dark': '#111111',
 					'light': '#FFFFFF',
 				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Lexend', 'system-ui', 'sans-serif'],
+				display: ['Montserrat', 'Lexend', 'system-ui', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -116,6 +117,10 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
@@ -127,10 +132,11 @@ export default {
 				'slide-down': 'slide-down 0.4s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
 				'scale-out': 'scale-out 0.3s ease-out',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'pulse': 'pulse 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'green-gradient': 'linear-gradient(135deg, #c8ff00 0%, #99cc00 100%)',
+				'green-gradient': 'linear-gradient(135deg, #cf0f00 0%, #ff1200 100%)',
 				'blue-gradient': 'linear-gradient(135deg, #00A0FF 0%, #0070B0 100%)',
 			}
 		}

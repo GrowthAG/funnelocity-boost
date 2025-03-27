@@ -45,7 +45,7 @@ const Metrics = () => {
               className="feature-card p-6 flex flex-col h-full"
             >
               <div className="flex items-baseline mb-4">
-                <span className="text-4xl font-bold text-growth-blue-electric">{metric.value}</span>
+                <span className="text-4xl font-bold text-growth-green">{metric.value}</span>
                 <ArrowUpRight className="ml-2 h-5 w-5 text-growth-green" />
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white leading-tight">{metric.label}</h3>

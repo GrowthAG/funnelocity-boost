@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out py-4 px-4 md:px-8",
-        scrolled ? "bg-black/80 backdrop-blur-md border-b border-growth-green/20" : "bg-transparent"
+        scrolled ? "bg-black/90 backdrop-blur-md border-b border-growth-green/10" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -36,7 +36,7 @@ const Navbar = () => {
               alt="Growth Funnels Logo" 
               className="h-8 md:h-10"
             />
-            <span className="ml-2 text-xl tracking-tight sr-only">Growth Funnels</span>
+            <span className="ml-2 text-xl tracking-tight text-white">GrowthFunnels</span>
           </div>
         </Link>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
             </Button>
           </Link>
           <Link to="/demo">
-            <Button className="bg-growth-green text-black hover:bg-growth-green-hover">
+            <Button className="bg-gradient-to-r from-growth-green to-growth-green-hover text-black hover:opacity-90">
               Agendar Demo
             </Button>
           </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-growth-green/20 py-6 px-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-growth-green/10 py-6 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             <Link 
               to="/features" 
@@ -133,7 +133,7 @@ const Navbar = () => {
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                <Button className="w-full bg-growth-green text-black hover:bg-growth-green-hover">
+                <Button className="w-full bg-gradient-to-r from-growth-green to-growth-green-hover text-black hover:opacity-90">
                   Agendar Demo
                 </Button>
               </Link>

@@ -4,70 +4,72 @@ import {
   Users, 
   LineChart, 
   Smartphone,
-
   Calendar, 
   Layers, 
   MessageSquare, 
   BarChart4, 
-  Combine, 
-  PanelLeft 
+  Workflow, 
+  PanelLeft,
+  FileText,
+  Bot,
+  Map
 } from 'lucide-react';
 
 const features = [
   {
-    icon: <PanelLeft className="h-6 w-6 text-growth-blue-electric" />,
-    title: "CRM e Pipeline Visual",
+    icon: <PanelLeft className="h-6 w-6 text-growth-green" />,
+    title: "CRM com Funis Visuais",
     description: "Gerencie seus leads e oportunidades com um painel visual intuitivo e personalizável."
   },
   {
-    icon: <Combine className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Automação de Marketing",
-    description: "Crie fluxos de automação para nutrir leads e clientes em cada etapa da jornada."
+    icon: <MessageSquare className="h-6 w-6 text-growth-green" />,
+    title: "WhatsApp, Email e SMS",
+    description: "Envie mensagens automatizadas para seus leads e clientes em múltiplos canais de comunicação."
   },
   {
-    icon: <Layers className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Page Builder",
-    description: "Construa landing pages de alta conversão sem precisar de conhecimentos técnicos."
+    icon: <Calendar className="h-6 w-6 text-growth-green" />,
+    title: "Agenda e Agendamentos",
+    description: "Sistema de agendamentos integrado com seu calendário, permitindo que clientes marquem horários automaticamente."
   },
   {
-    icon: <Users className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Formulários e Captura de Leads",
-    description: "Capture leads com formulários personalizados e qualifique-os automaticamente."
+    icon: <Layers className="h-6 w-6 text-growth-green" />,
+    title: "Landing Pages e Funis",
+    description: "Construa landing pages de alta conversão e funis de vendas completos sem conhecimento técnico."
   },
   {
-    icon: <MessageSquare className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Marketing de WhatsApp e Email",
-    description: "Envie mensagens personalizadas em massa para seus clientes por WhatsApp e email."
+    icon: <Workflow className="h-6 w-6 text-growth-green" />,
+    title: "Automação de Fluxos",
+    description: "Crie fluxos de automação para nutrir leads e clientes em cada etapa da jornada de compra."
   },
   {
-    icon: <Calendar className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Sistema de Agendamentos",
-    description: "Permita que seus clientes agendem consultas e reuniões diretamente em seu calendário."
+    icon: <BarChart4 className="h-6 w-6 text-growth-green" />,
+    title: "Dashboards em Tempo Real",
+    description: "Visualize o desempenho do seu funil de vendas com dashboards personalizáveis atualizados em tempo real."
   },
   {
-    icon: <BarChart4 className="h-6 w-6 text-growth-blue-electric" />,
-    title: "Dashboards e Métricas",
-    description: "Visualize o desempenho do seu funil de vendas com dashboards personalizáveis."
+    icon: <Bot className="h-6 w-6 text-growth-green" />,
+    title: "IA para Marketing",
+    description: "Use Inteligência Artificial para criar campanhas mais eficientes e segmentar leads com precisão."
   },
   {
-    icon: <LineChart className="h-6 w-6 text-growth-blue-electric" />,
-    title: "API e Integrações",
-    description: "Conecte com mais de 2000 aplicativos através de nossa API e integrações nativas."
+    icon: <FileText className="h-6 w-6 text-growth-green" />,
+    title: "Propostas e Contratos",
+    description: "Crie, envie e assine propostas e contratos digitalmente, agilizando o processo de fechamento."
   },
   {
-    icon: <Smartphone className="h-6 w-6 text-growth-blue-electric" />,
-    title: "App Mobile",
-    description: "Acesse suas informações de vendas e marketing em qualquer lugar pelo aplicativo móvel."
+    icon: <Map className="h-6 w-6 text-growth-green" />,
+    title: "Jornada do Cliente",
+    description: "Mapeie e otimize cada etapa da jornada do cliente para maximizar conversões e retenção."
   }
 ];
 
 const Features = () => {
   return (
-    <section className="bg-gradient-to-b from-black to-growth-blue-deep py-24 px-4 md:px-8">
+    <section className="bg-gradient-to-b from-black to-growth-dark py-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Todas as ferramentas que sua empresa precisa para crescer
+            Todas as ferramentas que sua empresa precisa para <span className="text-gradient">crescer</span>
           </h2>
           <p className="text-lg text-white/80">
             O Growth Funnels reúne todas as ferramentas essenciais para automação de marketing, CRM e gestão de vendas em uma única plataforma intuitiva.
@@ -81,7 +83,7 @@ const Features = () => {
               className="feature-card p-6 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-4 p-2 rounded-lg bg-white/5 border border-white/10 w-fit">
+              <div className="mb-4 p-2 rounded-lg bg-growth-green/10 border border-growth-green/20 w-fit">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
