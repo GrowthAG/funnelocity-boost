@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -95,7 +96,7 @@ const ActiveIntegrations = () => {
       logos: [
         "/lovable-uploads/1ececfa5-5b1c-40d9-97cc-7d5d576880b0.png",
         "/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png",
-        "/placeholder.svg"
+        "/lovable-uploads/b0d1d1d7-d70a-40ec-a72f-110ad69f7979.png"
       ]
     },
     {
@@ -113,8 +114,8 @@ const ActiveIntegrations = () => {
       value: "R$ 492,54", 
       tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"],
       logos: [
-        "/placeholder.svg",
-        "/placeholder.svg",
+        "/lovable-uploads/6fddeed4-ee93-4d35-bba1-f53510ad2e87.png",
+        "/lovable-uploads/12a37e20-a571-4148-9904-27a434227d8f.png",
         "/placeholder.svg",
         "/placeholder.svg"
       ]
