@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { 
@@ -130,19 +130,105 @@ const Features = () => {
     : features.filter(feature => feature.category === activeTab);
 
   const replacementTools = [
-    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Funis de vendas", value: "R$ 1.507,22/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Construtor de sites", value: "R$ 248,75/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "E-mail marketing", value: "R$ 406,25/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Automações de marketing", value: "R$ 858,20/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Cursos/Produtos", value: "R$ 492,54/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Gestão de reputação", value: "R$ 2.448/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
-    { name: "Analytics", value: "R$ 126,96/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] }
+    { 
+      name: "CRM & Pipeline de Vendas", 
+      value: "R$ 502,71/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Funis de vendas", 
+      value: "R$ 1.507,22/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Planejamento de redes sociais", 
+      value: "R$ 24,90/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Construtor de sites", 
+      value: "R$ 248,75/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Formulários e Pesquisas", 
+      value: "R$ 457,03/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "E-mail marketing", 
+      value: "R$ 406,25/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Calendário e Agendamentos", 
+      value: "R$ 111,72/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Automações de marketing", 
+      value: "R$ 858,20/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Cursos/Produtos", 
+      value: "R$ 492,54/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Chamadas e monitoramentos", 
+      value: "R$ 482,47/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Gestão de reputação", 
+      value: "R$ 2.448/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    },
+    {
+      name: "Analytics", 
+      value: "R$ 126,96/mês", 
+      logos: [
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1", className: "h-6 object-contain" },
+        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2", className: "h-6 object-contain" }
+      ] 
+    }
   ];
+
+  const totalSaving = "R$ 10.122,40";
 
   const mockRevenueData = [
     { month: 'Jan', value: 9.2 },
@@ -196,205 +282,212 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="mb-20 md:mb-28 overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <div className="p-8 md:p-10 border-r border-[#d0ff00]/10">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
-                <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
-                Dashboard & Analytics
-              </h3>
-              <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
-                Acompanhe os principais indicadores do seu funil em tempo real: receita recorrente, novos clientes e performance de campanhas.
-              </p>
-              
-              <div className="flex items-center justify-end mb-4 text-xs text-[#d0ff00]/80">
-                <RefreshCw className="h-3 w-3 mr-1 animate-spin" style={{animationDuration: '3s'}} />
-                <span>Atualizado em tempo real</span>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
-                    <div className="flex justify-between items-center mb-2">
-                      <p className="text-white/70 text-sm">Receita Recorrente</p>
-                      <TrendingUp className="h-4 w-4 text-green-500" />
-                    </div>
-                    <p className="text-white text-xl md:text-2xl font-bold">R$ 12.947</p>
-                    <p className="text-green-500 text-xs mt-1 flex items-center">
-                      <ArrowUpRight className="h-3 w-3 mr-1" />
-                      +8.3% vs último mês
-                    </p>
-                  </div>
-                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
-                    <div className="flex justify-between items-center mb-2">
-                      <p className="text-white/70 text-sm">Novos Clientes</p>
-                      <UsersIcon className="h-4 w-4 text-[#d0ff00]" />
-                    </div>
-                    <p className="text-white text-xl md:text-2xl font-bold">32</p>
-                    <p className="text-green-500 text-xs mt-1 flex items-center">
-                      <ArrowUpRight className="h-3 w-3 mr-1" />
-                      +12% vs último mês
-                    </p>
-                  </div>
+        <div className="mb-20 md:mb-28">
+          <div className="overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                  <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
+                  Dashboard & Analytics
+                </h3>
+                <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
+                  Acompanhe os principais indicadores do seu funil em tempo real: receita recorrente, novos clientes e performance de campanhas.
+                </p>
+                
+                <div className="flex items-center justify-end mb-4 text-xs text-[#d0ff00]/80">
+                  <RefreshCw className="h-3 w-3 mr-1 animate-spin" style={{animationDuration: '3s'}} />
+                  <span>Atualizado em tempo real</span>
                 </div>
                 
-                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col">
-                  <div className="flex justify-between items-center mb-3">
-                    <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
-                    <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
-                      +17.8%
+                <div className="space-y-6 flex-grow">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
+                      <div className="flex justify-between items-center mb-2">
+                        <p className="text-white/70 text-sm">Receita Recorrente</p>
+                        <TrendingUp className="h-4 w-4 text-green-500" />
+                      </div>
+                      <p className="text-white text-xl md:text-2xl font-bold">R$ 12.947</p>
+                      <p className="text-green-500 text-xs mt-1 flex items-center">
+                        <ArrowUpRight className="h-3 w-3 mr-1" />
+                        +8.3% vs último mês
+                      </p>
+                    </div>
+                    <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
+                      <div className="flex justify-between items-center mb-2">
+                        <p className="text-white/70 text-sm">Novos Clientes</p>
+                        <UsersIcon className="h-4 w-4 text-[#d0ff00]" />
+                      </div>
+                      <p className="text-white text-xl md:text-2xl font-bold">32</p>
+                      <p className="text-green-500 text-xs mt-1 flex items-center">
+                        <ArrowUpRight className="h-3 w-3 mr-1" />
+                        +12% vs último mês
+                      </p>
                     </div>
                   </div>
                   
-                  <div className="h-[160px] w-full">
-                    <div className="relative h-full w-full flex items-end justify-between px-2">
-                      {mockRevenueData.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center justify-end">
-                          <div 
-                            className="w-8 bg-gradient-to-t from-[#d0ff00]/60 to-[#d0ff00] rounded-t-sm"
-                            style={{ height: `${(item.value/20)*100}%` }}
-                          ></div>
-                          <span className="text-white/60 text-xs mt-2">{item.month}</span>
-                        </div>
-                      ))}
-                      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                        <svg className="w-full h-[70%] overflow-visible" preserveAspectRatio="none">
-                          <path 
-                            d="M 30 80 L 70 65 L 110 55 L 150 60 L 190 45 L 230 35 L 270 20" 
-                            fill="none" 
-                            stroke="#ffffff" 
-                            strokeWidth="1.5" 
-                            strokeDasharray="4,4"
-                            strokeLinecap="round"
-                            className="opacity-50"
-                          />
-                        </svg>
+                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col">
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
+                      <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
+                        +17.8%
                       </div>
+                    </div>
+                    
+                    <div className="h-[160px] w-full">
+                      <div className="relative h-full w-full flex items-end justify-between px-2">
+                        {mockRevenueData.map((item, index) => (
+                          <div key={index} className="flex flex-col items-center justify-end">
+                            <div 
+                              className="w-8 bg-gradient-to-t from-[#d0ff00]/60 to-[#d0ff00] rounded-t-sm"
+                              style={{ height: `${(item.value/20)*100}%` }}
+                            ></div>
+                            <span className="text-white/60 text-xs mt-2">{item.month}</span>
+                          </div>
+                        ))}
+                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                          <svg className="w-full h-[70%] overflow-visible" preserveAspectRatio="none">
+                            <path 
+                              d="M 30 80 L 70 65 L 110 55 L 150 60 L 190 45 L 230 35 L 270 20" 
+                              fill="none" 
+                              stroke="#ffffff" 
+                              strokeWidth="1.5" 
+                              strokeDasharray="4,4"
+                              strokeLinecap="round"
+                              className="opacity-50"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8 md:p-10 relative flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                  <Workflow className="h-6 w-6 text-[#d0ff00]" />
+                  Automações Inteligentes
+                </h3>
+                <p className="text-white/70 mb-5 leading-relaxed text-sm md:text-base">
+                  Crie sequências automáticas baseadas em comportamentos de clientes e prospects que aumentam suas conversões sem precisar criar códigos ou contratar developers.
+                </p>
+                
+                <div className="bg-black/30 border border-[#d0ff00]/10 rounded-lg p-5 mb-6 flex-grow">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="h-8 w-8 rounded-full bg-[#9b87f5]/10 flex items-center justify-center border border-[#9b87f5]/30">
+                      <FormInput className="h-4 w-4 text-[#9b87f5]" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-white text-sm font-medium">Nutrição de Leads</h4>
+                      <div className="flex items-center mt-1">
+                        <span className="text-[#9b87f5] text-xs font-medium">Conversão: 32%</span>
+                        <span className="mx-2 text-white/30">•</span>
+                        <span className="text-white/50 text-xs">Ativa há 47 dias</span>
+                      </div>
+                    </div>
+                    <div className="bg-[#9b87f5]/20 rounded-full px-2 py-0.5 text-xs text-[#9b87f5]">
+                      +204 leads
+                    </div>
+                  </div>
+
+                  <div className="mt-5 relative">
+                    <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#9b87f5]/20"></div>
+                    
+                    <div className="flex mb-5 relative">
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#9b87f5] z-10 shrink-0">
+                        <FormInput className="h-5 w-5 text-white" />
+                      </div>
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#9b87f5]/30">
+                        <h5 className="text-white text-sm font-medium mb-1">Trigger: Formulário Preenchido</h5>
+                        <p className="text-white/60 text-xs">O lead preenche o formulário de captura no seu site</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex mb-5 relative">
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#F97316] z-10 shrink-0">
+                        <Filter className="h-5 w-5 text-white" />
+                      </div>
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#F97316]/30">
+                        <h5 className="text-white text-sm font-medium mb-1">Condição: Interesse no Produto X?</h5>
+                        <p className="text-white/60 text-xs">Se marcou interesse no produto X, segue fluxo A, senão segue fluxo B</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex mb-5 relative">
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#0EA5E9] z-10 shrink-0">
+                        <Mail className="h-5 w-5 text-white" />
+                      </div>
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#0EA5E9]/30">
+                        <h5 className="text-white text-sm font-medium mb-1">Ação: Enviar Sequência de E-mails</h5>
+                        <p className="text-white/60 text-xs">Envia 3 e-mails ao longo de 7 dias com conteúdo educativo</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex relative">
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
+                        <Tag className="h-5 w-5 text-black" />
+                      </div>
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
+                        <h5 className="text-white text-sm font-medium mb-1">Ação: Adicionar Tag no CRM</h5>
+                        <p className="text-white/60 text-xs">Adiciona tag "Nutrido" e notifica o time comercial</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="text-white text-sm font-medium mb-3">Integrações Disponíveis:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
+                        <MessageCircle className="h-3 w-3 text-[#25D366]" />
+                      </div>
+                      <span className="text-white/80 text-xs">WhatsApp</span>
+                    </div>
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
+                        <Instagram className="h-3 w-3 text-[#E4405F]" />
+                      </div>
+                      <span className="text-white/80 text-xs">Instagram</span>
+                    </div>
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#0A66C2]/10 flex items-center justify-center border border-[#0A66C2]/30">
+                        <Linkedin className="h-3 w-3 text-[#0A66C2]" />
+                      </div>
+                      <span className="text-white/80 text-xs">LinkedIn</span>
+                    </div>
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
+                        <Mail className="h-3 w-3 text-[#d0ff00]" />
+                      </div>
+                      <span className="text-white/80 text-xs">E-mail</span>
+                    </div>
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#4A66FB]/10 flex items-center justify-center border border-[#4A66FB]/30">
+                        <Database className="h-3 w-3 text-[#4A66FB]" />
+                      </div>
+                      <span className="text-white/80 text-xs">CRM</span>
+                    </div>
+                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                      <div className="h-5 w-5 rounded-full bg-[#ea384c]/10 flex items-center justify-center border border-[#ea384c]/30">
+                        <Bell className="h-3 w-3 text-[#ea384c]" />
+                      </div>
+                      <span className="text-white/80 text-xs">Notificações</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="p-8 md:p-10 relative">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
-                <Workflow className="h-6 w-6 text-[#d0ff00]" />
-                Automações Inteligentes
-              </h3>
-              <p className="text-white/70 mb-5 leading-relaxed text-sm md:text-base">
-                Crie sequências automáticas baseadas em comportamentos de clientes e prospects que aumentam suas conversões sem precisar criar códigos ou contratar developers.
-              </p>
-              
-              <div className="bg-black/30 border border-[#d0ff00]/10 rounded-lg p-5 mb-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="h-8 w-8 rounded-full bg-[#9b87f5]/10 flex items-center justify-center border border-[#9b87f5]/30">
-                    <FormInput className="h-4 w-4 text-[#9b87f5]" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-white text-sm font-medium">Nutrição de Leads</h4>
-                    <div className="flex items-center mt-1">
-                      <span className="text-[#9b87f5] text-xs font-medium">Conversão: 32%</span>
-                      <span className="mx-2 text-white/30">•</span>
-                      <span className="text-white/50 text-xs">Ativa há 47 dias</span>
-                    </div>
-                  </div>
-                  <div className="bg-[#9b87f5]/20 rounded-full px-2 py-0.5 text-xs text-[#9b87f5]">
-                    +204 leads
-                  </div>
-                </div>
-
-                <div className="mt-5 relative">
-                  <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#9b87f5]/20"></div>
-                  
-                  <div className="flex mb-5 relative">
-                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#9b87f5] z-10 shrink-0">
-                      <FormInput className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#9b87f5]/30">
-                      <h5 className="text-white text-sm font-medium mb-1">Trigger: Formulário Preenchido</h5>
-                      <p className="text-white/60 text-xs">O lead preenche o formulário de captura no seu site</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex mb-5 relative">
-                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#F97316] z-10 shrink-0">
-                      <Filter className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#F97316]/30">
-                      <h5 className="text-white text-sm font-medium mb-1">Condição: Interesse no Produto X?</h5>
-                      <p className="text-white/60 text-xs">Se marcou interesse no produto X, segue fluxo A, senão segue fluxo B</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex mb-5 relative">
-                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#0EA5E9] z-10 shrink-0">
-                      <Mail className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#0EA5E9]/30">
-                      <h5 className="text-white text-sm font-medium mb-1">Ação: Enviar Sequência de E-mails</h5>
-                      <p className="text-white/60 text-xs">Envia 3 e-mails ao longo de 7 dias com conteúdo educativo</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex relative">
-                    <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
-                      <Tag className="h-5 w-5 text-black" />
-                    </div>
-                    <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
-                      <h5 className="text-white text-sm font-medium mb-1">Ação: Adicionar Tag no CRM</h5>
-                      <p className="text-white/60 text-xs">Adiciona tag "Nutrido" e notifica o time comercial</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <h4 className="text-white text-sm font-medium mb-3">Integrações Disponíveis:</h4>
-                <div className="flex flex-wrap gap-2">
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
-                      <MessageCircle className="h-3 w-3 text-[#25D366]" />
-                    </div>
-                    <span className="text-white/80 text-xs">WhatsApp</span>
-                  </div>
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
-                      <Instagram className="h-3 w-3 text-[#E4405F]" />
-                    </div>
-                    <span className="text-white/80 text-xs">Instagram</span>
-                  </div>
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#0A66C2]/10 flex items-center justify-center border border-[#0A66C2]/30">
-                      <Linkedin className="h-3 w-3 text-[#0A66C2]" />
-                    </div>
-                    <span className="text-white/80 text-xs">LinkedIn</span>
-                  </div>
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
-                      <Mail className="h-3 w-3 text-[#d0ff00]" />
-                    </div>
-                    <span className="text-white/80 text-xs">E-mail</span>
-                  </div>
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#4A66FB]/10 flex items-center justify-center border border-[#4A66FB]/30">
-                      <Database className="h-3 w-3 text-[#4A66FB]" />
-                    </div>
-                    <span className="text-white/80 text-xs">CRM</span>
-                  </div>
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-full bg-[#ea384c]/10 flex items-center justify-center border border-[#ea384c]/30">
-                      <Bell className="h-3 w-3 text-[#ea384c]" />
-                    </div>
-                    <span className="text-white/80 text-xs">Notificações</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex justify-center">
-                <Link to="/demo" className="bg-gradient-to-r from-[#d0ff00] to-[#b3e600] hover:from-[#d0ff00] hover:to-[#a3cc00] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1">
-                  Começar Automação Gratuita
-                </Link>
-              </div>
+            <div className="p-6 flex justify-center border-t border-[#d0ff00]/10">
+              <a 
+                href="https://checkout.growthfunnels.com.br/plus" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-gradient-to-r from-[#d0ff00] to-[#b3e600] hover:from-[#d0ff00] hover:to-[#a3cc00] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
+              >
+                Começar Automação Gratuita
+              </a>
             </div>
           </div>
         </div>
@@ -417,9 +510,8 @@ const Features = () => {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div 
-                    className="h-10 w-10 rounded-lg flex items-center justify-center"
                     style={{ backgroundColor: `${example.color}10`, borderColor: `${example.color}30` }}
-                    className="border"
+                    className="h-10 w-10 rounded-lg flex items-center justify-center border"
                   >
                     {example.id === 'lead-nurturing' && <FormInput style={{ color: example.color }} className="h-5 w-5" />}
                     {example.id === 'abandoned-cart' && <ShoppingCart style={{ color: example.color }} className="h-5 w-5" />}
@@ -584,7 +676,7 @@ const Features = () => {
               </div>
               <div className="col-span-4 md:col-span-4 text-right md:text-center">
                 <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
-                  <span className="text-white/70 line-through text-sm md:text-base">R$ 10.122,40/mês</span>
+                  <span className="text-white/70 line-through text-sm md:text-base">{totalSaving}</span>
                   <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
                 </div>
               </div>
