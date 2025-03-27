@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-slide-up">
             <div>
-              <span className="px-3 py-1 bg-growth-blue-electric/10 border border-growth-blue-electric/30 rounded-full text-growth-blue-electric text-sm font-medium">
+              <span className="px-3 py-1 bg-growth-green/10 border border-growth-green/30 rounded-full text-growth-green text-sm font-medium">
                 Nova plataforma de Marketing & CRM
               </span>
             </div>
@@ -37,20 +37,20 @@ const Hero = () => {
             <div className="pt-8 flex items-center space-x-4">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full bg-growth-blue-deep border-2 border-black flex items-center justify-center text-white text-sm">
+                  <div key={i} className="w-10 h-10 rounded-full bg-growth-dark border-2 border-growth-green/30 flex items-center justify-center text-white text-sm">
                     {i}
                   </div>
                 ))}
               </div>
               <p className="text-white/70 text-sm">
-                Mais de <span className="font-bold text-white">1,200+</span> empresas usando Growth Funnels
+                Mais de <span className="font-bold text-growth-green">1,200+</span> empresas usando Growth Funnels
               </p>
             </div>
           </div>
 
           <div className="relative animate-fade-in">
-            <div className="glass-panel p-2 shadow-2xl shadow-growth-blue-electric/20 animate-float">
-              <div className="rounded-xl overflow-hidden border border-white/10">
+            <div className="glass-panel p-2 shadow-2xl shadow-growth-green/20 animate-float">
+              <div className="rounded-xl overflow-hidden border border-growth-green/10">
                 <img 
                   src="/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png" 
                   alt="Growth Funnels Dashboard" 
@@ -70,9 +70,9 @@ const Hero = () => {
             <div className="absolute -top-6 -left-6 glass-panel p-4 w-40 shadow-lg animate-float">
               <div className="text-white text-center">
                 <p className="text-xs text-white/70">Automação</p>
-                <p className="text-2xl font-bold text-growth-blue-electric">24/7</p>
+                <p className="text-2xl font-bold text-growth-green">24/7</p>
                 <div className="h-1 w-full bg-white/20 rounded-full mt-2">
-                  <div className="h-full w-full bg-growth-blue-electric rounded-full"></div>
+                  <div className="h-full w-full bg-growth-green rounded-full"></div>
                 </div>
               </div>
             </div>

@@ -85,7 +85,7 @@
 
 @layer components {
   .hero-gradient {
-    @apply bg-gradient-to-b from-black via-growth-blue-deep to-black;
+    @apply bg-gradient-to-b from-black via-growth-dark to-black;
   }
   
   .glass-panel {
@@ -95,28 +95,28 @@
   .feature-card {
     @apply bg-white bg-opacity-[0.03] backdrop-blur-lg border border-white/10 rounded-xl 
            transition-all duration-300 hover:bg-opacity-[0.05] hover:scale-[1.02] 
-           hover:shadow-[0_0_30px_rgba(0,160,255,0.15)];
+           hover:shadow-[0_0_30px_rgba(200,255,0,0.15)];
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-growth-blue-electric to-growth-green bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-growth-green to-growth-green-hover bg-clip-text text-transparent;
   }
   
   .btn-primary {
+    @apply bg-growth-green text-black font-semibold rounded-md py-3 px-6
+           shadow-[0_0_20px_rgba(200,255,0,0.3)] hover:shadow-[0_0_30px_rgba(200,255,0,0.5)] 
+           transition-all duration-300 hover:bg-growth-green-hover;
+  }
+  
+  .btn-secondary {
     @apply bg-growth-blue-electric text-white rounded-md py-3 px-6 font-medium 
            shadow-[0_0_20px_rgba(0,160,255,0.3)] hover:shadow-[0_0_30px_rgba(0,160,255,0.5)] 
            transition-all duration-300 hover:bg-opacity-90;
   }
   
-  .btn-secondary {
-    @apply bg-growth-green text-white rounded-md py-3 px-6 font-medium 
-           shadow-[0_0_20px_rgba(0,208,132,0.3)] hover:shadow-[0_0_30px_rgba(0,208,132,0.5)] 
-           transition-all duration-300 hover:bg-opacity-90;
-  }
-  
   .btn-outline {
-    @apply border border-white/20 text-white rounded-md py-3 px-6 font-medium 
-           hover:bg-white/10 transition-all duration-300;
+    @apply border border-growth-green/60 text-growth-green rounded-md py-3 px-6 font-medium 
+           hover:bg-growth-green/10 transition-all duration-300;
   }
 }
 

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,12 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Growth Funnels Custom Colors
 				growth: {
 					'blue-deep': '#1A365D',
 					'blue-electric': '#00A0FF',
-					'green': '#00D084',
-					'dark': '#333333',
+					'green': '#c8ff00',
+					'green-hover': '#d0ff33',
+					'dark': '#111111',
 					'light': '#FFFFFF',
 				}
 			},
@@ -129,6 +128,10 @@ export default {
 				'scale-in': 'scale-in 0.3s ease-out',
 				'scale-out': 'scale-out 0.3s ease-out',
 				'float': 'float 6s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'green-gradient': 'linear-gradient(135deg, #c8ff00 0%, #99cc00 100%)',
+				'blue-gradient': 'linear-gradient(135deg, #00A0FF 0%, #0070B0 100%)',
 			}
 		}
 	},
