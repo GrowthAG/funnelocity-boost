@@ -21,6 +21,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         greenNeon: "bg-[#d0ff00] text-black hover:bg-[#c5f000] shadow-md shadow-[#d0ff00]/20 hover:shadow-lg hover:shadow-[#d0ff00]/30",
         outlineNeon: "border border-[#d0ff00]/40 bg-transparent text-[#d0ff00] hover:bg-[#d0ff00]/10 hover:border-[#d0ff00]/60 hover:text-white shadow-sm hover:shadow-md hover:shadow-[#d0ff00]/10",
+        redNeon: "bg-[#cf0f00] text-white hover:bg-[#b80e00] shadow-md shadow-[#cf0f00]/20 hover:shadow-lg hover:shadow-[#cf0f00]/30 font-bold",
       },
       size: {
         default: "h-10 px-4 py-2",

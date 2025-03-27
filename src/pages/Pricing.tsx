@@ -1,9 +1,10 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, HelpCircle, Plus, Check, ArrowDown, Shield } from 'lucide-react';
+import { CheckCircle, HelpCircle, Plus, Check, ArrowDown, Shield, CreditCard } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -170,6 +171,9 @@ const Pricing = () => {
                     <>
                       <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
                       <span className="text-white/70">{plan.period}</span>
+                      {billingAnnual && (
+                        <div className="text-white/70 text-sm mt-1">ou 12x de R$ {Math.floor(plan.price / 12)}</div>
+                      )}
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-white">Entre em contato</span>
@@ -215,20 +219,26 @@ const Pricing = () => {
                 )}
                 
                 <div className="mt-auto">
-                  <div className="flex justify-center py-2 mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-5 mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-5 mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-5 mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-5 mx-1" />
+                  <div className="flex justify-center py-3 mb-4">
+                    <div className="flex items-center gap-3">
+                      <CreditCard className="h-6 w-6 text-white/70" />
+                      <div className="flex items-center gap-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto" />
+                      </div>
+                    </div>
                   </div>
                   
                   <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button 
-                      className={`w-full ${
+                      className={`w-full py-2.5 ${
                         plan.popular 
-                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-bold' 
-                          : 'border border-[#d0ff00]/60 text-[#d0ff00] hover:bg-[#d0ff00]/10 hover:text-white font-medium'
+                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-bold shadow-md hover:shadow-lg shadow-[#d0ff00]/20 hover:shadow-[#d0ff00]/30' 
+                          : 'bg-[#cf0f00] text-white hover:bg-[#b80e00] font-bold shadow-md hover:shadow-lg shadow-[#cf0f00]/20 hover:shadow-[#cf0f00]/30'
                       }`}
+                      variant={plan.popular ? "greenNeon" : "redNeon"}
                       size="lg"
                     >
                       {plan.cta}

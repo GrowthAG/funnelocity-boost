@@ -102,6 +102,7 @@ const ComparisonTable = ({
                   />
                   <p className="text-5xl font-bold text-[#d0ff00]">R$ 497<span className="text-white/70 text-base">/mês</span></p>
                 </div>
+                <p className="text-white/70 text-sm mt-1">ou 12x de R$ 41,41</p>
                 
                 <div className="flex items-center gap-1 mt-3 mb-6">
                   <Check className="h-5 w-5 text-[#d0ff00]" />
@@ -110,8 +111,9 @@ const ComparisonTable = ({
                 
                 <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer" className="w-full max-w-xs">
                   <Button 
-                    className="w-full bg-[#d0ff00] text-black hover:bg-[#b3e600] shadow-lg hover:shadow-xl transition-all font-bold text-base py-6"
+                    className="w-full bg-[#cf0f00] text-white hover:bg-[#b80e00] shadow-lg hover:shadow-xl transition-all font-bold text-base py-6"
                     size="lg"
+                    variant="redNeon"
                   >
                     Contratar Plano PRO
                   </Button>
