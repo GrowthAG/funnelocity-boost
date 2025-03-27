@@ -19,7 +19,7 @@ const ComparisonTableHeader = ({ logoUrl }: ComparisonTableHeaderProps) => {
         <h2 className="text-xl md:text-2xl font-bold text-black">vs. Outras Soluções</h2>
       </div>
       <p className="text-black/90 text-sm md:text-base mt-1">
-        Compare o custo e os recursos do GrowthFunnels com as alternativas
+        Compare o custo e os recursos do GrowthFunnels com as alternativas do mercado
       </p>
     </div>
   );
