@@ -1,3 +1,4 @@
+
 // Sample data for the charts
 export const conversionData = [
   { name: 'Jan', conversions: 65, mrr: 12400 },
@@ -164,7 +165,7 @@ export const replacementToolsData = [
     value: "R$ 858,20", 
     tools: ["ActiveCampaign", "RD Station", "Salesforce Pardot"],
     logos: [
-      "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
+      "/placeholder.svg",
       "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
       "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png"
     ]
