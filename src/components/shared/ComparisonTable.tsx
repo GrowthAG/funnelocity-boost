@@ -75,13 +75,13 @@ const ComparisonTable = ({
                 </TableCell>
                 <TableCell className="py-3">
                   <div className="flex flex-wrap gap-2">
-                    {tool.logos && tool.logos.map((logo, idx) => (
-                      <img 
+                    {tool.tools.map((toolName, idx) => (
+                      <span 
                         key={idx} 
-                        src={logo} 
-                        alt={tool.tools[idx] || ''} 
-                        className="h-6 w-6 object-contain" 
-                      />
+                        className="text-white/80 text-sm bg-white/10 px-2 py-1 rounded"
+                      >
+                        {toolName}
+                      </span>
                     ))}
                   </div>
                 </TableCell>
