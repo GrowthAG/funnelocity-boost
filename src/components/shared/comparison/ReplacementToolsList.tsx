@@ -24,7 +24,8 @@ const toolLogoMap: Record<string, string> = {
   "GoTo": "/lovable-uploads/cb262656-76f3-4604-bea4-c8d1a91f4cd8.png",
   "Twilio": "/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png",
   "Google Analytics": "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png",
-  "Amplitude": "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png"
+  "Amplitude": "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png",
+  "Vimeo": "/lovable-uploads/f92386a0-e945-4e18-aef0-2d3878722d3b.png"
 };
 
 // Helper function to get the logo URL by tool name
@@ -36,8 +37,8 @@ const getToolLogoUrl = (toolName: string): string | undefined => {
 
 const ReplacementToolsList = ({ replacementTools, totalSaving }: ReplacementToolsListProps) => {
   return (
-    <div className="bg-black border-r border-[#d0ff00]/30">
-      <div className="p-5 border-b border-[#d0ff00]/30">
+    <div className="bg-growth-black border-r border-growth-green/30">
+      <div className="p-5 border-b border-growth-green/30">
         <h3 className="text-lg font-bold text-white">O que você substituirá:</h3>
       </div>
       <div className="px-5">
