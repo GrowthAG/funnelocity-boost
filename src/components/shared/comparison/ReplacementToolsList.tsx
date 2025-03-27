@@ -59,12 +59,16 @@ const ReplacementToolsList = ({ replacementTools, totalSaving }: ReplacementTool
           {replacementTools.map((tool, index) => (
             <li key={index} className="flex justify-between py-3">
               <div className="flex items-center gap-2">
-                {getToolLogoUrl(tool.name) && (
+                {getToolLogoUrl(tool.name) ? (
                   <img 
                     src={getToolLogoUrl(tool.name)} 
                     alt={`${tool.name} logo`}
                     className="h-5 w-auto max-w-[20px] object-contain"
                   />
+                ) : (
+                  <div className="h-5 w-5 flex items-center justify-center text-[#d0ff00] text-xs font-bold">
+                    {tool.name.charAt(0)}
+                  </div>
                 )}
                 <span className="text-white/80">{tool.name}</span>
               </div>

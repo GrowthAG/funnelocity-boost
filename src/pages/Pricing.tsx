@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -247,7 +246,7 @@ const Pricing = () => {
                   <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button 
                       className={`w-full py-2.5`}
-                      variant={plan.popular ? "greenNeon" : "redNeon"}
+                      variant="redNeon"
                       size="lg"
                     >
                       {plan.cta}
