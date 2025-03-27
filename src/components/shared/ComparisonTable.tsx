@@ -74,11 +74,11 @@ const ComparisonTable = ({
                   {tool.name}
                 </TableCell>
                 <TableCell className="py-3">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {tool.tools.map((toolName, idx) => (
                       <span 
                         key={idx} 
-                        className="text-white/80 text-sm bg-white/10 px-2 py-1 rounded"
+                        className="text-white/90 text-xs bg-white/10 px-2 py-0.5 rounded-full"
                       >
                         {toolName}
                       </span>
