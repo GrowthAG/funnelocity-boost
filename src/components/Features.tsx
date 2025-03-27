@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -151,96 +152,108 @@ const Features = () => {
       name: "CRM & Pipeline de Vendas", 
       value: "R$ 502,71/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "0 -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Monday", style: { objectPosition: "-45px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Pipedrive", style: { objectPosition: "-90px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Funis de vendas", 
       value: "R$ 1.507,22/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Optimizely", style: { objectPosition: "-225px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Planejamento de redes sociais", 
       value: "R$ 24,90/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "mLabs", style: { objectPosition: "0 -285px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "etus", style: { objectPosition: "-45px -285px", height: "40px", width: "100px", objectFit: "none" } }
       ] 
     },
     {
       name: "Construtor de sites", 
       value: "R$ 248,75/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "WordPress", style: { objectPosition: "0 -355px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Wix", style: { objectPosition: "-45px -355px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Webflow", style: { objectPosition: "-90px -355px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Formulários e Pesquisas", 
       value: "R$ 457,03/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Typeform", style: { objectPosition: "0 -425px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Respond.io", style: { objectPosition: "-45px -425px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Forms", style: { objectPosition: "-90px -425px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "E-mail marketing", 
       value: "R$ 406,25/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mailchimp", style: { objectPosition: "-45px -495px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Brevo", style: { objectPosition: "-90px -495px", height: "40px", width: "80px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Calendário e Agendamentos", 
       value: "R$ 111,72/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Calendly", style: { objectPosition: "0 -570px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Calendar", style: { objectPosition: "-45px -570px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Acuity", style: { objectPosition: "-90px -570px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Automações de marketing", 
       value: "R$ 858,20/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Cursos/Produtos", 
       value: "R$ 492,54/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Hotmart", style: { objectPosition: "0 -708px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Eduzz", style: { objectPosition: "-45px -708px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Kiwify", style: { objectPosition: "-90px -708px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Herospark", style: { objectPosition: "-135px -708px", height: "40px", width: "80px", objectFit: "none" } }
       ] 
     },
     {
       name: "Chamadas e monitoramentos", 
       value: "R$ 482,47/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Go To Connect", style: { objectPosition: "0 -781px", height: "40px", width: "80px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Voice", style: { objectPosition: "-90px -781px", height: "40px", width: "40px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Twilio", style: { objectPosition: "-135px -781px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Gestão de reputação", 
       value: "R$ 2.448/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google My Business", style: { objectPosition: "0 -855px", height: "40px", width: "40px", objectFit: "none" } }
       ] 
     },
     {
       name: "Analytics", 
       value: "R$ 126,96/mês", 
       logos: [
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 1" },
-        { src: "/lovable-uploads/b96e8d6c-8d5f-4d74-88b3-eea916a16a9e.png", alt: "Logo 2" }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mixpanel", style: { objectPosition: "0 -925px", height: "40px", width: "80px", objectFit: "none" } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Amplitude", style: { objectPosition: "-90px -925px", height: "40px", width: "80px", objectFit: "none" } }
       ] 
     }
   ];
@@ -651,9 +664,10 @@ const Features = () => {
               <div className="col-span-1 hidden md:block">
                 <div className="flex justify-end">
                   <img 
-                    src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
+                    src="/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png" 
                     alt="Growth Funnels Logo" 
-                    className="h-8 w-auto object-contain brightness-0"
+                    className="h-12 w-auto object-contain brightness-0 invert"
+                    style={{ objectPosition: "-220px -40px", objectFit: "none", width: "120px" }}
                   />
                 </div>
               </div>
@@ -668,16 +682,18 @@ const Features = () => {
                     <div className="text-white text-sm md:text-base">{tool.name}</div>
                   </div>
                   <div className="col-span-3 md:col-span-3 flex justify-center">
-                    <div className="flex space-x-2 md:space-x-3 bg-white/10 backdrop-blur-sm p-1.5 rounded-lg border border-white/10">
+                    <div className="flex flex-wrap justify-center items-center gap-2 bg-white/5 backdrop-blur-sm p-2 rounded-lg border border-white/10">
                       {tool.logos.map((logo, logoIndex) => (
                         <div 
                           key={logoIndex} 
-                          className="h-6 w-6 bg-white rounded-full flex items-center justify-center p-0.5"
+                          className="bg-white rounded-md flex items-center justify-center p-1 overflow-hidden"
+                          style={{ width: logo.style.width || "40px", height: logo.style.height || "40px" }}
                         >
                           <img 
                             src={logo.src} 
                             alt={logo.alt} 
-                            className="h-full w-full object-contain"
+                            style={logo.style}
+                            className="object-none"
                           />
                         </div>
                       ))}
@@ -687,8 +703,8 @@ const Features = () => {
                     <span className="text-white text-sm md:text-base">{tool.value}</span>
                   </div>
                   <div className="col-span-1 flex justify-end">
-                    <div className="bg-[#d0ff00]/10 h-7 w-7 rounded-full flex items-center justify-center">
-                      <Check className="h-4 w-4 text-[#d0ff00]" />
+                    <div className="bg-[#d0ff00]/10 h-8 w-8 rounded-full flex items-center justify-center">
+                      <Check className="h-5 w-5 text-[#d0ff00]" />
                     </div>
                   </div>
                 </div>
