@@ -31,18 +31,17 @@ const Navbar = () => {
           className="flex items-center"
           aria-label="GrowthFunnels Home"
         >
-          <div className="group relative transition-all duration-300">
+          <div className="flex items-center">
             <div className={cn(
-              "w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300",
-              scrolled ? "bg-black/60 shadow-[0_0_15px_rgba(207,15,0,0.3)]" : "bg-black/30"
+              "flex items-center justify-center"
             )}>
               <img 
-                src="/lovable-uploads/f08c6356-9c67-4e4d-8373-5cfd85f5e2f4.png" 
+                src="/lovable-uploads/19e748f8-e8c3-4367-a3ed-5d16da13f8c1.png" 
                 alt="GrowthFunnels Logo" 
-                className="h-7 md:h-8 transition-transform duration-300 group-hover:scale-110"
+                className="h-8 md:h-9 transition-transform duration-300 hover:scale-105"
               />
+              <span className="text-white font-semibold ml-2 text-lg md:text-xl">Funnels</span>
             </div>
-            <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-growth-green/70 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </div>
         </Link>
 
@@ -71,7 +70,7 @@ const Navbar = () => {
             </Button>
           </Link>
           <Link to="/demo">
-            <Button className="bg-gradient-to-r from-growth-green to-growth-green-hover text-black hover:opacity-90">
+            <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] font-medium">
               Agendar Demo
             </Button>
           </Link>
@@ -140,7 +139,7 @@ const Navbar = () => {
                 className="w-full"
                 onClick={() => setIsOpen(false)}
               >
-                <Button className="w-full bg-gradient-to-r from-growth-green to-growth-green-hover text-black hover:opacity-90">
+                <Button className="w-full bg-[#d0ff00] text-black hover:bg-[#b3e600] font-medium">
                   Agendar Demo
                 </Button>
               </Link>
