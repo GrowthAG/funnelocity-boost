@@ -35,7 +35,7 @@ const ActiveIntegrations = () => {
       <CardHeader className="relative pb-0">
         <div className="absolute top-4 right-4">
           <img 
-            src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
+            src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
             alt="GrowthFunnels Logo" 
             className="h-10 md:h-12"
           />

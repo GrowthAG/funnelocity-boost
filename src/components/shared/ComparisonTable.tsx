@@ -96,7 +96,11 @@ const ComparisonTable = ({
                 <TableCell className="text-white text-right py-3 font-medium">{tool.value}</TableCell>
                 {variant === 'pricing' && (
                   <TableCell className="text-right py-3">
-                    <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                    <img 
+                      src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
+                      alt="GrowthFunnels" 
+                      className="h-5 w-5 ml-auto" 
+                    />
                   </TableCell>
                 )}
               </TableRow>
@@ -119,7 +123,11 @@ const ComparisonTable = ({
               </TableCell>
               {variant === 'pricing' && (
                 <TableCell className="py-4 text-right">
-                  <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                  <img 
+                    src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
+                    alt="GrowthFunnels" 
+                    className="h-5 w-5 ml-auto" 
+                  />
                 </TableCell>
               )}
             </TableRow>
