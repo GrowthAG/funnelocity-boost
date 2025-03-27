@@ -40,7 +40,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white mobile-friendly-text flex items-center justify-center">
-              Por trás do <img src="/lovable-uploads/376df737-1d25-4a27-97fd-bbf94bbc1232.png" alt="GrowthFunnels" className="h-10 md:h-14 ml-2" />
+              Por trás do <img src="/lovable-uploads/e972de3f-e663-467b-a000-a691202e4b0e.png" alt="GrowthFunnels" className="h-10 md:h-14 ml-2" />
             </h1>
             <p className="text-lg md:text-xl text-white/80 mobile-friendly-text">
               Somos obcecados por crescimento, automação e resultados reais.
