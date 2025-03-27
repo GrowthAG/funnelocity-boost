@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,23 +28,21 @@ const ActiveIntegrations = () => {
     });
   };
 
-  // Dados da comparação
   const replacementTools: ToolInfo[] = [
     { 
       name: "CRM & Pipeline de Vendas", 
       value: "R$ 502,71", 
-      tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"],
+      tools: ["Pipedrive", "RD Station CRM", "Close"],
       logos: [
         "/lovable-uploads/ec2d3fe2-1f5f-4a70-9f28-8af8a18ffe4d.png", 
-        "/lovable-uploads/23a9d576-f113-4771-b2d3-ff5962bb0ae4.png",
-        "/lovable-uploads/28b22c78-8b09-4993-9304-088fc6a22e3d.png",
-        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png"
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
+        "/lovable-uploads/23a9d576-f113-4771-b2d3-ff5962bb0ae4.png"
       ]
     },
     {
       name: "Funis de Vendas", 
       value: "R$ 1.507,22", 
-      tools: ["Salesforce", "Pipefy", "HubSpot"],
+      tools: ["Salesforce", "Pipefy", "ClickFunnels"],
       logos: [
         "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png",
         "/lovable-uploads/af51da29-988c-4767-aa02-b724b80fd078.png",
@@ -84,27 +81,29 @@ const ActiveIntegrations = () => {
     {
       name: "E-mail Marketing", 
       value: "R$ 406,25", 
-      tools: ["Brevo", "Mailchimp", "ActiveCampaign"],
+      tools: ["Mailchimp", "RD Station", "Brevo"],
       logos: [
-        "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png",
         "/lovable-uploads/25d0a1ba-c7ab-4632-a6d7-ba4487a0a28c.png",
-        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png"
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
+        "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png"
       ]
     },
     {
       name: "Calendário e Agendamentos", 
       value: "R$ 111,72", 
-      tools: ["Calendly", "Google Calendar"],
+      tools: ["Calendly", "Google Agenda", "TidyCal"],
       logos: [
         "/lovable-uploads/1ececfa5-5b1c-40d9-97cc-7d5d576880b0.png",
-        "/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png"
+        "/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png",
+        "/placeholder.svg"
       ]
     },
     {
       name: "Automações de Marketing", 
       value: "R$ 858,20", 
-      tools: ["ActiveCampaign", "Salesforce Marketing Cloud"],
+      tools: ["ActiveCampaign", "RD Station", "Salesforce Pardot"],
       logos: [
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
         "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
         "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png"
       ]
@@ -123,7 +122,7 @@ const ActiveIntegrations = () => {
     {
       name: "Chamadas e Monitoramentos", 
       value: "R$ 482,47", 
-      tools: ["GoTo Connect", "Twilio"],
+      tools: ["GoToConnect", "Twilio"],
       logos: [
         "/placeholder.svg",
         "/placeholder.svg"
@@ -132,8 +131,9 @@ const ActiveIntegrations = () => {
     {
       name: "Gestão de Reputação", 
       value: "R$ 2.448,00", 
-      tools: ["Trustpilot"],
+      tools: ["Reclame Aqui Premium", "Trustpilot"],
       logos: [
+        "/placeholder.svg",
         "/placeholder.svg"
       ]
     },

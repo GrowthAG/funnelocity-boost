@@ -31,10 +31,11 @@ const Navbar = () => {
           className="flex items-center"
           aria-label="Funnels Home"
         >
+          {/* Updated logo with better visibility on dark backgrounds */}
           <img 
             src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
             alt="Funnels Logo" 
-            className="h-8 md:h-10"
+            className="h-8 md:h-10 filter brightness-150 contrast-125"
           />
         </Link>
 
