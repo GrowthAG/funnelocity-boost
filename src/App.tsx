@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Blog />} /> {/* Rota para artigos individuais */}
           <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           
           {/* External redirects */}
           <Route path="/login" element={<ExternalRedirect to="https://app.growthfunnels.com.br/" />} />
