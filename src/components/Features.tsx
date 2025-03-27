@@ -570,13 +570,13 @@ const Features = () => {
                   </div>
                 </div>
                 
-                <div className="mt-auto pt-5">
+                <div className="mt-auto pt-6">
                   <a 
-                    href="https://checkout.growthfunnels.com.br/plano-pro"
+                    href="https://checkout.growthfunnels.com.br/plus"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Usar Template ${example.title} - Redireciona para o Plano PRO`}
-                    className="block w-full py-2.5 rounded-md text-sm font-semibold bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
+                    aria-label={`Usar Template ${example.title} - Redireciona para o checkout do plano PLUS`}
+                    className="block w-full py-3 px-6 rounded-md text-base font-semibold bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
                   >
                     Usar Template
                   </a>
