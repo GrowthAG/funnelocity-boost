@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star, StarIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -15,14 +16,14 @@ const testimonials = [
     quote: "Resultados acelerados com o Funnels! O Funnels revolucionou nosso marketing com um CRM poderoso, aliado a estratégias de tráfego precisas. Alcançamos resultados rápidos, consistentes e surpreendentes, superando todas as expectativas.",
     author: "Daniel Lestinge",
     position: "BlueForecasts",
-    avatar: "/lovable-uploads/ec2d3fe2-1f5f-4a70-9f28-8af8a18ffe4d.png",
+    avatar: "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png", // Changed to the correct avatar for Daniel Lestinge
     stars: 5
   },
   {
     quote: "Totalmente integrado e eficiente. Com o Funnels, aceleramos a implementação de equipes e processos, alcançando resultados expressivos e mensuráveis em apenas uma semana. Uma solução prática, integrada e transformadora.",
     author: "Yves",
     position: "Wysion",
-    avatar: "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png",
+    avatar: "/lovable-uploads/ec2d3fe2-1f5f-4a70-9f28-8af8a18ffe4d.png", // Changed to the correct avatar for Yves
     stars: 5
   },
   {
