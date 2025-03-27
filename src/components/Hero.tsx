@@ -18,7 +18,7 @@ const Hero = () => {
             Transforme o Ciclo de Receita da Sua Empresa
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Plataforma completa de CRM, automação de marketing e geração de demanda criada para acelerar suas vendas e impulsionar o crescimento.
+            Plataforma completa de CRM, automação de marketing e geração de demanda criada para centralizar sua operação, automatizar processos e impulsionar seu crescimento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
             <Link to="/trial">

@@ -1,72 +1,80 @@
 
 import React from 'react';
 import { 
-  Users, 
-  BarChart, 
+  LayoutGrid, 
+  Activity, 
   MessageSquare,
   Calendar, 
+  FileText, 
+  Link2, 
   Database, 
-  Globe, 
-  LineChart, 
-  Zap, 
-  Shield
+  MessagesSquare,
+  Mail,
+  BarChart3,
+  MessageCircle,
+  Filter
 } from 'lucide-react';
 
-const features = [
-  {
-    icon: <Database className="h-6 w-6 text-[#d0ff00]" />,
-    title: "CRM Completo",
-    description: "Visualize toda a jornada do cliente em um único lugar. Organize leads, oportunidades e clientes em pipelines visuais para aumentar sua taxa de conversão."
-  },
-  {
-    icon: <MessageSquare className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Automação de Marketing",
-    description: "Crie sequências de emails, SMS e WhatsApp que se ativam automaticamente baseadas nas ações do seu lead, aumentando engajamento e vendas."
-  },
-  {
-    icon: <Calendar className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Agendamento Inteligente",
-    description: "Permita que seus leads agendem reuniões diretamente na sua agenda, eliminando o vai-e-vem de emails e reduzindo o ciclo de vendas."
-  },
-  {
-    icon: <Globe className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Landing Pages",
-    description: "Construa páginas de alta conversão em minutos usando nosso editor de arrastar e soltar, sem necessidade de conhecimento técnico."
-  },
-  {
-    icon: <Zap className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Automação de Workflows",
-    description: "Automatize processos repetitivos de vendas e marketing com fluxos de trabalho visuais que economizam tempo e reduzem erros humanos."
-  },
-  {
-    icon: <LineChart className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Analytics em Tempo Real",
-    description: "Monitore métricas de performance como CAC, LTV e ROI de campanhas, permitindo ajustes rápidos em sua estratégia de crescimento."
-  },
-  {
-    icon: <Shield className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Segurança Avançada",
-    description: "Proteja os dados dos seus clientes com criptografia de ponta a ponta e conformidade com LGPD, construindo confiança com sua base."
-  },
-  {
-    icon: <Users className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Colaboração de Equipe",
-    description: "Aumente a produtividade de vendas e marketing com ferramentas colaborativas que alinham equipes e eliminam silos de informação."
-  },
-  {
-    icon: <BarChart className="h-6 w-6 text-[#d0ff00]" />,
-    title: "Atribuição Avançada",
-    description: "Identifique com precisão quais canais e campanhas geram mais receita, otimizando seu investimento em marketing de performance."
-  }
-];
-
 const Features = () => {
+  const features = [
+    {
+      icon: <Database className="h-6 w-6 text-[#d0ff00]" />,
+      title: "CRM",
+      description: "Acompanhe leads, negociações e oportunidades em um único lugar."
+    },
+    {
+      icon: <LayoutGrid className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Construtor de Páginas",
+      description: "Monte páginas de captura e vendas facilmente sem conhecimento técnico."
+    },
+    {
+      icon: <Activity className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Automação de Fluxos",
+      description: "Crie sequências de automação para leads e clientes que ativam com base em comportamentos."
+    },
+    {
+      icon: <FileText className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Formulários Personalizados",
+      description: "Capte informações com formulários dinâmicos totalmente personalizáveis."
+    },
+    {
+      icon: <Link2 className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Integrações",
+      description: "Conecte-se com outras plataformas de forma simples e centralizada."
+    },
+    {
+      icon: <MessagesSquare className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Chat Unificado",
+      description: "Centralize mensagens de vários canais em um só lugar para melhor atendimento."
+    },
+    {
+      icon: <Calendar className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Calendários",
+      description: "Gerencie compromissos e agendamentos de forma simples e automatizada."
+    },
+    {
+      icon: <Mail className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Campanhas de E-mail",
+      description: "Automatize e-mails e acompanhe resultados com métricas detalhadas."
+    },
+    {
+      icon: <MessageCircle className="h-6 w-6 text-[#d0ff00]" />,
+      title: "WhatsApp",
+      description: "Envie mensagens manuais e automáticas diretamente para seus leads e clientes."
+    },
+    {
+      icon: <Filter className="h-6 w-6 text-[#d0ff00]" />,
+      title: "Funis de Vendas",
+      description: "Crie e gerencie funis de conversão completos para aumentar suas vendas."
+    }
+  ];
+
   return (
-    <section className="bg-black py-24 px-4 md:px-8 border-t border-[#d0ff00]/10">
+    <section className="bg-black py-24 px-4 md:px-8 border-t border-[#d0ff00]/10" id="features">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Todas as ferramentas para <span className="text-[#d0ff00]">automatizar</span> seu crescimento
+            Sua operação centralizada <span className="text-[#d0ff00]">em um único lugar</span>
           </h2>
           <p className="text-lg text-white/80">
             GrowthFunnels integra todas as funcionalidades essenciais para aquisição, nutrição e conversão de leads em uma única plataforma intuitiva, eliminando a necessidade de múltiplas ferramentas.
