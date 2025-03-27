@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -243,7 +244,7 @@ const Pricing = () => {
                       className={`w-full ${
                         plan.popular 
                           ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-bold' 
-                          : 'border border-[#d0ff00]/60 text-[#d0ff00] hover:bg-[#d0ff00]/10 font-medium'
+                          : 'border border-[#d0ff00]/60 text-[#d0ff00] hover:bg-[#d0ff00]/10 hover:text-white font-medium'
                       }`}
                       size="lg"
                     >

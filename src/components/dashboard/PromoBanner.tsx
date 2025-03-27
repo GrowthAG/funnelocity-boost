@@ -20,7 +20,7 @@ const PromoBanner = () => {
           <a href="/pricing">Ver Planos</a>
         </Button>
         <Button 
-          className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10 px-5 md:px-6 py-2.5 md:py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300" 
+          className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10 hover:text-white px-5 md:px-6 py-2.5 md:py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300" 
           size="lg" 
           variant="outline"
           asChild
