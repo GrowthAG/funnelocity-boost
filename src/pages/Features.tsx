@@ -124,7 +124,7 @@ const Features = () => {
               <td className="p-3 md:p-4 text-center border-t border-[#d0ff00]/10">
                 {feature.extraCost ? 
                   <XCircle className="h-5 w-5 text-destructive mx-auto" /> : 
-                  <CheckCircle className="h-5 w-5 text-growth-green mx-auto" />
+                  <CheckCircle className="h-5 w-5 text-[#d0ff00] mx-auto" />
                 }
               </td>
               <td className="p-3 md:p-4 text-white/80 border-t border-[#d0ff00]/10">{feature.description}</td>
@@ -196,7 +196,7 @@ const Features = () => {
                             <span className="text-white/50 text-xs">204 leads nos últimos 30 dias</span>
                           </div>
                         </div>
-                        <Button className="text-xs bg-[#9b87f5] hover:bg-[#8a74e6] text-white">Ver Detalhes</Button>
+                        <Button className="text-xs bg-[#d0ff00] hover:bg-[#b3e600] text-black">Ver Detalhes</Button>
                       </div>
                       
                       {/* Workflow Visual Steps */}
@@ -213,9 +213,8 @@ const Features = () => {
                               {step.icon}
                             </div>
                             <div 
-                              className="ml-4 bg-black/40 rounded-lg p-3 flex-1"
+                              className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border"
                               style={{ borderColor: `${step.color}30` }}
-                              className="border"
                             >
                               <h5 className="text-white text-sm font-medium mb-1">{step.type === "trigger" ? "Trigger" : step.type === "filter" ? "Condição" : "Ação"}: {step.title}</h5>
                               <p className="text-white/60 text-xs">{step.description}</p>

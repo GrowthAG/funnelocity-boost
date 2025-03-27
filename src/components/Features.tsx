@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -249,7 +248,7 @@ const Features = () => {
       triggers: ['Formulário Preenchido', 'E-book Baixado', 'Webinar Registrado'],
       actions: ['Enviar E-mail', 'Adicionar Tag CRM', 'Notificar Vendedor'],
       conversion: '32%',
-      color: '#9b87f5'
+      color: '#d0ff00'
     },
     {
       id: 'abandoned-cart',
@@ -258,7 +257,7 @@ const Features = () => {
       triggers: ['Carrinho Não Finalizado', 'Checkout Iniciado', 'Produto Adicionado'],
       actions: ['Enviar WhatsApp', 'Oferecer Desconto', 'Reengajar no Instagram'],
       conversion: '24%',
-      color: '#F97316'
+      color: '#d0ff00'
     },
     {
       id: 'client-onboarding',
@@ -267,7 +266,7 @@ const Features = () => {
       triggers: ['Primeira Compra', 'Assinatura Iniciada', 'Cadastro Completo'],
       actions: ['Enviar Boas-vindas', 'Agendar Reunião', 'Enviar Material de Treinamento'],
       conversion: '89%',
-      color: '#0EA5E9'
+      color: '#d0ff00'
     }
   ];
 
@@ -377,50 +376,50 @@ const Features = () => {
                 
                 <div className="bg-black/30 border border-[#d0ff00]/10 rounded-lg p-5 mb-6 flex-grow">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="h-8 w-8 rounded-full bg-[#9b87f5]/10 flex items-center justify-center border border-[#9b87f5]/30">
-                      <FormInput className="h-4 w-4 text-[#9b87f5]" />
+                    <div className="h-8 w-8 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
+                      <FormInput className="h-4 w-4 text-[#d0ff00]" />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white text-sm font-medium">Nutrição de Leads</h4>
                       <div className="flex items-center mt-1">
-                        <span className="text-[#9b87f5] text-xs font-medium">Conversão: 32%</span>
+                        <span className="text-[#d0ff00] text-xs font-medium">Conversão: 32%</span>
                         <span className="mx-2 text-white/30">•</span>
                         <span className="text-white/50 text-xs">Ativa há 47 dias</span>
                       </div>
                     </div>
-                    <div className="bg-[#9b87f5]/20 rounded-full px-2 py-0.5 text-xs text-[#9b87f5]">
+                    <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
                       +204 leads
                     </div>
                   </div>
 
                   <div className="mt-5 relative">
-                    <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#9b87f5]/20"></div>
+                    <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#d0ff00] to-[#d0ff00]/20"></div>
                     
                     <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#9b87f5] z-10 shrink-0">
-                        <FormInput className="h-5 w-5 text-white" />
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
+                        <FormInput className="h-5 w-5 text-black" />
                       </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#9b87f5]/30">
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
                         <h5 className="text-white text-sm font-medium mb-1">Trigger: Formulário Preenchido</h5>
                         <p className="text-white/60 text-xs">O lead preenche o formulário de captura no seu site</p>
                       </div>
                     </div>
                     
                     <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#F97316] z-10 shrink-0">
-                        <Filter className="h-5 w-5 text-white" />
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
+                        <Filter className="h-5 w-5 text-black" />
                       </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#F97316]/30">
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
                         <h5 className="text-white text-sm font-medium mb-1">Condição: Interesse no Produto X?</h5>
                         <p className="text-white/60 text-xs">Se marcou interesse no produto X, segue fluxo A, senão segue fluxo B</p>
                       </div>
                     </div>
                     
                     <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#0EA5E9] z-10 shrink-0">
-                        <Mail className="h-5 w-5 text-white" />
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
+                        <Mail className="h-5 w-5 text-black" />
                       </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#0EA5E9]/30">
+                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
                         <h5 className="text-white text-sm font-medium mb-1">Ação: Enviar Sequência de E-mails</h5>
                         <p className="text-white/60 text-xs">Envia 3 e-mails ao longo de 7 dias com conteúdo educativo</p>
                       </div>
@@ -509,21 +508,20 @@ const Features = () => {
             {automationExamples.map((example) => (
               <div 
                 key={example.id}
-                className="bg-black/40 border border-[#d0ff00]/10 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/30"
+                className="bg-black border border-[#d0ff00]/20 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/40"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div 
-                    style={{ backgroundColor: `${example.color}10`, borderColor: `${example.color}30` }}
-                    className="h-10 w-10 rounded-lg flex items-center justify-center border"
+                    className="h-10 w-10 rounded-lg flex items-center justify-center border bg-[#d0ff00]/10 border-[#d0ff00]/30"
                   >
-                    {example.id === 'lead-nurturing' && <FormInput style={{ color: example.color }} className="h-5 w-5" />}
-                    {example.id === 'abandoned-cart' && <ShoppingCart style={{ color: example.color }} className="h-5 w-5" />}
-                    {example.id === 'client-onboarding' && <BadgeCheck style={{ color: example.color }} className="h-5 w-5" />}
+                    {example.id === 'lead-nurturing' && <FormInput className="h-5 w-5 text-[#d0ff00]" />}
+                    {example.id === 'abandoned-cart' && <ShoppingCart className="h-5 w-5 text-[#d0ff00]" />}
+                    {example.id === 'client-onboarding' && <BadgeCheck className="h-5 w-5 text-[#d0ff00]" />}
                   </div>
                   <div>
                     <h3 className="text-white font-medium">{example.title}</h3>
                     <div className="flex items-center mt-1">
-                      <span style={{ color: example.color }} className="text-xs font-medium">Conversão: {example.conversion}</span>
+                      <span className="text-[#d0ff00] text-xs font-medium">Conversão: {example.conversion}</span>
                     </div>
                   </div>
                 </div>
@@ -547,8 +545,7 @@ const Features = () => {
                     {example.actions.map((action, idx) => (
                       <div 
                         key={idx} 
-                        className="border rounded-full py-1 px-2.5 text-xs"
-                        style={{ borderColor: `${example.color}30`, color: example.color, backgroundColor: `${example.color}05` }}
+                        className="border rounded-full py-1 px-2.5 text-xs bg-[#d0ff00]/5 border-[#d0ff00]/30 text-[#d0ff00]"
                       >
                         {action}
                       </div>
@@ -557,12 +554,7 @@ const Features = () => {
                 </div>
                 
                 <button 
-                  className="w-full mt-5 py-2 rounded-lg text-sm font-medium border transition-all"
-                  style={{ 
-                    borderColor: `${example.color}50`,
-                    color: example.color,
-                    backgroundColor: `${example.color}10`
-                  }}
+                  className="w-full mt-5 py-2 rounded-lg text-sm font-medium bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300"
                 >
                   Usar Template
                 </button>
