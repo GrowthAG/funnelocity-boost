@@ -4,6 +4,7 @@ import { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription }
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Check, ArrowDown, DollarSign } from 'lucide-react';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 
 const ActiveIntegrations = () => {
   const { toast } = useToast();
@@ -97,7 +98,7 @@ const ActiveIntegrations = () => {
   
   return (
     <Card className="bg-black/40 border border-[#d0ff00]/10 shadow-md col-span-1 md:col-span-3">
-      <CardHeader className="relative">
+      <CardHeader className="relative pb-0">
         <div className="absolute top-4 right-4">
           <img 
             src="/lovable-uploads/3a771a88-69f5-4e59-a54e-cc23daedc64e.png" 
@@ -111,45 +112,47 @@ const ActiveIntegrations = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-[#d0ff00] text-black">
-                <th className="py-3 px-4 text-left rounded-tl-lg">Ferramenta GrowthFunnels</th>
-                <th className="py-3 px-4 text-left">Substitui</th>
-                <th className="py-3 px-4 text-right rounded-tr-lg">Valor mensal</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#d0ff00]/10">
+        <div className="overflow-hidden rounded-lg mt-4">
+          <Table>
+            <TableHeader className="bg-[#d0ff00]">
+              <TableRow>
+                <TableHead className="text-black font-bold">Ferramenta GrowthFunnels</TableHead>
+                <TableHead className="text-black font-bold">Substitui</TableHead>
+                <TableHead className="text-black font-bold text-right">Valor mensal</TableHead>
+                <TableHead className="text-black font-bold w-10"></TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {replacementTools.map((tool, index) => (
-                <tr 
+                <TableRow 
                   key={index} 
-                  className="hover:bg-white/5 transition-colors"
+                  className="border-b border-[#d0ff00]/10 hover:bg-white/5"
                 >
-                  <td className="py-3 px-4 text-white">{tool.name}</td>
-                  <td className="py-3 px-4">
+                  <TableCell className="text-white py-3">{tool.name}</TableCell>
+                  <TableCell className="py-3">
                     <div className="flex flex-wrap gap-2">
                       {tool.tools.map((toolName, idx) => (
                         <span 
                           key={idx} 
-                          className="bg-white/5 text-white/80 text-sm px-2 py-1 rounded-md border border-white/10"
+                          className="bg-black/60 text-white px-2 py-1 rounded-md border border-[#d0ff00]/20 text-sm"
                         >
                           {toolName}
                         </span>
                       ))}
                     </div>
-                  </td>
-                  <td className="py-3 px-4 text-white text-right">{tool.value}</td>
-                </tr>
+                  </TableCell>
+                  <TableCell className="text-white text-right py-3">{tool.value}/mês</TableCell>
+                  <TableCell className="text-right py-3">
+                    <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-            <tfoot>
-              <tr className="bg-[#d0ff00]/10">
-                <td className="py-4 px-4 text-white font-bold">Total</td>
-                <td className="py-4 px-4"></td>
-                <td className="py-4 px-4 text-right">
+              <TableRow className="bg-[#d0ff00]/10 border-t border-[#d0ff00]/30">
+                <TableCell className="text-white font-bold py-4">Total</TableCell>
+                <TableCell className="py-4"></TableCell>
+                <TableCell className="py-4 text-right">
                   <div className="flex items-center justify-end gap-3">
-                    <span className="text-red-500/70 line-through">{totalSaving}</span>
+                    <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
                     <div className="flex items-center">
                       <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
                       <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
@@ -159,10 +162,13 @@ const ActiveIntegrations = () => {
                       <span className="text-[#d0ff00] text-xs font-medium">90%</span>
                     </div>
                   </div>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+                </TableCell>
+                <TableCell className="py-4 text-right">
+                  <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

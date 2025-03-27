@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, HelpCircle, Plus } from 'lucide-react';
+import { CheckCircle, HelpCircle, Plus, Check, ArrowDown, DollarSign } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -12,6 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 
 const Pricing = () => {
   useEffect(() => {
@@ -102,20 +102,19 @@ const Pricing = () => {
     }
   ];
 
-  // Summary of what the platform replaces
   const replacementTools = [
-    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês" },
-    { name: "Funis de vendas", value: "R$ 1.507,22/mês" },
-    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês" },
-    { name: "Construtor de sites", value: "R$ 248,75/mês" },
-    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês" },
-    { name: "E-mail marketing", value: "R$ 406,25/mês" },
-    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês" },
-    { name: "Automações de marketing", value: "R$ 858,20/mês" },
-    { name: "Cursos/Produtos", value: "R$ 492,54/mês" },
-    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês" },
-    { name: "Gestão de reputação", value: "R$ 2.448/mês" },
-    { name: "Analytics", value: "R$ 126,96/mês" }
+    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês", tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"] },
+    { name: "Funis de vendas", value: "R$ 1.507,22/mês", tools: ["Salesforce", "Pipefy", "HubSpot"] },
+    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês", tools: ["mLabs", "Etus"] },
+    { name: "Construtor de sites", value: "R$ 248,75/mês", tools: ["WordPress", "Wix", "Webflow"] },
+    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês", tools: ["Typeform", "Google Forms", "Respond.io"] },
+    { name: "E-mail marketing", value: "R$ 406,25/mês", tools: ["Brevo", "Mailchimp", "ActiveCampaign"] },
+    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês", tools: ["Calendly", "Google Calendar"] },
+    { name: "Automações de marketing", value: "R$ 858,20/mês", tools: ["ActiveCampaign", "Salesforce Marketing Cloud"] },
+    { name: "Cursos/Produtos", value: "R$ 492,54/mês", tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"] },
+    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês", tools: ["GoTo Connect", "Twilio"] },
+    { name: "Gestão de reputação", value: "R$ 2.448/mês", tools: ["Trustpilot"] },
+    { name: "Analytics", value: "R$ 126,96/mês", tools: ["Mixpanel", "Amplitude"] }
   ];
   
   const totalSaving = "R$ 10.122,40";
@@ -256,7 +255,6 @@ const Pricing = () => {
             ))}
           </div>
           
-          {/* Cost Comparison */}
           <div className="mt-20 bg-white/5 rounded-xl overflow-hidden border border-[#d0ff00]/10">
             <div className="p-6 border-b border-[#d0ff00]/10">
               <h3 className="text-2xl font-bold text-white">Quanto você economiza com GrowthFunnels?</h3>
@@ -264,7 +262,66 @@ const Pricing = () => {
             </div>
             
             <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="overflow-hidden rounded-lg">
+                <Table>
+                  <TableHeader className="bg-[#d0ff00]">
+                    <TableRow>
+                      <TableHead className="text-black font-bold">Ferramenta GrowthFunnels</TableHead>
+                      <TableHead className="text-black font-bold">Substitui</TableHead>
+                      <TableHead className="text-black font-bold text-right">Valor mensal</TableHead>
+                      <TableHead className="text-black font-bold w-10"></TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {replacementTools.map((tool, index) => (
+                      <TableRow 
+                        key={index} 
+                        className="border-b border-[#d0ff00]/10 hover:bg-white/5"
+                      >
+                        <TableCell className="text-white py-3">{tool.name}</TableCell>
+                        <TableCell className="py-3">
+                          <div className="flex flex-wrap gap-2">
+                            {tool.tools.map((toolName, idx) => (
+                              <span 
+                                key={idx} 
+                                className="bg-black/60 text-white px-2 py-1 rounded-md border border-[#d0ff00]/20 text-sm"
+                              >
+                                {toolName}
+                              </span>
+                            ))}
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-white text-right py-3">{tool.value}</TableCell>
+                        <TableCell className="text-right py-3">
+                          <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                    <TableRow className="bg-[#d0ff00]/10 border-t border-[#d0ff00]/30">
+                      <TableCell className="text-white font-bold py-4">Total</TableCell>
+                      <TableCell className="py-4"></TableCell>
+                      <TableCell className="py-4 text-right">
+                        <div className="flex items-center justify-end gap-3">
+                          <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
+                          <div className="flex items-center">
+                            <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
+                            <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
+                          </div>
+                          <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
+                            <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
+                            <span className="text-[#d0ff00] text-xs font-medium">90%</span>
+                          </div>
+                        </div>
+                      </TableCell>
+                      <TableCell className="py-4 text-right">
+                        <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <div>
                   <Card className="bg-black border border-[#d0ff00]/20">
                     <CardHeader>
