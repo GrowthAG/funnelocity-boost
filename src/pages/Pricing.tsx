@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, HelpCircle, Plus, Check, ArrowDown, DollarSign } from 'lucide-react';
+import { CheckCircle, HelpCircle, Plus, Check, ArrowDown, Shield } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -241,7 +241,10 @@ const Pricing = () => {
           
           <div className="mt-20 bg-white/5 rounded-xl overflow-hidden border border-[#d0ff00]/10">
             <div className="p-6 border-b border-[#d0ff00]/10">
-              <h3 className="text-2xl font-bold text-white">Quanto você economiza com GrowthFunnels?</h3>
+              <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                <Shield className="h-6 w-6 text-[#d0ff00]" />
+                Quanto você economiza com GrowthFunnels?
+              </h3>
               <p className="text-white/70 mt-2">A plataforma substitui mais de 12 ferramentas diferentes</p>
             </div>
             
@@ -253,57 +256,6 @@ const Pricing = () => {
                 showHeader={false}
                 showFooter={false}
               />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div>
-                  <Card className="bg-black border border-[#d0ff00]/20">
-                    <CardHeader>
-                      <CardTitle className="text-white">O que você substituirá:</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-3">
-                        {replacementToolsData.map((tool, index) => (
-                          <li key={index} className="flex justify-between pb-2 border-b border-white/10">
-                            <span className="text-white/80">{tool.name}</span>
-                            <span className="text-white">{tool.value}</span>
-                          </li>
-                        ))}
-                        <li className="flex justify-between pt-2">
-                          <span className="text-white font-bold">Total:</span>
-                          <span className="text-[#d0ff00] font-bold">{totalSavingData}/mês</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                
-                <div>
-                  <Card className="bg-black border border-[#d0ff00]/20 h-full">
-                    <CardHeader>
-                      <CardTitle className="text-white">Com GrowthFunnels você paga:</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-col items-center justify-center h-full space-y-6">
-                        <div className="text-center">
-                          <p className="text-white/70 mb-2">A partir de:</p>
-                          <p className="text-5xl font-bold text-[#d0ff00]">R$ 497<span className="text-white/70 text-base">/mês</span></p>
-                        </div>
-                        
-                        <div className="text-center">
-                          <p className="text-white/70 mb-2">Economia de até:</p>
-                          <p className="text-3xl font-bold text-white">90%</p>
-                        </div>
-                        
-                        <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] mt-4 font-bold" size="lg">
-                            Contratar Plano PRO
-                          </Button>
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
             </div>
           </div>
           
