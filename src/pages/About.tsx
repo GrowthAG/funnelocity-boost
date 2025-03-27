@@ -13,34 +13,6 @@ const About = () => {
   
   const isMobile = useIsMobile();
 
-  const timelineEvents = [
-    {
-      year: '2019',
-      title: 'Fundação',
-      description: 'Growth Funnels é fundada com a missão de democratizar o acesso a ferramentas avançadas de marketing e vendas.'
-    },
-    {
-      year: '2020',
-      title: 'Primeiro MVP',
-      description: 'Lançamento da primeira versão do produto com foco em automação de e-mails e CRM básico.'
-    },
-    {
-      year: '2021',
-      title: 'Expansão',
-      description: 'Integração com plataformas de mídia paga e adição de recursos avançados de CRM e automação.'
-    },
-    {
-      year: '2022',
-      title: 'Crescimento',
-      description: 'Alcance de 500 clientes ativos e expansão da equipe para 25 colaboradores.'
-    },
-    {
-      year: '2023',
-      title: 'Integração de IA',
-      description: 'Implementação de recursos de inteligência artificial para otimização de campanhas e análise preditiva.'
-    }
-  ];
-
   const values = [
     {
       title: 'Inovação',
@@ -67,8 +39,8 @@ const About = () => {
       <main className="pt-20 md:pt-24 pb-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white mobile-friendly-text">
-              Por trás do <span className="text-gradient">GrowthFunnels</span>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white mobile-friendly-text flex items-center justify-center">
+              Por trás do <img src="/lovable-uploads/376df737-1d25-4a27-97fd-bbf94bbc1232.png" alt="GrowthFunnels" className="h-10 md:h-14 ml-2" />
             </h1>
             <p className="text-lg md:text-xl text-white/80 mobile-friendly-text">
               Somos obcecados por crescimento, automação e resultados reais.
@@ -93,37 +65,6 @@ const About = () => {
                   <div key={index} className="bg-white/5 p-4 md:p-5 rounded-lg">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 text-growth-green">{value.title}</h3>
                     <p className="text-sm md:text-base text-white/80">{value.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="mb-16 md:mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 text-white text-center">Nossa História</h2>
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-growth-green/30"></div>
-              
-              {/* Timeline events */}
-              <div className="space-y-8 md:space-y-12">
-                {timelineEvents.map((event, index) => (
-                  <div 
-                    key={index} 
-                    className={`relative flex flex-col md:flex-row md:items-center ${
-                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
-                  >
-                    <div className="md:flex-1 p-4 md:p-6 feature-card md:max-w-[calc(50%-2rem)] ml-10 md:ml-0">
-                      <h3 className="text-lg md:text-xl font-bold text-growth-green mb-2">{event.title}</h3>
-                      <p className="text-sm md:text-base text-white/80">{event.description}</p>
-                    </div>
-                    <div className="z-10 flex-shrink-0 absolute top-0 left-0 md:static">
-                      <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-growth-green flex items-center justify-center mx-0 md:mx-4 text-black font-bold text-xs md:text-base">
-                        {event.year}
-                      </div>
-                    </div>
-                    <div className="hidden md:block md:flex-1"></div>
                   </div>
                 ))}
               </div>
