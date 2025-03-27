@@ -18,13 +18,13 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <div className="py-10 md:py-24"></div>
+        <div className="py-6 md:py-12"></div>
         <Features />
-        <div className="py-16 md:py-24"></div>
+        <div className="py-8 md:py-16"></div>
         <Metrics />
-        <div className="py-16 md:py-24"></div>
+        <div className="py-8 md:py-16"></div>
         <Testimonials />
-        <div className="py-16 md:py-24"></div>
+        <div className="py-8 md:py-16"></div>
         <CTA />
       </main>
       <Footer />
