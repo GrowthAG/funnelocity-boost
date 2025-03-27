@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
@@ -15,16 +14,16 @@ const CTA = () => {
           Junte-se a milhares de empresas que usam Funnels para automatizar processos, converter mais leads e aumentar sua receita recorrente.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-5">
-          <Link to="/trial">
+          <a href="https://app.growthfunnels.com.br/trial" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-[#d0ff00] hover:bg-[#b3e600] text-black w-full sm:w-auto px-8 py-6 text-lg">
               Testar Grátis por 14 Dias <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </Link>
-          <Link to="/demo">
+          </a>
+          <a href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" target="_blank" rel="noopener noreferrer">
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 w-full sm:w-auto px-8 py-6 text-lg">
               Agendar Demonstração
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

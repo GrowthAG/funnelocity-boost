@@ -54,19 +54,22 @@ const Navbar = () => {
           <Link to="/blog" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Blog
           </Link>
+          <Link to="https://growthfunnels.com.br/afiliados" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
+            Afiliados
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Link to="/login">
+          <a href="https://app.growthfunnels.com.br/" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" className="text-white hover:text-[#d0ff00] hover:bg-white/5">
               Login
             </Button>
-          </Link>
-          <Link to="/demo">
+          </a>
+          <a href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" target="_blank" rel="noopener noreferrer">
             <Button className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium">
               Agendar Demo
             </Button>
-          </Link>
+          </a>
         </div>
 
         <button 
@@ -117,25 +120,38 @@ const Navbar = () => {
             >
               Blog
             </Link>
+            <a 
+              href="https://growthfunnels.com.br/afiliados" 
+              className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
+              onClick={() => setIsOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Afiliados
+            </a>
             <div className="pt-4 flex flex-col space-y-3">
-              <Link 
-                to="/login" 
+              <a 
+                href="https://app.growthfunnels.com.br/" 
                 className="w-full"
                 onClick={() => setIsOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button variant="outline" className="w-full border-[#d0ff00]/30 text-white hover:bg-white/5">
                   Login
                 </Button>
-              </Link>
-              <Link 
-                to="/demo" 
+              </a>
+              <a 
+                href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" 
                 className="w-full"
                 onClick={() => setIsOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button className="w-full bg-[#d0ff00] hover:bg-[#b3e600] text-black">
                   Agendar Demo
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
