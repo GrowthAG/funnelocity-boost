@@ -27,10 +27,10 @@ const metrics = [
 
 const Metrics = () => {
   return (
-    <section className="bg-black py-16 md:py-24 px-4 md:px-8 border-t border-[#d0ff00]/10">
+    <section className="bg-black py-10 md:py-14 px-4 md:px-8 border-t border-[#d0ff00]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white leading-tight">
             Resultados que <span className="text-[#d0ff00]">transformam negócios</span>
           </h2>
           <p className="text-base md:text-lg text-white/80">
@@ -38,7 +38,7 @@ const Metrics = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {metrics.map((metric, index) => (
             <div 
               key={index} 

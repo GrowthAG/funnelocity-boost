@@ -5,9 +5,9 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="bg-black min-h-screen pt-24 pb-16 px-4 md:px-8 flex items-center">
+    <div className="bg-black min-h-screen pt-20 pb-8 px-4 md:px-8 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mx-auto max-w-4xl space-y-8 animate-slide-up">
+        <div className="text-center mx-auto max-w-4xl space-y-6 animate-slide-up">
           <div>
             <span className="px-3 py-1 bg-[#d0ff00]/10 border border-[#d0ff00]/30 rounded-full text-[#d0ff00] text-sm font-medium inline-block">
               🚀 Automatize seu crescimento
@@ -31,11 +31,11 @@ const Hero = () => {
               </Button>
             </a>
           </div>
-          <div className="pt-8 md:pt-12 flex flex-col items-center justify-center space-y-4 md:space-y-6">
+          <div className="pt-6 md:pt-8 flex flex-col items-center justify-center space-y-4">
             <p className="text-white/80 text-base md:text-lg">
               Mais de <span className="font-bold text-[#d0ff00]">2,500+</span> empresas já automatizaram seu crescimento
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-lg">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg">
               {[
                 "Substitui até 12 ferramentas",
                 "Economia de até 90%",

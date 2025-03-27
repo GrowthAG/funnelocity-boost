@@ -5,12 +5,12 @@ import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
   return (
-    <section className="py-20 md:py-32 px-4 md:px-8 bg-[#d0ff00]/10 border-y border-[#d0ff00]/20">
+    <section className="py-12 md:py-16 px-4 md:px-8 bg-[#d0ff00]/10 border-y border-[#d0ff00]/20">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-10 text-white leading-tight">
+        <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight">
           Pronto para acelerar seu crescimento?
         </h2>
-        <p className="text-base md:text-xl text-white/80 mb-8 md:mb-14 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
           Junte-se a milhares de empresas que usam o GrowthFunnels para automatizar processos, converter mais leads e aumentar sua receita recorrente. <span className="font-medium text-[#d0ff00]">Garantia de 14 dias: receba 100% do valor de volta se não estiver satisfeito.</span>
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
