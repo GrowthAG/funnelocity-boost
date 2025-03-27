@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/tooltip";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ComparisonTable from '@/components/shared/ComparisonTable';
-import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Pricing = () => {
   useEffect(() => {
@@ -102,6 +101,20 @@ const Pricing = () => {
       checkoutLink: 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd',
       popular: false
     }
+  ];
+
+  const replacementTools = [
+    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71" },
+    { name: "Funis de vendas", value: "R$ 1.507,22" },
+    { name: "Planejamento de redes sociais", value: "R$ 24,90" },
+    { name: "Construtor de sites", value: "R$ 248,75" },
+    { name: "Formulários e Pesquisas", value: "R$ 457,03" },
+    { name: "E-mail marketing", value: "R$ 406,25" },
+    { name: "Calendário e Agendamentos", value: "R$ 111,72" },
+    { name: "Automações de marketing", value: "R$ 858,20" },
+    { name: "Cursos/Produtos", value: "R$ 492,54" },
+    { name: "Chamadas e monitoramentos", value: "R$ 482,47" },
+    { name: "Gestão de reputação", value: "R$ 2.448,00" }
   ];
 
   return (
@@ -233,11 +246,7 @@ const Pricing = () => {
                   
                   <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button 
-                      className={`w-full py-2.5 ${
-                        plan.popular 
-                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-bold shadow-md hover:shadow-lg shadow-[#d0ff00]/20 hover:shadow-[#d0ff00]/30' 
-                          : 'bg-[#cf0f00] text-white hover:bg-[#b80e00] font-bold shadow-md hover:shadow-lg shadow-[#cf0f00]/20 hover:shadow-[#cf0f00]/30'
-                      }`}
+                      className={`w-full py-2.5`}
                       variant={plan.popular ? "greenNeon" : "redNeon"}
                       size="lg"
                     >
@@ -249,24 +258,11 @@ const Pricing = () => {
             ))}
           </div>
           
-          <div className="mt-20 bg-white/5 rounded-xl overflow-hidden border border-[#d0ff00]/10">
-            <div className="p-6 border-b border-[#d0ff00]/10">
-              <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Shield className="h-6 w-6 text-[#d0ff00]" />
-                Quanto você economiza com GrowthFunnels?
-              </h3>
-              <p className="text-white/70 mt-2">A plataforma substitui mais de 12 ferramentas diferentes</p>
-            </div>
-            
-            <div className="p-6">
-              <ComparisonTable 
-                replacementTools={replacementToolsData}
-                totalSaving={totalSavingData}
-                showHeader={false}
-                showFooter={false}
-                className="mt-0"
-              />
-            </div>
+          <div className="mt-16">
+            <ComparisonTable 
+              replacementTools={replacementTools}
+              totalSaving="R$ 7.539,79"
+            />
           </div>
           
           <div className="mt-16 text-center">
