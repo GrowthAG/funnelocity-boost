@@ -34,13 +34,14 @@ const App = () => (
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} /> {/* Adicionado rota para artigos individuais */}
+          <Route path="/blog/:id" element={<Blog />} /> {/* Rota para artigos individuais */}
           <Route path="/about" element={<About />} />
           
           {/* External redirects */}
           <Route path="/login" element={<ExternalRedirect to="https://app.growthfunnels.com.br/" />} />
           <Route path="/demo" element={<ExternalRedirect to="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" />} />
-          <Route path="/trial" element={<ExternalRedirect to="https://app.growthfunnels.com.br/trial" />} />
+          <Route path="/pro" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/pro" />} />
+          <Route path="/plus" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/plus" />} />
           <Route path="/afiliados" element={<ExternalRedirect to="https://growthfunnels.com.br/afiliados" />} />
           
           {/* These routes will redirect to home for now as placeholders */}

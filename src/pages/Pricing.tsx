@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -41,12 +40,13 @@ const Pricing = () => {
         '$0.0105 Fluxos de trabalho Premium',
         '$0.002625 Verificação de e-mail',
         '$0.0945 Conteúdo de IA',
-        '$0.0315 Fluxo de trabalho com IA',
+        '$0.0315 Fluxos de trabalho com IA',
         '$0.021 Por mensagem para IA',
         '$0.0777 Conversa no WhatsApp',
         '$0.0004254 Por e-mail disparado'
       ],
-      cta: 'ESCOLHER PLANO',
+      cta: 'CONTRATAR PLANO',
+      checkoutLink: 'https://checkout.growthfunnels.com.br/pro',
       popular: false
     },
     {
@@ -70,12 +70,13 @@ const Pricing = () => {
         '$0.0105 Fluxos de trabalho Premium',
         '$0.002625 Verificação de e-mail',
         '$0.0945 Conteúdo de IA',
-        '$0.0315 Fluxo de trabalho com IA',
+        '$0.0315 Fluxos de trabalho com IA',
         '$0.021 Por mensagem para IA',
         '$0.0777 Conversa no WhatsApp',
         '$0.0004254 Por e-mail disparado'
       ],
-      cta: 'ESCOLHER PLANO',
+      cta: 'CONTRATAR PLANO',
+      checkoutLink: 'https://checkout.growthfunnels.com.br/plus',
       popular: true
     },
     {
@@ -95,6 +96,7 @@ const Pricing = () => {
       ],
       additionalCosts: [],
       cta: 'FALE CONOSCO',
+      checkoutLink: 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd',
       popular: false
     }
   ];
@@ -236,18 +238,18 @@ const Pricing = () => {
                     <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-5 mx-1" />
                   </div>
                   
-                  <Link to={index === 2 ? "/demo" : "/trial"} className="w-full">
+                  <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button 
                       className={`w-full ${
                         plan.popular 
-                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-semibold' 
+                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-bold' 
                           : 'border border-[#d0ff00]/60 text-[#d0ff00] hover:bg-[#d0ff00]/10 font-medium'
                       }`}
                       size="lg"
                     >
                       {plan.cta}
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
@@ -301,11 +303,11 @@ const Pricing = () => {
                           <p className="text-3xl font-bold text-white">90%</p>
                         </div>
                         
-                        <Link to="/trial">
-                          <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] mt-4" size="lg">
-                            Testar Grátis por 14 Dias
+                        <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer">
+                          <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] mt-4 font-bold" size="lg">
+                            Contratar Plano PRO
                           </Button>
-                        </Link>
+                        </a>
                       </div>
                     </CardContent>
                   </Card>
