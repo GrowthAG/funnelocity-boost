@@ -6,6 +6,7 @@ import { CheckCircle, XCircle, FormInput, Tag, Filter, Mail, Calendar, MessageCi
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableFooter } from "@/components/ui/table";
+
 const Features = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,7 +27,6 @@ const Features = () => {
     label: "👥 CRM & Outras Ferramentas"
   }];
 
-  // Example workflow data
   const automationWorkflow = {
     title: "Sequência de Nutrição de Leads",
     conversion: "32%",
@@ -56,6 +56,7 @@ const Features = () => {
       color: "#d0ff00"
     }]
   };
+
   const features = {
     adManager: [{
       name: 'Google Ads Report',
@@ -135,150 +136,151 @@ const Features = () => {
     }]
   };
 
-  // Enhanced competitor tools data with properly organized logos
   const replacementTools = [{
     name: "CRM & Pipeline de Vendas",
     value: "R$ 502,71/mês",
     logos: [{
       name: "Pipedrive",
-      src: "https://cdn.simpleicons.org/pipedrive/white"
+      src: "/lovable-uploads/8d450804-20c6-46f6-9f0c-836bc0fa3ec2.png"
     }, {
       name: "Close",
-      src: "https://cdn.simpleicons.org/close/white"
+      src: "/lovable-uploads/8d450804-20c6-46f6-9f0c-836bc0fa3ec2.png"
     }, {
       name: "ActiveCampaign",
-      src: "https://cdn.simpleicons.org/activecampaign/white"
+      src: "/lovable-uploads/a8f3967f-41d1-4cb2-a034-907784d5d507.png"
     }, {
       name: "Salesflare",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/salesflare.png"
+      src: "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png"
     }]
   }, {
     name: "Funis de vendas",
     value: "R$ 1.507,22/mês",
     logos: [{
       name: "Salesforce",
-      src: "https://cdn.simpleicons.org/salesforce/white"
+      src: "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png"
     }, {
       name: "Pipefy",
-      src: "https://cdn.simpleicons.org/pipefy/white"
+      src: "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png"
     }, {
       name: "HubSpot",
-      src: "https://cdn.simpleicons.org/hubspot/white"
+      src: "/lovable-uploads/a8f3967f-41d1-4cb2-a034-907784d5d507.png"
     }]
   }, {
     name: "Planejamento de redes sociais",
     value: "R$ 24,90/mês",
     logos: [{
       name: "mLabs",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/mlabs.png"
+      src: "/lovable-uploads/8ba59a61-7e7a-49e9-adf2-e08574abd59b.png"
     }, {
       name: "Etus",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/etus.png"
+      src: "/lovable-uploads/2c2112ad-609f-45d0-a9c7-bf4fa9821097.png"
     }]
   }, {
     name: "Construtor de sites",
     value: "R$ 248,75/mês",
     logos: [{
       name: "WordPress",
-      src: "https://cdn.simpleicons.org/wordpress/white"
+      src: "/lovable-uploads/8dfd3a2f-5b18-4462-b6b2-33a8acefd6f7.png"
     }, {
       name: "Wix",
-      src: "https://cdn.simpleicons.org/wix/white"
+      src: "/lovable-uploads/8dfd3a2f-5b18-4462-b6b2-33a8acefd6f7.png"
     }, {
       name: "Webflow",
-      src: "https://cdn.simpleicons.org/webflow/white"
+      src: "/lovable-uploads/8dfd3a2f-5b18-4462-b6b2-33a8acefd6f7.png"
     }]
   }, {
     name: "Formulários e Pesquisas",
     value: "R$ 457,03/mês",
     logos: [{
       name: "Typeform",
-      src: "https://cdn.simpleicons.org/typeform/white"
+      src: "/lovable-uploads/60db33c2-03f0-4a6c-8895-126a032cd6f3.png"
     }, {
       name: "Google Forms",
-      src: "https://cdn.simpleicons.org/googleforms/white"
+      src: "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png"
     }, {
       name: "Respond.io",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/respond-io.png"
+      src: "/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png"
     }]
   }, {
     name: "E-mail marketing",
     value: "R$ 406,25/mês",
     logos: [{
       name: "Brevo",
-      src: "https://cdn.simpleicons.org/brevo/white"
+      src: "/lovable-uploads/a370bacb-4932-489a-80b1-47f3030227c3.png"
     }, {
       name: "Mailchimp",
-      src: "https://cdn.simpleicons.org/mailchimp/white"
+      src: "/lovable-uploads/a370bacb-4932-489a-80b1-47f3030227c3.png"
     }, {
       name: "ActiveCampaign",
-      src: "https://cdn.simpleicons.org/activecampaign/white"
+      src: "/lovable-uploads/a8f3967f-41d1-4cb2-a034-907784d5d507.png"
     }]
   }, {
     name: "Calendário e Agendamentos",
     value: "R$ 111,72/mês",
     logos: [{
       name: "Calendly",
-      src: "https://cdn.simpleicons.org/calendly/white"
+      src: "/lovable-uploads/cb262656-76f3-4604-bea4-c8d1a91f4cd8.png"
     }, {
       name: "Google Calendar",
-      src: "https://cdn.simpleicons.org/googlecalendar/white"
+      src: "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png"
     }]
   }, {
     name: "Automações de marketing",
     value: "R$ 858,20/mês",
     logos: [{
       name: "ActiveCampaign",
-      src: "https://cdn.simpleicons.org/activecampaign/white"
+      src: "/lovable-uploads/a8f3967f-41d1-4cb2-a034-907784d5d507.png"
     }, {
       name: "Salesforce Marketing Cloud",
-      src: "https://cdn.simpleicons.org/salesforce/white"
+      src: "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png"
     }]
   }, {
     name: "Cursos/Produtos",
     value: "R$ 492,54/mês",
     logos: [{
       name: "Hotmart",
-      src: "https://cdn.simpleicons.org/hotmart/white"
+      src: "/lovable-uploads/fafd30ca-de73-40a1-accf-bb56a14b939d.png"
     }, {
       name: "Eduzz",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/eduzz.png"
+      src: "/lovable-uploads/f157b2b4-81b3-47df-9349-f2b5e65e6fac.png"
     }, {
       name: "Kiwify",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/kiwify.png"
+      src: "/lovable-uploads/abaa61f2-0495-45f4-8d2f-7de74d200d17.png"
     }, {
       name: "HeroSpark",
-      src: "https://img.icons8.com/ios-filled/50/FFFFFF/herospark.png"
+      src: "/lovable-uploads/f9fa06e2-b163-447f-8bdd-318737e3fb97.png"
     }]
   }, {
     name: "Chamadas e monitoramentos",
     value: "R$ 482,47/mês",
     logos: [{
       name: "GoTo Connect",
-      src: "https://cdn.simpleicons.org/goto/white"
+      src: "/lovable-uploads/cb262656-76f3-4604-bea4-c8d1a91f4cd8.png"
     }, {
       name: "Twilio",
-      src: "https://cdn.simpleicons.org/twilio/white"
+      src: "/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png"
     }]
   }, {
     name: "Gestão de reputação",
     value: "R$ 2.448,00/mês",
     logos: [{
       name: "Trustpilot",
-      src: "https://cdn.simpleicons.org/trustpilot/white"
+      src: "/lovable-uploads/2c2112ad-609f-45d0-a9c7-bf4fa9821097.png"
     }]
   }, {
     name: "Analytics",
     value: "R$ 126,96/mês",
     logos: [{
       name: "Mixpanel",
-      src: "https://cdn.simpleicons.org/mixpanel/white"
+      src: "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png"
     }, {
       name: "Amplitude",
-      src: "https://cdn.simpleicons.org/amplitude/white"
+      src: "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png"
     }]
   }];
+
   const totalSaving = "R$ 10.122,40";
+
   const FeatureTable = ({
     featureList
   }: {
@@ -304,11 +306,11 @@ const Features = () => {
       </table>
     </div>;
 
-  // Function to render logo
   const renderToolLogo = (logo: {
     name: string;
     src: string;
   }) => <img key={logo.name} src={logo.src} alt={`${logo.name} logo`} title={logo.name} className="h-8 w-auto max-w-[100px] object-fill" />;
+
   return <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
       
@@ -323,7 +325,6 @@ const Features = () => {
             </p>
           </div>
           
-          {/* Comparison table showing all tools GrowthFunnels replaces */}
           <div className="mb-20">
             <div className="text-center max-w-3xl mx-auto mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
@@ -348,11 +349,7 @@ const Features = () => {
                   </div>
                   <div className="col-span-1 hidden md:block">
                     <div className="flex justify-end">
-                      <img alt="Growth Funnels Logo" className="h-12 w-auto object-contain brightness-0 invert" style={{
-                      objectPosition: "-220px -40px",
-                      objectFit: "none",
-                      width: "120px"
-                    }} src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440aa621c6930bf14f89.png" />
+                      <img alt="Growth Funnels Logo" className="h-12 w-auto object-contain brightness-0" src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" />
                     </div>
                   </div>
                 </div>
@@ -367,7 +364,7 @@ const Features = () => {
                       <div className="col-span-4 md:col-span-3">
                         <div className="flex flex-wrap justify-center items-center gap-2 bg-black/60 backdrop-blur-sm p-2 rounded-lg border border-white/10">
                           {tool.logos.map(logo => <div key={logo.name} className="flex items-center justify-center p-1">
-                              {renderToolLogo(logo)}
+                              <img src={logo.src} alt={logo.name} className="h-5 w-auto max-w-[24px] object-contain" />
                             </div>)}
                         </div>
                       </div>
@@ -445,9 +442,7 @@ const Features = () => {
                         <Button className="text-xs bg-[#d0ff00] hover:bg-[#b3e600] text-black">Ver Detalhes</Button>
                       </div>
                       
-                      {/* Workflow Visual Steps */}
                       <div className="mt-6 relative">
-                        {/* Timeline connector */}
                         <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#9b87f5] to-[#d0ff00]"></div>
                         
                         {automationWorkflow.steps.map((step, index) => <div key={index} className="flex mb-5 relative">
@@ -465,7 +460,6 @@ const Features = () => {
                           </div>)}
                       </div>
                       
-                      {/* Integrações */}
                       <div className="mt-6 pt-5 border-t border-[#d0ff00]/10">
                         <h4 className="text-white/80 text-sm font-medium mb-3">Integrações Disponíveis:</h4>
                         <div className="flex flex-wrap gap-2">
@@ -522,4 +516,5 @@ const Features = () => {
       <Footer />
     </div>;
 };
+
 export default Features;

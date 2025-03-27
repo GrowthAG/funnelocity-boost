@@ -23,15 +23,28 @@ const toolLogoMap: Record<string, string> = {
   "HeroSpark": "/lovable-uploads/f9fa06e2-b163-447f-8bdd-318737e3fb97.png",
   "GoTo": "/lovable-uploads/cb262656-76f3-4604-bea4-c8d1a91f4cd8.png",
   "Twilio": "/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png",
-  "Google Analytics": "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png",
+  "Google Analytics": "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png", 
   "Amplitude": "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png",
-  "Vimeo": "/lovable-uploads/f92386a0-e945-4e18-aef0-2d3878722d3b.png"
+  "Vimeo": "/lovable-uploads/f92386a0-e945-4e18-aef0-2d3878722d3b.png",
+  "WordPress": "/lovable-uploads/8dfd3a2f-5b18-4462-b6b2-33a8acefd6f7.png",
+  "Wix": "/lovable-uploads/8dfd3a2f-5b18-4462-b6b2-33a8acefd6f7.png",
+  "Google Forms": "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png",
+  "Calendly": "/lovable-uploads/cb262656-76f3-4604-bea4-c8d1a91f4cd8.png",
+  "Google Calendar": "/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png",
+  "Trustpilot": "/lovable-uploads/2c2112ad-609f-45d0-a9c7-bf4fa9821097.png",
+  "Mixpanel": "/lovable-uploads/4f7a5365-d10b-430c-a678-34f30b6019f3.png",
+  "Close": "/lovable-uploads/8d450804-20c6-46f6-9f0c-836bc0fa3ec2.png",
+  "Salesflare": "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png",
+  "Pipefy": "/lovable-uploads/47794046-44aa-411e-9cb6-c1a081dfedad.png",
+  "HubSpot": "/lovable-uploads/a8f3967f-41d1-4cb2-a034-907784d5d507.png",
+  "Mailchimp": "/lovable-uploads/a370bacb-4932-489a-80b1-47f3030227c3.png",
+  "Respond.io": "/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png"
 };
 
 // Helper function to get the logo URL by tool name
 const getToolLogoUrl = (toolName: string): string | undefined => {
   // Extract the main tool name (ignoring anything after "&" or similar)
-  const mainToolName = toolName.split(/\s+/)[0];
+  const mainToolName = toolName.split(/[\s&]+/)[0];
   return toolLogoMap[mainToolName];
 };
 

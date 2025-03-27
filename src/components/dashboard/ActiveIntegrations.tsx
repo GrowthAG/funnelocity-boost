@@ -57,8 +57,8 @@ const ActiveIntegrations = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-black/30 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-full bg-[#d0ff00]/10 flex items-center justify-center w-10 h-10">
-                <span className="text-[#d0ff00] text-sm font-medium">GA</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-[#d0ff00]/10">
+                <img src="/lovable-uploads/7dffaafa-f42a-4ab3-8cf9-c6998479f2d5.png" alt="Google Ads" className="h-6 w-auto" />
               </div>
               <div>
                 <p className="text-white font-medium">Google Ads</p>
@@ -77,8 +77,8 @@ const ActiveIntegrations = () => {
           
           <div className="bg-black/30 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-full bg-[#d0ff00]/10 flex items-center justify-center w-10 h-10">
-                <span className="text-[#d0ff00] text-sm font-medium">MA</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-[#d0ff00]/10">
+                <img src="/lovable-uploads/83a517c3-07d2-4fc2-aacf-53c06faebf6d.png" alt="Meta Ads" className="h-6 w-auto" />
               </div>
               <div>
                 <p className="text-white font-medium">Meta Ads</p>
@@ -97,8 +97,8 @@ const ActiveIntegrations = () => {
           
           <div className="bg-black/30 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-full bg-[#d0ff00]/10 flex items-center justify-center w-10 h-10">
-                <span className="text-[#d0ff00] text-sm font-medium">ZP</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-[#d0ff00]/10">
+                <img src="/lovable-uploads/1d6c3d72-1270-43d4-b0bb-1300829056ef.png" alt="Zapier" className="h-6 w-auto" />
               </div>
               <div>
                 <p className="text-white font-medium">Zapier</p>
