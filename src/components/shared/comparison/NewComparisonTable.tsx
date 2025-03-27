@@ -24,9 +24,9 @@ const NewComparisonTable = () => {
               <div className="flex justify-between items-center">
                 <div className="text-black font-bold text-lg">Valor</div>
                 <img 
-                  src="/lovable-uploads/2af2ab0f-347b-4cb0-b0d4-882a872e07fe.png" 
+                  src="/lovable-uploads/af038fe0-e06c-4817-8aa0-3052e485ac5b.png" 
                   alt="GrowthFunnels Logo" 
-                  className="h-8 w-auto" 
+                  className="h-10 w-auto" 
                 />
               </div>
             </div>
