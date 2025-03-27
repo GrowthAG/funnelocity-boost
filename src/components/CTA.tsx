@@ -11,7 +11,7 @@ const CTA = () => {
           Pronto para acelerar seu crescimento?
         </h2>
         <p className="text-base md:text-xl text-white/80 mb-8 md:mb-14 max-w-3xl mx-auto leading-relaxed">
-          Junte-se a milhares de empresas que usam o GrowthFunnels para automatizar processos, converter mais leads e aumentar sua receita recorrente.
+          Junte-se a milhares de empresas que usam o GrowthFunnels para automatizar processos, converter mais leads e aumentar sua receita recorrente. <span className="font-medium text-[#d0ff00]">Garantia de 14 dias: receba 100% do valor de volta se não estiver satisfeito.</span>
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
           <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer">

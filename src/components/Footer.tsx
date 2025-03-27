@@ -43,8 +43,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://app.growthfunnels.com.br/trial" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors">
-                  Teste Grátis
+                <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#d0ff00] transition-colors">
+                  Contratar PRO <span className="text-[#d0ff00] text-xs">(garantia de 14 dias)</span>
                 </a>
               </li>
               <li>
