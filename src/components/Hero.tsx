@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -32,17 +32,23 @@ const Hero = () => {
               </Button>
             </Link>
           </div>
-          <div className="pt-8 flex items-center justify-center space-x-4">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-black border-2 border-[#d0ff00]/40 flex items-center justify-center text-[#d0ff00] text-sm">
-                  {i}
-                </div>
-              ))}
-            </div>
+          <div className="pt-8 flex flex-col items-center justify-center space-y-4">
             <p className="text-white/80 text-sm">
               Mais de <span className="font-bold text-[#d0ff00]">2,500+</span> empresas já automatizaram seu crescimento
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg">
+              {[
+                "Substitui até 12 ferramentas",
+                "Economia de até 90%",
+                "Construtor de páginas",
+                "Automações inteligentes"
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#d0ff00] flex-shrink-0" />
+                  <span className="text-white/90 text-sm">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

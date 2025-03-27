@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle, HelpCircle } from 'lucide-react';
+import { CheckCircle, HelpCircle, Plus } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Pricing = () => {
   useEffect(() => {
@@ -21,54 +22,100 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: 'Starter',
-      price: billingAnnual ? 97 * 10 : 97,
+      name: 'PRO',
+      price: billingAnnual ? 497 * 10 : 497,
       period: billingAnnual ? '/ano' : '/mês',
-      description: 'Para pequenas empresas e empreendedores individuais',
+      description: 'Para pequenas empresas e empreendedores',
       features: [
-        'CRM completo',
-        'Funis de vendas visuais',
-        'Social Planner',
-        'Landing Pages básicas',
-        'Até 1.000 contatos',
-        '1 usuário'
+        'Até 3 usuários (+ R$69 por usuário adicional)',
+        'Até 20.000 contatos',
+        'Agendamentos e Calendários',
+        'Inbox unificado com WhatsApp, Instagram e e-mail',
+        'Construção de Funis/Landing Pages ilimitadas',
+        'Automações de e-mail',
+        'CRM de vendas',
+        'Reputação',
+        'Acesso à RevHackers Academy'
       ],
-      cta: 'Testar Grátis',
+      additionalCosts: [
+        '$0.0105 Fluxos de trabalho Premium',
+        '$0.002625 Verificação de e-mail',
+        '$0.0945 Conteúdo de IA',
+        '$0.0315 Fluxo de trabalho com IA',
+        '$0.021 Por mensagem para IA',
+        '$0.0777 Conversa no WhatsApp',
+        '$0.0004254 Por e-mail disparado'
+      ],
+      cta: 'ESCOLHER PLANO',
       popular: false
     },
     {
-      name: 'Pro',
-      price: billingAnnual ? 197 * 10 : 197,
+      name: 'PLUS',
+      price: billingAnnual ? 697 * 10 : 697,
       period: billingAnnual ? '/ano' : '/mês',
-      description: 'Ideal para empresas em crescimento',
+      description: 'Para empresas em crescimento',
       features: [
-        'Tudo do Starter +',
-        'Automações avançadas',
-        'Workflows personalizados',
-        'Disparos de e-mail',
-        'Até 10.000 contatos',
-        'Até 3 usuários'
+        'Todos os Recursos Pro +',
+        'Até 50.000 contatos',
+        'Workflows e Automações',
+        'Webhooks e APIs',
+        'Gestor de Social Media Completo',
+        'Chat Widgets e Bots de IA',
+        'Ferramenta de Cursos com Certificados (adeus, Hotmart!)',
+        'Pagamentos: crie produtos, faturas, assinaturas, conecte com Stripe e +',
+        'Gestão de afiliados e campanhas',
+        'Ferramenta de Criação de Comunidades'
       ],
-      cta: 'Assinar',
+      additionalCosts: [
+        '$0.0105 Fluxos de trabalho Premium',
+        '$0.002625 Verificação de e-mail',
+        '$0.0945 Conteúdo de IA',
+        '$0.0315 Fluxo de trabalho com IA',
+        '$0.021 Por mensagem para IA',
+        '$0.0777 Conversa no WhatsApp',
+        '$0.0004254 Por e-mail disparado'
+      ],
+      cta: 'ESCOLHER PLANO',
       popular: true
     },
     {
-      name: 'Max',
-      price: billingAnnual ? 297 * 10 : 297,
-      period: billingAnnual ? '/ano' : '/mês',
+      name: 'ENTERPRISE',
+      price: null,
+      period: '',
       description: 'Para equipes e empresas escaláveis',
       features: [
-        'Tudo do Pro +',
-        'Suporte dedicado',
-        'Integrações premium',
-        'API acesso completo',
+        'Todos os recursos Plus +',
+        'Usuários ilimitados',
         'Contatos ilimitados',
-        'Até 10 usuários'
+        'Whitelabel',
+        'Realizamos todo o seu setup',
+        'Implementação por especialistas',
+        'Total controle e flexibilidade',
+        'Suporte dedicado'
       ],
-      cta: 'Agendar Demo',
+      additionalCosts: [],
+      cta: 'FALE CONOSCO',
       popular: false
     }
   ];
+
+  // Summary of what the platform replaces
+  const replacementTools = [
+    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês" },
+    { name: "Funis de vendas", value: "R$ 1.507,22/mês" },
+    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês" },
+    { name: "Construtor de sites", value: "R$ 248,75/mês" },
+    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês" },
+    { name: "E-mail marketing", value: "R$ 406,25/mês" },
+    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês" },
+    { name: "Automações de marketing", value: "R$ 858,20/mês" },
+    { name: "Cursos/Produtos", value: "R$ 492,54/mês" },
+    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês" },
+    { name: "Gestão de reputação", value: "R$ 2.448/mês" },
+    { name: "Analytics", value: "R$ 126,96/mês" }
+  ];
+  
+  const totalSaving = "R$ 10.122,40";
 
   return (
     <div className="min-h-screen bg-black">
@@ -78,10 +125,10 @@ const Pricing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Planos que cabem na sua <span className="text-gradient">estratégia</span>
+              Uma <span className="text-gradient">plataforma completa</span> pelo preço de uma ferramenta
             </h1>
             <p className="text-xl text-white/80 mb-8">
-              Escolha o plano ideal para começar a automatizar seu marketing e vendas hoje mesmo
+              Economize até 90% substituindo várias ferramentas e tendo tudo em um só lugar
             </p>
             
             <div className="flex items-center justify-center mb-10">
@@ -119,22 +166,28 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`rounded-2xl p-8 flex flex-col h-full relative ${
+                className={`bg-black rounded-2xl p-8 flex flex-col h-full relative ${
                   plan.popular 
-                    ? 'bg-gradient-to-b from-[#d0ff00]/20 to-black border border-[#d0ff00]' 
-                    : 'feature-card'
+                    ? 'border-2 border-[#d0ff00]' 
+                    : 'border border-[#d0ff00]/30'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
-                    Recomendado
+                    Mais Popular
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-[#d0ff00] mb-2">{plan.name}</h3>
                 <p className="text-white/70 mb-6">{plan.description}</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
-                  <span className="text-white/70">{plan.period}</span>
+                  {plan.price ? (
+                    <>
+                      <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
+                      <span className="text-white/70">{plan.period}</span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-white">Entre em contato</span>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
@@ -144,7 +197,45 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
+                
+                {plan.additionalCosts.length > 0 && (
+                  <div className="mt-4 mb-6">
+                    <div className="flex items-center gap-2 text-white mb-2">
+                      <Plus className="h-4 w-4 text-[#d0ff00]" />
+                      <span className="text-sm font-medium">Custos Adicionais</span>
+                    </div>
+                    <ul className="text-xs text-white/60 space-y-1 pl-6">
+                      {plan.additionalCosts.slice(0, 3).map((cost, i) => (
+                        <li key={i}>{cost}</li>
+                      ))}
+                      {plan.additionalCosts.length > 3 && (
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger className="text-[#d0ff00] text-xs">
+                              + {plan.additionalCosts.length - 3} mais
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <ul className="space-y-1">
+                                {plan.additionalCosts.slice(3).map((cost, i) => (
+                                  <li key={i}>{cost}</li>
+                                ))}
+                              </ul>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      )}
+                    </ul>
+                  </div>
+                )}
+                
                 <div className="mt-auto">
+                  <div className="flex justify-center py-2 mb-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-5 mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-5 mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-5 mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-5 mx-1" />
+                  </div>
+                  
                   <Link to={index === 2 ? "/demo" : "/trial"} className="w-full">
                     <Button 
                       className={`w-full ${
@@ -160,6 +251,67 @@ const Pricing = () => {
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Cost Comparison */}
+          <div className="mt-20 bg-white/5 rounded-xl overflow-hidden border border-[#d0ff00]/10">
+            <div className="p-6 border-b border-[#d0ff00]/10">
+              <h3 className="text-2xl font-bold text-white">Quanto você economiza com GrowthFunnels?</h3>
+              <p className="text-white/70 mt-2">A plataforma substitui mais de 12 ferramentas diferentes</p>
+            </div>
+            
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <Card className="bg-black border border-[#d0ff00]/20">
+                    <CardHeader>
+                      <CardTitle className="text-white">O que você substituirá:</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-3">
+                        {replacementTools.map((tool, index) => (
+                          <li key={index} className="flex justify-between pb-2 border-b border-white/10">
+                            <span className="text-white/80">{tool.name}</span>
+                            <span className="text-white">{tool.value}</span>
+                          </li>
+                        ))}
+                        <li className="flex justify-between pt-2">
+                          <span className="text-white font-bold">Total:</span>
+                          <span className="text-[#d0ff00] font-bold">{totalSaving}/mês</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                <div>
+                  <Card className="bg-black border border-[#d0ff00]/20 h-full">
+                    <CardHeader>
+                      <CardTitle className="text-white">Com GrowthFunnels você paga:</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-col items-center justify-center h-full space-y-6">
+                        <div className="text-center">
+                          <p className="text-white/70 mb-2">A partir de:</p>
+                          <p className="text-5xl font-bold text-[#d0ff00]">R$ 497<span className="text-white/70 text-base">/mês</span></p>
+                        </div>
+                        
+                        <div className="text-center">
+                          <p className="text-white/70 mb-2">Economia de até:</p>
+                          <p className="text-3xl font-bold text-white">90%</p>
+                        </div>
+                        
+                        <Link to="/trial">
+                          <Button className="bg-[#d0ff00] text-black hover:bg-[#b3e600] mt-4" size="lg">
+                            Testar Grátis por 14 Dias
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="mt-16 text-center">
