@@ -66,8 +66,8 @@ export default {
 				growth: {
 					'blue-deep': '#1A365D',
 					'blue-electric': '#00A0FF',
-					'green': '#cf0f00',
-					'green-hover': '#ff1200',
+					'green': '#d0ff00',
+					'green-hover': '#b3e600',
 					'dark': '#111111',
 					'light': '#FFFFFF',
 				}
@@ -136,7 +136,7 @@ export default {
 				'pulse': 'pulse 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'green-gradient': 'linear-gradient(135deg, #cf0f00 0%, #ff1200 100%)',
+				'green-gradient': 'linear-gradient(135deg, #d0ff00 0%, #b3e600 100%)',
 				'blue-gradient': 'linear-gradient(135deg, #00A0FF 0%, #0070B0 100%)',
 			}
 		}

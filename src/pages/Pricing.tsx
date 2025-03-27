@@ -81,7 +81,7 @@ const Pricing = () => {
               Planos que cabem na sua <span className="text-gradient">estratégia</span>
             </h1>
             <p className="text-xl text-white/80 mb-8">
-              Escolha o plano ideal para começar a automatizar hoje mesmo
+              Escolha o plano ideal para começar a automatizar seu marketing e vendas hoje mesmo
             </p>
             
             <div className="flex items-center justify-center mb-10">
@@ -91,7 +91,7 @@ const Pricing = () => {
                     onClick={() => setBillingAnnual(false)}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                       !billingAnnual 
-                        ? 'bg-growth-green text-black' 
+                        ? 'bg-[#d0ff00] text-black' 
                         : 'text-white/70 hover:text-white'
                     }`}
                   >
@@ -101,7 +101,7 @@ const Pricing = () => {
                     onClick={() => setBillingAnnual(true)}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                       billingAnnual 
-                        ? 'bg-growth-green text-black' 
+                        ? 'bg-[#d0ff00] text-black' 
                         : 'text-white/70 hover:text-white'
                     }`}
                   >
@@ -121,12 +121,12 @@ const Pricing = () => {
                 key={index} 
                 className={`rounded-2xl p-8 flex flex-col h-full relative ${
                   plan.popular 
-                    ? 'bg-gradient-to-b from-growth-green/20 to-black border border-growth-green' 
+                    ? 'bg-gradient-to-b from-[#d0ff00]/20 to-black border border-[#d0ff00]' 
                     : 'feature-card'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-growth-green text-black py-1 px-4 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
                     Recomendado
                   </div>
                 )}
@@ -139,7 +139,7 @@ const Pricing = () => {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-growth-green mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2 mt-0.5 flex-shrink-0" />
                       <span className="text-white/80">{feature}</span>
                     </li>
                   ))}
@@ -147,7 +147,11 @@ const Pricing = () => {
                 <div className="mt-auto">
                   <Link to={index === 2 ? "/demo" : "/trial"} className="w-full">
                     <Button 
-                      className={`w-full ${plan.popular ? 'btn-primary' : 'btn-outline'}`}
+                      className={`w-full ${
+                        plan.popular 
+                          ? 'bg-[#d0ff00] text-black hover:bg-[#b3e600] font-semibold' 
+                          : 'border border-[#d0ff00]/60 text-[#d0ff00] hover:bg-[#d0ff00]/10 font-medium'
+                      }`}
                       size="lg"
                     >
                       {plan.cta}
@@ -162,7 +166,7 @@ const Pricing = () => {
             <h3 className="text-2xl font-bold mb-6 text-white">Perguntas frequentes sobre preços</h3>
             <div className="max-w-3xl mx-auto space-y-6">
               <TooltipProvider>
-                <div className="bg-white/5 p-4 rounded-lg border border-growth-green/10 flex items-center justify-between">
+                <div className="bg-white/5 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
                   <p className="text-white">Posso trocar de plano a qualquer momento?</p>
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -175,7 +179,7 @@ const Pricing = () => {
                     </TooltipContent>
                   </Tooltip>
                 </div>
-                <div className="bg-white/5 p-4 rounded-lg border border-growth-green/10 flex items-center justify-between">
+                <div className="bg-white/5 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
                   <p className="text-white">O teste grátis tem limitações?</p>
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -188,7 +192,7 @@ const Pricing = () => {
                     </TooltipContent>
                   </Tooltip>
                 </div>
-                <div className="bg-white/5 p-4 rounded-lg border border-growth-green/10 flex items-center justify-between">
+                <div className="bg-white/5 p-4 rounded-lg border border-[#d0ff00]/10 flex items-center justify-between">
                   <p className="text-white">Existe taxa de setup ou cancelamento?</p>
                   <Tooltip>
                     <TooltipTrigger asChild>
