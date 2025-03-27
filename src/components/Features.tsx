@@ -14,62 +14,62 @@ import {
 
 const features = [
   {
-    icon: <Database className="h-6 w-6 text-revcrm-blue" />,
-    title: "Unified CRM",
-    description: "Centralize all your customer data in one place for better relationship management and insight-driven decisions."
+    icon: <Database className="h-6 w-6 text-[#d0ff00]" />,
+    title: "CRM Completo",
+    description: "Visualize toda a jornada do cliente em um único lugar. Organize leads, oportunidades e clientes em pipelines visuais para aumentar sua taxa de conversão."
   },
   {
-    icon: <MessageSquare className="h-6 w-6 text-revcrm-blue" />,
-    title: "Multichannel Communication",
-    description: "Engage with your customers through email, SMS, and social media, all from a single platform."
+    icon: <MessageSquare className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Automação de Marketing",
+    description: "Crie sequências de emails, SMS e WhatsApp que se ativam automaticamente baseadas nas ações do seu lead, aumentando engajamento e vendas."
   },
   {
-    icon: <Calendar className="h-6 w-6 text-revcrm-blue" />,
-    title: "Smart Scheduling",
-    description: "Simplify appointment setting with an intelligent calendar that integrates with your existing tools."
+    icon: <Calendar className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Agendamento Inteligente",
+    description: "Permita que seus leads agendem reuniões diretamente na sua agenda, eliminando o vai-e-vem de emails e reduzindo o ciclo de vendas."
   },
   {
-    icon: <Globe className="h-6 w-6 text-revcrm-blue" />,
+    icon: <Globe className="h-6 w-6 text-[#d0ff00]" />,
     title: "Landing Pages",
-    description: "Create high-converting landing pages with our intuitive drag-and-drop builder, no coding required."
+    description: "Construa páginas de alta conversão em minutos usando nosso editor de arrastar e soltar, sem necessidade de conhecimento técnico."
   },
   {
-    icon: <Zap className="h-6 w-6 text-revcrm-blue" />,
-    title: "Workflow Automation",
-    description: "Automate repetitive tasks and create sophisticated workflows to nurture leads and close deals faster."
+    icon: <Zap className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Automação de Workflows",
+    description: "Automatize processos repetitivos de vendas e marketing com fluxos de trabalho visuais que economizam tempo e reduzem erros humanos."
   },
   {
-    icon: <LineChart className="h-6 w-6 text-revcrm-blue" />,
-    title: "Real-time Analytics",
-    description: "Make data-driven decisions with comprehensive dashboards and reports that update in real-time."
+    icon: <LineChart className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Analytics em Tempo Real",
+    description: "Monitore métricas de performance como CAC, LTV e ROI de campanhas, permitindo ajustes rápidos em sua estratégia de crescimento."
   },
   {
-    icon: <Shield className="h-6 w-6 text-revcrm-blue" />,
-    title: "Advanced Security",
-    description: "Protect your data with enterprise-grade security features including role-based access control and encryption."
+    icon: <Shield className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Segurança Avançada",
+    description: "Proteja os dados dos seus clientes com criptografia de ponta a ponta e conformidade com LGPD, construindo confiança com sua base."
   },
   {
-    icon: <Users className="h-6 w-6 text-revcrm-blue" />,
-    title: "Team Collaboration",
-    description: "Enhance team productivity with shared pipelines, tasks, and communication tools designed for collaboration."
+    icon: <Users className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Colaboração de Equipe",
+    description: "Aumente a produtividade de vendas e marketing com ferramentas colaborativas que alinham equipes e eliminam silos de informação."
   },
   {
-    icon: <BarChart className="h-6 w-6 text-revcrm-blue" />,
-    title: "Revenue Analytics",
-    description: "Track sales performance, conversion rates, and revenue metrics to optimize your sales pipeline."
+    icon: <BarChart className="h-6 w-6 text-[#d0ff00]" />,
+    title: "Atribuição Avançada",
+    description: "Identifique com precisão quais canais e campanhas geram mais receita, otimizando seu investimento em marketing de performance."
   }
 ];
 
 const Features = () => {
   return (
-    <section className="bg-white py-24 px-4 md:px-8">
+    <section className="bg-black py-24 px-4 md:px-8 border-t border-[#d0ff00]/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-revcrm-black">
-            All the tools you need to <span className="text-revcrm-blue">grow</span> your business
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            Todas as ferramentas para <span className="text-[#d0ff00]">automatizar</span> seu crescimento
           </h2>
-          <p className="text-lg text-revcrm-gray-dark">
-            RevCRM brings together all the essential tools for customer management, marketing automation, and sales in one intuitive platform, allowing you to manage your entire revenue cycle efficiently.
+          <p className="text-lg text-white/80">
+            GrowthFunnels integra todas as funcionalidades essenciais para aquisição, nutrição e conversão de leads em uma única plataforma intuitiva, eliminando a necessidade de múltiplas ferramentas.
           </p>
         </div>
         
@@ -77,13 +77,13 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-xl border border-revcrm-gray-medium hover:shadow-md transition-all duration-300"
+              className="feature-card bg-white/5 p-6 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 transition-all duration-300"
             >
-              <div className="mb-4 p-2 rounded-lg bg-revcrm-blue/10 w-fit">
+              <div className="mb-4 p-2 rounded-lg bg-[#d0ff00]/10 w-fit">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-revcrm-black">{feature.title}</h3>
-              <p className="text-revcrm-gray-dark">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+              <p className="text-white/70">{feature.description}</p>
             </div>
           ))}
         </div>

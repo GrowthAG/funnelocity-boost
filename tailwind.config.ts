@@ -53,14 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				revcrm: {
-					blue: '#2563EB',
-					"blue-dark": '#1d4ed8',
-					"blue-light": '#3b82f6',
-					"gray-light": '#f3f4f6',
-					"gray-medium": '#e5e7eb',
-					"gray-dark": '#6b7280',
-					black: '#111827',
+				growth: {
+					green: '#d0ff00',
+					"green-dark": '#b3e600',
+					"green-light": '#e0ff66',
+					"gray-light": '#333333',
+					"gray-medium": '#222222',
+					"gray-dark": '#111111',
+					black: '#000000',
 					white: '#ffffff',
 				}
 			},
@@ -108,7 +108,7 @@ export default {
 				'slide-down': 'slide-down 0.4s ease-out',
 			},
 			backgroundImage: {
-				'gradient-light': 'linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%)',
+				'gradient-dark': 'linear-gradient(145deg, #111111 0%, #000000 100%)',
 			}
 		}
 	},
