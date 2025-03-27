@@ -34,6 +34,7 @@ const App = () => (
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<Blog />} /> {/* Adicionado rota para artigos individuais */}
           <Route path="/about" element={<About />} />
           
           {/* External redirects */}
