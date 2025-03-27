@@ -252,9 +252,9 @@ const Pricing = () => {
               <ComparisonTable 
                 replacementTools={replacementToolsData}
                 totalSaving={totalSavingData}
-                variant="pricing"
                 showHeader={false}
                 showFooter={false}
+                className="mt-0"
               />
             </div>
           </div>
