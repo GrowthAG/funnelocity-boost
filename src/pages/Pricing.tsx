@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
+import ComparisonTable, { ToolInfo } from '@/components/shared/ComparisonTable';
 
 const Pricing = () => {
   useEffect(() => {
@@ -102,19 +103,122 @@ const Pricing = () => {
     }
   ];
 
-  const replacementTools = [
-    { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês", tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"] },
-    { name: "Funis de vendas", value: "R$ 1.507,22/mês", tools: ["Salesforce", "Pipefy", "HubSpot"] },
-    { name: "Planejamento de redes sociais", value: "R$ 24,90/mês", tools: ["mLabs", "Etus"] },
-    { name: "Construtor de sites", value: "R$ 248,75/mês", tools: ["WordPress", "Wix", "Webflow"] },
-    { name: "Formulários e Pesquisas", value: "R$ 457,03/mês", tools: ["Typeform", "Google Forms", "Respond.io"] },
-    { name: "E-mail marketing", value: "R$ 406,25/mês", tools: ["Brevo", "Mailchimp", "ActiveCampaign"] },
-    { name: "Calendário e Agendamentos", value: "R$ 111,72/mês", tools: ["Calendly", "Google Calendar"] },
-    { name: "Automações de marketing", value: "R$ 858,20/mês", tools: ["ActiveCampaign", "Salesforce Marketing Cloud"] },
-    { name: "Cursos/Produtos", value: "R$ 492,54/mês", tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"] },
-    { name: "Chamadas e monitoramentos", value: "R$ 482,47/mês", tools: ["GoTo Connect", "Twilio"] },
-    { name: "Gestão de reputação", value: "R$ 2.448/mês", tools: ["Trustpilot"] },
-    { name: "Analytics", value: "R$ 126,96/mês", tools: ["Mixpanel", "Amplitude"] }
+  const replacementTools: ToolInfo[] = [
+    { 
+      name: "CRM & Pipeline de Vendas", 
+      value: "R$ 502,71/mês", 
+      tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"],
+      logos: [
+        "/lovable-uploads/ec2d3fe2-1f5f-4a70-9f28-8af8a18ffe4d.png", 
+        "/lovable-uploads/23a9d576-f113-4771-b2d3-ff5962bb0ae4.png",
+        "/lovable-uploads/28b22c78-8b09-4993-9304-088fc6a22e3d.png",
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png"
+      ]
+    },
+    { 
+      name: "Funis de vendas", 
+      value: "R$ 1.507,22/mês", 
+      tools: ["Salesforce", "Pipefy", "HubSpot"],
+      logos: [
+        "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png",
+        "/lovable-uploads/af51da29-988c-4767-aa02-b724b80fd078.png",
+        "/lovable-uploads/85e849b6-0017-45f5-b4aa-d9c00e9236e5.png"
+      ]
+    },
+    { 
+      name: "Planejamento de redes sociais", 
+      value: "R$ 24,90/mês", 
+      tools: ["mLabs", "Etus"],
+      logos: [
+        "/lovable-uploads/873518a3-4940-430d-985b-470b533d4b7a.png",
+        "/lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"
+      ]
+    },
+    { 
+      name: "Construtor de sites", 
+      value: "R$ 248,75/mês", 
+      tools: ["WordPress", "Wix", "Webflow"],
+      logos: [
+        "/lovable-uploads/1afce23a-a9c6-4720-a725-f3a850ce22be.png",
+        "/lovable-uploads/19e748f8-e8c3-4367-a3ed-5d16da13f8c1.png",
+        "/lovable-uploads/f08c6356-9c67-4e4d-8373-5cfd85f5e2f4.png"
+      ]
+    },
+    { 
+      name: "Formulários e Pesquisas", 
+      value: "R$ 457,03/mês", 
+      tools: ["Typeform", "Google Forms", "Respond.io"],
+      logos: [
+        "/lovable-uploads/b1082615-5b0d-4bd3-9b75-ee2724be2d23.png",
+        "/lovable-uploads/84ede28a-0919-4309-ba2c-876a53719806.png",
+        "/lovable-uploads/88654284-fd43-4ec7-b610-7c068119ff81.png"
+      ]
+    },
+    { 
+      name: "E-mail marketing", 
+      value: "R$ 406,25/mês", 
+      tools: ["Brevo", "Mailchimp", "ActiveCampaign"],
+      logos: [
+        "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png",
+        "/lovable-uploads/25d0a1ba-c7ab-4632-a6d7-ba4487a0a28c.png",
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png"
+      ]
+    },
+    { 
+      name: "Calendário e Agendamentos", 
+      value: "R$ 111,72/mês", 
+      tools: ["Calendly", "Google Calendar"],
+      logos: [
+        "/lovable-uploads/1ececfa5-5b1c-40d9-97cc-7d5d576880b0.png",
+        "/lovable-uploads/efea1fc0-61ab-4104-bbee-bdb236109631.png"
+      ]
+    },
+    { 
+      name: "Automações de marketing", 
+      value: "R$ 858,20/mês", 
+      tools: ["ActiveCampaign", "Salesforce Marketing Cloud"],
+      logos: [
+        "/lovable-uploads/76071022-36a4-436d-b967-40b405aa5348.png",
+        "/lovable-uploads/fa9ce812-73e9-4b7a-8a2d-8d4bec1b9366.png"
+      ]
+    },
+    { 
+      name: "Cursos/Produtos", 
+      value: "R$ 492,54/mês", 
+      tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"],
+      logos: [
+        "/placeholder.svg",
+        "/placeholder.svg",
+        "/placeholder.svg",
+        "/placeholder.svg"
+      ]
+    },
+    { 
+      name: "Chamadas e monitoramentos", 
+      value: "R$ 482,47/mês", 
+      tools: ["GoTo Connect", "Twilio"],
+      logos: [
+        "/placeholder.svg",
+        "/placeholder.svg"
+      ]
+    },
+    { 
+      name: "Gestão de reputação", 
+      value: "R$ 2.448/mês", 
+      tools: ["Trustpilot"],
+      logos: [
+        "/placeholder.svg"
+      ]
+    },
+    { 
+      name: "Analytics", 
+      value: "R$ 126,96/mês", 
+      tools: ["Mixpanel", "Amplitude"],
+      logos: [
+        "/placeholder.svg",
+        "/placeholder.svg"
+      ]
+    }
   ];
   
   const totalSaving = "R$ 10.122,40";
@@ -262,64 +366,13 @@ const Pricing = () => {
             </div>
             
             <div className="p-6">
-              <div className="overflow-hidden rounded-lg">
-                <Table>
-                  <TableHeader className="bg-[#d0ff00]">
-                    <TableRow>
-                      <TableHead className="text-black font-bold">Ferramenta GrowthFunnels</TableHead>
-                      <TableHead className="text-black font-bold">Substitui</TableHead>
-                      <TableHead className="text-black font-bold text-right">Valor mensal</TableHead>
-                      <TableHead className="text-black font-bold w-10"></TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {replacementTools.map((tool, index) => (
-                      <TableRow 
-                        key={index} 
-                        className="border-b border-[#d0ff00]/10 hover:bg-white/5"
-                      >
-                        <TableCell className="text-white py-3">{tool.name}</TableCell>
-                        <TableCell className="py-3">
-                          <div className="flex flex-wrap gap-2">
-                            {tool.tools.map((toolName, idx) => (
-                              <span 
-                                key={idx} 
-                                className="bg-black/60 text-white px-2 py-1 rounded-md border border-[#d0ff00]/20 text-sm"
-                              >
-                                {toolName}
-                              </span>
-                            ))}
-                          </div>
-                        </TableCell>
-                        <TableCell className="text-white text-right py-3">{tool.value}</TableCell>
-                        <TableCell className="text-right py-3">
-                          <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                    <TableRow className="bg-[#d0ff00]/10 border-t border-[#d0ff00]/30">
-                      <TableCell className="text-white font-bold py-4">Total</TableCell>
-                      <TableCell className="py-4"></TableCell>
-                      <TableCell className="py-4 text-right">
-                        <div className="flex items-center justify-end gap-3">
-                          <span className="text-red-500/80 line-through">{totalSaving}/mês</span>
-                          <div className="flex items-center">
-                            <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
-                            <span className="text-[#d0ff00] font-bold">R$ 497/mês</span>
-                          </div>
-                          <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
-                            <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
-                            <span className="text-[#d0ff00] text-xs font-medium">90%</span>
-                          </div>
-                        </div>
-                      </TableCell>
-                      <TableCell className="py-4 text-right">
-                        <Check className="h-5 w-5 text-[#d0ff00] ml-auto" />
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </div>
+              <ComparisonTable 
+                replacementTools={replacementTools}
+                totalSaving={totalSaving}
+                variant="pricing"
+                showHeader={false}
+                showFooter={false}
+              />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <div>
