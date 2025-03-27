@@ -24,7 +24,12 @@ import {
   Bot,
   Instagram,
   Linkedin,
-  Check
+  Check,
+  TrendingUp,
+  Users as UsersIcon,
+  RefreshCw,
+  Zap,
+  ArrowUpRight
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -117,7 +122,6 @@ const Features = () => {
     ? features 
     : features.filter(feature => feature.category === activeTab);
 
-  // Tools replacement data for the comparison table
   const replacementTools = [
     { name: "CRM & Pipeline de Vendas", value: "R$ 502,71/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
     { name: "Funis de vendas", value: "R$ 1.507,22/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] },
@@ -133,6 +137,16 @@ const Features = () => {
     { name: "Analytics", value: "R$ 126,96/mês", logos: ["lovable-uploads/97fa57d5-6ac7-4ddf-891d-cc9c50d8249e.png"] }
   ];
 
+  const mockRevenueData = [
+    { month: 'Jan', value: 9.2 },
+    { month: 'Feb', value: 10.8 },
+    { month: 'Mar', value: 12.4 },
+    { month: 'Apr', value: 11.9 },
+    { month: 'May', value: 13.6 },
+    { month: 'Jun', value: 15.2 },
+    { month: 'Jul', value: 17.8 }
+  ];
+
   return (
     <div className="min-h-screen bg-black py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -145,63 +159,181 @@ const Features = () => {
           </p>
         </div>
 
-        {/* Platform Screenshots Section - Updated to match the image */}
         <div className="mb-20 md:mb-28 overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            {/* Left side - Dashboard & Analytics */}
             <div className="p-8 md:p-10 border-r border-[#d0ff00]/10">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Dashboard & Analytics</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
+                Dashboard & Analytics
+              </h3>
               <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
-                Visualize métricas importantes para seu negócio como receita mensal recorrente, crescimento e novos clientes.
+                Acompanhe os principais indicadores do seu funil em tempo real: receita recorrente, novos clientes e performance de campanhas.
               </p>
               
+              <div className="flex items-center justify-end mb-4 text-xs text-[#d0ff00]/80">
+                <RefreshCw className="h-3 w-3 mr-1 animate-spin" style={{animationDuration: '3s'}} />
+                <span>Atualizado em tempo real</span>
+              </div>
+              
               <div className="space-y-6">
-                {/* Cards */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4">
-                    <p className="text-white/70 text-sm mb-1">Receita Recorrente</p>
+                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
+                    <div className="flex justify-between items-center mb-2">
+                      <p className="text-white/70 text-sm">Receita Recorrente</p>
+                      <TrendingUp className="h-4 w-4 text-green-500" />
+                    </div>
                     <p className="text-white text-xl md:text-2xl font-bold">R$ 12.947</p>
+                    <p className="text-green-500 text-xs mt-1 flex items-center">
+                      <ArrowUpRight className="h-3 w-3 mr-1" />
+                      +8.3% vs último mês
+                    </p>
                   </div>
-                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4">
-                    <p className="text-white/70 text-sm mb-1">Novos Clientes</p>
+                  <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
+                    <div className="flex justify-between items-center mb-2">
+                      <p className="text-white/70 text-sm">Novos Clientes</p>
+                      <UsersIcon className="h-4 w-4 text-[#d0ff00]" />
+                    </div>
                     <p className="text-white text-xl md:text-2xl font-bold">32</p>
+                    <p className="text-green-500 text-xs mt-1 flex items-center">
+                      <ArrowUpRight className="h-3 w-3 mr-1" />
+                      +12% vs último mês
+                    </p>
                   </div>
                 </div>
                 
-                {/* Chart area */}
-                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-4 flex items-center justify-center h-[180px]">
-                  <img 
-                    src="/lovable-uploads/af51da29-988c-4767-aa02-b724b80fd078.png" 
-                    alt="Dashboard Analytics Chart" 
-                    className="h-24 w-auto object-contain"
-                  />
+                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col">
+                  <div className="flex justify-between items-center mb-3">
+                    <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
+                    <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
+                      +17.8%
+                    </div>
+                  </div>
+                  
+                  <div className="h-[160px] w-full">
+                    <div className="relative h-full w-full flex items-end justify-between px-2">
+                      {mockRevenueData.map((item, index) => (
+                        <div key={index} className="flex flex-col items-center justify-end">
+                          <div 
+                            className="w-8 bg-gradient-to-t from-[#d0ff00]/60 to-[#d0ff00] rounded-t-sm"
+                            style={{ height: `${(item.value/20)*100}%` }}
+                          ></div>
+                          <span className="text-white/60 text-xs mt-2">{item.month}</span>
+                        </div>
+                      ))}
+                      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                        <svg className="w-full h-[70%] overflow-visible" preserveAspectRatio="none">
+                          <path 
+                            d="M 30 80 L 70 65 L 110 55 L 150 60 L 190 45 L 230 35 L 270 20" 
+                            fill="none" 
+                            stroke="#ffffff" 
+                            strokeWidth="1.5" 
+                            strokeDasharray="4,4"
+                            strokeLinecap="round"
+                            className="opacity-50"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             
-            {/* Right side - Automações Visuais */}
-            <div className="p-8 md:p-10">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Automações Visuais</h3>
+            <div className="p-8 md:p-10 relative">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                <Workflow className="h-6 w-6 text-[#d0ff00]" />
+                Automações Visuais
+              </h3>
               <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
-                Crie fluxos de automação sem código com nosso editor visual intuitivo.
+                Crie automações poderosas sem precisar de código, usando nosso editor visual com lógica condicional, agendamentos e múltiplas integrações.
               </p>
               
-              <div className="flex flex-col items-center justify-center h-[calc(100%-80px)] space-y-6">
-                <img 
-                  src="/lovable-uploads/25d0a1ba-c7ab-4632-a6d7-ba4487a0a28c.png" 
-                  alt="Automações Visuais" 
-                  className="h-36 w-auto object-contain"
-                />
-                <p className="text-white text-lg">Crie sua automação</p>
-                <a href="/demo" className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3 transition-all duration-300">
+              <div className="flex justify-center mb-6">
+                <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-2 px-4 flex items-center gap-4">
+                  <div className="h-8 w-8 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
+                    <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                  </div>
+                  <div className="h-8 w-8 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
+                    <Instagram className="h-4 w-4 text-[#E4405F]" />
+                  </div>
+                  <div className="h-8 w-8 rounded-full bg-[#4267B2]/10 flex items-center justify-center border border-[#4267B2]/30">
+                    <Linkedin className="h-4 w-4 text-[#4267B2]" />
+                  </div>
+                  <div className="h-8 w-8 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
+                    <Mail className="h-4 w-4 text-[#d0ff00]" />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-5 bg-black/30 border border-[#d0ff00]/10 rounded-lg mb-8">
+                <div className="flex items-center justify-center">
+                  <div className="relative flex flex-col items-center">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-full bg-[#d0ff00]/10 border border-[#d0ff00] flex items-center justify-center">
+                          <Users className="h-6 w-6 text-[#d0ff00]" />
+                        </div>
+                        <span className="text-white text-xs mt-2">Cliente</span>
+                      </div>
+                      
+                      <svg width="40" height="20">
+                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
+                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
+                      </svg>
+                      
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-md bg-[#FF6B6B]/10 border border-[#FF6B6B] flex items-center justify-center">
+                          <Filter className="h-6 w-6 text-[#FF6B6B]" />
+                        </div>
+                        <span className="text-white text-xs mt-2">Condição</span>
+                      </div>
+                      
+                      <svg width="40" height="20">
+                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
+                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
+                      </svg>
+                      
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-md bg-[#0088FE]/10 border border-[#0088FE] flex items-center justify-center">
+                          <Zap className="h-6 w-6 text-[#0088FE]" />
+                        </div>
+                        <span className="text-white text-xs mt-2">Ação</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-md bg-[#d0ff00]/10 border border-[#d0ff00] flex items-center justify-center">
+                          <Mail className="h-6 w-6 text-[#d0ff00]" />
+                        </div>
+                        <span className="text-white text-xs mt-2">Email</span>
+                      </div>
+                      
+                      <svg width="40" height="20">
+                        <path d="M 0 10 L 40 10" stroke="#d0ff00" strokeWidth="1.5" />
+                        <path d="M 30 5 L 40 10 L 30 15" fill="none" stroke="#d0ff00" strokeWidth="1.5" />
+                      </svg>
+                      
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-md bg-[#8884d8]/10 border border-[#8884d8] flex items-center justify-center">
+                          <Database className="h-6 w-6 text-[#8884d8]" />
+                        </div>
+                        <span className="text-white text-xs mt-2">CRM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex justify-center">
+                <Link to="/demo" className="bg-gradient-to-r from-[#d0ff00] to-[#b3e600] hover:from-[#d0ff00] hover:to-[#a3cc00] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1">
                   Começar Agora
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Feature Tabs */}
         <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="relative mb-12">
             <div className="absolute inset-0 bg-[#d0ff00]/5 rounded-lg -z-10" />
@@ -252,9 +384,7 @@ const Features = () => {
           ))}
         </Tabs>
 
-        {/* Tools Replacement Section */}
         <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30">
-          {/* Header */}
           <div className="bg-[#d0ff00] p-5 md:p-6">
             <div className="grid grid-cols-12 gap-4 items-center">
               <div className="col-span-4 md:col-span-5">
@@ -278,7 +408,6 @@ const Features = () => {
             </div>
           </div>
           
-          {/* Tools List */}
           <div className="divide-y divide-[#d0ff00]/10">
             {replacementTools.map((tool, index) => (
               <div key={index} className="flex items-center p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
@@ -288,7 +417,6 @@ const Features = () => {
                   </div>
                   <div className="col-span-3 md:col-span-3 flex justify-center">
                     <div className="flex space-x-1 md:space-x-2">
-                      {/* Placeholder for tool logos */}
                       <div className="h-6 w-6 bg-white/10 rounded-full"></div>
                       <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
                       <div className="h-6 w-6 bg-white/10 rounded-full hidden md:block"></div>
@@ -305,14 +433,12 @@ const Features = () => {
             ))}
           </div>
           
-          {/* Total */}
           <div className="bg-[#d0ff00]/10 p-4 md:p-6">
             <div className="grid grid-cols-12 gap-4 items-center">
               <div className="col-span-5 md:col-span-5">
                 <h3 className="text-lg md:text-xl font-bold text-white">Total</h3>
               </div>
               <div className="col-span-3 md:col-span-3">
-                {/* Placeholder for empty column */}
               </div>
               <div className="col-span-4 md:col-span-4 text-right md:text-center">
                 <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
