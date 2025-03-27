@@ -74,29 +74,16 @@ const ComparisonTable = ({
                   {tool.name}
                 </TableCell>
                 <TableCell className="py-5">
-                  {tool.logos && tool.logos.length > 0 ? (
-                    <div className="flex items-center justify-center gap-4 bg-black/40 p-3 rounded-lg border border-white/10">
-                      {tool.logos.map((logo, logoIndex) => (
-                        <img 
-                          key={logoIndex}
-                          src={logo}
-                          alt={`${tool.tools[logoIndex] || 'Tool'} logo`}
-                          className="h-8 w-auto object-contain"
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="flex flex-wrap gap-1.5">
-                      {tool.tools.map((toolName, idx) => (
-                        <span 
-                          key={idx} 
-                          className="text-white/90 text-xs bg-white/10 px-2 py-0.5 rounded-full"
-                        >
-                          {toolName}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex flex-wrap gap-1.5">
+                    {tool.tools.map((toolName, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-white/90 text-xs bg-white/10 px-2 py-0.5 rounded-full"
+                      >
+                        {toolName}
+                      </span>
+                    ))}
+                  </div>
                 </TableCell>
                 <TableCell className="text-white text-right py-5 font-medium text-base">
                   {tool.value}/mês

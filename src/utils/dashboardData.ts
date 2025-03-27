@@ -4,114 +4,62 @@ export const replacementToolsData = [
   { 
     name: "CRM & Pipeline de Vendas", 
     value: "R$ 502,71", 
-    tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"],
-    logos: [
-      "/lovable-uploads/1805e67c-7e92-466f-b7b8-4783f2664200.png"
-    ]
+    tools: ["Pipedrive", "Close", "Salesflare", "ActiveCampaign"]
   },
   {
     name: "Funis de vendas", 
     value: "R$ 1.507,22", 
-    tools: ["Salesforce", "Pipefy", "HubSpot"],
-    logos: [
-      "https://cdn.simpleicons.org/salesforce/white",
-      "https://cdn.simpleicons.org/pipefy/white",
-      "https://cdn.simpleicons.org/hubspot/white"
-    ]
+    tools: ["Salesforce", "Pipefy", "HubSpot"]
   },
   {
     name: "Planejamento de redes sociais", 
     value: "R$ 24,90", 
-    tools: ["mLabs", "Etus"],
-    logos: [
-      "https://img.icons8.com/ios-filled/50/FFFFFF/mlabs.png",
-      "https://img.icons8.com/ios-filled/50/FFFFFF/etus.png"
-    ]
+    tools: ["mLabs", "Etus"]
   },
   {
     name: "Construtor de sites", 
     value: "R$ 248,75", 
-    tools: ["WordPress", "Wix", "Webflow"],
-    logos: [
-      "https://cdn.simpleicons.org/wordpress/white",
-      "https://cdn.simpleicons.org/wix/white",
-      "https://cdn.simpleicons.org/webflow/white"
-    ]
+    tools: ["WordPress", "Wix", "Webflow"]
   },
   {
     name: "Formulários e Pesquisas", 
     value: "R$ 457,03", 
-    tools: ["Typeform", "Google Forms", "Respond.io"],
-    logos: [
-      "https://cdn.simpleicons.org/typeform/white",
-      "https://cdn.simpleicons.org/googleforms/white",
-      "https://img.icons8.com/ios-filled/50/FFFFFF/respond-io.png"
-    ]
+    tools: ["Typeform", "Google Forms", "Respond.io"]
   },
   {
     name: "E-mail marketing", 
     value: "R$ 406,25", 
-    tools: ["Brevo", "Mailchimp", "ActiveCampaign"],
-    logos: [
-      "https://cdn.simpleicons.org/brevo/white",
-      "https://cdn.simpleicons.org/mailchimp/white",
-      "https://cdn.simpleicons.org/activecampaign/white"
-    ]
+    tools: ["Brevo", "Mailchimp", "ActiveCampaign"]
   },
   {
     name: "Calendário e Agendamentos", 
     value: "R$ 111,72", 
-    tools: ["Calendly", "Google Calendar"],
-    logos: [
-      "https://cdn.simpleicons.org/calendly/white",
-      "https://cdn.simpleicons.org/googlecalendar/white"
-    ]
+    tools: ["Calendly", "Google Calendar"]
   },
   {
     name: "Automações de marketing", 
     value: "R$ 858,20", 
-    tools: ["ActiveCampaign", "Salesforce Marketing Cloud"],
-    logos: [
-      "https://cdn.simpleicons.org/activecampaign/white",
-      "https://cdn.simpleicons.org/salesforce/white"
-    ]
+    tools: ["ActiveCampaign", "Salesforce Marketing Cloud"]
   },
   {
     name: "Cursos/Produtos", 
     value: "R$ 492,54", 
-    tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"],
-    logos: [
-      "https://cdn.simpleicons.org/hotmart/white",
-      "https://img.icons8.com/ios-filled/50/FFFFFF/eduzz.png",
-      "https://img.icons8.com/ios-filled/50/FFFFFF/kiwify.png",
-      "https://img.icons8.com/ios-filled/50/FFFFFF/herospark.png"
-    ]
+    tools: ["Hotmart", "Eduzz", "Kiwify", "HeroSpark"]
   },
   {
     name: "Chamadas e monitoramentos", 
     value: "R$ 482,47", 
-    tools: ["GoTo Connect", "Twilio"],
-    logos: [
-      "https://cdn.simpleicons.org/goto/white",
-      "https://cdn.simpleicons.org/twilio/white"
-    ]
+    tools: ["GoTo Connect", "Twilio"]
   },
   {
     name: "Gestão de reputação", 
     value: "R$ 2.448,00", 
-    tools: ["Trustpilot"],
-    logos: [
-      "https://cdn.simpleicons.org/trustpilot/white"
-    ]
+    tools: ["Trustpilot"]
   },
   {
     name: "Analytics", 
     value: "R$ 126,96", 
-    tools: ["Mixpanel", "Amplitude"],
-    logos: [
-      "https://cdn.simpleicons.org/mixpanel/white",
-      "https://cdn.simpleicons.org/amplitude/white"
-    ]
+    tools: ["Mixpanel", "Amplitude"]
   }
 ];
 
@@ -128,10 +76,10 @@ export const automationPerformanceData = [
 ];
 
 export const automationData = [
-  { name: 'Automação 1', rate: 85, status: 'active' },
-  { name: 'Automação 2', rate: 72, status: 'active' },
-  { name: 'Automação 3', rate: 55, status: 'inactive' },
-  { name: 'Automação 4', rate: 92, status: 'active' },
+  { name: 'Automação 1', rate: 85, status: 'active', fillColor: '#10b981' },
+  { name: 'Automação 2', rate: 72, status: 'active', fillColor: '#10b981' },
+  { name: 'Automação 3', rate: 55, status: 'inactive', fillColor: '#6b7280' },
+  { name: 'Automação 4', rate: 92, status: 'active', fillColor: '#10b981' },
 ];
 
 export const ticketData = [
@@ -178,8 +126,8 @@ export const funnelData = [
 ];
 
 export const automationMetrics = [
-  { name: 'Automações Ativas', value: 12, growth: '+20%', icon: 'activity' },
-  { name: 'Taxa de Conversão', value: '8.5%', growth: '+2.1%', icon: 'percent' },
-  { name: 'Contatos Ativos', value: '2,450', growth: '+15%', icon: 'users' },
-  { name: 'Ticket Médio', value: 'R$ 450', growth: '+5%', icon: 'dollar-sign' },
+  { name: 'Automações Ativas', title: 'Automações Ativas', value: '12', change: '+20%', positive: true, icon: 'activity' },
+  { name: 'Taxa de Conversão', title: 'Taxa de Conversão', value: '8.5%', change: '+2.1%', positive: true, icon: 'percent' },
+  { name: 'Contatos Ativos', title: 'Contatos Ativos', value: '2,450', change: '+15%', positive: true, icon: 'users' },
+  { name: 'Ticket Médio', title: 'Ticket Médio', value: 'R$ 450', change: '+5%', positive: true, icon: 'dollar-sign' },
 ];
