@@ -152,108 +152,108 @@ const Features = () => {
       name: "CRM & Pipeline de Vendas", 
       value: "R$ 502,71/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "0 -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Monday", style: { objectPosition: "-45px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Pipedrive", style: { objectPosition: "-90px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "0 -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Monday", style: { objectPosition: "-45px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Pipedrive", style: { objectPosition: "-90px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Funis de vendas", 
       value: "R$ 1.507,22/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Optimizely", style: { objectPosition: "-225px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Optimizely", style: { objectPosition: "-225px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "RD Station", style: { objectPosition: "-135px -143px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Planejamento de redes sociais", 
       value: "R$ 24,90/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "mLabs", style: { objectPosition: "0 -285px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "etus", style: { objectPosition: "-45px -285px", height: "40px", width: "100px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "mLabs", style: { objectPosition: "0 -285px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "etus", style: { objectPosition: "-45px -285px", height: "40px", width: "100px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Construtor de sites", 
       value: "R$ 248,75/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "WordPress", style: { objectPosition: "0 -355px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Wix", style: { objectPosition: "-45px -355px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Webflow", style: { objectPosition: "-90px -355px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "WordPress", style: { objectPosition: "0 -355px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Wix", style: { objectPosition: "-45px -355px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Webflow", style: { objectPosition: "-90px -355px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Formulários e Pesquisas", 
       value: "R$ 457,03/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Typeform", style: { objectPosition: "0 -425px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Respond.io", style: { objectPosition: "-45px -425px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Forms", style: { objectPosition: "-90px -425px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Typeform", style: { objectPosition: "0 -425px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Respond.io", style: { objectPosition: "-45px -425px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Forms", style: { objectPosition: "-90px -425px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "E-mail marketing", 
       value: "R$ 406,25/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mailchimp", style: { objectPosition: "-45px -495px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Brevo", style: { objectPosition: "-90px -495px", height: "40px", width: "80px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mailchimp", style: { objectPosition: "-45px -495px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Brevo", style: { objectPosition: "-90px -495px", height: "40px", width: "80px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Calendário e Agendamentos", 
       value: "R$ 111,72/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Calendly", style: { objectPosition: "0 -570px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Calendar", style: { objectPosition: "-45px -570px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Acuity", style: { objectPosition: "-90px -570px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Calendly", style: { objectPosition: "0 -570px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Calendar", style: { objectPosition: "-45px -570px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Acuity", style: { objectPosition: "-90px -570px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Automações de marketing", 
       value: "R$ 858,20/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "ActiveCampaign", style: { objectPosition: "0 -495px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "HubSpot", style: { objectPosition: "-270px -143px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Salesforce", style: { objectPosition: "-180px -143px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Cursos/Produtos", 
       value: "R$ 492,54/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Hotmart", style: { objectPosition: "0 -708px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Eduzz", style: { objectPosition: "-45px -708px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Kiwify", style: { objectPosition: "-90px -708px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Herospark", style: { objectPosition: "-135px -708px", height: "40px", width: "80px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Hotmart", style: { objectPosition: "0 -708px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Eduzz", style: { objectPosition: "-45px -708px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Kiwify", style: { objectPosition: "-90px -708px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Herospark", style: { objectPosition: "-135px -708px", height: "40px", width: "80px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Chamadas e monitoramentos", 
       value: "R$ 482,47/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Go To Connect", style: { objectPosition: "0 -781px", height: "40px", width: "80px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Voice", style: { objectPosition: "-90px -781px", height: "40px", width: "40px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Twilio", style: { objectPosition: "-135px -781px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Go To Connect", style: { objectPosition: "0 -781px", height: "40px", width: "80px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google Voice", style: { objectPosition: "-90px -781px", height: "40px", width: "40px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Twilio", style: { objectPosition: "-135px -781px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Gestão de reputação", 
       value: "R$ 2.448/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google My Business", style: { objectPosition: "0 -855px", height: "40px", width: "40px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Google My Business", style: { objectPosition: "0 -855px", height: "40px", width: "40px", objectFit: "none" as const } }
       ] 
     },
     {
       name: "Analytics", 
       value: "R$ 126,96/mês", 
       logos: [
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mixpanel", style: { objectPosition: "0 -925px", height: "40px", width: "80px", objectFit: "none" } },
-        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Amplitude", style: { objectPosition: "-90px -925px", height: "40px", width: "80px", objectFit: "none" } }
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Mixpanel", style: { objectPosition: "0 -925px", height: "40px", width: "80px", objectFit: "none" as const } },
+        { src: "/lovable-uploads/3ae50462-d15d-4181-8b6b-e438e28d2c65.png", alt: "Amplitude", style: { objectPosition: "-90px -925px", height: "40px", width: "80px", objectFit: "none" as const } }
       ] 
     }
   ];
