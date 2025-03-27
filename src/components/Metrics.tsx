@@ -27,28 +27,28 @@ const metrics = [
 
 const Metrics = () => {
   return (
-    <section className="bg-black py-24 px-4 md:px-8 border-t border-[#d0ff00]/10">
+    <section className="bg-black py-16 md:py-24 px-4 md:px-8 border-t border-[#d0ff00]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight">
             Resultados que <span className="text-[#d0ff00]">transformam negócios</span>
           </h2>
-          <p className="text-lg text-white/80">
+          <p className="text-base md:text-lg text-white/80">
             GrowthFunnels não apenas simplifica seus processos, mas impulsiona seu crescimento com resultados mensuráveis.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {metrics.map((metric, index) => (
             <div 
               key={index} 
-              className="feature-card bg-white/5 p-6 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 transition-all duration-300 flex flex-col h-full"
+              className="feature-card bg-white/5 p-5 md:p-6 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 transition-all duration-300 flex flex-col h-full"
             >
-              <div className="flex items-baseline mb-4">
-                <span className="text-4xl font-bold text-[#d0ff00]">{metric.value}</span>
-                <ArrowUpRight className="ml-2 h-5 w-5 text-[#d0ff00]" />
+              <div className="flex items-baseline mb-3">
+                <span className="text-3xl md:text-4xl font-bold text-[#d0ff00]">{metric.value}</span>
+                <ArrowUpRight className="ml-1 h-5 w-5 text-[#d0ff00]" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white leading-tight">{metric.label}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-white leading-tight">{metric.label}</h3>
               <p className="text-white/70 text-sm mt-auto">{metric.description}</p>
             </div>
           ))}
