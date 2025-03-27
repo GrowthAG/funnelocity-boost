@@ -9,7 +9,10 @@ import Index from "./pages/Index";
 import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
+import BlogPost from "./components/BlogPost";
 import About from "./pages/About";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 
@@ -35,8 +38,10 @@ const App = () => (
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} /> {/* Rota para artigos individuais */}
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/dashboard" element={<Dashboard />} />
           
           {/* External redirects */}
@@ -45,10 +50,6 @@ const App = () => (
           <Route path="/pro" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/pro" />} />
           <Route path="/plus" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/plus" />} />
           <Route path="/afiliados" element={<ExternalRedirect to="https://growthfunnels.com.br/afiliados" />} />
-          
-          {/* These routes will redirect to home for now as placeholders */}
-          <Route path="/case-studies" element={<Index />} />
-          <Route path="/contact" element={<Index />} />
           
           {/* Catch all for 404 */}
           <Route path="*" element={<NotFound />} />
