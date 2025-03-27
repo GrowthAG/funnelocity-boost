@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -277,7 +278,7 @@ const Features = () => {
           <h1 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-white leading-tight">
             Uma plataforma, <span className="text-gradient">todas as ferramentas</span> que você precisa
           </h1>
-          <p className="text-base md:text-xl text-white/80 leading-relaxed">
+          <p className="text-base md:text-lg text-white/80 leading-relaxed">
             Substitua mais de 10 ferramentas e economize até 90% do seu investimento em tecnologia.
           </p>
         </div>
@@ -285,12 +286,13 @@ const Features = () => {
         <div className="mb-20 md:mb-28">
           <div className="overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col min-h-[660px]">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+              {/* Dashboard Analytics Section */}
+              <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col min-h-[680px]">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2 h-9">
                   <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
                   Dashboard & Analytics
                 </h3>
-                <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">
+                <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base h-[60px]">
                   Acompanhe os principais indicadores do seu funil em tempo real: receita recorrente, novos clientes e performance de campanhas.
                 </p>
                 
@@ -326,14 +328,14 @@ const Features = () => {
                   </div>
                   
                   <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col flex-grow">
-                    <div className="flex justify-between items-center mb-3">
+                    <div className="flex justify-between items-center mb-4">
                       <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
                       <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
                         +17.8%
                       </div>
                     </div>
                     
-                    <div className="h-[160px] w-full mt-4">
+                    <div className="h-[180px] w-full mt-4 flex-grow">
                       <div className="relative h-full w-full flex items-end justify-between px-2">
                         {mockRevenueData.map((item, index) => (
                           <div key={index} className="flex flex-col items-center justify-end">
@@ -363,12 +365,13 @@ const Features = () => {
                 </div>
               </div>
               
-              <div className="p-8 md:p-10 relative flex flex-col min-h-[660px]">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2">
+              {/* Automações Inteligentes Section */}
+              <div className="p-8 md:p-10 relative flex flex-col min-h-[680px]">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2 h-9">
                   <Workflow className="h-6 w-6 text-[#d0ff00]" />
                   Automações Inteligentes
                 </h3>
-                <p className="text-white/70 mb-5 leading-relaxed text-sm md:text-base">
+                <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base h-[60px]">
                   Crie sequências automáticas baseadas em comportamentos de clientes e prospects que aumentam suas conversões sem precisar criar códigos ou contratar developers.
                 </p>
                 
