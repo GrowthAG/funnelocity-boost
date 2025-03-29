@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
-import ComparisonTableHeader from './shared/comparison/ComparisonTableHeader';
 
 const ComparisonSection = () => {
   const competitors = [
@@ -21,18 +19,17 @@ const ComparisonSection = () => {
   return (
     <section className="bg-black py-10 md:py-16 px-4 md:px-8 border-t border-[#d0ff00]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white leading-tight">
-            Por que escolher o <span className="text-[#d0ff00]">GrowthFunnels</span>?
+        <div className="bg-[#d0ff00] text-black text-center px-4 py-6 md:py-8 rounded-t-xl">
+          <h2 className="text-xl md:text-3xl font-semibold flex justify-center items-center gap-2">
+            <span className="text-2xl md:text-3xl font-bold text-black">GrowthFunnels</span>
+            <span className="text-black">vs. Outras Soluções</span>
           </h2>
-          <p className="text-base md:text-lg text-white/80">
-            Compare nossa solução com as alternativas do mercado e veja por que somos a escolha certa para seu negócio.
+          <p className="text-sm md:text-base mt-2">
+            Compare o custo e os recursos do <strong>GrowthFunnels</strong> com as alternativas do mercado
           </p>
         </div>
 
-        <div className="bg-white/5 rounded-xl border border-[#d0ff00]/20 overflow-hidden">
-<ComparisonTableHeader logoUrl="/logo-preto.png" />
-          
+        <div className="bg-white/5 rounded-b-xl border border-[#d0ff00]/20 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-white">
               <thead>
@@ -78,7 +75,7 @@ const ComparisonSection = () => {
               </tbody>
             </table>
           </div>
-          
+
           <div className="p-4 bg-white/[0.02] border-t border-[#d0ff00]/10 text-center">
             <p className="text-sm text-white/70">
               Veja a comparação completa em nossa <a href="/pricing" className="text-[#d0ff00] hover:underline">página de preços</a>
