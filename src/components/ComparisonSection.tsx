@@ -31,7 +31,7 @@ const ComparisonSection = () => {
         </div>
 
         <div className="bg-white/5 rounded-xl border border-[#d0ff00]/20 overflow-hidden">
-          <ComparisonTableHeader logoUrl="/lovable-uploads/e972de3f-e663-467b-a000-a691202e4b0e.png" />
+<ComparisonTableHeader logoUrl="/public/logo-preto.png" />
           
           <div className="overflow-x-auto">
             <table className="w-full text-white">
