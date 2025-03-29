@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -13,21 +12,16 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="space-y-8 md:space-y-12"> {/* Usando space-y para controlar espaçamento uniforme */}
         <Hero />
-        <div className="py-3 md:py-6"></div>
         <Features />
-        <div className="py-3 md:py-6"></div>
         <Metrics />
-        <div className="py-3 md:py-6"></div>
         <ComparisonSection />
-        <div className="py-3 md:py-6"></div>
         <Testimonials />
-        <div className="py-3 md:py-6"></div>
         <CTA />
       </main>
       <Footer />
