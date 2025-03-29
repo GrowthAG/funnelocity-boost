@@ -9,6 +9,8 @@
   <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate"/>
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://funneloctity-boost.lovable.app/"/>
   <meta property="og:title" content="Transforme o Ciclo de Receita da Sua Empresa"/>
@@ -17,25 +19,47 @@
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:site_name" content="Funnels"/>
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Transforme o Ciclo de Receita da Sua Empresa"/>
   <meta name="twitter:description" content="Plataforma completa de CRM, automação de marketing e geração de demanda criada para centralizar sua operação, automatizar processos e impulsionar seu crescimento."/>
   <meta name="twitter:image" content="https://funneloctity-boost.lovable.app/public/homepage.png"/>
+
+  <!-- Favicons -->
   <link rel="icon" href="/public/favicon.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon.png"/>
   <link rel="shortcut icon" href="/public/favicon.png"/>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS para remover marca d'água da Lovable -->
+  <!-- CSS + JS para remover marca d'água da Lovable -->
   <style>
-    a[href*="lovable.app"] {
+    a[href*="lovable.app"],
+    div[class*="lovable"],
+    div[style*="lovable"] {
       display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const interval = setInterval(() => {
+        const badge = document.querySelector('a[href*="lovable.app"], div[class*="lovable"], div[style*="lovable"]');
+        if (badge) {
+          badge.remove();
+          clearInterval(interval);
+        }
+      }, 100);
+    });
+  </script>
 </head>
 <body>
   <div id="root" data-badge="false"></div>
