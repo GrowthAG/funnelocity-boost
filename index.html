@@ -23,38 +23,4 @@ As aplicações cloud-native frequentemente adotam arquiteturas de microsserviç
 ### 2. Containers
 Containers se tornaram o padrão de fato para empacotar aplicações cloud-native. Tecnologias como Docker permitem empacotar o código da aplicação junto com suas dependências, garantindo consistência entre ambientes de desenvolvimento e produção, e facilitando a implantação em diferentes infraestruturas.
 
-> "Os containers são para as aplicações cloud-native o que as máquinas virtuais foram para a virtualização: a unidade fundamental de computação." — Kelsey Hightower
-
-### 3. Orquestração Dinâmica
-Plataformas de orquestração como Kubernetes gerenciam o ciclo de vida dos containers, automatizando tarefas como provisionamento, escalonamento, recuperação de falhas e balanceamento de carga. A orquestração dinâmica é essencial para lidar com a natureza distribuída e efêmera das aplicações cloud-native.
-
-### 4. Infraestrutura como Código (IaC)
-A infraestrutura como código é a prática de definir a infraestrutura necessária para sua aplicação por meio de arquivos de configuração declarativos. Ferramentas como Terraform, CloudFormation ou Pulumi automatizam o provisionamento e a configuração de recursos, garantindo consistência e reprodutibilidade.
-
----
-
-## Exemplo de manifesto Kubernetes para um microsserviço
-
-\`\`\`yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: minha-aplicacao
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: minha-aplicacao
-  template:
-    metadata:
-      labels:
-        app: minha-aplicacao
-    spec:
-      containers:
-        - name: minha-aplicacao
-          image: minha-imagem:latest
-          ports:
-            - containerPort: 80
-\`\`\`
-`
-}
+> "Os containers são para as aplicações cloud-native o que as máquinas virtuais foram para a virtualização:
