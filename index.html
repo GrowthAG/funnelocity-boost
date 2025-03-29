@@ -1,41 +1,60 @@
+{
+  slug: "cloud-native-aplicacoes-nativas-nuvem",
+  title: "Cloud Native: construindo aplicações nativas para a nuvem",
+  excerpt: "Uma introdução às arquiteturas cloud-native e como elas podem transformar o desenvolvimento de aplicações modernas.",
+  content: `
+O desenvolvimento de aplicações cloud-native representa uma mudança fundamental na forma como o software é construído, implantado e gerenciado. Trata-se de uma abordagem que explora ao máximo os benefícios da computação em nuvem, permitindo maior agilidade, escalabilidade e resiliência.
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GrowthFunnels | A Melhor Plataforma de Automação de Marketing e Vendas do Brasil</title>
-    <meta name="description" content="Aumente suas conversões em 127% com a plataforma GrowthFunnels. Automação completa de marketing e vendas que reduz 68% do seu ciclo de vendas e economiza +15h semanais em tarefas manuais." />
-    <meta name="author" content="GrowthFunnels" />
+Neste artigo, exploraremos os princípios e práticas que definem as aplicações nativas para a nuvem.
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.growthfunnels.com.br/" />
-    <meta property="og:title" content="Transforme o Ciclo de Receita da Sua Empresa" />
-    <meta property="og:description" content="Aumente suas conversões em 127% com a plataforma GrowthFunnels. Automação completa de marketing e vendas que reduz 68% do seu ciclo de vendas e economiza +15h semanais em tarefas manuais." />
-    <meta property="og:image" content="/lovable-uploads/bc7febbc-4fe1-4251-9d36-9244229fa243.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="GrowthFunnels" />
+## O que significa Cloud Native?
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@growthfunnels" />
-    <meta name="twitter:title" content="Transforme o Ciclo de Receita da Sua Empresa" />
-    <meta name="twitter:description" content="Aumente suas conversões em 127% com a plataforma GrowthFunnels. Automação completa de marketing e vendas que reduz 68% do seu ciclo de vendas e economiza +15h semanais em tarefas manuais." />
-    <meta name="twitter:image" content="/lovable-uploads/bc7febbc-4fe1-4251-9d36-9244229fa243.png" />
-    
-    <!-- Favicon and Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/lovable-uploads/a736a1c2-45ad-43d2-9dad-ff38e068cc99.png">
-  </head>
+Cloud native, ou nativo para nuvem, é mais do que apenas hospedar aplicações na nuvem. É uma abordagem arquitetônica e operacional que tira proveito completo das características únicas da computação em nuvem. De acordo com a Cloud Native Computing Foundation (CNCF), aplicações cloud-native são “projetadas para abraçar a escala rápida e a confiabilidade, permitindo inovação e agilidade mais velozes”.
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+![Arquitetura cloud-native](https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)
+
+---
+
+## Princípios Fundamentais
+
+### 1. Microsserviços
+As aplicações cloud-native frequentemente adotam arquiteturas de microsserviços, sistemas complexos em componentes menores e independentes que podem ser desenvolvidos, implantados e escalados separadamente. Cada microsserviço foca em uma responsabilidade específica do negócio e se comunica com outros serviços através de APIs bem definidas.
+
+### 2. Containers
+Containers se tornaram o padrão de fato para empacotar aplicações cloud-native. Tecnologias como Docker permitem empacotar o código da aplicação junto com suas dependências, garantindo consistência entre ambientes de desenvolvimento e produção, e facilitando a implantação em diferentes infraestruturas.
+
+> "Os containers são para as aplicações cloud-native o que as máquinas virtuais foram para a virtualização: a unidade fundamental de computação." — Kelsey Hightower
+
+### 3. Orquestração Dinâmica
+Plataformas de orquestração como Kubernetes gerenciam o ciclo de vida dos containers, automatizando tarefas como provisionamento, escalonamento, recuperação de falhas e balanceamento de carga. A orquestração dinâmica é essencial para lidar com a natureza distribuída e efêmera das aplicações cloud-native.
+
+### 4. Infraestrutura como Código (IaC)
+A infraestrutura como código é a prática de definir a infraestrutura necessária para sua aplicação por meio de arquivos de configuração declarativos. Ferramentas como Terraform, CloudFormation ou Pulumi automatizam o provisionamento e a configuração de recursos, garantindo consistência e reprodutibilidade.
+
+---
+
+## Exemplo de manifesto Kubernetes para um microsserviço
+
+\`\`\`yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minha-aplicacao
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: minha-aplicacao
+  template:
+    metadata:
+      labels:
+        app: minha-aplicacao
+    spec:
+      containers:
+        - name: minha-aplicacao
+          image: minha-imagem:latest
+          ports:
+            - containerPort: 80
+\`\`\`
+`
+}
