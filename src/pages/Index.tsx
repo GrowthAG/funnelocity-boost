@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
-      <main className="space-y-8 md:space-y-12"> {/* Usando space-y para controlar espaçamento uniforme */}
+      <main className="space-y-4 md:space-y-6 lg:space-y-8"> {/* Espaçamento reduzido entre seções */}
         <Hero />
         <Features />
         <Metrics />
