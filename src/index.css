@@ -1,139 +1,32 @@
+import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+import Metrics from '../components/Metrics';
+import Testimonials from '../components/Testimonials';
+import CTA from '../components/CTA';
+import Footer from '../components/Footer';
+import ComparisonSection from '../components/ComparisonSection';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 72 100% 50%;
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 72 100% 50%;
-    --accent-foreground: 0 0% 0%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 72 100% 50%;
-    --input: 72 100% 50%;
-    --ring: 72 100% 50%;
-
-    --radius: 0.5rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html {
-    @apply overflow-x-hidden scroll-smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
-  }
+const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
-  
-  h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
-  
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-  
-  p {
-    @apply text-base md:text-lg leading-relaxed;
-  }
-}
+  return (
+    <div className="min-h-screen bg-black overflow-x-hidden">
+      <Navbar />
+      <main className="space-y-4 md:space-y-6 lg:space-y-8"> {/* Espaçamento reduzido entre seções */}
+        <Hero />
+        <Features />
+        <Metrics />
+        <ComparisonSection />
+        <Testimonials />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
-@layer components {
-  .btn-primary {
-    @apply bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-md py-2 px-6
-           transition-all duration-300 shadow-md hover:shadow-lg shadow-[#d0ff00]/10 hover:shadow-[#d0ff00]/20;
-  }
-  
-  .btn-secondary {
-    @apply bg-black hover:bg-black/80 text-white border border-[#d0ff00]/30
-           rounded-md py-2 px-6 font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:border-[#d0ff00]/50;
-  }
-  
-  .section-padding {
-    @apply py-6 md:py-10 lg:py-12 px-4 md:px-8;
-  }
-  
-  .section-spacing {
-    @apply py-4 md:py-8 lg:py-10;
-  }
-  
-  .feature-card {
-    @apply bg-white/5 rounded-xl border border-[#d0ff00]/10 hover:border-[#d0ff00]/30 backdrop-blur-sm 
-           transition-all duration-300 hover:translate-y-[-4px];
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-[#d0ff00] to-[#a3cc00] bg-clip-text text-transparent;
-  }
-  
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-md border border-[#d0ff00]/10 rounded-xl;
-  }
-  
-  .mobile-friendly-text {
-    @apply text-balance hyphens-auto;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-}
+export default Index;
