@@ -144,7 +144,7 @@ const Pricing = () => {
   ];
 
   // Componente de Tabela de Comparação Aprimorada
-  const EnhancedComparisonTable = ({ replacementTools, totalSaving }) => {
+  const EnhancedComparisonTable = ({ replacementTools, totalSaving, billingAnnual, getCheckoutLink }) => {
     return (
       <div className="bg-black text-white">
         <div className="mb-8">
