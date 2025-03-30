@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,12 +13,8 @@ import {
   MessageCircle, 
   Database, 
   Bell, 
-  Check, 
-  ArrowRight, 
-  ChevronRight,
   Users,
   BarChart2, 
-  Smartphone,
   Globe,
   Zap,
   PlayCircle
@@ -227,9 +223,7 @@ const Features = () => {
   };
 
   // Componente de tabela de funcionalidades com imagens de demonstração
-  const FeatureTable = ({
-    featureList
-  }) => {
+  const FeatureTable = ({ featureList }) => {
     const [selectedFeature, setSelectedFeature] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     
@@ -483,6 +477,18 @@ const Features = () => {
                         <h4 className="text-white/80 text-sm font-medium mb-3">Integrações Disponíveis:</h4>
                         <div className="flex flex-wrap gap-2">
                           <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                            <span className="text-white/80 text-xs">WhatsApp</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Mail className="h-4 w-4 text-[#d0ff00]" />
+                            <span className="text-white/80 text-xs">E-mail</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Database className="h-4 w-4 text-[#4A66FB]" />
+                            <span className="text-white/80 text-xs">CRM</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-[#0EA5E9]" />
                             <span className="text-white/80 text-xs">Calendário</span>
                           </div>
@@ -498,7 +504,7 @@ const Features = () => {
                 
                 {/* Tabela de funcionalidades com imagens de demonstração */}
                 <div className="mb-8 md:mb-12">
-                  <FeatureTable featureList={features[category.id as keyof typeof features]} />
+                  <FeatureTable featureList={features[category.id]} />
                 </div>
               </TabsContent>
             ))}
@@ -538,16 +544,4 @@ const Features = () => {
   );
 };
 
-export default Features;d-full py-1.5 px-3 flex items-center gap-2">
-                            <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                            <span className="text-white/80 text-xs">WhatsApp</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                            <Mail className="h-4 w-4 text-[#d0ff00]" />
-                            <span className="text-white/80 text-xs">E-mail</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                            <Database className="h-4 w-4 text-[#4A66FB]" />
-                            <span className="text-white/80 text-xs">CRM</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounde
+export default Features;
