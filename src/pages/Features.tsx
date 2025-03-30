@@ -26,15 +26,19 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 // Componente otimizado para incorporar vídeos do YouTube sem marcas d'água
 const YouTubeEmbed = ({ videoId, title }) => {
+  if (!videoId) return null;
+  
   return (
     <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
       <iframe 
-        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
+        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&origin=${window.location.origin}`}
         title={title || "Vídeo de demonstração"}
         className="w-full h-full absolute inset-0 z-10"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        loading="lazy"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
       ></iframe>
     </div>
   );
@@ -279,20 +283,26 @@ const Features = () => {
             <p className="text-white/70 text-sm">{featureList[selectedFeature].description}</p>
           </div>
           <div className="p-4">
-            {isPlaying && featureList[selectedFeature].hasVideo ? (
-              <YouTubeEmbed 
-                videoId={featureList[selectedFeature].videoId} 
-                title={`Demonstração de ${featureList[selectedFeature].name}`}
-              />
+            {isPlaying && featureList[selectedFeature].hasVideo && featureList[selectedFeature].videoId ? (
+              <div className="w-full">
+                <YouTubeEmbed 
+                  videoId={featureList[selectedFeature].videoId} 
+                  title={`Demonstração de ${featureList[selectedFeature].name}`}
+                />
+              </div>
             ) : (
               <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
                 <img 
                   src={featureList[selectedFeature].demoImage} 
                   alt={`Demonstração de ${featureList[selectedFeature].name}`} 
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/640x360/111111/d0ff00?text=GrowthFunnels";
+                  }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {featureList[selectedFeature].hasVideo ? (
+                  {featureList[selectedFeature].hasVideo && featureList[selectedFeature].videoId ? (
                     <Button 
                       variant="outline" 
                       size="sm" 
@@ -442,7 +452,7 @@ const Features = () => {
                       </div>
                       
                       {showWorkflowVideo ? (
-                        <div className="mb-6">
+                        <div className="mb-6 w-full">
                           <YouTubeEmbed 
                             videoId="kbknZyu3CGA" // 7️⃣ Criando e Gerenciando Calendários Calendars 1
                             title="Demonstração de Automação de Workflow" 
