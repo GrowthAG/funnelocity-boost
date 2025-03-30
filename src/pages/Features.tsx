@@ -24,14 +24,14 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
 
-// Componente para exibir vídeo do YouTube
+// Componente otimizado para incorporar vídeos do YouTube sem marcas d'água
 const YouTubeEmbed = ({ videoId, title }) => {
   return (
     <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
       <iframe 
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title={title}
-        className="w-full h-full absolute inset-0"
+        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0`}
+        title={title || "Vídeo de demonstração"}
+        className="w-full h-full absolute inset-0 z-10"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -206,7 +206,7 @@ const Features = () => {
       description: 'Configure o perfil inicial da sua empresa na plataforma.',
       demoImage: '/lovable-uploads/demo-google-ads.png',
       hasVideo: true,
-      videoId: 'p_rqiFCySYM'  // Usando vídeo da visão geral como placeholder para "Configuração Inicial do Perfil da Empresa"
+      videoId: 'p_rqiFCySYM'  // Usando vídeo da visão geral como placeholder
     }, {
       name: 'Ajustes Avançados',
       extraCost: false,
@@ -307,6 +307,7 @@ const Features = () => {
                       variant="outline" 
                       size="sm" 
                       className="bg-black/70 border-white/20 text-white hover:bg-black/90 flex items-center gap-2"
+                      disabled
                     >
                       <PlayCircle className="h-4 w-4 text-[#d0ff00]" />
                       <span>Ver Demo</span>
