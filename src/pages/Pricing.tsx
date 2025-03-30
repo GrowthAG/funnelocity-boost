@@ -182,15 +182,15 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative flex flex-col justify-between bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
+                className={`relative flex flex-col justify-between h-full bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold z-10">
                     Mais Popular
                   </div>
                 )}
 
-                <div>
+                <div className="flex-grow">
                   <h3 className="text-xl font-bold text-[#d0ff00]">{plan.name}</h3>
                   <p className="text-white/70 mb-6">{plan.description}</p>
 
@@ -208,24 +208,26 @@ const Pricing = () => {
                     </div>
                   )}
 
-                  <a 
-                    href={getCheckoutLink(plan.name)} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="block w-full mt-4"
-                    onClick={(e) => {
-                      // Garantir que o link correto está sendo usado
-                      const link = getCheckoutLink(plan.name);
-                      e.currentTarget.href = link;
-                      console.log(`Redirecionando para: ${link}`);
-                    }}
-                  >
-                    <Button className="w-full py-2.5" variant="greenNeon" size="lg">
-                      {plan.name === 'ENTERPRISE' ? 'FALE CONOSCO' : 'CONTRATAR PLANO'}
-                    </Button>
-                  </a>
+                  <div className="mt-auto">
+                    <a 
+                      href={getCheckoutLink(plan.name)} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="block w-full"
+                      onClick={(e) => {
+                        // Garantir que o link correto está sendo usado
+                        const link = getCheckoutLink(plan.name);
+                        e.currentTarget.href = link;
+                        console.log(`Redirecionando para: ${link}`);
+                      }}
+                    >
+                      <Button className="w-full py-2.5" variant="greenNeon" size="lg">
+                        {plan.name === 'ENTERPRISE' ? 'FALE CONOSCO' : 'CONTRATAR PLANO'}
+                      </Button>
+                    </a>
+                  </div>
 
-                  <ul className="space-y-3 my-8">
+                  <ul className="space-y-3 my-8 flex-grow">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2 mt-0.5 flex-shrink-0" />
@@ -265,10 +267,10 @@ const Pricing = () => {
 
                 <div className="flex justify-center mt-6">
                   <CreditCard className="h-5 w-5 text-white/70 mr-3" />
-                  <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto" />
-                  <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto" />
-                  <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto" />
-                  <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto mx-1" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto mx-1" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto mx-1" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto mx-1" />
                 </div>
               </div>
             ))}
