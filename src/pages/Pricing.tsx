@@ -69,7 +69,7 @@ const Pricing = () => {
       name: 'PRO',
       price: billingAnnual ? 4970 : 497,
       period: billingAnnual ? '/ano' : '/mês',
-      monthlyInstallment: billingAnnual ? 'ou 12x de R$ 414' : null,
+      monthlyInstallment: billingAnnual ?: null,
       description: 'Para pequenas empresas e startups',
       features: [
         'Até 3 usuários (+ R$69 por usuário adicional)',
