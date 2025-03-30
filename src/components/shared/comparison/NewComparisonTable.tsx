@@ -20,16 +20,16 @@ const NewComparisonTable = ({
   getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-anual"
 }: NewComparisonTableProps) => {
   return (
-    <div className="rounded-md overflow-hidden divide-y divide-growth-green/30 shadow-lg shadow-growth-green/5">
+    <div className="rounded-md overflow-hidden shadow-lg">
       <ComparisonTableHeader logoUrl={logoUrl} />
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-1 lg:col-span-5 xl:col-span-4">
+        <div className="col-span-1 lg:col-span-6">
           {replacementTools ? (
             <ReplacementToolsList tools={replacementTools} />
           ) : (
-            <div className="bg-growth-black border-r border-growth-green/30 p-6 md:p-8">
+            <div className="bg-black border-r border-white/10 p-6 md:p-8">
               <h3 className="text-xl font-bold text-white mb-4">O que você substituirá:</h3>
-              <p className="text-white/80 text-base">
+              <p className="text-white/70 text-base">
                 Lista de ferramentas que serão substituídas pelo GrowthFunnels,
                 ajudando a otimizar seu orçamento e simplificar sua stack de
                 marketing e vendas.
@@ -37,7 +37,7 @@ const NewComparisonTable = ({
             </div>
           )}
         </div>
-        <div className="col-span-1 lg:col-span-7 xl:col-span-8">
+        <div className="col-span-1 lg:col-span-6">
           <GrowthFunnelsPricing 
             totalSaving={totalSaving} 
             billingAnnual={billingAnnual}
