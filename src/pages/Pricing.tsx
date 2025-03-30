@@ -102,6 +102,7 @@ const Pricing = () => {
       description: 'Para empresas em crescimento',
       features: [
         'Todos os Recursos Pro +',
+        'Até 5 usuários (+ R$69 por usuário adicional)',
         'Até 50.000 contatos',
         'Workflows e Automações',
         'Webhooks e APIs',
@@ -178,11 +179,11 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative flex flex-col justify-between h-full bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
+                className={`relative flex flex-col bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold z-10">
@@ -190,12 +191,12 @@ const Pricing = () => {
                   </div>
                 )}
 
-                <div className="flex-grow">
+                <div>
                   <h3 className="text-xl font-bold text-[#d0ff00]">{plan.name}</h3>
                   <p className="text-white/70 mb-6">{plan.description}</p>
 
                   {plan.price ? (
-                    <div className="mb-6">
+                    <div className="mb-6 min-h-[80px]">
                       <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
                       <span className="text-white/70">{plan.period}</span>
                       {plan.monthlyInstallment && (
@@ -203,12 +204,12 @@ const Pricing = () => {
                       )}
                     </div>
                   ) : (
-                    <div className="mb-6">
+                    <div className="mb-6 min-h-[80px]">
                       <span className="text-2xl font-bold text-white">Entre em contato</span>
                     </div>
                   )}
 
-                  <div className="mt-auto">
+                  <div className="mt-8">
                     <a 
                       href={getCheckoutLink(plan.name)} 
                       target="_blank" 
@@ -227,7 +228,7 @@ const Pricing = () => {
                     </a>
                   </div>
 
-                  <ul className="space-y-3 my-8 flex-grow">
+                  <ul className="space-y-3 mt-8 mb-4 min-h-[350px]">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2 mt-0.5 flex-shrink-0" />
@@ -238,7 +239,7 @@ const Pricing = () => {
 
                   {plan.additionalCosts.length > 0 && (
                     <TooltipProvider>
-                      <div>
+                      <div className="min-h-[80px]">
                         <div className="flex items-center gap-2 text-white mb-2">
                           <Plus className="h-4 w-4 text-[#d0ff00]" />
                           <span className="text-sm font-medium">Custos Adicionais</span>
