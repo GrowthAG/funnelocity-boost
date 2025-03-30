@@ -26,7 +26,7 @@ const Pricing = () => {
     });
   }, []);
 
-  const [billingAnnual, setBillingAnnual] = useState(true);
+  const [billingAnnual, setBillingAnnual] = useState(false);
   
   // Função para alternar entre os modos de cobrança
   const toggleBillingMode = (isAnnual) => {
