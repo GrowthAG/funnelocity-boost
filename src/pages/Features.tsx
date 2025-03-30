@@ -42,6 +42,10 @@ const YouTubeEmbed = ({ videoId, title }) => {
   );
 };
 
+// AQUI REMOVI AS DUAS LINHAS PROBLEMÁTICAS:
+// export default Features;
+// };
+
 const Features = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
