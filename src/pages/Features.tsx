@@ -3,27 +3,9 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
-import { 
-  CheckCircle, 
-  XCircle, 
-  FormInput, 
-  Tag, 
-  Filter, 
-  Mail, 
-  Calendar, 
-  MessageCircle, 
-  Database, 
-  Bell, 
-  Users,
-  BarChart2, 
-  Globe,
-  Zap,
-  PlayCircle,
-  Settings,
-  Briefcase
+import {
+  Zap
 } from 'lucide-react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const Templates = () => {
   useEffect(() => {
