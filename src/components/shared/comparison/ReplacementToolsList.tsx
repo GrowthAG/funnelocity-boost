@@ -12,7 +12,7 @@ interface ToolsListProps {
 
 const ReplacementToolsList: React.FC<ToolsListProps> = ({ tools }) => {
   return (
-    <div className="bg-black border-r border-white/10 h-full">
+    <div className="bg-black h-full flex flex-col">
       <div className="p-6 border-b border-white/10">
         <h3 className="text-xl font-bold text-white mb-4">O que você substituirá:</h3>
         <p className="text-white/70 text-base">
@@ -21,7 +21,7 @@ const ReplacementToolsList: React.FC<ToolsListProps> = ({ tools }) => {
         </p>
       </div>
       
-      <div className="divide-y divide-white/10">
+      <div className="divide-y divide-white/10 flex-grow overflow-auto">
         {tools.map((tool, index) => (
           <div key={index} className="p-4 hover:bg-white/5 transition-colors">
             <div className="flex justify-between items-center mb-2">
@@ -46,7 +46,7 @@ const ReplacementToolsList: React.FC<ToolsListProps> = ({ tools }) => {
         ))}
       </div>
       
-      <div className="p-4 bg-[#d0ff00]/5 border-t border-[#d0ff00]/30">
+      <div className="p-4 bg-[#d0ff00]/5 border-t border-[#d0ff00]/30 mt-auto">
         <div className="flex justify-between items-center">
           <span className="text-white font-bold">Total economizado:</span>
           <div className="flex items-center">

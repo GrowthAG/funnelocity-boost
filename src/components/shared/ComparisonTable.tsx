@@ -24,7 +24,7 @@ const ComparisonTable = ({
   getCheckoutLink
 }: ComparisonTableProps) => {
   return (
-    <div className={`${className} border border-white/10 rounded-lg overflow-hidden`}>
+    <div className={`${className} overflow-hidden min-h-[600px]`}>
       <NewComparisonTable 
         logoUrl="/lovable-uploads/e972de3f-e663-467b-a000-a691202e4b0e.png"
         replacementTools={replacementTools}
