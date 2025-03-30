@@ -226,8 +226,9 @@ const Pricing = () => {
                   alt="GrowthFunnels Logo" 
                   className="h-8 mr-2" 
                 />
-                <span className="text-3xl font-bold text-[#d0ff00]">{billingAnnual ? 'R$ 4970' : 'R$ 497'}</span>
-                <span className="text-white/70">{billingAnnual ? '/ano' : '/mês'}</span>
+               <span className="text-3xl font-bold text-[#d0ff00]">R$ 497</span>
+               <span className="text-white/70">/mês</span>
+
               </div>
               <p className="text-sm text-white/70 mt-1">{billingAnnual ? 'ou 12x de R$ 414' : ''}</p>
               
