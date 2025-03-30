@@ -23,13 +23,13 @@ const NewComparisonTable = ({
     <div className="rounded-md overflow-hidden shadow-lg">
       <ComparisonTableHeader logoUrl={logoUrl} />
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-1 lg:col-span-6 border-r border-white/10 h-full">
+        <div className="col-span-1 lg:col-span-6 border-r border-white/10">
           {replacementTools ? (
             <ReplacementToolsList tools={replacementTools} />
           ) : (
-            <div className="bg-black p-6 md:p-8 h-full">
-              <h3 className="text-xl font-bold text-white mb-4">O que você substituirá:</h3>
-              <p className="text-white/70 text-base">
+            <div className="bg-black p-4 h-full">
+              <h3 className="text-lg font-bold text-white mb-2">O que você substituirá:</h3>
+              <p className="text-white/70 text-sm">
                 Lista de ferramentas que serão substituídas pelo GrowthFunnels,
                 ajudando a otimizar seu orçamento e simplificar sua stack de
                 marketing e vendas.
@@ -37,7 +37,7 @@ const NewComparisonTable = ({
             </div>
           )}
         </div>
-        <div className="col-span-1 lg:col-span-6 h-full">
+        <div className="col-span-1 lg:col-span-6">
           <GrowthFunnelsPricing 
             totalSaving={totalSaving} 
             billingAnnual={billingAnnual}
