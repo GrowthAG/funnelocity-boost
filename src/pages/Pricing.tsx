@@ -246,15 +246,19 @@ const Pricing = () => {
                           <Plus className="h-4 w-4 text-[#d0ff00]" />
                           <span className="text-sm font-medium">Custos Adicionais</span>
                         </div>
-                        <ul className="text-xs text-white/60 space-y-1 pl-6">
+                          <ul className="text-xs text-white/60 space-y-1 pl-6">
                           {plan.additionalCosts.slice(0, 3).map((cost, i) => (
                             <li key={i}>{cost}</li>
                           ))}
                           {plan.additionalCosts.length > 3 && (
                             <Tooltip>
-                              <TooltipTrigger className="text-[#d0ff00] text-xs">+ {plan.additionalCosts.length - 3} mais</TooltipTrigger>
-                              <TooltipContent>
-                                <ul className="space-y-1">
+                              <TooltipTrigger asChild>
+                                <button className="text-[#d0ff00] text-xs cursor-pointer hover:underline">
+                                  + {plan.additionalCosts.length - 3} mais
+                                </button>
+                              </TooltipTrigger>
+                              <TooltipContent className="bg-black/95 border border-[#d0ff00]/30 p-3 rounded-lg shadow-lg">
+                                <ul className="space-y-1 text-white">
                                   {plan.additionalCosts.slice(3).map((cost, i) => (
                                     <li key={i}>{cost}</li>
                                   ))}
