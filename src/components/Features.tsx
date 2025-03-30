@@ -574,15 +574,13 @@ const Features = () => {
             </div>
             
             <div className="py-8 border-t border-[#d0ff00]/10 flex justify-center">
-              <a 
-                href="https://checkout.growthfunnels.com.br/plus" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
-              >
-                Começar Automação Gratuita
-              </a>
-            </div>
+  <a 
+    href="/pricing" 
+    className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
+  >
+    Começar com Garantia de 14 Dias
+  </a>
+</div>
           </div>
         </div>
 
