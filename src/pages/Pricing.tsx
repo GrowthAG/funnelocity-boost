@@ -399,9 +399,11 @@ const Pricing = () => {
             </div>
 
             <div className="mt-16">
-              <EnhancedComparisonTable 
+              <ComparisonTable 
                 replacementTools={replacementToolsData}
                 totalSaving={totalSavingData}
+                billingAnnual={billingAnnual}
+                getCheckoutLink={getCheckoutLink}
               />
             </div>
           </div>
