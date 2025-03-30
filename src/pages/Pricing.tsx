@@ -2,7 +2,7 @@ from IPython.display import Markdown
 
 # Código atualizado e formatado conforme solicitado
 updated_code = """
-```jsx
+```tsx
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -68,10 +68,9 @@ const Pricing = () => {
         'Webhooks e APIs',
         'Gestor de Social Media Completo',
         'Chat Widgets e Bots de IA',
-        'Ferramenta de Cursos com Certificados (adeus, Hotmart!)',
-        'Pagamentos: crie produtos, faturas, assinaturas, conecte com Stripe e +',
-        'Gestão de afiliados e campanhas',
-        'Ferramenta de Criação de Comunidades'
+        'Ferramenta de Cursos com Certificados',
+        'Pagamentos integrados com Stripe e +',
+        'Gestão de afiliados e comunidades'
       ],
       additionalCosts: [
         '$0.0105 Fluxos de trabalho Premium',
@@ -98,8 +97,7 @@ const Pricing = () => {
         'Usuários ilimitados',
         'Contatos ilimitados',
         'Whitelabel',
-        'Realizamos todo o seu setup',
-        'Implementação por especialistas',
+        'Setup completo com especialistas',
         'Total controle e flexibilidade',
         'Suporte dedicado'
       ],
@@ -142,10 +140,12 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {plans.map((plan, index) => (
-              <div key={index} className={\`bg-black rounded-2xl p-8 flex flex-col justify-between relative \${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}\`}>
+              <div
+                key={index}
+                className={\`flex flex-col justify-between bg-black rounded-2xl p-8 h-full relative \${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}\`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
                     Mais Popular
@@ -153,20 +153,25 @@ const Pricing = () => {
                 )}
                 <div>
                   <h3 className="text-2xl font-bold text-[#d0ff00] mb-2">{plan.name}</h3>
-                  <p className="text-white/70 mb-6">{plan.description}</p>
-                  <div className="mb-6">
-                    {plan.price ? (
-                      <>
-                        <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
-                        <span className="text-white/70">{plan.period}</span>
-                        {billingAnnual && (
-                          <div className="text-white/70 text-sm mt-1">ou 12x de R$ {Math.floor(plan.price / 12)}</div>
-                        )}
-                      </>
-                    ) : (
-                      <span className="text-2xl font-bold text-white">Entre em contato</span>
-                    )}
-                  </div>
+                  <p className="text-white/70 mb-4">{plan.description}</p>
+                  {plan.price ? (
+                    <div className="mb-4">
+                      <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
+                      <span className="text-white/70">{plan.period}</span>
+                      {billingAnnual && (
+                        <div className="text-white/70 text-sm mt-1">
+                          ou 12x de R$ {Math.floor(plan.price / 12)}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-2xl font-bold text-white mb-4">Entre em contato</p>
+                  )}
+                  <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full block mb-6">
+                    <Button className="w-full py-2.5" variant="greenNeon" size="lg">
+                      {plan.cta}
+                    </Button>
+                  </a>
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
@@ -176,7 +181,7 @@ const Pricing = () => {
                     ))}
                   </ul>
                   {plan.additionalCosts.length > 0 && (
-                    <div className="mb-4">
+                    <div className="mb-6">
                       <div className="flex items-center gap-2 text-white mb-2">
                         <Plus className="h-4 w-4 text-[#d0ff00]" />
                         <span className="text-sm font-medium">Custos Adicionais</span>
@@ -202,25 +207,17 @@ const Pricing = () => {
                       </ul>
                     </div>
                   )}
-                </div>
-
-                <div className="mt-6">
-                  <div className="flex justify-center py-3 mb-4">
+                  <div className="flex justify-center py-3">
                     <div className="flex items-center gap-3">
                       <CreditCard className="h-6 w-6 text-white/70" />
                       <div className="flex items-center gap-2">
                         <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto" />
                         <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto" />
-                        <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="Amex" className="h-6 w-auto" />
                         <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto" />
                       </div>
                     </div>
                   </div>
-                  <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button className="w-full py-2.5" variant="greenNeon" size="lg">
-                      {plan.cta}
-                    </Button>
-                  </a>
                 </div>
               </div>
             ))}
@@ -228,6 +225,13 @@ const Pricing = () => {
 
           <div className="mt-16">
             <ComparisonTable replacementTools={replacementToolsData} totalSaving={totalSavingData} />
+          </div>
+
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold mb-6 text-white">Perguntas frequentes sobre preços</h3>
+            <div className="max-w-3xl mx-auto space-y-6">
+              {/* ... FAQ Tooltips ... */}
+            </div>
           </div>
         </div>
       </main>
