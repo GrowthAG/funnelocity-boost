@@ -17,7 +17,9 @@ import {
   BarChart2, 
   Globe,
   Zap,
-  PlayCircle
+  PlayCircle,
+  Settings,
+  Briefcase
 } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -68,6 +70,11 @@ const Features = () => {
       id: "crm",
       label: "👥 CRM & Outras Ferramentas",
       icon: <Users className="h-4 w-4 text-[#d0ff00]" />
+    },
+    {
+      id: "config",
+      label: "⚙️ Configurações",
+      icon: <Settings className="h-4 w-4 text-[#d0ff00]" />
     }
   ];
 
@@ -105,119 +112,111 @@ const Features = () => {
   // Lista de funcionalidades por categoria com os vídeos corretamente alocados
   const features = {
     adManager: [{
-      name: 'Google Ads Report',
+      name: 'Dashboard e Indicadores',
       extraCost: false,
-      description: 'Painel com desempenho de campanhas Google Ads.',
+      description: 'Entenda os principais indicadores de desempenho para seu negócio.',
       demoImage: '/lovable-uploads/demo-google-ads.png',
       hasVideo: true,
       videoId: 'Gl8bJpKaoK8'  // 4️⃣ Dashboard Entendendo os Indicadores
     }, {
-      name: 'Meta Ads Report',
+      name: 'Google Ads Report',
       extraCost: false,
-      description: 'Painel com desempenho de campanhas Facebook/Instagram.',
+      description: 'Painel com desempenho de campanhas Google Ads.',
       demoImage: '/lovable-uploads/demo-meta-ads.png',
       hasVideo: false
     }, {
-      name: 'Attribution Report',
+      name: 'Meta Ads Report',
       extraCost: false,
-      description: 'Conversões por canal de origem.',
+      description: 'Painel com desempenho de campanhas Facebook/Instagram.',
       demoImage: '/lovable-uploads/demo-attribution.png',
       hasVideo: false
     }, {
-      name: 'Appointment Report',
+      name: 'Visão Geral da Plataforma',
       extraCost: false,
-      description: 'Conversões de agendamentos por origem.',
+      description: 'Conheça a plataforma Growth Funnels de ponta a ponta.',
       demoImage: '/lovable-uploads/demo-appointment.png',
-      hasVideo: false
-    }, {
-      name: 'Call Report',
-      extraCost: false,
-      description: 'Conversões por chamadas telefônicas.',
-      demoImage: '/lovable-uploads/demo-call.png',
-      hasVideo: false
+      hasVideo: true,
+      videoId: 'p_rqiFCySYM'  // 1️⃣ Visão Geral do Growth Funnels
     }],
     marketing: [{
-      name: 'Disparo de E-mails',
+      name: 'Gerenciamento de Conversas',
       extraCost: true,
-      description: 'Envio de campanhas e automações por e-mail.',
+      description: 'Introdução ao módulo de conversas e acompanhamentos.',
       demoImage: '/lovable-uploads/demo-email.png',
       hasVideo: true,
       videoId: 'p-5pUOmrNOk'  // 6️⃣ Introdução às Conversas (Conversations)
     }, {
-      name: 'Verificação de E-mails',
-      extraCost: true,
-      description: 'Validação de e-mails para evitar hard bounce.',
-      demoImage: '/lovable-uploads/demo-email-verification.png',
-      hasVideo: false
-    }, {
-      name: 'Construtor de E-mails',
+      name: 'Gestão de Contatos',
       extraCost: false,
-      description: 'Editor intuitivo drag & drop.',
+      description: 'Aprenda a gerenciar sua base de contatos de forma eficiente.',
+      demoImage: '/lovable-uploads/demo-email-verification.png',
+      hasVideo: true,
+      videoId: '5YEVNryH1gM'  // 5️⃣ Gerenciando Contatos (Contacts)
+    }, {
+      name: 'Disparo de E-mails',
+      extraCost: true,
+      description: 'Envio de campanhas e automações por e-mail.',
       demoImage: '/lovable-uploads/demo-email-builder.png',
       hasVideo: false
     }],
     workflow: [{
+      name: 'Gerenciando Calendários',
+      extraCost: false,
+      description: 'Aprenda a criar e gerenciar calendários para agendar compromissos e tarefas.',
+      demoImage: '/lovable-uploads/demo-lead-nurturing.png',
+      hasVideo: true,
+      videoId: 'kbknZyu3CGA'  // 7️⃣ Criando e Gerenciando Calendários Calendars 1
+    }, {
       name: 'Automação de Nutrição de Leads',
       extraCost: false,
       description: 'Sequências de e-mails e mensagens baseadas em comportamento do usuário que aumentam sua taxa de conversão em 32%.',
-      demoImage: '/lovable-uploads/demo-lead-nurturing.png',
-      hasVideo: true,
-      videoId: '5YEVNryH1gM'  // 5️⃣ Gerenciando Contatos (Contacts)
+      demoImage: '/lovable-uploads/demo-cart-recovery.png',
+      hasVideo: false
     }, {
       name: 'Automação de Carrinho Abandonado',
       extraCost: false,
       description: 'Recupere até 24% das vendas perdidas com lembretes automáticos via WhatsApp e e-mail.',
-      demoImage: '/lovable-uploads/demo-cart-recovery.png',
-      hasVideo: false
-    }, {
-      name: 'Onboarding de Clientes',
-      extraCost: false,
-      description: 'Entregue conteúdo educacional e agende demonstrações automaticamente para novos clientes.',
       demoImage: '/lovable-uploads/demo-onboarding.png',
-      hasVideo: false
-    }, {
-      name: 'Workflows Avançados',
-      extraCost: true,
-      description: 'Crie automações complexas com múltiplas condições, atrasos e bifurcações.',
-      demoImage: '/lovable-uploads/demo-advanced-workflow.png',
-      hasVideo: false
-    }, {
-      name: 'Triggers Personalizados',
-      extraCost: true,
-      description: 'Configure gatilhos baseados em eventos específicos do seu negócio.',
-      demoImage: '/lovable-uploads/demo-triggers.png',
       hasVideo: false
     }],
     crm: [{
-      name: 'CRM completo',
+      name: 'Oportunidades e Pipeline',
       extraCost: false,
-      description: 'Gerenciamento de contatos, oportunidades e pipelines.',
+      description: 'Crie e gerencie oportunidades de negócio em seu pipeline de vendas.',
       demoImage: '/lovable-uploads/demo-crm.png',
       hasVideo: true,
       videoId: 'dGgUUjvbEGY'  // 8️⃣ Criando Oportunidades e Gerenciando o Pipeline
     }, {
-      name: 'Funnels',
+      name: 'Equipe e Colaboradores',
       extraCost: false,
-      description: 'Criação de funis de vendas visuais.',
+      description: 'Adicione e gerencie membros da sua equipe e suas permissões.',
       demoImage: '/lovable-uploads/demo-funnels.png',
       hasVideo: true,
-      videoId: 'p_rqiFCySYM'  // 1️⃣ Visão Geral do Growth Funnels
+      videoId: 'Z8lNliX-MtI'  // 3️⃣ Adicionando e Gerenciando Equipe My Staff
     }, {
-      name: 'Social Planner',
+      name: 'CRM completo',
       extraCost: false,
-      description: 'Agendamento de postagens em redes sociais.',
+      description: 'Gerenciamento de contatos, oportunidades e pipelines.',
       demoImage: '/lovable-uploads/demo-social.png',
       hasVideo: false
+    }],
+    config: [{
+      name: 'Configuração da Empresa',
+      extraCost: false,
+      description: 'Configure o perfil inicial da sua empresa na plataforma.',
+      demoImage: '/lovable-uploads/demo-google-ads.png',
+      hasVideo: true,
+      videoId: 'p_rqiFCySYM'  // Usando vídeo da visão geral como placeholder para "Configuração Inicial do Perfil da Empresa"
     }, {
-      name: 'Membership',
-      extraCost: true,
-      description: 'Área de membros com acesso restrito.',
+      name: 'Ajustes Avançados',
+      extraCost: false,
+      description: 'Personalize as configurações avançadas da sua conta.',
       demoImage: '/lovable-uploads/demo-membership.png',
       hasVideo: false
     }, {
-      name: 'Communities',
+      name: 'Integrações',
       extraCost: false,
-      description: 'Criação de comunidades para engajar leads.',
+      description: 'Configure integrações com outras ferramentas e plataformas.',
       demoImage: '/lovable-uploads/demo-communities.png',
       hasVideo: false
     }]
