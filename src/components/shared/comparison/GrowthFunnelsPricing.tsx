@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, ExternalLink, DollarSign, Zap, Shield } from 'lucide-react';
+import { CheckCircle, ExternalLink, DollarSign, Zap, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface GrowthFunnelsPricingProps {
@@ -11,12 +11,13 @@ interface GrowthFunnelsPricingProps {
 
 const GrowthFunnelsPricing = ({ 
   totalSaving = "R$ 10.122,40", 
-  billingAnnual = true,
-  getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-anual"
+  billingAnnual = false,
+  getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-mensal"
 }: GrowthFunnelsPricingProps) => {
   const price = billingAnnual ? "4.970" : "497";
   const period = billingAnnual ? "/ano" : "/mês";
   const installment = billingAnnual ? "ou 12x de R$ 414" : null;
+  const planType = billingAnnual ? "Anual" : "Mensal";
 
   return (
     <div className="bg-black p-6 md:p-8 rounded-b-md md:rounded-r-md md:rounded-bl-none h-full flex flex-col justify-between border border-white/10">
@@ -29,7 +30,7 @@ const GrowthFunnelsPricing = ({
         </div>
         
         <div className="mb-8">
-          <p className="text-sm text-white/70 mb-2">A partir de:</p>
+          <p className="text-sm text-white/70 mb-2">Plano {planType}:</p>
           <div className="flex flex-col items-center mb-3">
             <div className="flex items-baseline">
               <span className="text-[#d0ff00] text-xl font-bold">R$</span>
@@ -46,8 +47,8 @@ const GrowthFunnelsPricing = ({
           <div className="flex items-start bg-white/5 p-3 rounded-lg">
             <CheckCircle className="h-5 w-5 text-[#d0ff00] mt-0.5 mr-3 flex-shrink-0" />
             <div>
-              <span className="text-white text-base font-medium">Todos os recursos em uma única plataforma</span>
-              <p className="text-white/60 text-sm mt-1">Substitua até 12 ferramentas diferentes por uma solução completa</p>
+              <span className="text-white text-base font-medium">Substitua até 12 ferramentas</span>
+              <p className="text-white/60 text-sm mt-1">Todas as funcionalidades que você precisa em uma única plataforma</p>
             </div>
           </div>
           
@@ -55,10 +56,18 @@ const GrowthFunnelsPricing = ({
             <Zap className="h-5 w-5 text-[#d0ff00] mt-0.5 mr-3 flex-shrink-0" />
             <div>
               <span className="text-white text-base font-medium">Economize até {totalSaving} por ano</span>
-              <p className="text-white/60 text-sm mt-1">Reduza seus custos em até 90% mantendo todas as funcionalidades</p>
+              <p className="text-white/60 text-sm mt-1">Reduza seus custos em até 90% com a mesma qualidade</p>
             </div>
           </div>
           
+          <div className="flex items-start bg-white/5 p-3 rounded-lg">
+            <Users className="h-5 w-5 text-[#d0ff00] mt-0.5 mr-3 flex-shrink-0" />
+            <div>
+              <span className="text-white text-base font-medium">Até 3 usuários incluídos</span>
+              <p className="text-white/60 text-sm mt-1">Adicione mais usuários por apenas R$ 69/mês cada</p>
+            </div>
+          </div>
+
           <div className="flex items-start bg-white/5 p-3 rounded-lg">
             <Shield className="h-5 w-5 text-[#d0ff00] mt-0.5 mr-3 flex-shrink-0" />
             <div>
@@ -77,7 +86,7 @@ const GrowthFunnelsPricing = ({
           className="block w-full"
         >
           <Button className="w-full py-3 text-base font-bold" variant="greenNeon" size="lg">
-            Contratar Plano PRO
+            Contratar Plano PRO Mensal
             <ExternalLink className="h-4 w-4 ml-1" />
           </Button>
         </a>
@@ -87,7 +96,7 @@ const GrowthFunnelsPricing = ({
             <span className="block text-[#d0ff00] text-sm font-medium">
               Economize 90% em relação a outras soluções
             </span>
-            <span className="text-white/60 text-xs">Otimize seu orçamento mantendo todas as funcionalidades</span>
+            <span className="text-white/60 text-xs">Uma única assinatura para todas as ferramentas de marketing</span>
           </div>
         </div>
       </div>

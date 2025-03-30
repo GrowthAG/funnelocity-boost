@@ -20,7 +20,7 @@ const ComparisonTable = ({
   replacementTools,
   totalSaving = "R$ 10.122,40",
   className = '',
-  billingAnnual = true,
+  billingAnnual = false,
   getCheckoutLink
 }: ComparisonTableProps) => {
   return (

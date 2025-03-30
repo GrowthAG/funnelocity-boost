@@ -16,8 +16,8 @@ const NewComparisonTable = ({
   logoUrl,
   replacementTools,
   totalSaving,
-  billingAnnual = true,
-  getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-anual"
+  billingAnnual = false,
+  getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-mensal"
 }: NewComparisonTableProps) => {
   return (
     <div className="rounded-md overflow-hidden shadow-lg">
