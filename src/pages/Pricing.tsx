@@ -76,8 +76,8 @@ const Pricing = () => {
         'Até 3 usuários (+ R$69 por usuário adicional)',
         'Até 20.000 contatos',
         'Agendamentos e Calendários',
-        'Inbox unificado com WhatsApp, Instagram e e-mail',
-        'Construção de Funis/Landing Pages ilimitadas',
+        'Inbox unificado (WhatsApp, Instagram e e-mail)',
+        'Funis/Landing Pages ilimitadas',
         'Automações de e-mail',
         'CRM de vendas',
         'Reputação',
@@ -108,7 +108,7 @@ const Pricing = () => {
         'Webhooks e APIs',
         'Gestor de Social Media Completo',
         'Chat Widgets e Bots de IA',
-        'Ferramenta de Cursos com Certificados (adeus, Hotmart!)',
+        'Ferramenta de Cursos com Certificados',
         'Pagamentos integrados com Stripe e +',
         'Gestão de afiliados e comunidades'
       ],
@@ -135,7 +135,9 @@ const Pricing = () => {
         'Whitelabel',
         'Setup completo com especialistas',
         'Total controle e flexibilidade',
-        'Suporte dedicado'
+        'Suporte dedicado',
+        'Integrações personalizadas',
+        'Treinamento da equipe'
       ],
       additionalCosts: [],
       popular: false
