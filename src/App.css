@@ -1,19 +1,21 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;  /* Reduzido de 2rem para 1rem */
   text-align: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 5em;  /* Reduzido de 6em para 5em */
+  padding: 1em;  /* Reduzido de 1.5em para 1em */
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -34,9 +36,52 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;  /* Reduzido de 2em para 1em */
 }
 
 .read-the-docs {
   color: #888;
+}
+
+/* Ajustes adicionais para reduzir espaçamento */
+.container, main > div, section {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+h1 {
+  margin-bottom: 0.5rem !important;
+}
+
+p {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.py-16, .py-12, .py-10, .py-8 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.my-16, .my-12, .my-10, .my-8 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.gap-8, .gap-6 {
+  gap: 0.75rem !important;
+}
+
+.mb-16, .mb-12, .mb-10, .mb-8 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-16, .mt-12, .mt-10, .mt-8 {
+  margin-top: 1rem !important;
+}
+
+.space-y-8, .space-y-6, .space-y-4 {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
