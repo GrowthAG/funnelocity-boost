@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 import { 
   CheckCircle, 
   XCircle, 
@@ -30,7 +30,7 @@ const Templates = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const workflows = [
     {
@@ -95,7 +95,7 @@ const Templates = () => {
                     ))}
                   </div>
                 </div>
-                <Button className="w-full bg-[#d0ff00] text-black hover:bg-[#c6f300] text-sm font-semibold" onClick={() => router.push('/pricing')}>
+                <Button className="w-full bg-[#d0ff00] text-black hover:bg-[#c6f300] text-sm font-semibold" onClick={() => navigate('/pricing')}>
                   Usar Template
                 </Button>
               </div>
