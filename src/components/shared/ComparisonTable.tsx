@@ -8,7 +8,7 @@ export interface ToolInfo {
 }
 
 interface ComparisonTableProps {
-  replacementTools: ToolInfo[];
+  replacementTools: any[];
   totalSaving?: string;
   className?: string;
 }
@@ -20,7 +20,11 @@ const ComparisonTable = ({
 }: ComparisonTableProps) => {
   return (
     <div className={`${className}`}>
-      <NewComparisonTable logoUrl="/lovable-uploads/e972de3f-e663-467b-a000-a691202e4b0e.png" />
+      <NewComparisonTable 
+        logoUrl="/lovable-uploads/e972de3f-e663-467b-a000-a691202e4b0e.png"
+        replacementTools={replacementTools}
+        totalSaving={totalSaving}
+      />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import ComparisonTable from '@/components/shared/ComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Pricing = () => {
@@ -179,17 +180,12 @@ const Pricing = () => {
                   <td className="py-4 px-6 text-left">{tool.name}</td>
                   <td className="py-4 px-6">
                     <div className="flex flex-wrap gap-2 justify-center">
-                      {tool.logos.map((logo, i) => (
+                      {tool.tools && tool.tools.map((toolName, i) => (
                         <div 
                           key={i} 
-                          className="bg-white/10 rounded-md h-8 w-8 flex items-center justify-center p-1"
-                          title={logo.alt || ''}
+                          className="bg-white/10 rounded-md px-2 py-1 text-xs"
                         >
-                          <img 
-                            src={logo.src} 
-                            alt={logo.alt || tool.name} 
-                            className="max-h-6 max-w-6 object-contain" 
-                          />
+                          {toolName}
                         </div>
                       ))}
                     </div>
