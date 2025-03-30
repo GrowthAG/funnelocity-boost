@@ -1,8 +1,12 @@
+from pathlib import Path
+
+code = '''
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CheckCircle, HelpCircle, Plus, CreditCard } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
@@ -22,7 +26,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'PRO',
-      price: billingAnnual ? 4970 : 497,
+      price: billingAnnual ? 497 * 10 : 497,
       period: billingAnnual ? '/ano' : '/mês',
       description: 'Para pequenas empresas e empreendedores',
       features: [
@@ -53,7 +57,7 @@ const Pricing = () => {
     },
     {
       name: 'PLUS',
-      price: billingAnnual ? 6970 : 697,
+      price: billingAnnual ? 697 * 10 : 697,
       period: billingAnnual ? '/ano' : '/mês',
       description: 'Para empresas em crescimento',
       features: [
@@ -63,9 +67,10 @@ const Pricing = () => {
         'Webhooks e APIs',
         'Gestor de Social Media Completo',
         'Chat Widgets e Bots de IA',
-        'Ferramenta de Cursos com Certificados',
-        'Pagamentos integrados com Stripe e mais',
-        'Gestão de afiliados e comunidades'
+        'Ferramenta de Cursos com Certificados (adeus, Hotmart!)',
+        'Pagamentos: crie produtos, faturas, assinaturas, conecte com Stripe e +',
+        'Gestão de afiliados e campanhas',
+        'Ferramenta de Criação de Comunidades'
       ],
       additionalCosts: [
         '$0.0105 Fluxos de trabalho Premium',
@@ -92,7 +97,8 @@ const Pricing = () => {
         'Usuários ilimitados',
         'Contatos ilimitados',
         'Whitelabel',
-        'Setup completo com especialistas',
+        'Realizamos todo o seu setup',
+        'Implementação por especialistas',
         'Total controle e flexibilidade',
         'Suporte dedicado'
       ],
@@ -104,42 +110,60 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black">
       <Navbar />
+
       <main className="pt-24 pb-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Uma <span className="text-[#d0ff00]">plataforma completa</span> pelo preço de uma ferramenta
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Uma <span className="text-gradient">plataforma completa</span> pelo preço de uma ferramenta
             </h1>
             <p className="text-xl text-white/80 mb-8">
               Economize até 90% substituindo várias ferramentas e tendo tudo em um só lugar
             </p>
-            <div className="flex justify-center">
-              <div className="bg-white/10 p-1 rounded-full flex">
-                <button
-                  onClick={() => setBillingAnnual(false)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                    !billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  Mensal
-                </button>
-                <button
-                  onClick={() => setBillingAnnual(true)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                    billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  Anual <span className="ml-2 bg-black/20 text-white text-xs px-2 py-0.5 rounded-full">Economize 16%</span>
-                </button>
+
+            <div className="flex items-center justify-center mb-10">
+              <div className="bg-white/10 p-1 rounded-full">
+                <div className="flex">
+                  <button
+                    onClick={() => setBillingAnnual(false)}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                      !billingAnnual
+                        ? 'bg-[#d0ff00] text-black'
+                        : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    Mensal
+                  </button>
+                  <button
+                    onClick={() => setBillingAnnual(true)}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                      billingAnnual
+                        ? 'bg-[#d0ff00] text-black'
+                        : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    Anual
+                    <span className="bg-black/20 text-white text-xs px-2 py-0.5 rounded-full">
+                      Economize 16%
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
-              <div key={index} className={`bg-black border rounded-2xl p-8 flex flex-col ${plan.popular ? 'border-[#d0ff00] border-2' : 'border-[#d0ff00]/30'}`}>
+              <div
+                key={index}
+                className={`bg-black rounded-2xl p-8 flex flex-col justify-between min-h-[660px] relative ${
+                  plan.popular
+                    ? 'border-2 border-[#d0ff00]'
+                    : 'border border-[#d0ff00]/30'
+                }`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
                     Mais Popular
@@ -152,13 +176,14 @@ const Pricing = () => {
                     <>
                       <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
                       <span className="text-white/70">{plan.period}</span>
-                      {billingAnnual && <div className="text-sm mt-1 text-white/70">ou 12x de R$ {Math.floor(plan.price / 12)}</div>}
+                      {billingAnnual && (
+                        <div className="text-white/70 text-sm mt-1">ou 12x de R$ {Math.floor(plan.price / 12)}</div>
+                      )}
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-white">Entre em contato</span>
                   )}
                 </div>
-
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
@@ -182,23 +207,38 @@ const Pricing = () => {
                   </div>
                 )}
 
-                <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="greenNeon" size="lg" className="w-full py-2.5">
-                    {plan.cta}
-                  </Button>
-                </a>
+                <div className="mt-auto pt-6">
+                  <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      className="w-full py-2.5"
+                      variant="greenNeon"
+                      size="lg"
+                    >
+                      {plan.cta}
+                    </Button>
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="mt-16">
-            <ComparisonTable replacementTools={replacementToolsData} totalSaving={totalSavingData} />
+            <ComparisonTable
+              replacementTools={replacementToolsData}
+              totalSaving={totalSavingData}
+            />
           </div>
         </div>
       </main>
+
       <Footer />
     </div>
   );
 };
 
 export default Pricing;
+'''
+
+output_path = Path("/mnt/data/PricingPageAtualizada.jsx")
+output_path.write_text(code)
+output_path.name
