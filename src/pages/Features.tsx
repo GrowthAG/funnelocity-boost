@@ -26,6 +26,22 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Componente para exibir vídeo do YouTube
+const YouTubeEmbed = ({ videoId, title }) => {
+  return (
+    <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
+      <iframe 
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={title}
+        className="w-full h-full absolute inset-0"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+};
+
 const Features = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,8 +49,6 @@ const Features = () => {
   
   const [activeCategory, setActiveCategory] = useState("adManager");
   const isMobile = useIsMobile();
-  
-  // Estado para controlar o vídeo do fluxo de automação
   const [showWorkflowVideo, setShowWorkflowVideo] = useState(false);
   
   // Definição das categorias de funcionalidades
@@ -92,109 +106,123 @@ const Features = () => {
     }]
   };
 
-  // Mapeamento de vídeos para recursos específicos
-  const videoMappings = {
-    "Google Ads Report": "kbknZyu3CGA",
-    "Disparo de E-mails": "p-5pUOmrNOk",
-    "Automação de Nutrição de Leads": "kMzY8OiD7fA",
-    "CRM completo": "p_rqiFCySYM"
-  };
-
-  // Lista de funcionalidades por categoria
+  // Lista de funcionalidades por categoria com vídeos apenas para recursos específicos
   const features = {
     adManager: [{
       name: 'Google Ads Report',
       extraCost: false,
       description: 'Painel com desempenho de campanhas Google Ads.',
-      demoImage: '/lovable-uploads/demo-google-ads.png'
+      demoImage: '/lovable-uploads/demo-google-ads.png',
+      hasVideo: true,
+      videoId: 'kbknZyu3CGA'
     }, {
       name: 'Meta Ads Report',
       extraCost: false,
       description: 'Painel com desempenho de campanhas Facebook/Instagram.',
-      demoImage: '/lovable-uploads/demo-meta-ads.png'
+      demoImage: '/lovable-uploads/demo-meta-ads.png',
+      hasVideo: false
     }, {
       name: 'Attribution Report',
       extraCost: false,
       description: 'Conversões por canal de origem.',
-      demoImage: '/lovable-uploads/demo-attribution.png'
+      demoImage: '/lovable-uploads/demo-attribution.png',
+      hasVideo: false
     }, {
       name: 'Appointment Report',
       extraCost: false,
       description: 'Conversões de agendamentos por origem.',
-      demoImage: '/lovable-uploads/demo-appointment.png'
+      demoImage: '/lovable-uploads/demo-appointment.png',
+      hasVideo: false
     }, {
       name: 'Call Report',
       extraCost: false,
       description: 'Conversões por chamadas telefônicas.',
-      demoImage: '/lovable-uploads/demo-call.png'
+      demoImage: '/lovable-uploads/demo-call.png',
+      hasVideo: false
     }],
     marketing: [{
       name: 'Disparo de E-mails',
       extraCost: true,
       description: 'Envio de campanhas e automações por e-mail.',
-      demoImage: '/lovable-uploads/demo-email.png'
+      demoImage: '/lovable-uploads/demo-email.png',
+      hasVideo: true,
+      videoId: 'p-5pUOmrNOk'
     }, {
       name: 'Verificação de E-mails',
       extraCost: true,
       description: 'Validação de e-mails para evitar hard bounce.',
-      demoImage: '/lovable-uploads/demo-email-verification.png'
+      demoImage: '/lovable-uploads/demo-email-verification.png',
+      hasVideo: false
     }, {
       name: 'Construtor de E-mails',
       extraCost: false,
       description: 'Editor intuitivo drag & drop.',
-      demoImage: '/lovable-uploads/demo-email-builder.png'
+      demoImage: '/lovable-uploads/demo-email-builder.png',
+      hasVideo: false
     }],
     workflow: [{
       name: 'Automação de Nutrição de Leads',
       extraCost: false,
       description: 'Sequências de e-mails e mensagens baseadas em comportamento do usuário que aumentam sua taxa de conversão em 32%.',
-      demoImage: '/lovable-uploads/demo-lead-nurturing.png'
+      demoImage: '/lovable-uploads/demo-lead-nurturing.png',
+      hasVideo: true,
+      videoId: 'kMzY8OiD7fA'
     }, {
       name: 'Automação de Carrinho Abandonado',
       extraCost: false,
       description: 'Recupere até 24% das vendas perdidas com lembretes automáticos via WhatsApp e e-mail.',
-      demoImage: '/lovable-uploads/demo-cart-recovery.png'
+      demoImage: '/lovable-uploads/demo-cart-recovery.png',
+      hasVideo: false
     }, {
       name: 'Onboarding de Clientes',
       extraCost: false,
       description: 'Entregue conteúdo educacional e agende demonstrações automaticamente para novos clientes.',
-      demoImage: '/lovable-uploads/demo-onboarding.png'
+      demoImage: '/lovable-uploads/demo-onboarding.png',
+      hasVideo: false
     }, {
       name: 'Workflows Avançados',
       extraCost: true,
       description: 'Crie automações complexas com múltiplas condições, atrasos e bifurcações.',
-      demoImage: '/lovable-uploads/demo-advanced-workflow.png'
+      demoImage: '/lovable-uploads/demo-advanced-workflow.png',
+      hasVideo: false
     }, {
       name: 'Triggers Personalizados',
       extraCost: true,
       description: 'Configure gatilhos baseados em eventos específicos do seu negócio.',
-      demoImage: '/lovable-uploads/demo-triggers.png'
+      demoImage: '/lovable-uploads/demo-triggers.png',
+      hasVideo: false
     }],
     crm: [{
       name: 'CRM completo',
       extraCost: false,
       description: 'Gerenciamento de contatos, oportunidades e pipelines.',
-      demoImage: '/lovable-uploads/demo-crm.png'
+      demoImage: '/lovable-uploads/demo-crm.png',
+      hasVideo: true,
+      videoId: 'p_rqiFCySYM'
     }, {
       name: 'Funnels',
       extraCost: false,
       description: 'Criação de funis de vendas visuais.',
-      demoImage: '/lovable-uploads/demo-funnels.png'
+      demoImage: '/lovable-uploads/demo-funnels.png',
+      hasVideo: false
     }, {
       name: 'Social Planner',
       extraCost: false,
       description: 'Agendamento de postagens em redes sociais.',
-      demoImage: '/lovable-uploads/demo-social.png'
+      demoImage: '/lovable-uploads/demo-social.png',
+      hasVideo: false
     }, {
       name: 'Membership',
       extraCost: true,
       description: 'Área de membros com acesso restrito.',
-      demoImage: '/lovable-uploads/demo-membership.png'
+      demoImage: '/lovable-uploads/demo-membership.png',
+      hasVideo: false
     }, {
       name: 'Communities',
       extraCost: false,
       description: 'Criação de comunidades para engajar leads.',
-      demoImage: '/lovable-uploads/demo-communities.png'
+      demoImage: '/lovable-uploads/demo-communities.png',
+      hasVideo: false
     }]
   };
 
@@ -205,16 +233,7 @@ const Features = () => {
     featureList: any[];
   }) => {
     const [selectedFeature, setSelectedFeature] = useState(0);
-    const [showVideo, setShowVideo] = useState(false);
-    
-    // Resetar o vídeo quando a feature muda
-    useEffect(() => {
-      setShowVideo(false);
-    }, [selectedFeature]);
-    
-    // Verificar se a feature atual tem um vídeo associado
-    const hasVideo = videoMappings[featureList[selectedFeature].name] !== undefined;
-    const videoId = hasVideo ? videoMappings[featureList[selectedFeature].name] : '';
+    const [isPlaying, setIsPlaying] = useState(false);
     
     return (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -233,7 +252,10 @@ const Features = () => {
                   <tr 
                     key={index} 
                     className={`hover:bg-black/60 transition-colors cursor-pointer ${index === selectedFeature ? 'bg-[#d0ff00]/10' : ''}`}
-                    onClick={() => setSelectedFeature(index)}
+                    onClick={() => {
+                      setSelectedFeature(index);
+                      setIsPlaying(false);
+                    }}
                   >
                     <td className="p-3 md:p-4 text-white font-medium border-t border-[#d0ff00]/10">{feature.name}</td>
                     <td className="p-3 md:p-4 text-center border-t border-[#d0ff00]/10">
@@ -263,17 +285,11 @@ const Features = () => {
             <p className="text-white/70 text-sm">{featureList[selectedFeature].description}</p>
           </div>
           <div className="p-4">
-            {showVideo && hasVideo ? (
-              <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
-                <iframe 
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title={`Demonstração de ${featureList[selectedFeature].name}`}
-                  className="w-full h-full absolute inset-0"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+            {isPlaying && featureList[selectedFeature].hasVideo ? (
+              <YouTubeEmbed 
+                videoId={featureList[selectedFeature].videoId} 
+                title={`Demonstração de ${featureList[selectedFeature].name}`}
+              />
             ) : (
               <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
                 <img 
@@ -282,15 +298,26 @@ const Features = () => {
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="bg-black/70 border-white/20 text-white hover:bg-black/90 flex items-center gap-2"
-                    onClick={() => hasVideo && setShowVideo(true)}
-                  >
-                    <PlayCircle className="h-4 w-4 text-[#d0ff00]" />
-                    <span>Ver Demo</span>
-                  </Button>
+                  {featureList[selectedFeature].hasVideo ? (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="bg-black/70 border-white/20 text-white hover:bg-black/90 flex items-center gap-2"
+                      onClick={() => setIsPlaying(true)}
+                    >
+                      <PlayCircle className="h-4 w-4 text-[#d0ff00]" />
+                      <span>Ver Demo</span>
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="bg-black/70 border-white/20 text-white hover:bg-black/90 flex items-center gap-2"
+                    >
+                      <PlayCircle className="h-4 w-4 text-[#d0ff00]" />
+                      <span>Ver Demo</span>
+                    </Button>
+                  )}
                 </div>
               </div>
             )}
@@ -421,16 +448,10 @@ const Features = () => {
                       
                       {showWorkflowVideo ? (
                         <div className="mb-6">
-                          <div className="relative aspect-video rounded-lg overflow-hidden bg-black/60 border border-white/10">
-                            <iframe 
-                              src="https://www.youtube.com/embed/5YEVNryH1gM"
-                              title="Demonstração de Automação de Workflow"
-                              className="w-full h-full absolute inset-0"
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            ></iframe>
-                          </div>
+                          <YouTubeEmbed 
+                            videoId="5YEVNryH1gM" 
+                            title="Demonstração de Automação de Workflow" 
+                          />
                         </div>
                       ) : (
                         <div className="mt-6 relative">
