@@ -386,161 +386,140 @@ const Features = () => {
                 <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base h-[60px]">
                   Acompanhe os principais indicadores do seu funil em tempo real: receita recorrente, novos clientes e performance de campanhas.
                 </p>
-                
-                <div className="flex items-center justify-end mb-4 text-xs text-[#d0ff00]/80">
-                  <RefreshCw className="h-3 w-3 mr-1 animate-spin" style={{animationDuration: '3s'}} />
-                  <span>Atualizado em tempo real</span>
-                </div>
-                
-                <div className="space-y-6 flex-grow">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
-                      <div className="flex justify-between items-center mb-2">
-                        <p className="text-white/70 text-sm">Receita Recorrente</p>
-                        <TrendingUp className="h-4 w-4 text-green-500" />
-                      </div>
-                      <p className="text-white text-xl md:text-2xl font-bold">R$ 12.947</p>
-                      <p className="text-green-500 text-xs mt-1 flex items-center">
-                        <ArrowUpRight className="h-3 w-3 mr-1" />
-                        +8.3% vs último mês
-                      </p>
-                    </div>
-                    <div className="bg-black border border-[#d0ff00]/20 rounded-lg p-4 flex flex-col">
-                      <div className="flex justify-between items-center mb-2">
-                        <p className="text-white/70 text-sm">Novos Clientes</p>
-                        <UsersIcon className="h-4 w-4 text-[#d0ff00]" />
-                      </div>
-                      <p className="text-white text-xl md:text-2xl font-bold">32</p>
-                      <p className="text-green-500 text-xs mt-1 flex items-center">
-                        <ArrowUpRight className="h-3 w-3 mr-1" />
-                        +12% vs último mês
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-black/40 border border-[#d0ff00]/10 rounded-lg p-5 flex flex-col flex-grow">
-                    <div className="flex justify-between items-center mb-4">
-                      <h4 className="text-white text-sm font-medium">Performance últimos 7 dias</h4>
-                      <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
-                        +17.8%
-                      </div>
-                    </div>
-                    
-                    <div className="h-[180px] w-full mt-4 flex-grow">
-                      <div className="relative h-full w-full flex items-end justify-between px-2">
-                        {mockRevenueData.map((item, index) => (
-                          <div key={index} className="flex flex-col items-center justify-end">
-                            <div 
-                              className="w-8 bg-gradient-to-t from-[#d0ff00]/60 to-[#d0ff00] rounded-t-sm"
-                              style={{ height: `${(item.value/20)*100}%` }}
-                            ></div>
-                            <span className="text-white/60 text-xs mt-2">{item.month}</span>
-                          </div>
-                        ))}
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                          <svg className="w-full h-[70%] overflow-visible" preserveAspectRatio="none">
-                            <path 
-                              d="M 30 80 L 70 65 L 110 55 L 150 60 L 190 45 L 230 35 L 270 20" 
-                              fill="none" 
-                              stroke="#ffffff" 
-                              strokeWidth="1.5" 
-                              strokeDasharray="4,4"
-                              strokeLinecap="round"
-                              className="opacity-50"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Automações Inteligentes Section */}
-              <div className="p-8 md:p-10 relative flex flex-col min-h-[680px]">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2 h-9">
-                  <Workflow className="h-6 w-6 text-[#d0ff00]" />
-                  Automações Inteligentes
-                </h3>
-                <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base h-[60px]">
-                  Crie sequências automáticas baseadas em comportamentos de clientes e prospects que aumentam suas conversões sem precisar criar códigos ou contratar developers.
-                </p>
-                
-                <div className="bg-black/30 border border-[#d0ff00]/10 rounded-lg p-5 mb-6 flex-grow">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="h-8 w-8 rounded-full bg-[#d0ff00]/10 flex items-center justify-center border border-[#d0ff00]/30">
-                      <FormInput className="h-4 w-4 text-[#d0ff00]" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-white text-sm font-medium">Nutrição de Leads</h4>
-                      <div className="flex items-center mt-1">
-                        <span className="text-[#d0ff00] text-xs font-medium">Conversão: 32%</span>
-                        <span className="mx-2 text-white/30">•</span>
-                        <span className="text-white/50 text-xs">Ativa há 47 dias</span>
-                      </div>
-                    </div>
-                    <div className="bg-[#d0ff00]/20 rounded-full px-2 py-0.5 text-xs text-[#d0ff00]">
-                      +204 leads
-                    </div>
-                  </div>
+               import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FormInput, ShoppingCart, BadgeCheck } from 'lucide-react';
 
-                  <div className="mt-5 relative">
-                    <div className="absolute left-[22px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#d0ff00] to-[#d0ff00]/20"></div>
-                    
-                    <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
-                        <FormInput className="h-5 w-5 text-black" />
-                      </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
-                        <h5 className="text-white text-sm font-medium mb-1">Trigger: Formulário Preenchido</h5>
-                        <p className="text-white/60 text-xs">O lead preenche o formulário de captura no seu site</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
-                        <Filter className="h-5 w-5 text-black" />
-                      </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
-                        <h5 className="text-white text-sm font-medium mb-1">Condição: Interesse no Produto X?</h5>
-                        <p className="text-white/60 text-xs">Se marcou interesse no produto X, segue fluxo A, senão segue fluxo B</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex mb-5 relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
-                        <Mail className="h-5 w-5 text-black" />
-                      </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
-                        <h5 className="text-white text-sm font-medium mb-1">Ação: Enviar Sequência de E-mails</h5>
-                        <p className="text-white/60 text-xs">Envia 3 e-mails ao longo de 7 dias com conteúdo educativo</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex relative">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-[#d0ff00] z-10 shrink-0">
-                        <Tag className="h-5 w-5 text-black" />
-                      </div>
-                      <div className="ml-4 bg-black/40 rounded-lg p-3 flex-1 border border-[#d0ff00]/30">
-                        <h5 className="text-white text-sm font-medium mb-1">Ação: Adicionar Tag no CRM</h5>
-                        <p className="text-white/60 text-xs">Adiciona tag "Nutrido" e notifica o time comercial</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mb-6">
-                  <h4 className="text-white text-sm font-medium mb-3">Integrações Disponíveis:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                      <div className="h-5 w-5 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/30">
-                        <MessageCircle className="h-3 w-3 text-[#25D366]" />
-                      </div>
-                      <span className="text-white/80 text-xs">WhatsApp</span>
-                    </div>
-                    <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                      <div className="h-5 w-5 rounded-full bg-[#E4405F]/10 flex items-center justify-center border border-[#E4405F]/30">
-                        <Instagram className="h-3 w-3 text-[#E4405F]" />
+const automationExamples = [
+  {
+    id: 'lead-nurturing',
+    title: 'Nutrição de Leads',
+    description: 'Sequência automatizada para converter visitantes em clientes',
+    triggers: ['Formulário Preenchido', 'E-book Baixado', 'Webinar Registrado'],
+    actions: ['Enviar E-mail', 'Adicionar Tag CRM', 'Notificar Vendedor'],
+    conversion: '32%',
+    color: '#d0ff00',
+    icon: <FormInput className="h-5 w-5 text-[#d0ff00]" />
+  },
+  {
+    id: 'abandoned-cart',
+    title: 'Carrinho Abandonado',
+    description: 'Recupere vendas perdidas com lembretes automáticos',
+    triggers: ['Carrinho Não Finalizado', 'Checkout Iniciado', 'Produto Adicionado'],
+    actions: ['Enviar WhatsApp', 'Oferecer Desconto', 'Reengajar no Instagram'],
+    conversion: '24%',
+    color: '#d0ff00',
+    icon: <ShoppingCart className="h-5 w-5 text-[#d0ff00]" />
+  },
+  {
+    id: 'client-onboarding',
+    title: 'Onboarding de Clientes',
+    description: 'Apresente sua empresa e produto para novos clientes',
+    triggers: ['Primeira Compra', 'Assinatura Iniciada', 'Cadastro Completo'],
+    actions: ['Enviar Boas-vindas', 'Agendar Reunião', 'Enviar Material de Treinamento'],
+    conversion: '89%',
+    color: '#d0ff00',
+    icon: <BadgeCheck className="h-5 w-5 text-[#d0ff00]" />
+  }
+];
+
+// Componente de Template de Automação
+const AutomationTemplateCard: React.FC<{
+  template: typeof automationExamples[0]
+}> = ({ template }) => {
+  const navigate = useNavigate();
+
+  const handleUseTemplate = () => {
+    // Navega para a página de preços passando o tipo de template
+    navigate('/pricing', { 
+      state: { 
+        templateType: template.id 
+      } 
+    });
+  };
+
+  return (
+    <div 
+      key={template.id}
+      className="bg-black border border-[#d0ff00]/20 rounded-xl p-5 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d0ff00]/5 hover:border-[#d0ff00]/40 flex flex-col h-full"
+    >
+      <div className="flex items-center gap-3 mb-4">
+        <div 
+          className="h-10 w-10 rounded-lg flex items-center justify-center border bg-[#d0ff00]/10 border-[#d0ff00]/30"
+        >
+          {template.icon}
+        </div>
+        <div>
+          <h3 className="text-white font-medium">{template.title}</h3>
+          <div className="flex items-center mt-1">
+            <span className="text-[#d0ff00] text-xs font-medium">Conversão: {template.conversion}</span>
+          </div>
+        </div>
+      </div>
+      
+      <p className="text-white/70 text-sm mb-4">{template.description}</p>
+      
+      <div className="mb-4">
+        <h4 className="text-white/80 text-xs font-medium mb-2">Gatilhos:</h4>
+        <div className="flex flex-wrap gap-2">
+          {template.triggers.map((trigger, idx) => (
+            <div key={idx} className="bg-black/70 border border-white/10 rounded-full py-1 px-2.5 text-white/70 text-xs">
+              {trigger}
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div>
+        <h4 className="text-white/80 text-xs font-medium mb-2">Ações:</h4>
+        <div className="flex flex-wrap gap-2">
+          {template.actions.map((action, idx) => (
+            <div 
+              key={idx} 
+              className="border rounded-full py-1 px-2.5 text-xs bg-[#d0ff00]/5 border-[#d0ff00]/30 text-[#d0ff00]"
+            >
+              {action}
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="mt-auto pt-6">
+        <button 
+          onClick={handleUseTemplate}
+          aria-label={`Usar Template ${template.title}`}
+          className="block w-full py-3 px-6 rounded-md text-base font-semibold bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
+        >
+          Usar Template
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// Seção de Templates de Automação
+const AutomationTemplatesSection: React.FC = () => {
+  return (
+    <div className="mb-16 md:mb-24">
+      <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white">
+          Templates de Automação Prontos
+        </h2>
+        <p className="text-white/70 text-base">
+          Comece em minutos com nossos modelos de automação testados e otimizados
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {automationExamples.map((template) => (
+          <AutomationTemplateCard key={template.id} template={template} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AutomationTemplatesSection;nstagram className="h-3 w-3 text-[#E4405F]" />
                       </div>
                       <span className="text-white/80 text-xs">Instagram</span>
                     </div>
