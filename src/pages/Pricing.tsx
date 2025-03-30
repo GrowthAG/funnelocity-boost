@@ -343,3 +343,112 @@ const Pricing = () => {
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold z-10">
+                      Mais Popular
+                    </div>
+                  )}
+
+                  <div>
+                    <h3 className="text-xl font-bold text-[#d0ff00] min-h-[30px]">{plan.name}</h3>
+                    <p className="text-white/70 mb-6 min-h-[50px]">{plan.description}</p>
+
+                    {plan.price ? (
+                      <div className="mb-6 min-h-[80px]">
+                        <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
+                        <span className="text-white/70">{plan.period}</span>
+                        {plan.monthlyInstallment && (
+                          <div className="text-white/70 text-sm mt-1">{plan.monthlyInstallment}</div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="mb-6 min-h-[80px]">
+                        <span className="text-2xl font-bold text-white">Entre em contato</span>
+                      </div>
+                    )}
+
+                    <div className="mt-8">
+                      <a 
+                        href={getCheckoutLink(plan.name)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="block w-full"
+                        onClick={(e) => {
+                          // Garantir que o link correto está sendo usado
+                          const link = getCheckoutLink(plan.name);
+                          e.currentTarget.href = link;
+                          console.log(`Redirecionando para: ${link}`);
+                        }}
+                      >
+                        <Button className="w-full py-2.5" variant="greenNeon" size="lg">
+                          {plan.name === 'ENTERPRISE' ? 'FALE CONOSCO' : 'CONTRATAR PLANO'}
+                        </Button>
+                      </a>
+                    </div>
+
+                    <ul className="space-y-3 mt-8 mb-4 min-h-[350px]">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-white/80">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {plan.additionalCosts.length > 0 && (
+                      <div className="min-h-[80px]">
+                        <div className="flex items-center gap-2 text-white mb-2">
+                          <Plus className="h-4 w-4 text-[#d0ff00]" />
+                          <span className="text-sm font-medium">Custos Adicionais</span>
+                        </div>
+                        <ul className="text-xs text-white/60 space-y-1 pl-6">
+                          {plan.additionalCosts.slice(0, 3).map((cost, i) => (
+                            <li key={i}>{cost}</li>
+                          ))}
+                          {plan.additionalCosts.length > 3 && (
+                            <li>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <button className="text-[#d0ff00] text-xs cursor-pointer hover:underline focus:outline-none">
+                                    + {plan.additionalCosts.length - 3} mais
+                                  </button>
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-black/95 border border-[#d0ff00]/30 p-3 rounded-lg shadow-lg">
+                                  <ul className="space-y-1 text-white">
+                                    {plan.additionalCosts.slice(3).map((cost, i) => (
+                                      <li key={i}>{cost}</li>
+                                    ))}
+                                  </ul>
+                                </TooltipContent>
+                              </Tooltip>
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex justify-center mt-6">
+                    <CreditCard className="h-5 w-5 text-white/70 mr-3" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto mx-1" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16">
+              <EnhancedComparisonTable 
+                replacementTools={replacementToolsData}
+                totalSaving={totalSavingData}
+              />
+            </div>
+          </div>
+        </main>
+      </TooltipProvider>
+      <Footer />
+    </div>
+  );
+};
+
+export default Pricing;
