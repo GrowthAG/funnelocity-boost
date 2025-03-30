@@ -9,12 +9,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import ComparisonTable from '@/components/shared/ComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Pricing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-
+    
     // Log para depuração quando a página carrega
     console.log("Links de checkout configurados:", {
       'PRO Anual': checkoutLinks.PRO.annual,
@@ -26,7 +27,7 @@ const Pricing = () => {
   }, []);
 
   const [billingAnnual, setBillingAnnual] = useState(true);
-
+  
   // Função para alternar entre os modos de cobrança
   const toggleBillingMode = (isAnnual) => {
     setBillingAnnual(isAnnual);
@@ -52,7 +53,7 @@ const Pricing = () => {
     if (planName === 'ENTERPRISE') {
       return checkoutLinks.ENTERPRISE;
     }
-
+    
     // Escolhe o link baseado na seleção do usuário (anual ou mensal)
     if (billingAnnual) {
       console.log(`Link ${planName} anual:`, checkoutLinks[planName].annual);
@@ -142,8 +143,8 @@ const Pricing = () => {
     }
   ];
 
-  // Componente de Tabela de Comparação
-  const ComparisonTable = ({ replacementTools, totalSaving }) => {
+  // Componente de Tabela de Comparação Aprimorada
+  const EnhancedComparisonTable = ({ replacementTools, totalSaving }) => {
     return (
       <div className="bg-black text-white">
         <div className="mb-8">
@@ -151,115 +152,107 @@ const Pricing = () => {
             <img 
               src="https://growthfunnels.com.br/wp-content/uploads/2024/05/logo-growth-funnels.svg" 
               alt="GrowthFunnels Logo" 
-              className="h-10 mr-2" 
+              className="h-8 mr-2" 
             />
-            <span className="text-2xl font-bold">vs. Outras Soluções</span>
+            <span className="text-xl font-bold">vs. Outras Soluções</span>
           </div>
-          <p className="text-center text-white/70 mb-8 text-lg">
-            Compare o custo e os recursos do GrowthFunnels com as alternativas do mercado e veja quanto você pode economizar enquanto simplifica sua stack de marketing e vendas.
+          <p className="text-center text-white/70 mb-8">
+            Compare o custo e os recursos do GrowthFunnels com as alternativas do mercado
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Coluna da esquerda - O que você substituirá */}
-          <div className="p-6 border-r border-white/10">
-            <h3 className="text-xl font-bold mb-6 text-white">O que você substituirá:</h3>
-            <p className="text-white/70 text-lg mb-6">
-              Todas essas ferramentas podem ser substituídas pelo GrowthFunnels, simplificando sua operação e reduzindo custos:
-            </p>
-            
-            {/* Tabela de ferramentas */}
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <tbody className="text-base">
-                  {replacementTools.map((tool, index) => (
-                    <tr key={index} className="border-b border-white/10">
-                      <td className="py-4 text-left font-medium text-lg">
-                        <div>{tool.name}</div>
-                        <div className="flex flex-wrap gap-1 mt-2">
-                          {tool.logos.map((logo, i) => (
-                            <div key={i} className="bg-black/80 rounded-md h-8 w-auto px-2 flex items-center justify-center">
-                              <img src={logo.src} alt={logo.alt || tool.name} className="h-5 object-contain" />
-                            </div>
-                          ))}
+  
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-[#d0ff00] text-black">
+                <th className="py-4 px-6 text-left font-bold">Ferramentas</th>
+                <th className="py-4 px-6 text-center font-bold">Substitui</th>
+                <th className="py-4 px-6 text-right font-bold">Valor</th>
+                <th className="py-4 px-2 text-center w-12 font-bold"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {replacementTools.map((tool, index) => (
+                <tr 
+                  key={index} 
+                  className={`border-b border-white/10 hover:bg-white/5 transition-colors ${index % 2 === 0 ? 'bg-black/60' : 'bg-black/30'}`}
+                >
+                  <td className="py-4 px-6 text-left">{tool.name}</td>
+                  <td className="py-4 px-6">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {tool.tools && tool.tools.map((toolName, i) => (
+                        <div 
+                          key={i} 
+                          className="bg-white/10 rounded-md px-2 py-1 text-xs"
+                        >
+                          {toolName}
                         </div>
-                      </td>
-                      <td className="py-4 text-right font-bold text-lg text-[#d0ff00]">{tool.value}</td>
-                    </tr>
-                  ))}
-                  <tr className="border-t-2 border-[#d0ff00]">
-                    <td className="py-5 text-left font-bold text-xl">Total</td>
-                    <td className="py-5 text-right font-bold text-2xl text-[#d0ff00]">{totalSaving}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="py-4 px-6 text-right font-medium">{tool.value}</td>
+                  <td className="py-4 px-2 text-center">
+                    <CheckCircle className="h-5 w-5 text-[#d0ff00] inline-block" />
+                  </td>
+                </tr>
+              ))}
+              <tr className="border-t-2 border-[#d0ff00] bg-black/80">
+                <td className="py-5 px-6 text-left font-bold text-xl">Total</td>
+                <td className="py-5 px-6"></td>
+                <td className="py-5 px-6 text-right font-bold text-xl text-[#d0ff00]">{totalSaving}</td>
+                <td className="py-5 px-2 text-center">
+                  <CheckCircle className="h-6 w-6 text-[#d0ff00] inline-block" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <div className="mt-8 mb-16 grid md:grid-cols-2 gap-8">
+          <div className="p-6 bg-black/30 border border-white/10 rounded-xl">
+            <h3 className="text-xl font-bold mb-4 text-white">O que você substituirá:</h3>
+            <p className="text-white/70">
+              Lista de ferramentas que serão substituídas pelo GrowthFunnels, ajudando a otimizar seu orçamento e simplificar sua stack de marketing e vendas.
+            </p>
           </div>
+  
+          <div className="p-6 bg-black/30 border border-white/10 rounded-xl">
+            <h3 className="text-xl font-bold mb-4 text-white">Com GrowthFunnels você paga:</h3>
+            <div className="mt-4 text-center">
+              <p className="text-sm text-white/70 mb-2">A partir de:</p>
+              <div className="flex items-center justify-center">
+                <img 
+                  src="https://growthfunnels.com.br/wp-content/uploads/2024/05/logo-growth-funnels.svg" 
+                  alt="GrowthFunnels Logo" 
+                  className="h-8 mr-2" 
+                />
+               <span className="text-3xl font-bold text-[#d0ff00]">R$ 497</span>
+               <span className="text-white/70">/mês</span>
 
-          {/* Coluna da direita - Com GrowthFunnels você paga */}
-          <div className="p-6 bg-black border-l border-white/10">
-            <h3 className="text-xl font-bold mb-6 text-white">Com GrowthFunnels você paga:</h3>
-            <p className="text-white/70 mb-2 text-lg">Plano Mensal:</p>
-            <div className="mb-8">
-              <div className="flex items-center">
-                <span className="text-5xl font-bold text-[#d0ff00]">R$ 497</span>
-                <span className="text-white/70 text-xl">/mês</span>
               </div>
-            </div>
-            
-            {/* Lista de benefícios */}
-            <ul className="space-y-6 text-lg">
-              <li className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Substitua até 12 ferramentas</p>
-                  <p className="text-white/70">Todas as funcionalidades em uma única plataforma</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Economize até R$ 10.122,40 por ano</p>
-                  <p className="text-white/70">Reduza seus custos em até 90% com mais qualidade</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Até 3 usuários incluídos</p>
-                  <p className="text-white/70">Adicione mais usuários por apenas R$ 69/mês cada</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">25.000 contatos incluídos</p>
-                  <p className="text-white/70">Gerencie seus clientes e leads em um só lugar</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Suporte técnico dedicado</p>
-                  <p className="text-white/70">Conte com nossa equipe para implementação e dúvidas</p>
-                </div>
-              </li>
-            </ul>
-            
-            {/* Botão de ação */}
-            <div className="mt-10">
-              <a 
-                href={getCheckoutLink('PRO')} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-[#d0ff00] text-black font-bold py-4 px-6 rounded-lg inline-flex items-center justify-center w-full hover:brightness-110 transition-all text-lg"
-              >
-                Contratar Plano PRO Mensal
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 ml-2">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
+              <p className="text-sm text-white/70 mt-1">{billingAnnual ? 'ou 12x de R$ 414' : ''}</p>
+              
+              <div className="flex items-center justify-center mt-4 mb-6">
+                <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2" />
+                <span className="text-white">Todos os recursos em uma única plataforma</span>
+              </div>
+              
+              <div className="mt-4">
+                <a 
+                  href={getCheckoutLink('PRO')} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block w-full"
+                >
+                  <Button className="w-full py-3" variant="greenNeon" size="lg">
+                    Contratar Plano PRO
+                  </Button>
+                </a>
+              </div>
+              
+              <div className="mt-4 bg-[#d0ff00]/10 rounded-full py-1 px-4 inline-block">
+                <span className="text-[#d0ff00] font-medium text-sm">Economize 90%</span>
+              </div>
             </div>
           </div>
         </div>
@@ -410,6 +403,8 @@ const Pricing = () => {
               <ComparisonTable 
                 replacementTools={replacementToolsData}
                 totalSaving={totalSavingData}
+                billingAnnual={billingAnnual}
+                getCheckoutLink={getCheckoutLink}
               />
             </div>
           </div>
