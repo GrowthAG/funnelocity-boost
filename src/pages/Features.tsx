@@ -42,10 +42,6 @@ const YouTubeEmbed = ({ videoId, title }) => {
   );
 };
 
-// AQUI REMOVI AS DUAS LINHAS PROBLEMÁTICAS:
-// export default Features;
-// };
-
 const Features = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -110,7 +106,7 @@ const Features = () => {
     }]
   };
 
-  // Lista de funcionalidades por categoria com vídeos apenas para recursos específicos
+  // Lista de funcionalidades por categoria
   const features = {
     adManager: [{
       name: 'Google Ads Report',
@@ -118,7 +114,7 @@ const Features = () => {
       description: 'Painel com desempenho de campanhas Google Ads.',
       demoImage: '/lovable-uploads/demo-google-ads.png',
       hasVideo: true,
-      videoId: 'kbknZyu3CGA'
+      videoId: 'kbknZyu3CGA'  // Google Ads
     }, {
       name: 'Meta Ads Report',
       extraCost: false,
@@ -150,7 +146,7 @@ const Features = () => {
       description: 'Envio de campanhas e automações por e-mail.',
       demoImage: '/lovable-uploads/demo-email.png',
       hasVideo: true,
-      videoId: 'p-5pUOmrNOk'
+      videoId: 'p-5pUOmrNOk'  // Marketing/Email
     }, {
       name: 'Verificação de E-mails',
       extraCost: true,
@@ -170,7 +166,7 @@ const Features = () => {
       description: 'Sequências de e-mails e mensagens baseadas em comportamento do usuário que aumentam sua taxa de conversão em 32%.',
       demoImage: '/lovable-uploads/demo-lead-nurturing.png',
       hasVideo: true,
-      videoId: 'kMzY8OiD7fA'
+      videoId: 'kMzY8OiD7fA'  // Automação
     }, {
       name: 'Automação de Carrinho Abandonado',
       extraCost: false,
@@ -202,7 +198,7 @@ const Features = () => {
       description: 'Gerenciamento de contatos, oportunidades e pipelines.',
       demoImage: '/lovable-uploads/demo-crm.png',
       hasVideo: true,
-      videoId: 'p_rqiFCySYM'
+      videoId: 'p_rqiFCySYM'  // CRM
     }, {
       name: 'Funnels',
       extraCost: false,
@@ -233,11 +229,14 @@ const Features = () => {
   // Componente de tabela de funcionalidades com imagens de demonstração
   const FeatureTable = ({
     featureList
-  }: {
-    featureList: any[];
   }) => {
     const [selectedFeature, setSelectedFeature] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+    
+    // Resetar o vídeo quando a feature muda
+    useEffect(() => {
+      setIsPlaying(false);
+    }, [selectedFeature]);
     
     return (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -256,10 +255,7 @@ const Features = () => {
                   <tr 
                     key={index} 
                     className={`hover:bg-black/60 transition-colors cursor-pointer ${index === selectedFeature ? 'bg-[#d0ff00]/10' : ''}`}
-                    onClick={() => {
-                      setSelectedFeature(index);
-                      setIsPlaying(false);
-                    }}
+                    onClick={() => setSelectedFeature(index)}
                   >
                     <td className="p-3 md:p-4 text-white font-medium border-t border-[#d0ff00]/10">{feature.name}</td>
                     <td className="p-3 md:p-4 text-center border-t border-[#d0ff00]/10">
@@ -487,18 +483,6 @@ const Features = () => {
                         <h4 className="text-white/80 text-sm font-medium mb-3">Integrações Disponíveis:</h4>
                         <div className="flex flex-wrap gap-2">
                           <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                            <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                            <span className="text-white/80 text-xs">WhatsApp</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                            <Mail className="h-4 w-4 text-[#d0ff00]" />
-                            <span className="text-white/80 text-xs">E-mail</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
-                            <Database className="h-4 w-4 text-[#4A66FB]" />
-                            <span className="text-white/80 text-xs">CRM</span>
-                          </div>
-                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-[#0EA5E9]" />
                             <span className="text-white/80 text-xs">Calendário</span>
                           </div>
@@ -554,4 +538,16 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Features;d-full py-1.5 px-3 flex items-center gap-2">
+                            <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                            <span className="text-white/80 text-xs">WhatsApp</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Mail className="h-4 w-4 text-[#d0ff00]" />
+                            <span className="text-white/80 text-xs">E-mail</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounded-full py-1.5 px-3 flex items-center gap-2">
+                            <Database className="h-4 w-4 text-[#4A66FB]" />
+                            <span className="text-white/80 text-xs">CRM</span>
+                          </div>
+                          <div className="bg-black/40 border border-[#d0ff00]/10 rounde
