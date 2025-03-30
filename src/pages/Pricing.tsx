@@ -163,7 +163,53 @@ const Pricing = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
-            {/* ... tabela permanece igual ... */}
+            <thead>
+              <tr className="bg-[#d0ff00] text-black">
+                <th className="py-4 px-6 text-left font-bold">Ferramentas</th>
+                <th className="py-4 px-6 text-center font-bold">Substitui</th>
+                <th className="py-4 px-6 text-right font-bold">Valor</th>
+                <th className="py-4 px-2 text-center w-12 font-bold"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {replacementTools.map((tool, index) => (
+                <tr 
+                  key={index} 
+                  className={`border-b border-white/10 hover:bg-white/5 transition-colors ${index % 2 === 0 ? 'bg-black/60' : 'bg-black/30'}`}
+                >
+                  <td className="py-4 px-6 text-left">{tool.name}</td>
+                  <td className="py-4 px-6">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {tool.logos.map((logo, i) => (
+                        <div 
+                          key={i} 
+                          className="bg-white/10 rounded-md h-8 w-8 flex items-center justify-center p-1"
+                          title={logo.alt || ''}
+                        >
+                          <img 
+                            src={logo.src} 
+                            alt={logo.alt || tool.name} 
+                            className="max-h-6 max-w-6 object-contain" 
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="py-4 px-6 text-right font-medium">{tool.value}</td>
+                  <td className="py-4 px-2 text-center">
+                    <CheckCircle className="h-5 w-5 text-[#d0ff00] inline-block" />
+                  </td>
+                </tr>
+              ))}
+              <tr className="border-t-2 border-[#d0ff00] bg-black/80">
+                <td className="py-5 px-6 text-left font-bold text-xl">Total</td>
+                <td className="py-5 px-6"></td>
+                <td className="py-5 px-6 text-right font-bold text-xl text-[#d0ff00]">{totalSaving}</td>
+                <td className="py-5 px-2 text-center">
+                  <CheckCircle className="h-6 w-6 text-[#d0ff00] inline-block" />
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
@@ -176,15 +222,10 @@ const Pricing = () => {
           </div>
 
           <div className="p-6 bg-black/30 border border-white/10 rounded-xl">
-            <h3 className="text-xl font-bold mb-4 text-white">Com GrowthFunnels você paga:</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Com <img src="https://growthfunnels.com.br/wp-content/uploads/2024/05/logo-growth-funnels.svg" alt="GrowthFunnels Logo" className="h-6 inline-block mx-1" /> você paga:</h3>
             <div className="mt-4 text-center">
               <p className="text-sm text-white/70 mb-2">A partir de:</p>
               <div className="flex items-center justify-center">
-                <img 
-                  src="https://growthfunnels.com.br/wp-content/uploads/2024/05/logo-growth-funnels.svg" 
-                  alt="GrowthFunnels Logo" 
-                  className="h-8 mr-2" 
-                />
                 <span className="text-3xl font-bold text-[#d0ff00]">R$ 497</span>
                 <span className="text-white/70">/mês</span>
               </div>
@@ -222,17 +263,142 @@ const Pricing = () => {
         <main className="pt-24 pb-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              {/* ... cabeçalho permanece igual ... */}
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Uma <span className="text-gradient">plataforma completa</span> pelo preço de uma ferramenta
+              </h1>
+              <p className="text-xl text-white/80 mb-8">
+                Economize até 90% substituindo várias ferramentas e tendo tudo em um só lugar
+              </p>
+
+              <div className="flex items-center justify-center mb-10">
+                <div className="bg-white/10 p-1 rounded-full">
+                  <div className="flex">
+                    <button
+                      onClick={() => toggleBillingMode(false)}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'}`}
+                    >
+                      Mensal
+                    </button>
+                    <button
+                      onClick={() => toggleBillingMode(true)}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'}`}
+                    >
+                      Anual
+                      <span className="bg-black/20 text-white text-xs px-2 py-0.5 rounded-full">
+                        Economize 16%
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-              {/* ... planos permanecem iguais com preços atualizados ... */}
+              {plans.map((plan, index) => (
+                <div 
+                  key={index} 
+                  className={`relative flex flex-col bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold z-10">
+                      Mais Popular
+                    </div>
+                  )}
+
+                  <div>
+                    <h3 className="text-xl font-bold text-[#d0ff00] min-h-[30px]">{plan.name}</h3>
+                    <p className="text-white/70 mb-6 min-h-[50px]">{plan.description}</p>
+
+                    {plan.price ? (
+                      <div className="mb-6 min-h-[80px]">
+                        <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
+                        <span className="text-white/70">{plan.period}</span>
+                        {plan.monthlyInstallment && (
+                          <div className="text-white/70 text-sm mt-1">{plan.monthlyInstallment}</div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="mb-6 min-h-[80px]">
+                        <span className="text-2xl font-bold text-white">Entre em contato</span>
+                      </div>
+                    )}
+
+                    <div className="mt-8">
+                      <a 
+                        href={getCheckoutLink(plan.name)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="block w-full"
+                        onClick={(e) => {
+                          // Garantir que o link correto está sendo usado
+                          const link = getCheckoutLink(plan.name);
+                          e.currentTarget.href = link;
+                          console.log(`Redirecionando para: ${link}`);
+                        }}
+                      >
+                        <Button className="w-full py-2.5" variant="greenNeon" size="lg">
+                          {plan.name === 'ENTERPRISE' ? 'FALE CONOSCO' : 'CONTRATAR PLANO'}
+                        </Button>
+                      </a>
+                    </div>
+
+                    <ul className="space-y-3 mt-8 mb-4 min-h-[350px]">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-white/80">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {plan.additionalCosts.length > 0 && (
+                      <div className="min-h-[80px]">
+                        <div className="flex items-center gap-2 text-white mb-2">
+                          <Plus className="h-4 w-4 text-[#d0ff00]" />
+                          <span className="text-sm font-medium">Custos Adicionais</span>
+                        </div>
+                        <ul className="text-xs text-white/60 space-y-1 pl-6">
+                          {plan.additionalCosts.slice(0, 3).map((cost, i) => (
+                            <li key={i}>{cost}</li>
+                          ))}
+                          {plan.additionalCosts.length > 3 && (
+                            <li>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <button className="text-[#d0ff00] text-xs cursor-pointer hover:underline focus:outline-none">
+                                    + {plan.additionalCosts.length - 3} mais
+                                  </button>
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-black/95 border border-[#d0ff00]/30 p-3 rounded-lg shadow-lg">
+                                  <ul className="space-y-1 text-white">
+                                    {plan.additionalCosts.slice(3).map((cost, i) => (
+                                      <li key={i}>{cost}</li>
+                                    ))}
+                                  </ul>
+                                </TooltipContent>
+                              </Tooltip>
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex justify-center mt-6">
+                    <CreditCard className="h-5 w-5 text-white/70 mr-3" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto mx-1" />
+                  </div>
+                </div>
+              ))}
             </div>
+
             <div className="mt-16">
-              <ComparisonTable 
+              <EnhancedComparisonTable 
                 replacementTools={replacementToolsData}
                 totalSaving={totalSavingData}
-                billingAnnual={billingAnnual}
-                getCheckoutLink={getCheckoutLink}
               />
             </div>
           </div>
