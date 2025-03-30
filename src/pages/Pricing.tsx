@@ -1,10 +1,3 @@
-from IPython.display import display, Markdown
-
-# Código atualizado conforme solicitado
-codigo_atualizado = """
-```jsx
-// PricingPage.jsx
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -225,5 +218,4 @@ const Pricing = () => {
     </div>
   );
 };
-
 export default Pricing;
