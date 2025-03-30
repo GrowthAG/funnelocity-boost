@@ -102,7 +102,7 @@ const Features = () => {
     }]
   };
 
-  // Lista de funcionalidades por categoria
+  // Lista de funcionalidades por categoria com os vídeos corretamente alocados
   const features = {
     adManager: [{
       name: 'Google Ads Report',
@@ -110,7 +110,7 @@ const Features = () => {
       description: 'Painel com desempenho de campanhas Google Ads.',
       demoImage: '/lovable-uploads/demo-google-ads.png',
       hasVideo: true,
-      videoId: 'kbknZyu3CGA'  // Google Ads
+      videoId: 'Gl8bJpKaoK8'  // 4️⃣ Dashboard Entendendo os Indicadores
     }, {
       name: 'Meta Ads Report',
       extraCost: false,
@@ -142,7 +142,7 @@ const Features = () => {
       description: 'Envio de campanhas e automações por e-mail.',
       demoImage: '/lovable-uploads/demo-email.png',
       hasVideo: true,
-      videoId: 'p-5pUOmrNOk'  // Marketing/Email
+      videoId: 'p-5pUOmrNOk'  // 6️⃣ Introdução às Conversas (Conversations)
     }, {
       name: 'Verificação de E-mails',
       extraCost: true,
@@ -162,7 +162,7 @@ const Features = () => {
       description: 'Sequências de e-mails e mensagens baseadas em comportamento do usuário que aumentam sua taxa de conversão em 32%.',
       demoImage: '/lovable-uploads/demo-lead-nurturing.png',
       hasVideo: true,
-      videoId: 'kMzY8OiD7fA'  // Automação
+      videoId: '5YEVNryH1gM'  // 5️⃣ Gerenciando Contatos (Contacts)
     }, {
       name: 'Automação de Carrinho Abandonado',
       extraCost: false,
@@ -194,13 +194,14 @@ const Features = () => {
       description: 'Gerenciamento de contatos, oportunidades e pipelines.',
       demoImage: '/lovable-uploads/demo-crm.png',
       hasVideo: true,
-      videoId: 'p_rqiFCySYM'  // CRM
+      videoId: 'dGgUUjvbEGY'  // 8️⃣ Criando Oportunidades e Gerenciando o Pipeline
     }, {
       name: 'Funnels',
       extraCost: false,
       description: 'Criação de funis de vendas visuais.',
       demoImage: '/lovable-uploads/demo-funnels.png',
-      hasVideo: false
+      hasVideo: true,
+      videoId: 'p_rqiFCySYM'  // 1️⃣ Visão Geral do Growth Funnels
     }, {
       name: 'Social Planner',
       extraCost: false,
@@ -443,7 +444,7 @@ const Features = () => {
                       {showWorkflowVideo ? (
                         <div className="mb-6">
                           <YouTubeEmbed 
-                            videoId="5YEVNryH1gM" 
+                            videoId="kbknZyu3CGA" // 7️⃣ Criando e Gerenciando Calendários Calendars 1
                             title="Demonstração de Automação de Workflow" 
                           />
                         </div>
