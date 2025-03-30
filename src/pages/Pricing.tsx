@@ -15,32 +15,54 @@ import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 const Pricing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Log para depuração quando a página carrega
+    console.log("Links de checkout configurados:", {
+      'PRO Anual': checkoutLinks.PRO.annual,
+      'PRO Mensal': checkoutLinks.PRO.monthly,
+      'PLUS Anual': checkoutLinks.PLUS.annual,
+      'PLUS Mensal': checkoutLinks.PLUS.monthly,
+      'Modo atual': billingAnnual ? 'Anual' : 'Mensal'
+    });
   }, []);
 
   const [billingAnnual, setBillingAnnual] = useState(true);
+  
+  // Função para alternar entre os modos de cobrança
+  const toggleBillingMode = (isAnnual) => {
+    setBillingAnnual(isAnnual);
+    console.log(`Modo de cobrança alterado para: ${isAnnual ? 'Anual' : 'Mensal'}`);
+  };
 
-  // Links de checkout corrigidos
+  // Links de checkout - definidos de forma clara e sem variáveis
   const checkoutLinks = {
     PRO: {
-      annual: 'https://checkout.growthfunnels.com.br/pro-anual',
-      monthly: 'https://checkout.growthfunnels.com.br/pro-mensal'
+      annual: "https://checkout.growthfunnels.com.br/pro-anual",
+      monthly: "https://checkout.growthfunnels.com.br/pro-mensal"
     },
     PLUS: {
-      annual: 'https://checkout.growthfunnels.com.br/plus-anual',
-      monthly: 'https://checkout.growthfunnels.com.br/plus-mensal'
+      annual: "https://checkout.growthfunnels.com.br/plus-anual",
+      monthly: "https://checkout.growthfunnels.com.br/plus-mensal"
     },
-    ENTERPRISE: 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd'
+    ENTERPRISE: "https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd"
   };
 
   // Função para obter o link de checkout correto com base no plano e tipo de cobrança
+  // Função revisada que garante o uso dos links corretos
   const getCheckoutLink = (planName) => {
+    // Para o plano ENTERPRISE, usa sempre o mesmo link
     if (planName === 'ENTERPRISE') {
       return checkoutLinks.ENTERPRISE;
     }
     
-    return billingAnnual 
-      ? checkoutLinks[planName].annual 
-      : checkoutLinks[planName].monthly;
+    // Escolhe o link baseado na seleção do usuário (anual ou mensal)
+    if (billingAnnual) {
+      console.log(`Link ${planName} anual:`, checkoutLinks[planName].annual);
+      return checkoutLinks[planName].annual;
+    } else {
+      console.log(`Link ${planName} mensal:`, checkoutLinks[planName].monthly);
+      return checkoutLinks[planName].monthly;
+    }
   };
 
   const plans = [
@@ -137,13 +159,13 @@ const Pricing = () => {
               <div className="bg-white/10 p-1 rounded-full">
                 <div className="flex">
                   <button
-                    onClick={() => setBillingAnnual(false)}
+                    onClick={() => toggleBillingMode(false)}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'}`}
                   >
                     Mensal
                   </button>
                   <button
-                    onClick={() => setBillingAnnual(true)}
+                    onClick={() => toggleBillingMode(true)}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${billingAnnual ? 'bg-[#d0ff00] text-black' : 'text-white/70 hover:text-white'}`}
                   >
                     Anual
@@ -158,7 +180,10 @@ const Pricing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
-              <div key={index} className={`flex flex-col justify-between bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}>
+              <div 
+                key={index} 
+                className={`relative flex flex-col justify-between bg-black rounded-2xl p-8 border ${plan.popular ? 'border-2 border-[#d0ff00]' : 'border border-[#d0ff00]/30'}`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0ff00] text-black py-1 px-4 rounded-full text-sm font-semibold">
                     Mais Popular
@@ -183,7 +208,18 @@ const Pricing = () => {
                     </div>
                   )}
 
-                  <a href={getCheckoutLink(plan.name)} target="_blank" rel="noopener noreferrer" className="block w-full mt-4">
+                  <a 
+                    href={getCheckoutLink(plan.name)} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block w-full mt-4"
+                    onClick={(e) => {
+                      // Garantir que o link correto está sendo usado
+                      const link = getCheckoutLink(plan.name);
+                      e.currentTarget.href = link;
+                      console.log(`Redirecionando para: ${link}`);
+                    }}
+                  >
                     <Button className="w-full py-2.5" variant="greenNeon" size="lg">
                       {plan.name === 'ENTERPRISE' ? 'FALE CONOSCO' : 'CONTRATAR PLANO'}
                     </Button>
