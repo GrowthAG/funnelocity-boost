@@ -67,7 +67,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'PRO',
-      price: billingAnnual ? 497 : 497,
+      price: 497,
       period: '/mês',
       monthlyInstallment: null,
       description: 'Para pequenas empresas e startups',
@@ -96,7 +96,7 @@ const Pricing = () => {
     {
       name: 'PLUS',
       price: billingAnnual ? 6970 : 697,
-      period: billingAnnual ? ' à vista' : '/mês',
+      period: billingAnnual ? '/ano' : '/mês',
       monthlyInstallment: null,
       description: 'Para empresas em desenvolvimento',
       features: [
