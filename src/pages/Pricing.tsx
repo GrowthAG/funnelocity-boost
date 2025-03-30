@@ -9,7 +9,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import ComparisonTable from '@/components/shared/ComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Pricing = () => {
@@ -143,8 +142,8 @@ const Pricing = () => {
     }
   ];
 
-  // Componente de Tabela de Comparação Aprimorada
-  const EnhancedComparisonTable = ({ replacementTools, totalSaving }) => {
+  // Componente de Tabela de Comparação
+  const ComparisonTable = ({ replacementTools, totalSaving }) => {
     return (
       <div className="bg-black text-white">
         <div className="mb-8">
@@ -162,36 +161,25 @@ const Pricing = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          {/* Coluna da esquerda - O que você substituirá */}
           <div className="p-6 border-r border-white/10">
             <h3 className="text-xl font-bold mb-6 text-white">O que você substituirá:</h3>
             <p className="text-white/70 text-lg mb-6">
               Todas essas ferramentas podem ser substituídas pelo GrowthFunnels, simplificando sua operação e reduzindo custos:
             </p>
-          
+            
+            {/* Tabela de ferramentas */}
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <tbody className="text-base">
                   {replacementTools.map((tool, index) => (
-                    <tr 
-                      key={index} 
-                      className="border-b border-white/10"
-                    >
+                    <tr key={index} className="border-b border-white/10">
                       <td className="py-4 text-left font-medium text-lg">
-                        <div>
-                          {tool.name}
-                        </div>
+                        <div>{tool.name}</div>
                         <div className="flex flex-wrap gap-1 mt-2">
                           {tool.logos.map((logo, i) => (
-                            <div 
-                              key={i} 
-                              className="bg-black/80 rounded-md h-8 w-auto px-2 flex items-center justify-center"
-                              title={logo.alt || ''}
-                            >
-                              <img 
-                                src={logo.src} 
-                                alt={logo.alt || tool.name} 
-                                className="h-5 object-contain" 
-                              />
+                            <div key={i} className="bg-black/80 rounded-md h-8 w-auto px-2 flex items-center justify-center">
+                              <img src={logo.src} alt={logo.alt || tool.name} className="h-5 object-contain" />
                             </div>
                           ))}
                         </div>
@@ -208,6 +196,7 @@ const Pricing = () => {
             </div>
           </div>
 
+          {/* Coluna da direita - Com GrowthFunnels você paga */}
           <div className="p-6 bg-black border-l border-white/10">
             <h3 className="text-xl font-bold mb-6 text-white">Com GrowthFunnels você paga:</h3>
             <p className="text-white/70 mb-2 text-lg">Plano Mensal:</p>
@@ -218,6 +207,7 @@ const Pricing = () => {
               </div>
             </div>
             
+            {/* Lista de benefícios */}
             <ul className="space-y-6 text-lg">
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
@@ -227,60 +217,39 @@ const Pricing = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <div className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                  </svg>
-                </div>
+                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Economize até R$ 10.122,40 por ano</p>
                   <p className="text-white/70">Reduza seus custos em até 90% com mais qualidade</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <div className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                </div>
+                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Até 3 usuários incluídos</p>
                   <p className="text-white/70">Adicione mais usuários por apenas R$ 69/mês cada</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <div className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Suporte técnico dedicado</p>
-                  <p className="text-white/70">Conte com nossa equipe para implementação e dúvidas</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-                  </svg>
-                </div>
+                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">25.000 contatos incluídos</p>
                   <p className="text-white/70">Gerencie seus clientes e leads em um só lugar</p>
                 </div>
               </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-6 w-6 text-[#d0ff00] mr-3 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Suporte técnico dedicado</p>
+                  <p className="text-white/70">Conte com nossa equipe para implementação e dúvidas</p>
+                </div>
+              </li>
             </ul>
             
+            {/* Botão de ação */}
             <div className="mt-10">
               <a 
-                href="https://checkout.growthfunnels.com.br/pro-mensal" 
+                href={getCheckoutLink('PRO')} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-[#d0ff00] text-black font-bold py-4 px-6 rounded-lg inline-flex items-center justify-center w-full hover:brightness-110 transition-all text-lg"
@@ -438,7 +407,7 @@ const Pricing = () => {
             </div>
 
             <div className="mt-16">
-              <EnhancedComparisonTable 
+              <ComparisonTable 
                 replacementTools={replacementToolsData}
                 totalSaving={totalSavingData}
               />
