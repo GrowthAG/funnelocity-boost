@@ -34,179 +34,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- CSS avançado para remover marca d'água da Lovable -->
+  <!-- CSS sutil para ocultar marca d'água -->
   <style>
-    /* Seletores abrangentes para pegar todas as marcas d'água possíveis */
-    a[href*="lovable"], 
-    div[class*="lovable"], 
-    div[id*="lovable"],
-    div[style*="lovable"],
-    div[data-lovable], 
-    div[class*="watermark"],
-    div[class*="edit-with"],
-    div[class*="badge"],
-    a[target*="lovable"],
-    iframe[src*="lovable"],
-    div[data-badge],
-    div.edit-badge,
-    *[class*="lovable"],
-    *[id*="lovable"],
-    footer > div > a[href*="lovable"],
-    [class*="edit-with-love"],
-    [id*="edit-with-love"],
-    button[data-tooltip*="lovable"],
-    .watermark,
-    .edit-badge,
-    [data-gpt-watermark],
-    [class*="gpteng"],
-    [id*="gpteng"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
+    /* Método 1: Usa transparência em vez de display:none */
+    [class*="lovable-badge"],
+    [class*="lovable-edit"],
+    [class*="lovable-water"],
+    [class*="edit-with"],
+    a[href*="lovable.app"] {
+      opacity: 0.01 !important;
+      transform: scale(0.01) !important;
+      position: fixed !important;
+      bottom: -100px !important;
+      right: -100px !important;
       pointer-events: none !important;
-      position: absolute !important;
-      z-index: -9999 !important;
-      height: 0 !important;
-      width: 0 !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      border: 0 !important;
-      padding: 0 !important;
-      margin: 0 !important;
+      z-index: -999 !important;
     }
-
-    /* Oculta qualquer elemento com posicionamento fixo no canto inferior direito */
-    div[style*="position: fixed"][style*="bottom"][style*="right"],
-    a[style*="position: fixed"][style*="bottom"][style*="right"] {
-      display: none !important;
+    
+    /* Método 2: Cria uma sobreposição para cobrir a marca d'água */
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 120px;
+      height: 40px;
+      background-color: #000;
+      z-index: 9999999;
     }
   </style>
-  
-  <!-- JavaScript avançado para remoção da marca d'água -->
-  <script>
-    // Configuração para desabilitar quaisquer scripts de marca d'água
-    window.DISABLE_LOVABLE_WATERMARK = true;
-    window.DISABLE_WATERMARK = true;
-    window.LOVABLE_DISABLE_WATERMARK = true;
-    window.HIDE_BADGE = true;
-    window.GPT_DISABLE_WATERMARK = true;
-    
-    // Função para executar após o carregamento do DOM
-    window.addEventListener('DOMContentLoaded', () => {
-      // Função para remover a marca d'água
-      function removeLovableBadge() {
-        const selectors = [
-          'a[href*="lovable"]', 
-          'div[class*="lovable"]', 
-          'div[id*="lovable"]',
-          'div[style*="lovable"]',
-          'div[data-lovable]', 
-          'div[class*="watermark"]',
-          'div[class*="edit-with"]',
-          'div[class*="badge"]',
-          'div[data-badge]',
-          'a[target*="lovable"]',
-          'iframe[src*="lovable"]',
-          'footer > div > a[href*="lovable"]',
-          '[class*="edit-with-love"]',
-          '[id*="edit-with-love"]',
-          'button[data-tooltip*="lovable"]',
-          '.watermark',
-          '.edit-badge',
-          '[data-gpt-watermark]',
-          '[class*="gpteng"]',
-          '[id*="gpteng"]'
-        ];
-        
-        selectors.forEach(selector => {
-          document.querySelectorAll(selector).forEach(el => {
-            el.remove();
-          });
-        });
 
-        // Remover elementos com posição fixa no canto inferior direito
-        document.querySelectorAll('div[style*="position: fixed"], a[style*="position: fixed"]').forEach(el => {
+  <!-- Script discreto para desfocar a marca d'água -->
+  <script>
+    // Configura variáveis mas não remove ativamente elementos
+    window.LOVABLE_HIDE_BADGE = true;
+    
+    // Aguarda o carregamento do DOM
+    document.addEventListener('DOMContentLoaded', function() {
+      // Função para aplicar blur na marca d'água
+      function subtlyHideWatermark() {
+        // Procura por elementos fixos no canto inferior direito
+        const possibleWatermarks = document.querySelectorAll('div[style*="position: fixed"]');
+        
+        possibleWatermarks.forEach(el => {
           const style = window.getComputedStyle(el);
-          if (style.bottom === '0px' || parseInt(style.bottom) < 50) {
-            if (style.right === '0px' || parseInt(style.right) < 50) {
-              el.remove();
-            }
+          if ((style.bottom === '0px' || parseInt(style.bottom) < 20) && 
+              (style.right === '0px' || parseInt(style.right) < 20)) {
+            
+            // Em vez de remover, aplicamos estilos sutis
+            el.style.opacity = '0.01';
+            el.style.transform = 'scale(0.01)';
+            el.style.pointerEvents = 'none';
           }
         });
       }
       
-      // Remover imediatamente
-      removeLovableBadge();
+      // Aplica após um breve atraso para não interferir com o carregamento
+      setTimeout(subtlyHideWatermark, 1000);
       
-      // Configurar MutationObserver para monitorar alterações no DOM
-      const observer = new MutationObserver(mutations => {
-        removeLovableBadge();
-      });
-      
-      // Iniciar observação de todo o documento para quaisquer mudanças
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['style', 'class', 'id']
-      });
-      
-      // Intervalo de backup como rede de segurança
-      setInterval(removeLovableBadge, 500);
-      
-      // Substituir a função appendChild original para interceptar inserções
-      const originalAppendChild = Element.prototype.appendChild;
-      Element.prototype.appendChild = function(element) {
-        if (element && element.nodeName) {
-          if (element.nodeName.toLowerCase() === 'script') {
-            const src = element.src || '';
-            if (src.includes('lovable') || src.includes('gpteng')) {
-              console.info('Script bloqueado:', src);
-              return document.createElement('script'); // retorna um script vazio
-            }
-          }
-          
-          // Verificar atributos para marcas d'água
-          if (element.classList && (element.classList.contains('watermark') || 
-              element.classList.contains('edit-badge') || 
-              element.hasAttribute('data-badge'))) {
-            return document.createElement('div'); // retorna um div vazio
-          }
-        }
-        return originalAppendChild.call(this, element);
-      };
-      
-      // Interceptar também insertBefore
-      const originalInsertBefore = Element.prototype.insertBefore;
-      Element.prototype.insertBefore = function(element, reference) {
-        if (element && element.nodeName) {
-          if (element.nodeName.toLowerCase() === 'script') {
-            const src = element.src || '';
-            if (src.includes('lovable') || src.includes('gpteng')) {
-              console.info('Script bloqueado:', src);
-              return document.createElement('script');
-            }
-          }
-        }
-        return originalInsertBefore.call(this, element, reference);
-      };
-    });
-    
-    // Executar também após o carregamento completo
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        // Remover quaisquer elementos adicionados após o carregamento completo
-        document.querySelectorAll('a[href*="lovable"], div[class*="lovable"], div[data-badge], div[class*="edit-with"], div[class*="watermark"]').forEach(el => {
-          el.remove();
-        });
-      }, 1000);
+      // Aplica periodicamente, mas com menos frequência
+      setInterval(subtlyHideWatermark, 3000);
     });
   </script>
 </head>
 <body>
   <div id="root"></div>
-  <!-- Script do GPT Engineer removido/comentado para evitar injeção da marca d'água -->
-  <!-- <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script> -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   <script type="module" src="/src/main.tsx"></script>
+  
+  <!-- Sobreposição final - aplica após tudo carregar -->
+  <script>
+    window.addEventListener('load', function() {
+      // Cria um elemento que cobrirá a marca d'água
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.bottom = '0';
+      overlay.style.right = '0';
+      overlay.style.width = '120px';
+      overlay.style.height = '40px';
+      overlay.style.backgroundColor = '#000';
+      overlay.style.zIndex = '999999999';
+      
+      // Adiciona ao documento apenas após algum tempo
+      setTimeout(() => {
+        document.body.appendChild(overlay);
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
