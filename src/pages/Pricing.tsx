@@ -226,10 +226,10 @@ const Pricing = () => {
                   alt="GrowthFunnels Logo" 
                   className="h-8 mr-2" 
                 />
-                <span className="text-3xl font-bold text-[#d0ff00]">{billingAnnual ? 'R$ 4970' : 'R$ 497'}</span>
+                <span className="text-3xl font-bold text-[#d0ff00]">{billingAnnual ? 'R$ 497' : 'R$ 497'}</span>
                 <span className="text-white/70">{billingAnnual ? '/ano' : '/mês'}</span>
               </div>
-              <p className="text-sm text-white/70 mt-1">{billingAnnual ? 'ou 12x de R$ 414' : ''}</p>
+              <p className="text-sm text-white/70 mt-1">{billingAnnual ?: ''}</p>
               
               <div className="flex items-center justify-center mt-4 mb-6">
                 <CheckCircle className="h-5 w-5 text-[#d0ff00] mr-2" />
