@@ -71,7 +71,7 @@ const Pricing = () => {
       price: billingAnnual ? 4970 : 497,
       period: billingAnnual ? '/ano' : '/mês',
       monthlyInstallment: billingAnnual ? 'ou 12x de R$ 414' : null,
-      description: 'Para pequenas empresas e empreendedores',
+      description: 'Para pequenas empresas e startups',
       features: [
         'Até 3 usuários (+ R$69 por usuário adicional)',
         'Até 20.000 contatos',
@@ -99,7 +99,7 @@ const Pricing = () => {
       price: billingAnnual ? 6970 : 697,
       period: billingAnnual ? '/ano' : '/mês',
       monthlyInstallment: billingAnnual ? 'ou 12x de R$ 580' : null,
-      description: 'Para empresas em crescimento',
+      description: 'Para empresas em desenvolvimento',
       features: [
         'Todos os Recursos Pro +',
         'Até 5 usuários (+ R$69 por usuário adicional)',
@@ -127,7 +127,7 @@ const Pricing = () => {
       name: 'ENTERPRISE',
       price: null,
       period: '',
-      description: 'Para equipes e empresas escaláveis',
+      description: 'Para corporações e grandes times',
       features: [
         'Todos os recursos Plus +',
         'Usuários ilimitados',
