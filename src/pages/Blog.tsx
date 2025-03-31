@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -26,7 +25,26 @@ const Blog = () => {
     { id: 'case-study', name: 'Cases' }
   ];
 
-  const filteredPosts = blogPosts
+  // Ensure all blog posts have the required social share properties
+  const processedBlogPosts = blogPosts.map(post => ({
+    ...post,
+    socialShare: {
+      ...post.socialShare,
+      whatsapp: post.socialShare.whatsapp || '#',
+      telegram: post.socialShare.telegram || '#'
+    }
+  }));
+
+  const processedFeaturedPost = {
+    ...featuredPost,
+    socialShare: {
+      ...featuredPost.socialShare,
+      whatsapp: featuredPost.socialShare.whatsapp || '#',
+      telegram: featuredPost.socialShare.telegram || '#'
+    }
+  };
+
+  const filteredPosts = processedBlogPosts
     .filter(post => 
       (activeCategory === 'all' || post.category === activeCategory) &&
       (searchTerm === '' || 
@@ -95,8 +113,8 @@ const Blog = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="relative h-72 lg:h-full overflow-hidden">
                 <img 
-                  src={featuredPost.image} 
-                  alt={featuredPost.title} 
+                  src={processedFeaturedPost.image} 
+                  alt={processedFeaturedPost.title} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute top-4 right-4 bg-[#d0ff00] text-black text-xs font-semibold px-3 py-1 rounded-full">
@@ -106,39 +124,39 @@ const Blog = () => {
               <div className="p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {featuredPost.tags.map((tag, idx) => (
+                    {processedFeaturedPost.tags.map((tag, idx) => (
                       <span key={idx} className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">
                         {tag}
                       </span>
                     ))}
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                    {featuredPost.title}
+                    {processedFeaturedPost.title}
                   </h2>
                   <p className="text-white/70 text-lg mb-6">
-                    {featuredPost.excerpt}
+                    {processedFeaturedPost.excerpt}
                   </p>
                 </div>
                 <div>
                   <div className="flex items-center mb-6">
                     <Avatar className="h-10 w-10 mr-3">
-                      {featuredPost.authorImage ? (
-                        <AvatarImage src={featuredPost.authorImage} alt={featuredPost.author} />
+                      {processedFeaturedPost.authorImage ? (
+                        <AvatarImage src={processedFeaturedPost.authorImage} alt={processedFeaturedPost.author} />
                       ) : (
-                        <AvatarFallback>{featuredPost.author.substring(0, 2)}</AvatarFallback>
+                        <AvatarFallback>{processedFeaturedPost.author.substring(0, 2)}</AvatarFallback>
                       )}
                     </Avatar>
                     <div>
-                      <div className="text-white text-sm">{featuredPost.author}</div>
+                      <div className="text-white text-sm">{processedFeaturedPost.author}</div>
                       <div className="flex items-center text-white/50 text-xs">
                         <Calendar className="h-3 w-3 mr-1" />
-                        <span className="mr-2">{formatDate(featuredPost.date)}</span>
+                        <span className="mr-2">{formatDate(processedFeaturedPost.date)}</span>
                         <Clock className="h-3 w-3 mr-1" />
-                        <span>{featuredPost.readTime}</span>
+                        <span>{processedFeaturedPost.readTime}</span>
                       </div>
                     </div>
                   </div>
-                  <Link to={`/blog/${featuredPost.id}`}>
+                  <Link to={`/blog/${processedFeaturedPost.id}`}>
                     <Button className="w-full bg-[#d0ff00] hover:bg-[#b3e600] text-black shadow-md hover:shadow-lg">
                       Ler artigo completo <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

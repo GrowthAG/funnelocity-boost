@@ -22,11 +22,29 @@ const BlogPost = () => {
     
     const postId = parseInt(id || '0');
     if (postId === featuredPost.id) {
-      setPost(featuredPost);
+      // Add missing social media links if they don't exist
+      const completePost = {
+        ...featuredPost,
+        socialShare: {
+          ...featuredPost.socialShare,
+          whatsapp: featuredPost.socialShare.whatsapp || '#',
+          telegram: featuredPost.socialShare.telegram || '#'
+        }
+      };
+      setPost(completePost);
     } else {
       const foundPost = blogPosts.find(post => post.id === postId);
       if (foundPost) {
-        setPost(foundPost);
+        // Add missing social media links if they don't exist
+        const completePost = {
+          ...foundPost,
+          socialShare: {
+            ...foundPost.socialShare,
+            whatsapp: foundPost.socialShare.whatsapp || '#',
+            telegram: foundPost.socialShare.telegram || '#'
+          }
+        };
+        setPost(completePost);
       }
     }
   }, [id]);
