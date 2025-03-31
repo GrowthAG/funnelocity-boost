@@ -20,7 +20,7 @@ const Hero = () => {
             Plataforma completa de CRM, automação de marketing e geração de demanda criada para centralizar sua operação, automatizar processos e impulsionar seu crescimento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center">
-            <a href="https://checkout.growthfunnels.com.br/pro" target="_blank" rel="noopener noreferrer">
+            <a href="https://checkout.growthfunnels.com.br/pro-mensal" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#d0ff00] hover:bg-[#b3e600] text-black w-full sm:w-auto px-6 py-6 text-lg font-bold">
                 Contratar Plano PRO <ArrowRight className="ml-1 h-5 w-5" />
               </Button>

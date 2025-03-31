@@ -18,6 +18,7 @@ const GrowthFunnelsPricing = ({
   const period = billingAnnual ? "/ano" : "/mês";
   const installment = billingAnnual ? "ou 12x de R$ 414" : null;
   const planType = billingAnnual ? "Anual" : "Mensal";
+  const buttonText = `Contratar Plano PRO ${planType}`;
 
   return (
     <div className="bg-black h-full flex flex-col">
@@ -118,7 +119,7 @@ const GrowthFunnelsPricing = ({
           className="block w-full"
         >
           <Button className="w-full py-2 text-sm font-bold" variant="greenNeon" size="default">
-            Contratar Plano PRO Mensal
+            {buttonText}
             <ExternalLink className="h-4 w-4 ml-1" />
           </Button>
         </a>

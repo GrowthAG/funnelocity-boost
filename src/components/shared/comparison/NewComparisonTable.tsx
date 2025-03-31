@@ -17,7 +17,14 @@ const NewComparisonTable = ({
   replacementTools,
   totalSaving,
   billingAnnual = false,
-  getCheckoutLink = () => "https://checkout.growthfunnels.com.br/pro-mensal"
+  getCheckoutLink = (plan: string) => {
+    const planLinks = {
+      'PRO': billingAnnual ? 'https://checkout.growthfunnels.com.br/pro-anual' : 'https://checkout.growthfunnels.com.br/pro-mensal',
+      'PLUS': billingAnnual ? 'https://checkout.growthfunnels.com.br/plus-anual' : 'https://checkout.growthfunnels.com.br/plus-mensal',
+      'ENTERPRISE': 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd'
+    };
+    return planLinks[plan] || 'https://checkout.growthfunnels.com.br/pro-mensal';
+  }
 }: NewComparisonTableProps) => {
   return (
     <div className="rounded-md overflow-hidden shadow-lg">

@@ -21,7 +21,14 @@ const ComparisonTable = ({
   totalSaving = "R$ 10.122,40",
   className = '',
   billingAnnual = false,
-  getCheckoutLink
+  getCheckoutLink = (plan: string) => {
+    const planLinks = {
+      'PRO': billingAnnual ? 'https://checkout.growthfunnels.com.br/pro-anual' : 'https://checkout.growthfunnels.com.br/pro-mensal',
+      'PLUS': billingAnnual ? 'https://checkout.growthfunnels.com.br/plus-anual' : 'https://checkout.growthfunnels.com.br/plus-mensal',
+      'ENTERPRISE': 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd'
+    };
+    return planLinks[plan] || 'https://checkout.growthfunnels.com.br/pro-mensal';
+  }
 }: ComparisonTableProps) => {
   return (
     <div className={`${className} overflow-hidden`}>
