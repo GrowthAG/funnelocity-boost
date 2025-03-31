@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Features from '@/pages/Features';
 
@@ -11,8 +12,8 @@ const FeaturesFix = () => {
     // Add a window error handler to catch any JavaScript errors
     window.onerror = function(message, source, lineno, colno, error) {
       // If it's a property access error from Features.tsx, suppress it
-      if (source?.includes('Features.tsx') && 
-          (message?.includes('onerror') || message?.includes('src'))) {
+      if (typeof source === 'string' && source.includes('Features.tsx') && 
+          (typeof message === 'string' && (message.includes('onerror') || message.includes('src')))) {
         return true; // Prevents the error from propagating
       }
       

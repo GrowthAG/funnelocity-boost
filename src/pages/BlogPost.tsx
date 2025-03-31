@@ -6,19 +6,21 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calendar, Clock, User, ArrowLeft, Facebook, Twitter, Linkedin, Share2, MessageCircle, Copy, CheckCircle2 } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { blogPosts, featuredPost } from '@/data/blogData';
+import { rmitalineaCase } from '@/data/rmitalineaCase';
 import { BlogPostType } from '@/types/blog';
-import { useToast } from '@/components/ui/use-toast';
+import ShareButtons from '@/components/ShareButtons';
 
 const BlogPost = () => {
   const { id } = useParams();
   const [post, setPost] = useState<BlogPostType | null>(null);
-  const [copied, setCopied] = useState(false);
-  const { toast } = useToast();
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Add the new RM Italínea case study to the blog posts
+    const allBlogPosts = [rmitalineaCase, ...blogPosts];
     
     const postId = parseInt(id || '0');
     if (postId === featuredPost.id) {
@@ -33,7 +35,7 @@ const BlogPost = () => {
       };
       setPost(completePost);
     } else {
-      const foundPost = blogPosts.find(post => post.id === postId);
+      const foundPost = allBlogPosts.find(post => post.id === postId);
       if (foundPost) {
         // Add missing social media links if they don't exist
         const completePost = {
@@ -56,40 +58,6 @@ const BlogPost = () => {
       month: 'long', 
       year: 'numeric' 
     }).format(date);
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    toast({
-      title: "Link copiado!",
-      description: "O link do artigo foi copiado para a área de transferência",
-      duration: 3000,
-    });
-    
-    setTimeout(() => {
-      setCopied(false);
-    }, 3000);
-  };
-
-  const getShareUrl = (platform: string) => {
-    const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(post?.title || '');
-    
-    switch (platform) {
-      case 'facebook':
-        return `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-      case 'twitter':
-        return `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-      case 'linkedin':
-        return `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-      case 'whatsapp':
-        return `https://api.whatsapp.com/send?text=${title}%20${url}`;
-      case 'telegram':
-        return `https://t.me/share/url?url=${url}&text=${title}`;
-      default:
-        return '#';
-    }
   };
   
   if (!post) {
@@ -135,32 +103,12 @@ const BlogPost = () => {
             </div>
 
             {/* Social share buttons - Top */}
-            <div className="flex flex-wrap items-center gap-3 mb-8 p-4 bg-white/5 rounded-lg">
-              <span className="text-white/80 text-sm font-medium flex items-center">
-                <Share2 className="mr-2 h-4 w-4" /> Compartilhar:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                <a href={getShareUrl('linkedin')} target="_blank" rel="noopener noreferrer" 
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#08518a] transition-colors">
-                  <Linkedin className="w-4 h-4 text-white" />
-                </a>
-                <a href={getShareUrl('twitter')} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#1DA1F2] hover:bg-[#0c85d0] transition-colors">
-                  <Twitter className="w-4 h-4 text-white" />
-                </a>
-                <a href={getShareUrl('facebook')} target="_blank" rel="noopener noreferrer" 
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#1877F2] hover:bg-[#0e5fb6] transition-colors">
-                  <Facebook className="w-4 h-4 text-white" />
-                </a>
-                <a href={getShareUrl('whatsapp')} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#128C7E] transition-colors">
-                  <MessageCircle className="w-4 h-4 text-white" />
-                </a>
-                <button onClick={copyToClipboard}
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
-                  {copied ? <CheckCircle2 className="w-4 h-4 text-[#d0ff00]" /> : <Copy className="w-4 h-4 text-white" />}
-                </button>
-              </div>
+            <div className="mb-8">
+              <ShareButtons 
+                url={window.location.href} 
+                title={post.title} 
+                compact={true} 
+              />
             </div>
             
             <div className="flex items-center mb-8">
@@ -168,7 +116,7 @@ const BlogPost = () => {
                 {post.authorImage ? (
                   <AvatarImage src={post.authorImage} alt={post.author} />
                 ) : (
-                  <AvatarFallback>{post.author.substring(0, 2)}</AvatarFallback>
+                  <AvatarFallback>{post.author.substring(0, 2).toUpperCase()}</AvatarFallback>
                 )}
               </Avatar>
               <div>
@@ -176,14 +124,13 @@ const BlogPost = () => {
                 {post.authorBio && (
                   <div className="text-white/70 text-sm max-w-md">{post.authorBio}</div>
                 )}
+                <div className="flex items-center text-white/60 text-sm mt-1">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  <span className="mr-4">{formatDate(post.date)}</span>
+                  <Clock className="h-4 w-4 mr-1" />
+                  <span>{post.readTime}</span>
+                </div>
               </div>
-            </div>
-            
-            <div className="flex items-center text-white/60 text-sm mb-8">
-              <Calendar className="h-4 w-4 mr-1" />
-              <span className="mr-4">{formatDate(post.date)}</span>
-              <Clock className="h-4 w-4 mr-1" />
-              <span>{post.readTime}</span>
             </div>
             
             <div className="w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden mb-10">
@@ -198,28 +145,7 @@ const BlogPost = () => {
           <div className="border-t border-white/10 pt-8 mt-16">
             <div className="flex flex-col sm:flex-row items-center justify-between">
               <h3 className="text-xl font-bold text-white mb-4 sm:mb-0">Compartilhe este artigo:</h3>
-              <div className="flex gap-4">
-                <a href={getShareUrl('linkedin')} target="_blank" rel="noopener noreferrer" 
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2] hover:bg-[#08518a] transition-colors">
-                  <Linkedin className="w-5 h-5 text-white" />
-                </a>
-                <a href={getShareUrl('twitter')} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#1DA1F2] hover:bg-[#0c85d0] transition-colors">
-                  <Twitter className="w-5 h-5 text-white" />
-                </a>
-                <a href={getShareUrl('facebook')} target="_blank" rel="noopener noreferrer" 
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#1877F2] hover:bg-[#0e5fb6] transition-colors">
-                  <Facebook className="w-5 h-5 text-white" />
-                </a>
-                <a href={getShareUrl('whatsapp')} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#128C7E] transition-colors">
-                  <MessageCircle className="w-5 h-5 text-white" />
-                </a>
-                <button onClick={copyToClipboard}
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
-                  {copied ? <CheckCircle2 className="w-5 h-5 text-[#d0ff00]" /> : <Copy className="w-5 h-5 text-white" />}
-                </button>
-              </div>
+              <ShareButtons url={window.location.href} title={post.title} />
             </div>
           </div>
           
@@ -230,7 +156,7 @@ const BlogPost = () => {
                 {post.authorImage ? (
                   <AvatarImage src={post.authorImage} alt={post.author} />
                 ) : (
-                  <AvatarFallback className="text-xl">{post.author.substring(0, 2)}</AvatarFallback>
+                  <AvatarFallback className="text-xl">{post.author.substring(0, 2).toUpperCase()}</AvatarFallback>
                 )}
               </Avatar>
               <div>
@@ -242,11 +168,17 @@ const BlogPost = () => {
                 <div className="flex gap-3 mt-4">
                   <a href="https://linkedin.com/in/jhonnasmello" target="_blank" rel="noopener noreferrer" 
                     className="text-white/60 hover:text-[#d0ff00]">
-                    <Linkedin className="w-5 h-5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
                   </a>
                   <a href="https://twitter.com/jhonnasmello" target="_blank" rel="noopener noreferrer"
                     className="text-white/60 hover:text-[#d0ff00]">
-                    <Twitter className="w-5 h-5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -273,11 +205,11 @@ const BlogPost = () => {
             <h3 className="text-2xl font-bold mb-8 text-white">Artigos Relacionados</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {blogPosts
+              {[...blogPosts, rmitalineaCase]
                 .filter(p => p.id !== post.id && p.category === post.category)
                 .slice(0, 3)
                 .map((relatedPost) => (
-                  <div key={relatedPost.id} className="feature-card overflow-hidden rounded-xl group">
+                  <div key={relatedPost.id} className="feature-card overflow-hidden rounded-xl group hover:shadow-lg transition-all duration-300">
                     <div className="relative h-48 overflow-hidden">
                       <img 
                         src={relatedPost.image} 
@@ -293,15 +225,15 @@ const BlogPost = () => {
                           </span>
                         ))}
                       </div>
-                      <h4 className="text-lg font-bold mb-4 text-white line-clamp-2">
+                      <h4 className="text-lg font-bold mb-4 text-white line-clamp-2 hover:text-[#d0ff00] transition-colors">
                         {relatedPost.title}
                       </h4>
                       <div className="flex items-center mb-5">
-                        <Avatar className="h-8 w-8 mr-3">
+                        <Avatar className="h-8 w-8 mr-3 border border-[#d0ff00]/30">
                           {relatedPost.authorImage ? (
                             <AvatarImage src={relatedPost.authorImage} alt={relatedPost.author} />
                           ) : (
-                            <AvatarFallback>{relatedPost.author.substring(0, 2)}</AvatarFallback>
+                            <AvatarFallback>{relatedPost.author.substring(0, 2).toUpperCase()}</AvatarFallback>
                           )}
                         </Avatar>
                         <div className="flex flex-col">
