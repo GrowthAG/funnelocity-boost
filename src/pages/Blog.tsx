@@ -2,15 +2,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Tag, Facebook, Twitter, Linkedin, Search } from 'lucide-react';
 import { blogPosts, featuredPost } from '@/data/blogData';
 
 const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
     { id: 'all', name: 'Todos' },
@@ -22,11 +26,15 @@ const Blog = () => {
     { id: 'case-study', name: 'Cases' }
   ];
 
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const filteredPosts = activeCategory === 'all' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
+  const filteredPosts = blogPosts
+    .filter(post => 
+      (activeCategory === 'all' || post.category === activeCategory) &&
+      (searchTerm === '' || 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      )
+    );
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -51,7 +59,20 @@ const Blog = () => {
               Estratégias, estudos de caso e insights sobre marketing e vendas para impulsionar seu negócio
             </p>
             
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
+            <div className="relative mb-10">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-white/40" />
+              </div>
+              <input
+                type="text"
+                placeholder="Buscar artigos, tópicos ou tags..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-black/50 border border-white/20 rounded-lg text-white focus:outline-none focus:border-[#d0ff00] transition-colors"
+              />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
               {categories.map((category) => (
                 <Button
                   key={category.id}
@@ -99,13 +120,23 @@ const Blog = () => {
                   </p>
                 </div>
                 <div>
-                  <div className="flex items-center text-white/50 text-sm mb-6">
-                    <User className="h-4 w-4 mr-1" />
-                    <span className="mr-4">{featuredPost.author}</span>
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span className="mr-4">{formatDate(featuredPost.date)}</span>
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{featuredPost.readTime}</span>
+                  <div className="flex items-center mb-6">
+                    <Avatar className="h-10 w-10 mr-3">
+                      {featuredPost.authorImage ? (
+                        <AvatarImage src={featuredPost.authorImage} alt={featuredPost.author} />
+                      ) : (
+                        <AvatarFallback>{featuredPost.author.substring(0, 2)}</AvatarFallback>
+                      )}
+                    </Avatar>
+                    <div>
+                      <div className="text-white text-sm">{featuredPost.author}</div>
+                      <div className="flex items-center text-white/50 text-xs">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        <span className="mr-2">{formatDate(featuredPost.date)}</span>
+                        <Clock className="h-3 w-3 mr-1" />
+                        <span>{featuredPost.readTime}</span>
+                      </div>
+                    </div>
                   </div>
                   <Link to={`/blog/${featuredPost.id}`}>
                     <Button className="w-full bg-[#d0ff00] hover:bg-[#b3e600] text-black shadow-md hover:shadow-lg">
@@ -146,13 +177,23 @@ const Blog = () => {
                   <p className="text-white/70 mb-4 flex-grow">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center text-white/50 text-sm mb-5">
-                    <User className="h-4 w-4 mr-1" />
-                    <span className="mr-4">{post.author}</span>
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span className="mr-4">{formatDate(post.date)}</span>
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{post.readTime}</span>
+                  <div className="flex items-center mb-5">
+                    <Avatar className="h-8 w-8 mr-2">
+                      {post.authorImage ? (
+                        <AvatarImage src={post.authorImage} alt={post.author} />
+                      ) : (
+                        <AvatarFallback>{post.author.substring(0, 2)}</AvatarFallback>
+                      )}
+                    </Avatar>
+                    <div className="flex-1">
+                      <div className="text-white text-sm">{post.author}</div>
+                      <div className="flex items-center text-white/50 text-xs">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        <span className="mr-2">{formatDate(post.date)}</span>
+                        <Clock className="h-3 w-3 mr-1" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
                   </div>
                   <Link to={`/blog/${post.id}`}>
                     <Button variant="outline" className="w-full border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
@@ -168,7 +209,10 @@ const Blog = () => {
             <div className="text-center py-20">
               <h3 className="text-xl text-white mb-4">Nenhum artigo encontrado nesta categoria</h3>
               <Button 
-                onClick={() => setActiveCategory('all')}
+                onClick={() => {
+                  setActiveCategory('all');
+                  setSearchTerm('');
+                }}
                 className="bg-[#d0ff00] hover:bg-[#b3e600] text-black"
               >
                 Ver todos os artigos
@@ -195,6 +239,28 @@ const Blog = () => {
                   Inscrever-se
                 </Button>
               </div>
+            </div>
+          </div>
+          
+          {/* Social Media Follow */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold mb-6 text-white">Siga-nos nas redes sociais</h3>
+            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+              Acompanhe a Growth Funnels para dicas diárias, novidades e conteúdos exclusivos sobre marketing, vendas e crescimento de negócios.
+            </p>
+            <div className="flex justify-center gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1877F2] hover:bg-[#0e5fb6] transition-colors">
+                <Facebook className="w-6 h-6 text-white" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1DA1F2] hover:bg-[#0c85d0] transition-colors">
+                <Twitter className="w-6 h-6 text-white" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0A66C2] hover:bg-[#08518a] transition-colors">
+                <Linkedin className="w-6 h-6 text-white" />
+              </a>
             </div>
           </div>
         </div>
