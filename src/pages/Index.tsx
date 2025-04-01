@@ -7,11 +7,24 @@ import Metrics from '../components/Metrics';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import ComparisonSection from '../components/ComparisonSection';
+import EnhancedComparisonTable from '../components/shared/EnhancedComparisonTable';
+import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
+  // Define a function for checkout links
+  const getCheckoutLink = (plan) => {
+    const planLinks = {
+      'PRO': 'https://checkout.growthfunnels.com.br/pro-mensal',
+      'PLUS': 'https://checkout.growthfunnels.com.br/plus-mensal',
+      'ENTERPRISE': 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd'
+    };
+    return planLinks[plan] || 'https://checkout.growthfunnels.com.br/pro-mensal';
+  };
   
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
@@ -20,6 +33,14 @@ const Index = () => {
         <Hero />
         <Features />
         <Metrics />
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <EnhancedComparisonTable 
+            replacementTools={replacementToolsData}
+            totalSaving={totalSavingData}
+            getCheckoutLink={getCheckoutLink}
+            className="rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30 my-16 md:my-24"
+          />
+        </div>
         <Testimonials />
         <CTA />
       </main>
