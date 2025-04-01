@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -38,7 +39,6 @@ import {
   BadgeCheck,
   Bell,
   Settings,
-  BarChart4,
   UserCheck,
   ArrowDown,
   DollarSign
@@ -53,6 +53,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
+import ExactComparisonTable from '@/components/shared/ExactComparisonTable';
 
 const Features = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -186,6 +188,16 @@ const Features = () => {
       color: '#d0ff00'
     }
   ];
+
+  // Define the checkout links function
+  const getCheckoutLink = (plan) => {
+    const planLinks = {
+      'PRO': 'https://checkout.growthfunnels.com.br/pro-mensal',
+      'PLUS': 'https://checkout.growthfunnels.com.br/plus-mensal',
+      'ENTERPRISE': 'https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd'
+    };
+    return planLinks[plan] || 'https://checkout.growthfunnels.com.br/pro-mensal';
+  };
 
   return (
     <div className="min-h-screen bg-black py-20 md:py-28">
@@ -399,13 +411,13 @@ const Features = () => {
             </div>
             
             <div className="py-8 border-t border-[#d0ff00]/10 flex justify-center">
-  <a 
-    href="/pricing" 
-    className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
-  >
-    Começar com Garantia de 14 Dias
-  </a>
-</div>
+              <a 
+                href="/pricing" 
+                className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium rounded-full px-8 py-3.5 transition-all duration-300 shadow-lg shadow-[#d0ff00]/20 hover:shadow-xl hover:shadow-[#d0ff00]/30 transform hover:-translate-y-1"
+              >
+                Começar com Garantia de 14 Dias
+              </a>
+            </div>
           </div>
         </div>
 
@@ -535,29 +547,12 @@ const Features = () => {
         </Tabs>
 
         <div className="mt-20 md:mt-28 mb-16 md:mb-24 rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30">
-          <div className="bg-[#d0ff00] p-5 md:p-6">
-            <div className="grid grid-cols-12 gap-4 items-center">
-              <div className="col-span-4 md:col-span-5">
-                <h3 className="text-lg md:text-xl font-bold text-black">Ferramentas</h3>
-              </div>
-              <div className="col-span-4 md:col-span-3 text-center">
-                <h3 className="text-lg md:text-xl font-bold text-black">Substitui</h3>
-              </div>
-              <div className="col-span-3 md:col-span-3">
-                <h3 className="text-lg md:text-xl font-bold text-black text-right md:text-center">Valor</h3>
-              </div>
-              <div className="col-span-1 hidden md:block">
-                <div className="flex justify-end">
-                  <img 
-                    src="/lovable-uploads/38330c75-db65-4540-ae8c-3b05f2f6cd94.png" 
-                    alt="Growth Funnels Logo" 
-                    className="h-12 w-auto object-contain brightness-0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
+          <ExactComparisonTable 
+            replacementTools={replacementToolsData} 
+            totalSaving={totalSavingData}
+            getCheckoutLink={getCheckoutLink}
+          />
+        </div>
         
         <div className="text-center mt-16 md:mt-24 py-16 md:py-20">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-white leading-tight">
