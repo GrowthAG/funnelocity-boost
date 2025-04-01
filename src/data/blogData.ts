@@ -72,7 +72,7 @@ export const blogPosts: BlogPostType[] = [
 
 export const featuredPost: BlogPostType = {
   id: 7,
-  title: 'Como a Growth Funnels ajudou a dobrar o faturamento da empresa X em 3 meses',
+  title: 'Como a Growth Funnels triplicou o faturamento da R&M Italinea com automações de marketing, funis de venda, implementação de CRM, gerando agendamentos no showroom diretamente com os vendedores',
   excerpt: 'Um estudo de caso detalhado sobre como nossa plataforma transformou completamente a estratégia de marketing e vendas, resultando em um crescimento exponencial.',
   category: 'case-study',
   image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
