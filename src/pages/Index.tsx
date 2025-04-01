@@ -34,7 +34,7 @@ const Index = () => {
         <Metrics />
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="rounded-xl overflow-hidden shadow-lg border border-[#d0ff00]/30 my-16 md:my-24">
-            <ExactComparisonTable 
+            <EnhancedComparisonTable 
               replacementTools={replacementToolsData}
               totalSaving={totalSavingData}
               getCheckoutLink={getCheckoutLink}
