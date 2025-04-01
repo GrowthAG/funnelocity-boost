@@ -8,6 +8,7 @@ import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import ExactComparisonTable from '@/components/shared/ExactComparisonTable';
+import EnhancedComparisonTable from '@/components/shared/EnhancedComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Index = () => {
