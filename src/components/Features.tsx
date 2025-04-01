@@ -558,30 +558,6 @@ const Features = () => {
             </div>
           </div>
           
-          
-          <div className="bg-[#d0ff00]/10 p-4 md:p-6">
-            <div className="grid grid-cols-12 gap-4 items-center">
-              <div className="col-span-5 md:col-span-5">
-                <h3 className="text-lg md:text-xl font-bold text-white">Total</h3>
-              </div>
-              <div className="col-span-3 md:col-span-3">
-              </div>
-              <div className="col-span-4 md:col-span-4 text-right md:text-center">
-                <div className="flex items-center justify-end md:justify-center gap-3 md:gap-4">
-                  <span className="text-red-500/70 line-through text-sm md:text-base">{totalSaving}</span>
-                  <div className="flex items-center">
-                    <DollarSign className="h-4 w-4 text-[#d0ff00] mr-1" />
-                    <span className="text-[#d0ff00] font-bold text-lg md:text-xl">R$ 497/mês</span>
-                  </div>
-                  <div className="flex items-center bg-[#d0ff00]/20 rounded-full px-2 py-1 ml-1">
-                    <ArrowDown className="h-3 w-3 text-[#d0ff00] mr-1" />
-                    <span className="text-[#d0ff00] text-xs font-medium">90%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         
         <div className="text-center mt-16 md:mt-24 py-16 md:py-20">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-white leading-tight">
