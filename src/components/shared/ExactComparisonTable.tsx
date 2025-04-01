@@ -28,7 +28,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
         <img 
           src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" 
           alt="GrowthFunnels Logo" 
-          className="h-10" 
+          className="h-6" 
         />
         <span className="text-xl font-bold text-white">vs. Outras Soluções</span>
       </div>
