@@ -146,7 +146,6 @@ const Features = () => {
     ? features 
     : features.filter(feature => feature.category === activeTab);
 
-  
 
   const mockRevenueData = [
     { month: 'Jan', value: 9.2 },
