@@ -24,11 +24,11 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
 }) => {
   return (
     <div className={`bg-black text-white ${className}`}>
-      <div className="flex justify-center items-center gap-2 mb-4">
+      <div className="flex justify-center items-center gap-2 mb-2">
         <img 
           src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" 
           alt="GrowthFunnels Logo" 
-          className="h-8" 
+          className="h-10" 
         />
         <span className="text-xl font-bold text-white">vs. Outras Soluções</span>
       </div>
