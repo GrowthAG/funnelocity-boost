@@ -482,7 +482,7 @@ const Features = () => {
                 
                 <div className="mt-auto pt-6">
                   <a 
-                    href="https://checkout.growthfunnels.com.br/plus-mensal"
+                    href="/pricing"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Usar Template ${example.title} - Redireciona para o checkout do plano PLUS`}
