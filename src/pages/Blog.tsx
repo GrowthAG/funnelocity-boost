@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calendar, Clock, User, ArrowRight, Tag, ArrowLeft, ThumbsUp, Share, Bookmark } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react';
 import { blogPosts, featuredPost } from '@/data/blogData';
 
 const Blog = () => {
@@ -19,8 +19,7 @@ const Blog = () => {
     { id: 'ai', name: 'IA' },
     { id: 'funnels', name: 'Funis' },
     { id: 'traffic', name: 'Tráfego' },
-    { id: 'case-study', name: 'Cases' },
-    { id: 'architecture', name: 'Arquitetura' }
+    { id: 'case-study', name: 'Cases' }
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -44,76 +43,10 @@ const Blog = () => {
       
       <main className="pt-28 pb-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section for Blog */}
-          <div className="relative rounded-xl overflow-hidden mb-16 h-[420px] md:h-[520px]">
-            <img 
-              src={featuredPost.image} 
-              alt={featuredPost.title} 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-              <div className="flex space-x-2 mb-4">
-                <Link to="/blog" className="flex items-center text-white hover:text-[#d0ff00] transition-colors">
-                  <ArrowLeft className="h-4 w-4 mr-1" />
-                  <span>Voltar para o Blog</span>
-                </Link>
-                <span className="text-white/50">|</span>
-                <span className="bg-[#d0ff00] text-black text-xs font-bold px-3 py-1 rounded-full">
-                  {categories.find(cat => cat.id === featuredPost.category)?.name}
-                </span>
-              </div>
-              
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
-                {featuredPost.title}
-              </h1>
-              
-              <div className="flex flex-wrap items-center gap-6 text-white/70 mb-6">
-                <div className="flex items-center">
-                  <img 
-                    src="https://randomuser.me/api/portraits/men/32.jpg" 
-                    alt={featuredPost.author}
-                    className="h-10 w-10 rounded-full mr-3 border-2 border-[#d0ff00]"
-                  />
-                  <div>
-                    <div className="text-white font-medium">{featuredPost.author}</div>
-                    <div className="text-white/50 text-sm">Advisor</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center text-white/50">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  <span>{formatDate(featuredPost.date)}</span>
-                </div>
-                
-                <div className="flex items-center text-white/50">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>{featuredPost.readTime}</span>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-3 mt-6">
-                <Button variant="outline" size="sm" className="bg-white/10 border-transparent text-white hover:bg-white/20 hover:text-white rounded-full">
-                  <ThumbsUp className="h-4 w-4 mr-2" />
-                  Curtir
-                </Button>
-                <Button variant="outline" size="sm" className="bg-white/10 border-transparent text-white hover:bg-white/20 hover:text-white rounded-full">
-                  <Bookmark className="h-4 w-4 mr-2" />
-                  Salvar
-                </Button>
-                <Button variant="outline" size="sm" className="bg-white/10 border-transparent text-white hover:bg-white/20 hover:text-white rounded-full">
-                  <Share className="h-4 w-4 mr-2" />
-                  Compartilhar
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-white">
-              Nosso <span className="text-gradient">Blog</span>
-            </h2>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Conteúdo para acelerar seu <span className="text-gradient">crescimento</span>
+            </h1>
             <p className="text-xl text-white/80 mb-10">
               Estratégias, estudos de caso e insights sobre marketing e vendas para impulsionar seu negócio
             </p>
@@ -136,7 +69,56 @@ const Blog = () => {
             </div>
           </div>
           
-          {/* Blog Posts Grid */}
+          {/* Featured Post */}
+          <div className="mb-16 feature-card overflow-hidden rounded-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="relative h-72 lg:h-full overflow-hidden">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 bg-[#d0ff00] text-black text-xs font-semibold px-3 py-1 rounded-full">
+                  Destaque
+                </div>
+              </div>
+              <div className="p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {featuredPost.tags.map((tag, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="text-white/70 text-lg mb-6">
+                    {featuredPost.excerpt}
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center text-white/50 text-sm mb-6">
+                    <User className="h-4 w-4 mr-1" />
+                    <span className="mr-4">{featuredPost.author}</span>
+                    <Calendar className="h-4 w-4 mr-1" />
+                    <span className="mr-4">{formatDate(featuredPost.date)}</span>
+                    <Clock className="h-4 w-4 mr-1" />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                  <Link to={`/blog/${featuredPost.id}`}>
+                    <Button className="w-full bg-[#d0ff00] hover:bg-[#b3e600] text-black shadow-md hover:shadow-lg">
+                      Ler artigo completo <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <h3 className="text-2xl font-bold mb-8 text-white">Artigos Recentes</h3>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
               <div key={post.id} className="feature-card overflow-hidden rounded-xl flex flex-col h-full group">
@@ -164,27 +146,14 @@ const Blog = () => {
                   <p className="text-white/70 mb-4 flex-grow">
                     {post.excerpt}
                   </p>
-                  
-                  <div className="flex items-center mb-4 text-white/70">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/32.jpg" 
-                      alt={post.author}
-                      className="h-8 w-8 rounded-full mr-2 border border-[#d0ff00]"
-                    />
-                    <span className="text-sm">{post.author}</span>
+                  <div className="flex items-center text-white/50 text-sm mb-5">
+                    <User className="h-4 w-4 mr-1" />
+                    <span className="mr-4">{post.author}</span>
+                    <Calendar className="h-4 w-4 mr-1" />
+                    <span className="mr-4">{formatDate(post.date)}</span>
+                    <Clock className="h-4 w-4 mr-1" />
+                    <span>{post.readTime}</span>
                   </div>
-                  
-                  <div className="flex justify-between items-center text-white/50 text-sm mb-4">
-                    <div className="flex items-center">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      <span>{formatDate(post.date)}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-1" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                  
                   <Link to={`/blog/${post.id}`}>
                     <Button variant="outline" className="w-full border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10">
                       Ler mais <ArrowRight className="ml-2 h-4 w-4" />
@@ -207,102 +176,25 @@ const Blog = () => {
             </div>
           )}
           
-          {/* Article Content Preview Section */}
-          <div className="mt-20 mb-10 max-w-3xl mx-auto">
-            <div className="border-l-4 border-[#d0ff00] pl-6 py-2 mb-6">
-              <p className="text-white/80 text-lg italic">
-                Descubra as vantagens de adotar microsserviços para aumentar a
-                escalabilidade e resiliência dos seus sistemas.
-              </p>
-            </div>
-            
-            <div className="mb-10">
-              <h3 className="text-xl font-bold text-white mb-4">Neste artigo</h3>
-              <ul className="space-y-3 text-white/80">
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Introdução</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Desenvolvimento</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Conclusão</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="prose prose-invert max-w-none">
-              <p className="text-white/80 mb-6">
-                A arquitetura de microsserviços tem revolucionado a forma como as empresas 
-                desenvolvem e implantam aplicações de software. Diferentemente da abordagem 
-                monolítica tradicional, onde toda a aplicação é construída como uma única unidade, 
-                a arquitetura de microsserviços divide a aplicação em componentes menores e 
-                independentes que se comunicam entre si.
-              </p>
-              
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">Entendendo os Microsserviços</h3>
-              
-              <Link to={`/blog/${featuredPost.id}`} className="block mt-8">
-                <Button className="bg-[#d0ff00] hover:bg-[#b3e600] text-black">
-                  Continuar lendo o artigo completo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-          
-          {/* Sidebar Content */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div className="md:col-span-2">
-              {/* Newsletter Signup */}
-              <div className="p-8 rounded-xl bg-[#d0ff00]/10 border border-[#d0ff00]/20 mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-white">Receba nossos conteúdos</h3>
-                <p className="text-white/70 mb-6">
-                  Assine nossa newsletter e receba os últimos artigos e novidades diretamente no seu email.
+          {/* Newsletter Signup */}
+          <div className="mt-24 p-10 rounded-xl bg-[#d0ff00]/10 border border-[#d0ff00]/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-white">Receba nossos artigos</h3>
+                <p className="text-white/70 mb-0">
+                  Inscreva-se para receber as últimas novidades, dicas e estratégias para impulsionar seu crescimento.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Seu melhor e-mail"
-                    className="flex-1 px-4 py-3 rounded-lg bg-black/50 border border-[#d0ff00]/20 text-white focus:outline-none focus:border-[#d0ff00]"
-                  />
-                  <Button className="bg-[#d0ff00] hover:bg-[#b3e600] text-black whitespace-nowrap">
-                    Inscrever-se
-                  </Button>
-                </div>
               </div>
-            </div>
-            
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-6">Áreas de Expertise</h3>
-              <ul className="space-y-4 text-white/80">
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Arquitetura de Software</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Sistemas Distribuídos</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Cloud Computing</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>DevOps</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Inteligência Artificial</span>
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="h-4 w-4 text-[#d0ff00] mr-2" />
-                  <span>Marketing Digital</span>
-                </li>
-              </ul>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Seu melhor e-mail"
+                  className="flex-1 px-4 py-3 rounded-lg bg-black/50 border border-[#d0ff00]/20 text-white focus:outline-none focus:border-[#d0ff00]"
+                />
+                <Button className="bg-[#d0ff00] hover:bg-[#b3e600] text-black whitespace-nowrap">
+                  Inscrever-se
+                </Button>
+              </div>
             </div>
           </div>
         </div>
