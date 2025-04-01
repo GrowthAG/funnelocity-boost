@@ -558,41 +558,6 @@ const Features = () => {
             </div>
           </div>
           
-          <div className="divide-y divide-[#d0ff00]/30">
-            {replacementTools.map((tool, index) => (
-              <div key={index} className="flex items-center p-4 md:p-5 bg-black hover:bg-black/80 transition-colors">
-                <div className="w-full grid grid-cols-12 gap-4 items-center">
-                  <div className="col-span-5 md:col-span-5">
-                    <div className="text-white text-sm md:text-base">{tool.name}</div>
-                  </div>
-                  <div className="col-span-3 md:col-span-3 flex justify-center">
-                    <div className="flex flex-wrap justify-center items-center gap-2 bg-black/60 backdrop-blur-sm p-2 rounded-lg border border-white/10">
-                      {tool.logos.map((logo, logoIndex) => (
-                        <div 
-                          key={logoIndex} 
-                          className="flex items-center justify-center p-1"
-                        >
-                          <img 
-                            src={logo.src} 
-                            alt={logo.name}
-                            className="object-contain h-5 w-auto max-w-[24px]"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="col-span-3 md:col-span-3 text-right md:text-center">
-                    <span className="text-white text-sm md:text-base">{tool.value}</span>
-                  </div>
-                  <div className="col-span-1 flex justify-end">
-                    <div className="bg-[#d0ff00]/10 h-8 w-8 rounded-full flex items-center justify-center">
-                      <Check className="h-5 w-5 text-[#d0ff00]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
           
           <div className="bg-[#d0ff00]/10 p-4 md:p-6">
             <div className="grid grid-cols-12 gap-4 items-center">
