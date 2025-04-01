@@ -21,7 +21,12 @@ const Index = () => {
         <Hero />
         <Features />
         <Metrics />
-        <ComparisonSection />
+        <ComparisonTable 
+                replacementTools={replacementToolsData}
+                totalSaving={totalSavingData}
+                billingAnnual={billingAnnual}
+                getCheckoutLink={getCheckoutLink}
+              />
         <Testimonials />
         <CTA />
       </main>
