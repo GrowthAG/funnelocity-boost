@@ -7,6 +7,7 @@ import Metrics from '../components/Metrics';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import ComparisonSection from '@/components/ComparisonSection';
 
 const Index = () => {
   useEffect(() => {
