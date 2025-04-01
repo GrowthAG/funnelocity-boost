@@ -22,7 +22,7 @@ const Index = () => {
         <Metrics />
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            {/* Novo conteúdo para substituir o ComparisonSection */}
+            <ComparisonSection />
           </div>
         </div>
         <Testimonials />
