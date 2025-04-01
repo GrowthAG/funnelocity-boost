@@ -7,7 +7,6 @@ import Metrics from '../components/Metrics';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import ExactComparisonTable from '@/components/shared/ExactComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
 const Index = () => {
@@ -31,7 +30,6 @@ const Index = () => {
       <main className="space-y-4 md:space-y-6 lg:space-y-8"> {/* Espaçamento reduzido entre seções */}
         <Hero />
         <Features />
-        </div>
         <Metrics />
         <Testimonials />
         <CTA />
