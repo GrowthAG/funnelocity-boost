@@ -21,11 +21,7 @@ const Index = () => {
         <Hero />
         <Features />
         <Metrics />
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <ComparisonSection />
-          </div>
-        </div>
+        <ComparisonSection />
         <Testimonials />
         <CTA />
       </main>
