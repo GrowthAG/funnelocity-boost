@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -147,6 +148,7 @@ const Features = () => {
     ? features 
     : features.filter(feature => feature.category === activeTab);
 
+
   const mockRevenueData = [
     { month: 'Jan', value: 9.2 },
     { month: 'Feb', value: 10.8 },
@@ -187,6 +189,7 @@ const Features = () => {
     }
   ];
 
+  // Define the checkout links function
   const getCheckoutLink = (plan) => {
     const planLinks = {
       'PRO': 'https://checkout.growthfunnels.com.br/pro-mensal',
@@ -211,6 +214,7 @@ const Features = () => {
         <div className="mb-20 md:mb-28">
           <div className="overflow-hidden rounded-xl bg-black border border-[#d0ff00]/20 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              {/* Dashboard Analytics Section */}
               <div className="p-8 md:p-10 border-r border-[#d0ff00]/10 flex flex-col min-h-[680px]">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2 h-9">
                   <BarChart3 className="h-6 w-6 text-[#d0ff00]" />
@@ -289,6 +293,7 @@ const Features = () => {
                 </div>
               </div>
               
+              {/* Automações Inteligentes Section */}
               <div className="p-8 md:p-10 relative flex flex-col min-h-[680px]">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-white flex items-center gap-2 h-9">
                   <Workflow className="h-6 w-6 text-[#d0ff00]" />
@@ -476,13 +481,15 @@ const Features = () => {
                 </div>
                 
                 <div className="mt-auto pt-6">
-                  <Link 
-                    to="/pricing"
-                    aria-label={`Usar Template ${example.title} - Redireciona para a página de preços`}
+                  <a 
+                    href="https://checkout.growthfunnels.com.br/plus-mensal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Usar Template ${example.title} - Redireciona para o checkout do plano PLUS`}
                     className="block w-full py-3 px-6 rounded-md text-base font-semibold bg-[#d0ff00] text-black hover:bg-[#b3e600] transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
                   >
                     Usar Template
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
