@@ -490,7 +490,6 @@ const Features = () => {
                   </Link>
                   </a>
                 </div>
-              </div>
             ))}
           </div>
         </div>
