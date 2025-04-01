@@ -1,14 +1,25 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, CreditCard, Plus } from 'lucide-react';
+import { CheckCircle, CreditCard, ChevronDown } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import ComparisonTable from '@/components/shared/ComparisonTable';
 import { replacementToolsData, totalSavingData } from '@/utils/dashboardData';
 
@@ -357,43 +368,33 @@ const Pricing = () => {
 
                     {plan.additionalCosts.length > 0 && (
                       <div className="min-h-[80px]">
-                        <div className="flex items-center gap-2 text-white mb-2">
-                          <Plus className="h-4 w-4 text-[#d0ff00]" />
-                          <span className="text-sm font-medium">Custos Adicionais</span>
-                        </div>
-                        <ul className="text-xs text-white/60 space-y-1 pl-6">
-                          {plan.additionalCosts.slice(0, 3).map((cost, i) => (
-                            <li key={i}>{cost}</li>
-                          ))}
-                          {plan.additionalCosts.length > 3 && (
-                            <li>
-                              <Tooltip>
-                                <TooltipTrigger asChild>
-                                  <button className="text-[#d0ff00] text-xs cursor-pointer hover:underline focus:outline-none">
-                                    + {plan.additionalCosts.length - 3} mais
-                                  </button>
-                                </TooltipTrigger>
-                                <TooltipContent className="bg-black/95 border border-[#d0ff00]/30 p-3 rounded-lg shadow-lg">
-                                  <ul className="space-y-1 text-white">
-                                    {plan.additionalCosts.slice(3).map((cost, i) => (
-                                      <li key={i}>{cost}</li>
-                                    ))}
-                                  </ul>
-                                </TooltipContent>
-                              </Tooltip>
-                            </li>
-                          )}
-                        </ul>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <button className="flex items-center gap-2 text-white hover:text-[#d0ff00] mb-2 transition-colors bg-white/5 px-3 py-2 rounded-lg w-full">
+                              <span className="text-sm font-medium">Custos Adicionais</span>
+                              <ChevronDown className="h-4 w-4 ml-auto" />
+                            </button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent className="bg-black/95 border border-[#d0ff00]/30 p-3 rounded-lg shadow-lg w-64">
+                            <ul className="space-y-2 text-white/70 text-xs">
+                              {plan.additionalCosts.map((cost, i) => (
+                                <li key={i} className="px-2 py-1 hover:bg-white/10 rounded transition-colors">
+                                  {cost}
+                                </li>
+                              ))}
+                            </ul>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       </div>
                     )}
                   </div>
 
                   <div className="flex justify-center mt-6">
-                    <CreditCard className="h-5 w-5 text-white/70 mr-3" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-6 w-auto mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-6 w-auto mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-6 w-auto mx-1" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-6 w-auto mx-1" />
+                    <CreditCard className="h-6 w-6 text-white/70 mr-3" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" className="h-7 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Mastercard" className="h-7 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="American Express" className="h-7 w-auto mx-1" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="Paypal" className="h-7 w-auto mx-1" />
                   </div>
                 </div>
               ))}

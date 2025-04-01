@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -6,7 +7,6 @@ import Metrics from '../components/Metrics';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import ComparisonSection from '../components/ComparisonSection';
 
 const Index = () => {
   useEffect(() => {
@@ -20,7 +20,11 @@ const Index = () => {
         <Hero />
         <Features />
         <Metrics />
-        <ComparisonSection />
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Novo conteúdo para substituir o ComparisonSection */}
+          </div>
+        </div>
         <Testimonials />
         <CTA />
       </main>
