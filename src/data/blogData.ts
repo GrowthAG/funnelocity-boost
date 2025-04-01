@@ -7,7 +7,7 @@ export const blogPosts: BlogPostType[] = [
     title: 'Como aumentar suas taxas de conversão em 147% com automação',
     excerpt: 'Descubra as estratégias que utilizamos para aumentar drasticamente as taxas de conversão dos nossos clientes através de fluxos de automação inteligentes.',
     category: 'automations',
-    image: 'https://images.unsplash.com/photo-1733306696471-807493ff845b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'https://ix-www.imgix.net/case-study/unsplash/unsplash02.jpg?ixlib=js-3.8.0&auto=compress%2Cformat&w=1800',
     author: 'Carlos Mendes',
     date: '2023-06-15',
     readTime: '8 min',
