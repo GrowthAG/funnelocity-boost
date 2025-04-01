@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -258,8 +259,8 @@ const Features = () => {
                     <td className="p-3 md:p-4 text-white font-medium border-t border-[#d0ff00]/10">{feature.name}</td>
                     <td className="p-3 md:p-4 text-center border-t border-[#d0ff00]/10">
                       {feature.extraCost 
-                        ? <XCircle className="h-5 w-5 text-yellow-500 mx-auto" title="Custo adicional" /> 
-                        : <CheckCircle className="h-5 w-5 text-[#d0ff00] mx-auto" title="Incluso em todos os planos" />
+                        ? <XCircle className="h-5 w-5 text-yellow-500 mx-auto" aria-label="Custo adicional" /> 
+                        : <CheckCircle className="h-5 w-5 text-[#d0ff00] mx-auto" aria-label="Incluso em todos os planos" />
                       }
                     </td>
                     <td className="p-3 md:p-4 text-white/80 border-t border-[#d0ff00]/10 hidden md:table-cell">{feature.description}</td>
@@ -297,8 +298,9 @@ const Features = () => {
                   alt={`Demonstração de ${featureList[selectedFeature].name}`} 
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                   onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/640x360/111111/d0ff00?text=GrowthFunnels";
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "https://via.placeholder.com/640x360/111111/d0ff00?text=GrowthFunnels";
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
