@@ -26,7 +26,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
     <div className={`bg-black text-white ${className}`}>
       <div className="flex justify-center items-center gap-2 mb-2">
         <img 
-          src="https://growthfunnels.com.br/wp-content/uploads/2024/05/logo-growth-funnels.svg" 
+          src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" 
           alt="GrowthFunnels Logo" 
           className="h-8" 
         />
