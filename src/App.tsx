@@ -31,9 +31,6 @@ const ExternalRedirect = ({ to }: { to: string }) => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Helmet defaultTitle="Growth Funnels - Automatize seu crescimento" titleTemplate="%s | Growth Funnels">
-        <meta name="description" content="Plataforma completa de CRM, automação de marketing e geração de demanda criada para centralizar sua operação, automatizar processos e impulsionar seu crescimento." />
-      </Helmet>
       <Toaster />
       <Sonner />
       <BrowserRouter>
