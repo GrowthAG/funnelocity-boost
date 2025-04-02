@@ -55,9 +55,9 @@ const Navbar = () => {
           <Link to="/blog" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Blog
           </Link>
-          <Link to="/afiliados" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
+          <a href="https://www.afiliados.growthfunnels.com.br" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Afiliados
-          </Link>
+          </a>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -121,13 +121,15 @@ const Navbar = () => {
             >
               Blog
             </Link>
-            <Link 
-              to="/afiliados" 
+            <a 
+              href="https://growthfunnels.com.br/afiliados" 
               className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Afiliados
-            </Link>
+            </a>
             <Link 
               to="/privacy" 
               className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
