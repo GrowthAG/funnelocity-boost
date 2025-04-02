@@ -15,6 +15,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
+import Affiliates from "./pages/Affiliates";
+import { Helmet } from "react-helmet";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,9 @@ const ExternalRedirect = ({ to }: { to: string }) => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <Helmet defaultTitle="Growth Funnels - Automatize seu crescimento" titleTemplate="%s | Growth Funnels">
+        <meta name="description" content="Plataforma completa de CRM, automação de marketing e geração de demanda criada para centralizar sua operação, automatizar processos e impulsionar seu crescimento." />
+      </Helmet>
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -43,13 +48,13 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/afiliados" element={<Affiliates />} />
           
           {/* External redirects */}
           <Route path="/login" element={<ExternalRedirect to="https://app.growthfunnels.com.br/" />} />
           <Route path="/demo" element={<ExternalRedirect to="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" />} />
           <Route path="/pro" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/pro" />} />
           <Route path="/plus" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/plus" />} />
-          <Route path="/afiliados" element={<ExternalRedirect to="https://growthfunnels.com.br/afiliados" />} />
           
           {/* Catch all for 404 */}
           <Route path="*" element={<NotFound />} />

@@ -121,15 +121,13 @@ const Navbar = () => {
             >
               Blog
             </Link>
-            <a 
-              href="https://growthfunnels.com.br/afiliados" 
+            <Link 
+              to="/afiliados" 
               className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Afiliados
-            </a>
+            </Link>
             <Link 
               to="/privacy" 
               className="text-white hover:text-[#d0ff00] transition-colors py-2 font-medium"
