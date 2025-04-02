@@ -55,9 +55,9 @@ const Navbar = () => {
           <Link to="/blog" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Blog
           </Link>
-          <a href="https://www.afiliados.growthfunnels.com.br" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
+          <Link to="/afiliados" className="text-white hover:text-[#d0ff00] transition-colors font-medium">
             Afiliados
-          </a>
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
