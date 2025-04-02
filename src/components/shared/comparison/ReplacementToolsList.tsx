@@ -34,7 +34,7 @@ const ReplacementToolsList: React.FC<ToolsListProps> = ({ tools }) => {
                 {tool.tools.map((toolName, i) => (
                   <div 
                     key={i} 
-                    className="bg-white/10 text-white/80 rounded px-2 py-0.5 text-xs flex items-center"
+                    className="bg-[#333333] hover:bg-[#444444] text-white/80 rounded px-2 py-0.5 text-xs flex items-center transition-colors duration-200"
                   >
                     <ArrowRight className="h-3 w-3 mr-1 text-[#d0ff00]" />
                     {toolName}
