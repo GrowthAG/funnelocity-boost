@@ -20,11 +20,6 @@ const Affiliates = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <Helmet>
-        <title>Programa de Afiliados | Growth Funnels</title>
-        <meta name="description" content="Ganhe até 30% de comissão recorrente indicando o Growth Funnels! Junte-se ao nosso programa de afiliados." />
-      </Helmet>
-      
       <Navbar />
       
       <main className="pt-28 pb-16 px-4 md:px-8">
