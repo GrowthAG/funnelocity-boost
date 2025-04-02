@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -14,9 +13,8 @@ import {
   ThumbsUp, 
   MessageSquare, 
   Tag,
-  Twitter,
-  Facebook,
   Linkedin,
+  Instagram,
   Mail,
   ArrowUp,
   Search
@@ -135,6 +133,17 @@ const BlogPost = () => {
         { id: 'metricas-essenciais', text: 'Métricas Essenciais para Otimização Contínua' },
         { id: 'implementando-growth', text: 'Implementando na Growth Funnels' }
       ];
+    } else if (post.id === 7) {
+      return [
+        { id: 'desafio-inicial', text: 'O Desafio Inicial' },
+        { id: 'estrategia-implementada', text: 'Estratégia Implementada' },
+        { id: 'automacao-personalizada', text: '1. Automação Personalizada' },
+        { id: 'crm-integrado', text: '2. CRM Integrado' },
+        { id: 'funis-segmentados', text: '3. Funis Segmentados' },
+        { id: 'resultados-alcancados', text: 'Resultados Alcançados' },
+        { id: 'licoes-aprendidas', text: 'Lições Aprendidas' },
+        { id: 'conclusao-case', text: 'Conclusão' }
+      ];
     }
     return [];
   };
@@ -215,17 +224,11 @@ const BlogPost = () => {
                 </div>
                 <div className="flex space-x-3">
                   <p className="text-white/60 hidden md:block mr-2">Compartilhar:</p>
-                  <button className="bg-[#1DA1F2]/10 hover:bg-[#1DA1F2]/20 text-[#1DA1F2] p-2 rounded-full transition-colors">
-                    <Twitter className="h-5 w-5" />
-                  </button>
-                  <button className="bg-[#4267B2]/10 hover:bg-[#4267B2]/20 text-[#4267B2] p-2 rounded-full transition-colors">
-                    <Facebook className="h-5 w-5" />
-                  </button>
                   <button className="bg-[#0077B5]/10 hover:bg-[#0077B5]/20 text-[#0077B5] p-2 rounded-full transition-colors">
                     <Linkedin className="h-5 w-5" />
                   </button>
-                  <button className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors">
-                    <Mail className="h-5 w-5" />
+                  <button className="bg-[#E1306C]/10 hover:bg-[#E1306C]/20 text-[#E1306C] p-2 rounded-full transition-colors">
+                    <Instagram className="h-5 w-5" />
                   </button>
                 </div>
               </div>
@@ -412,7 +415,7 @@ const BlogPost = () => {
                       A personalização já não se limita a inserir o nome do cliente em emails. Com IA, empresas estão criando experiências totalmente personalizadas:
                     </p>
                     <ul className="list-disc pl-6 text-white/80 mb-6">
-                      <li>A empresa de e-commerce XYZ implementou um sistema de recomendação baseado em IA que analisa não apenas o histórico de compras, mas também padrões de navegação, sazonalidade e até mesmo condições climáticas locais para sugerir produtos. O resultado: aumento de 34% no valor médio dos pedidos.</li>
+                      <li>Um marketplace B2B utiliza IA para gerar descrições de produto personalizadas para mais de 50.000 itens, resultando em aumento de 27% no tráfego orgânico e melhoria significativa nas taxas de conversão.</li>
                       <li>Uma fintech brasileira utiliza IA para personalizar completamente a jornada de educação financeira baseada no comportamento individual do usuário, resultando em um aumento de 47% na ativação de produtos adicionais.</li>
                     </ul>
                     <p className="text-white/80 mb-6">
@@ -515,7 +518,7 @@ const BlogPost = () => {
                       É o momento da verdade, onde o lead toma a decisão final de compra. Funis de alta conversão elevam suas taxas aqui com:
                     </p>
                     <ul className="list-disc pl-6 text-white/80 mb-6">
-                      <li><strong>Urgência genuína:</strong> Elementos de escassez e urgência baseados em limitações reais (não artificiais) podem aumentar conversões em até 42%. Exemplos incluem vagas limitadas para um programa ou bonificações por tempo determinado.</li>
+                      <li><strong>Urgência genu��na:</strong> Elementos de escassez e urgência baseados em limitações reais (não artificiais) podem aumentar conversões em até 42%. Exemplos incluem vagas limitadas para um programa ou bonificações por tempo determinado.</li>
                       <li><strong>Redução de risco percebido:</strong> Garantias claras e sem asteriscos aumentam a conversão em média 32%. Quanto mais específica a garantia, maior a confiança gerada.</li>
                       <li><strong>Simplificação da decisão:</strong> Paradoxalmente, oferecer menos opções de pacotes ou planos (idealmente não mais que 3) resulta em mais conversões. A clareza das diferenças entre opções é fundamental.</li>
                     </ul>
@@ -553,6 +556,100 @@ const BlogPost = () => {
                       <li>Dashboards personalizáveis para monitoramento de KPIs</li>
                       <li>Integração com múltiplos canais de comunicação e aquisição</li>
                     </ul>
+                  </>
+                )}
+
+                {post.id === 7 && (
+                  <>
+                    <h2 id="desafio-inicial" className="text-2xl font-bold text-white mt-12 mb-6">O Desafio Inicial</h2>
+                    <p className="text-white/80 mb-6">
+                      A R&M Italinea, uma das principais lojas de móveis planejados do Brasil, enfrentava desafios significativos em sua estratégia de aquisição e conversão de clientes. Com um mercado altamente competitivo e um ciclo de vendas complexo, a empresa precisava de uma solução que pudesse:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li>Aumentar o volume de leads qualificados sem ampliar significativamente o investimento em mídia</li>
+                      <li>Reduzir o tempo entre o primeiro contato e o agendamento de visita ao showroom</li>
+                      <li>Melhorar a eficiência da equipe de vendas, focando seu tempo em leads com maior propensão à compra</li>
+                      <li>Centralizar dados e interações de múltiplos canais para uma visão 360° do cliente</li>
+                    </ul>
+                    <p className="text-white/80 mb-6">
+                      Os sistemas anteriores não permitiam uma segmentação eficiente dos leads, resultando em um processo one-size-fits-all que não reconhecia as diferentes necessidades e momentos de cada cliente potencial.
+                    </p>
+                    
+                    <h2 id="estrategia-implementada" className="text-2xl font-bold text-white mt-12 mb-6">Estratégia Implementada</h2>
+                    <p className="text-white/80 mb-6">
+                      Após uma análise detalhada do processo de vendas da R&M Italinea e do comportamento de seus clientes, desenvolvemos uma estratégia integrada utilizando a plataforma Growth Funnels. A implementação foi realizada em etapas para minimizar interrupções e permitir ajustes contínuos baseados em dados reais.
+                    </p>
+                    
+                    <h3 id="automacao-personalizada" className="text-xl font-bold text-white mt-10 mb-4">1. Automação Personalizada</h3>
+                    <p className="text-white/80 mb-6">
+                      Implementamos fluxos de automação que respondiam ao comportamento específico de cada lead. Por exemplo:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li>Leads que demonstravam interesse em cozinhas planejadas recebiam conteúdo específico sobre esse ambiente, incluindo cases, catálogos e vídeos de projetos similares</li>
+                      <li>Automações sensíveis ao tempo de interação, intensificando contatos com leads que demonstravam sinais de urgência na compra</li>
+                      <li>Recuperação automática de leads inativos com ofertas personalizadas baseadas em seu histórico de interações</li>
+                    </ul>
+                    
+                    <h3 id="crm-integrado" className="text-xl font-bold text-white mt-10 mb-4">2. CRM Integrado</h3>
+                    <p className="text-white/80 mb-6">
+                      Centralizamos todas as informações dos clientes em um único sistema, permitindo:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li>Visualização completa da jornada do cliente, desde o primeiro clique até o pós-venda</li>
+                      <li>Scoring automático de leads baseado em múltiplas variáveis comportamentais</li>
+                      <li>Distribuição inteligente de leads para os vendedores mais adequados ao perfil do cliente</li>
+                      <li>Insights sobre o funil de vendas em tempo real, identificando gargalos e oportunidades</li>
+                    </ul>
+                    
+                    <h3 id="funis-segmentados" className="text-xl font-bold text-white mt-10 mb-4">3. Funis Segmentados</h3>
+                    <p className="text-white/80 mb-6">
+                      Desenvolvemos funis específicos para diferentes segmentos de clientes e ambientes:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li>Funil para primeiro apartamento, focado em soluções práticas e otimização de espaço</li>
+                      <li>Funil para reforma, com ênfase na minimização de transtornos e transformação de ambientes</li>
+                      <li>Funil para casas de alto padrão, destacando materiais premium e projetos exclusivos</li>
+                    </ul>
+                    <p className="text-white/80 mb-6">
+                      Cada funil contava com conteúdos, gatilhos e pontos de interação humana específicos, otimizados continuamente através de testes A/B.
+                    </p>
+                    
+                    <h2 id="resultados-alcancados" className="text-2xl font-bold text-white mt-12 mb-6">Resultados Alcançados</h2>
+                    <p className="text-white/80 mb-6">
+                      Em apenas seis meses após a implementação completa, a R&M Italinea experimentou transformações significativas:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li><strong>Aumento de 312% no faturamento</strong> em comparação com o mesmo período do ano anterior</li>
+                      <li>Redução de 68% no tempo médio entre o primeiro contato e o agendamento no showroom</li>
+                      <li>Aumento de 47% na taxa de conversão de lead para cliente</li>
+                      <li>Crescimento de 28% no valor médio dos projetos vendidos</li>
+                      <li>Redução de 52% no custo de aquisição de cliente (CAC)</li>
+                    </ul>
+                    <p className="text-white/80 mb-6">
+                      Além dos números, houve uma melhoria significativa na satisfação tanto dos clientes quanto da equipe de vendas. Os vendedores passaram a receber leads mais qualificados e com informações contextuais que facilitavam o processo de venda.
+                    </p>
+                    
+                    <h2 id="licoes-aprendidas" className="text-2xl font-bold text-white mt-12 mb-6">Lições Aprendidas</h2>
+                    <p className="text-white/80 mb-6">
+                      Durante o projeto, identificamos insights valiosos que podem beneficiar outras empresas do segmento:
+                    </p>
+                    <ul className="list-disc pl-6 text-white/80 mb-6">
+                      <li><strong>A nutrição de leads não deve ser linear</strong> - Leads em estágios similares podem precisar de abordagens completamente diferentes</li>
+                      <li><strong>O timing é crucial</strong> - O momento certo para intervenção humana pode ser a diferença entre um cliente ganho ou perdido</li>
+                      <li><strong>Dados centralizados geram eficiência operacional</strong> - Eliminar silos de informação reduz redundâncias e melhora a experiência do cliente</li>
+                      <li><strong>Experimentação contínua é essencial</strong> - Os melhores resultados vieram de testes constantes e iterações baseadas em dados</li>
+                    </ul>
+                    
+                    <h2 id="conclusao-case" className="text-2xl font-bold text-white mt-12 mb-6">Conclusão</h2>
+                    <p className="text-white/80 mb-6">
+                      O caso da R&M Italinea demonstra como uma abordagem integrada de marketing, vendas e atendimento, potencializada por automação inteligente e CRM, pode transformar radicalmente os resultados de uma empresa no setor de móveis planejados.
+                    </p>
+                    <p className="text-white/80 mb-6">
+                      A plataforma Growth Funnels não apenas forneceu as ferramentas tecnológicas necessárias, mas também o framework estratégico e o suporte para implementação, permitindo que a empresa multiplicasse seu faturamento sem um aumento proporcional em seus custos operacionais.
+                    </p>
+                    <p className="text-white/80 mb-6">
+                      Este caso ilustra perfeitamente como a transformação digital bem executada pode ser o diferencial competitivo em mercados tradicionais, superando expectativas tanto em termos de resultados financeiros quanto na experiência proporcionada aos clientes.
+                    </p>
                   </>
                 )}
               </div>
