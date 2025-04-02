@@ -16,7 +16,6 @@ import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import Affiliates from "./pages/Affiliates";
-import { Helmet } from "react-helmet";
 
 const queryClient = new QueryClient();
 
