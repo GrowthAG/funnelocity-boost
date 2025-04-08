@@ -66,11 +66,11 @@ const Navbar = () => {
               Login
             </Button>
           </a>
-          <a href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" target="_blank" rel="noopener noreferrer">
+          <Link to="/schedule">
             <Button className="bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium">
               Agendar Demo
             </Button>
-          </a>
+          </Link>
         </div>
 
         <button 
@@ -154,17 +154,15 @@ const Navbar = () => {
                   Login
                 </Button>
               </a>
-              <a 
-                href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" 
-                className="w-full"
+              <Link
+                to="/schedule"
+                className="w-full" 
                 onClick={() => setIsOpen(false)}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <Button className="w-full bg-[#d0ff00] hover:bg-[#b3e600] text-black">
                   Agendar Demo
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

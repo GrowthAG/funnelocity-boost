@@ -16,6 +16,7 @@ import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import Affiliates from "./pages/Affiliates";
+import Schedule from "./pages/Schedule";
 
 const queryClient = new QueryClient();
 
@@ -45,10 +46,11 @@ const App = () => (
           <Route path="/terms" element={<Terms />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/afiliados" element={<Affiliates />} />
+          <Route path="/schedule" element={<Schedule />} />
           
           {/* External redirects */}
           <Route path="/login" element={<ExternalRedirect to="https://app.growthfunnels.com.br/" />} />
-          <Route path="/demo" element={<ExternalRedirect to="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" />} />
+          <Route path="/demo" element={<Navigate to="/schedule" replace />} />
           <Route path="/pro" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/pro" />} />
           <Route path="/plus" element={<ExternalRedirect to="https://checkout.growthfunnels.com.br/plus" />} />
           

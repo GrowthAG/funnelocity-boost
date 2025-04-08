@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -19,11 +20,11 @@ const CTA = () => {
               Contratar Plano PRO <ArrowRight className="ml-1 h-5 w-5" />
             </Button>
           </a>
-          <a href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" target="_blank" rel="noopener noreferrer">
+          <Link to="/schedule">
             <Button size="lg" variant="outline" className="border-white text-white font-medium hover:bg-white/10 w-full sm:w-auto px-6 md:px-10 py-6 md:py-7 text-base md:text-lg shadow-md hover:shadow-lg transition-all duration-300">
               Agendar Demonstração
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
