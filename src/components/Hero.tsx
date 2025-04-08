@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -25,11 +26,11 @@ const Hero = () => {
                 Contratar Plano PRO <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
             </a>
-            <a href="https://api.leadconnectorhq.com/widget/booking/MPETKLENngnBUUDATVAd" target="_blank" rel="noopener noreferrer">
+            <Link to="/schedule">
               <Button size="lg" variant="outline" className="border border-[#d0ff00]/30 text-[#d0ff00] hover:bg-[#d0ff00]/10 w-full sm:w-auto px-6 py-6 text-lg font-medium">
                 Agendar Demonstração
               </Button>
-            </a>
+            </Link>
           </div>
           <div className="pt-6 md:pt-8 flex flex-col items-center justify-center space-y-4">
             <p className="text-white/80 text-base md:text-lg">
