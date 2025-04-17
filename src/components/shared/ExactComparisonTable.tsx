@@ -76,7 +76,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
           </div>
           
           <div className="space-y-4 p-4 py-[15px]">
-            <div className="flex items-start gap-2 px-0 py-[5px] bg-neutral-900 rounded-md">
+            <div className="flex items-start gap-2 py-[5px] bg-neutral-900 rounded-md mx-0 px-[7px]">
               <CheckCircle className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Substitua até 12 ferramentas</span>
