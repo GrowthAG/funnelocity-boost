@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const Hero = () => {
-  return <div className="bg-black min-h-screen pt-20 pb-8 px-4 md:px-8 flex items-center py-[40px]">
+  return <div className="bg-black min-h-screen pt-20 pb-8 px-4 md:px-8 flex items-center py-[60px] my-0">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mx-auto max-w-4xl space-y-6 animate-slide-up">
           <div>
