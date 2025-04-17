@@ -20,7 +20,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
   className = ''
 }) => {
   return <div className={`bg-black text-white ${className}`}>
-      <div className="flex justify-center items-bottom gap-2 mb-2">
+      <div className="flex justify-center items-bottom gap-2 mb-2 px-0 mx-0 my-[12px] py-[5px]">
         <img src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" alt="GrowthFunnels Logo" className="h-6" />
         <span className="text-xl font-bold text-white">vs. Outras Soluções</span>
       </div>
@@ -69,14 +69,14 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
           <div className="p-4 mb-2">
             <p className="text-sm text-white/70">Plano Mensal:</p>
             <div className="flex justify-center items-baseline mt-2">
-              <span className="text-[#d0ff00] text-lg font-bold">R$</span>
+              <span className="text-[#d0ff00] font-bold text-xl">R$</span>
               <span className="text-[#d0ff00] text-7xl font-bold mx-1">497</span>
-              <span className="text-white/70">/mês</span>
+              <span className="text-white/70 font-normal text-lg">/mês</span>
             </div>
           </div>
           
-          <div className="space-y-3 p-4">
-            <div className="flex items-start gap-2">
+          <div className="space-y-4 p-4 py-[15px]">
+            <div className="flex items-start gap-2 px-0 py-[5px]">
               <CheckCircle className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Substitua até 12 ferramentas</span>
@@ -84,7 +84,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <Zap className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Economize até R$ 10.122,40 por ano</span>
@@ -92,7 +92,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <Users className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Até 3 usuários incluídos</span>
@@ -100,7 +100,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[6px]">
               <Shield className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Suporte técnico dedicado</span>
@@ -108,7 +108,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <Database className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">20.000 contatos incluídos</span>
@@ -116,7 +116,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <Clock className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Automações ilimitadas</span>
@@ -124,7 +124,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <Medal className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Funções premium inclusas</span>
@@ -132,7 +132,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               </div>
             </div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 py-[5px]">
               <BellRing className="h-5 w-5 text-[#d0ff00] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-white font-medium">Notificações inteligentes</span>
