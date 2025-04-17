@@ -59,8 +59,8 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
         
         {/* Right column */}
         <div>
-          <div className="p-4 border-b border-white/20 flex justify-between items-start">
-            <h3 className="text-xl font-bold text-white">Com GrowthFunnels você paga:</h3>
+          <div className="p-4 border-b border-white/20 flex allign center items-start">
+            <h3 className="text-xl font-bold text-white text-justify">Com GrowthFunnels você paga:</h3>
             <div className="text-[#d0ff00]">
               <DollarSign size={24} />
             </div>
