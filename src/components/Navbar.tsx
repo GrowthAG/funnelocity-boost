@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Funnels Home">
           {/* Updated logo with better visibility on dark backgrounds */}
-          <img alt="Funnels Logo" src="/lovable-uploads/00eb4d6a-1e77-48d2-a29e-45dbaa0200b2.png" className="h-8 md:h-12" />
+          <img alt="Funnels Logo" src="/lovable-uploads/00eb4d6a-1e77-48d2-a29e-45dbaa0200b2.png" className="h-10 md:h-10" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
