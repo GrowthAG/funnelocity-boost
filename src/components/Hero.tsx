@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <div className="bg-black min-h-screen pt-20 pb-8 px-4 md:px-8 flex items-center">
+  return <div className="bg-black min-h-screen pt-20 pb-8 px-4 md:px-8 flex items-center py-[40px]">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mx-auto max-w-4xl space-y-6 animate-slide-up">
           <div>
@@ -37,23 +34,14 @@ const Hero = () => {
               Mais de <span className="font-bold text-[#d0ff00]">2,500+</span> empresas já automatizaram seu crescimento
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg">
-              {[
-                "Substitui até 12 ferramentas",
-                "Economia de até 90%",
-                "Construtor de páginas",
-                "Automações inteligentes"
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-2">
+              {["Substitui até 12 ferramentas", "Economia de até 90%", "Construtor de páginas", "Automações inteligentes"].map((feature, i) => <div key={i} className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-[#d0ff00] flex-shrink-0" />
                   <span className="text-white/90 text-sm md:text-base">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
