@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { ArrowRight, CheckCircle, Zap, Users, Shield, Database, Clock, Medal, BellRing, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface ExactComparisonTableProps {
   replacementTools: Array<{
     name: string;
@@ -14,7 +12,6 @@ interface ExactComparisonTableProps {
   getCheckoutLink?: (plan: string) => string;
   className?: string;
 }
-
 const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
   replacementTools,
   totalSaving,
@@ -22,14 +19,9 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
   getCheckoutLink = (plan: string) => `https://checkout.growthfunnels.com.br/${plan.toLowerCase()}-${billingAnnual ? 'anual' : 'mensal'}`,
   className = ''
 }) => {
-  return (
-    <div className={`bg-black text-white ${className}`}>
+  return <div className={`bg-black text-white ${className}`}>
       <div className="flex justify-center items-bottom gap-2 mb-2">
-        <img 
-          src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" 
-          alt="GrowthFunnels Logo" 
-          className="h-6" 
-        />
+        <img src="https://storage.googleapis.com/msgsndr/S7HEFAz97UKuC8NLHMmI/media/6700440a319ff820f2ee4b4e.png" alt="GrowthFunnels Logo" className="h-6" />
         <span className="text-xl font-bold text-white">vs. Outras Soluções</span>
       </div>
       <p className="text-center text-white/70 mb-4 text-sm">
@@ -49,28 +41,19 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
           </div>
           
           <div className="divide-y divide-white/20">
-            {replacementTools.map((tool, index) => (
-              <div key={index} className="p-3 flex flex-col">
+            {replacementTools.map((tool, index) => <div key={index} className="p-3 flex flex-col">
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-white">{tool.name}</span>
                   <span className="font-bold text-[#d0ff00]">{tool.value}</span>
                 </div>
                 
-                {tool.tools && tool.tools.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {tool.tools.map((toolName, i) => (
-                      <div 
-                        key={i} 
-                        className="bg-[#333333] hover:bg-[#444444] text-white/80 rounded px-2 py-0.5 text-xs flex items-center transition-colors duration-200"
-                      >
+                {tool.tools && tool.tools.length > 0 && <div className="flex flex-wrap gap-1 mt-1">
+                    {tool.tools.map((toolName, i) => <div key={i} className="bg-[#333333] hover:bg-[#444444] text-white/80 rounded px-2 py-0.5 text-xs flex items-center transition-colors duration-200">
                         <ArrowRight className="h-3 w-3 mr-1 text-[#d0ff00]" />
                         {toolName}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                      </div>)}
+                  </div>}
+              </div>)}
           </div>
         </div>
         
@@ -87,7 +70,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
             <p className="text-sm text-white/70">Plano Mensal:</p>
             <div className="flex justify-center items-baseline mt-2">
               <span className="text-[#d0ff00] text-lg font-bold">R$</span>
-              <span className="text-[#d0ff00] text-5xl font-bold mx-1">497</span>
+              <span className="text-[#d0ff00] text-7xl font-bold mx-1">497</span>
               <span className="text-white/70">/mês</span>
             </div>
           </div>
@@ -159,12 +142,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
           </div>
           
           <div className="p-4 mt-2">
-            <a 
-              href={getCheckoutLink('PRO')} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block w-full"
-            >
+            <a href={getCheckoutLink('PRO')} target="_blank" rel="noopener noreferrer" className="block w-full">
               <Button className="w-full py-3 bg-[#d0ff00] hover:bg-[#b3e600] text-black font-medium" size="lg">
                 Contratar Plano PRO
               </Button>
@@ -172,8 +150,6 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ExactComparisonTable;
