@@ -75,9 +75,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
               <span className="text-[#d0ff00] text-7xl font-bold mx-1">497</span>
               <span className="text-white/70 font-normal text-lg">/mês</span>
             </div>
-            <p className="text-sm text-white/70 mt-2">
-              Subscrição para transformar sua operação de marketing e vendas
-            </p>
+            <p className="text-sm text-white/70 mt-2">Inscreva-se para transformar sua operação de marketing e vendas</p>
           </div>
           
           <div className="space-y-4 p-4 py-[15px]">
