@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, Zap, Users, Shield, Database, Clock, Medal, BellRing, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface ExactComparisonTableProps {
   replacementTools: Array<{
     name: string;
@@ -13,7 +12,6 @@ interface ExactComparisonTableProps {
   getCheckoutLink?: (plan: string) => string;
   className?: string;
 }
-
 const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
   replacementTools,
   totalSaving,
@@ -65,7 +63,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
             <div className="w-full">
               <h3 className="text-xl font-bold text-white">Com Funnels você paga:</h3>
               <div className="flex justify-center mt-2">
-                <DollarSign size={24} className="text-[#d0ff00]" />
+                
               </div>
             </div>
           </div>
@@ -159,5 +157,4 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
       </div>
     </div>;
 };
-
 export default ExactComparisonTable;
