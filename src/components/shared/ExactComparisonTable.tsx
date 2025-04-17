@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, Zap, Users, Shield, Database, Clock, Medal, BellRing, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 interface ExactComparisonTableProps {
   replacementTools: Array<{
     name: string;
@@ -12,6 +13,7 @@ interface ExactComparisonTableProps {
   getCheckoutLink?: (plan: string) => string;
   className?: string;
 }
+
 const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
   replacementTools,
   totalSaving,
@@ -32,7 +34,7 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 border-t border-white/20">
         {/* Left column */}
         <div className="border-r border-white/20">
-          <div className="p-4 border-b border-white/20">
+          <div className="p-4 border-b border-white/20 text-center">
             <h3 className="text-xl font-bold text-white">O que você substituirá:</h3>
             <p className="text-white/70 text-sm mt-1">
               Todas essas ferramentas podem ser substituídas pelo GrowthFunnels, simplificando sua 
@@ -59,20 +61,25 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
         
         {/* Right column */}
         <div>
-          <div className="p-4 border-b border-white/20 flex justify-between items-start px-[15px] mx-0">
-            <h3 className="text-xl font-bold text-white">Com GrowthFunnels você paga:</h3>
-            <div className="text-[#d0ff00]">
-              <DollarSign size={24} />
+          <div className="p-4 border-b border-white/20 flex justify-between items-start px-[15px] mx-0 text-center">
+            <div className="w-full">
+              <h3 className="text-xl font-bold text-white">Com Funnels você paga:</h3>
+              <div className="flex justify-center mt-2">
+                <DollarSign size={24} className="text-[#d0ff00]" />
+              </div>
             </div>
           </div>
           
-          <div className="p-4 mb-2">
+          <div className="p-4 mb-2 text-center">
             <p className="text-sm text-white/70">Plano Mensal:</p>
             <div className="flex justify-center items-baseline mt-2">
               <span className="text-[#d0ff00] font-bold text-xl">R$</span>
               <span className="text-[#d0ff00] text-7xl font-bold mx-1">497</span>
               <span className="text-white/70 font-normal text-lg">/mês</span>
             </div>
+            <p className="text-sm text-white/70 mt-2">
+              Subscrição para transformar sua operação de marketing e vendas
+            </p>
           </div>
           
           <div className="space-y-4 p-4 py-[15px]">
@@ -152,4 +159,5 @@ const ExactComparisonTable: React.FC<ExactComparisonTableProps> = ({
       </div>
     </div>;
 };
+
 export default ExactComparisonTable;
